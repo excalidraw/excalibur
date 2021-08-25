@@ -11,8 +11,8 @@ jest.mock("../../scene/export", () => ({
 describe("exportToCanvas", () => {
   const EXPORT_PADDING = 10;
 
-  it("with default arguments", () => {
-    const canvas = utils.exportToCanvas({
+  it("with default arguments", async () => {
+    const canvas = await utils.exportToCanvas({
       ...diagramFactory({ elementOverrides: { width: 100, height: 100 } }),
     });
 
@@ -20,8 +20,8 @@ describe("exportToCanvas", () => {
     expect(canvas.height).toBe(100 + 2 * EXPORT_PADDING);
   });
 
-  it("when custom width and height", () => {
-    const canvas = utils.exportToCanvas({
+  it("when custom width and height", async () => {
+    const canvas = await utils.exportToCanvas({
       ...diagramFactory({ elementOverrides: { width: 100, height: 100 } }),
       getDimensions: () => ({ width: 200, height: 200, scale: 1 }),
     });

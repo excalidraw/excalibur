@@ -181,7 +181,7 @@ export const renderScene = (
   rc: RoughCanvas,
   canvas: HTMLCanvasElement,
   sceneState: SceneState,
-  // extra options, currently passed by export helper
+  // extra options passed to the renderer
   {
     renderScrollbars = true,
     renderSelection = true,
@@ -190,11 +190,15 @@ export const renderScene = (
     // doesn't guarantee pixel-perfect output.
     renderOptimizations = false,
     renderGrid = true,
+    /** when exporting the behavior is slightly different (e.g. we can't use
+        CSS filters) */
+    isExport = false,
   }: {
     renderScrollbars?: boolean;
     renderSelection?: boolean;
     renderOptimizations?: boolean;
     renderGrid?: boolean;
+    isExport?: boolean;
   } = {},
 ) => {
   if (canvas === null) {
@@ -211,7 +215,7 @@ export const renderScene = (
   const normalizedCanvasWidth = canvas.width / scale;
   const normalizedCanvasHeight = canvas.height / scale;
 
-  if (sceneState.exportWithDarkMode) {
+  if (isExport && sceneState.theme === "dark") {
     context.filter = THEME_FILTER;
   }
 

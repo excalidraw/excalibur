@@ -22,7 +22,7 @@ export const serializeAsJSON = (
     version: 2,
     source: EXPORT_SOURCE,
     elements: clearElementsForExport(elements),
-    appState: cleanAppStateForExport(appState),
+    appState: cleanAppStateForExport(appState, elements),
   };
 
   return JSON.stringify(data, null, 2);

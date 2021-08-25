@@ -93,13 +93,22 @@ const flipElements = (
   appState: AppState,
   flipDirection: "horizontal" | "vertical",
 ): ExcalidrawElement[] => {
-  for (let i = 0; i < elements.length; i++) {
-    flipElement(elements[i], appState);
-    // If vertical flip, rotate an extra 180
-    if (flipDirection === "vertical") {
-      rotateElement(elements[i], Math.PI);
+  elements.forEach((element) => {
+    if (element.type === "image") {
+      mutateElement(element, {
+        scale:
+          flipDirection === "horizontal"
+            ? [element.scale[0] * -1, element.scale[1]]
+            : [element.scale[0], element.scale[1] * -1],
+      });
+    } else {
+      flipElement(element, appState);
+      // If vertical flip, rotate an extra 180
+      if (flipDirection === "vertical") {
+        rotateElement(element, Math.PI);
+      }
     }
-  }
+  });
   return elements;
 };
 

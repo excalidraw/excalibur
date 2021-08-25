@@ -1,12 +1,11 @@
-import { ExcalidrawTextElement } from "../element/types";
-import { Zoom } from "../types";
+import { ExcalidrawTextElement, ImageId } from "../element/types";
+import { AppState, Zoom } from "../types";
 
 export type SceneState = {
   scrollX: number;
   scrollY: number;
   // null indicates transparent bg
   viewBackgroundColor: string | null;
-  exportWithDarkMode?: boolean;
   zoom: Zoom;
   shouldCacheIgnoreZoom: boolean;
   remotePointerViewportCoords: { [id: string]: { x: number; y: number } };
@@ -14,6 +13,8 @@ export type SceneState = {
   remoteSelectedElementIds: { [elementId: string]: string[] };
   remotePointerUsernames: { [id: string]: string };
   remotePointerUserStates: { [id: string]: string };
+  theme: AppState["theme"];
+  imageCache: Map<ImageId, HTMLImageElement>;
 };
 
 export type SceneScroll = {

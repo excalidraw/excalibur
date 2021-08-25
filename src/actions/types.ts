@@ -1,7 +1,6 @@
 import React from "react";
 import { ExcalidrawElement } from "../element/types";
-import { AppState, ExcalidrawProps } from "../types";
-import Library from "../data/library";
+import { AppClassProperties, AppState, ExcalidrawProps } from "../types";
 import { ToolButtonSize } from "../components/ToolButton";
 
 /** if false, the action should be prevented */
@@ -17,17 +16,11 @@ export type ActionResult =
     }
   | false;
 
-type AppAPI = {
-  canvas: HTMLCanvasElement | null;
-  focusContainer(): void;
-  library: Library;
-};
-
 type ActionFn = (
   elements: readonly ExcalidrawElement[],
   appState: Readonly<AppState>,
   formData: any,
-  app: AppAPI,
+  app: AppClassProperties,
 ) => ActionResult | Promise<ActionResult>;
 
 export type UpdaterFn = (res: ActionResult) => void;

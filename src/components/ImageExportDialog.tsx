@@ -112,27 +112,22 @@ const ImageExportModal = ({
     if (!previewNode) {
       return;
     }
-    try {
-      const canvas = exportToCanvas(exportedElements, appState, {
-        exportBackground,
-        viewBackgroundColor,
-        exportPadding,
-      });
-
-      // if converting to blob fails, there's some problem that will
-      // likely prevent preview and export (e.g. canvas too big)
-      canvasToBlob(canvas)
-        .then(() => {
+    exportToCanvas(exportedElements, appState, {
+      exportBackground,
+      viewBackgroundColor,
+      exportPadding,
+    })
+      .then((canvas) => {
+        // if converting to blob fails, there's some problem that will
+        // likely prevent preview and export (e.g. canvas too big)
+        return canvasToBlob(canvas).then(() => {
           renderPreview(canvas, previewNode);
-        })
-        .catch((error) => {
-          console.error(error);
-          renderPreview(new CanvasError(), previewNode);
         });
-    } catch (error) {
-      console.error(error);
-      renderPreview(new CanvasError(), previewNode);
-    }
+      })
+      .catch((error) => {
+        console.error(error);
+        renderPreview(new CanvasError(), previewNode);
+      });
   }, [
     appState,
     exportedElements,

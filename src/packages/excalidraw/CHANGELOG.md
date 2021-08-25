@@ -308,6 +308,7 @@ Please add the latest change on the top under the correct section.
 - #### BREAKING CHANGE
   Use `location.hash` when importing libraries to fix installation issues. This will require host apps to add a `hashchange` listener and call the newly exposed `excalidrawAPI.importLibrary(url)` API when applicable [#3320](https://github.com/excalidraw/excalidraw/pull/3320). Check the [readme](https://github.com/excalidraw/excalidraw/blob/master/src/packages/excalidraw/README.md#importlibrary) for more details.
 - Append `location.pathname` to `libraryReturnUrl` default url [#3325](https://github.com/excalidraw/excalidraw/pull/3325).
+- Support image elements [#3424](https://github.com/excalidraw/excalidraw/pull/3424).
 
 ### Build
 

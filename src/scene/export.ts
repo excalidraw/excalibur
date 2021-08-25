@@ -7,10 +7,14 @@ import { AppState } from "../types";
 import { DEFAULT_EXPORT_PADDING, THEME_FILTER } from "../constants";
 import { getDefaultAppState } from "../appState";
 import { serializeAsJSON } from "../data/json";
+import {
+  getInitializedImageElements,
+  updateImageCache,
+} from "../element/image";
 
 export const SVG_EXPORT_TAG = `<!-- svg-source:excalidraw -->`;
 
-export const exportToCanvas = (
+export const exportToCanvas = async (
   elements: readonly NonDeletedExcalidrawElement[],
   appState: AppState,
   {
@@ -36,6 +40,14 @@ export const exportToCanvas = (
 
   const { canvas, scale = 1 } = createCanvas(width, height);
 
+  const defaultAppState = getDefaultAppState();
+
+  const imageCache = await updateImageCache({
+    imageCache: new Map(),
+    imageElements: getInitializedImageElements(elements),
+    files: appState.files,
+  });
+
   renderScene(
     elements,
     appState,
@@ -45,21 +57,23 @@ export const exportToCanvas = (
     canvas,
     {
       viewBackgroundColor: exportBackground ? viewBackgroundColor : null,
-      exportWithDarkMode: appState.exportWithDarkMode,
       scrollX: -minX + exportPadding,
       scrollY: -minY + exportPadding,
-      zoom: getDefaultAppState().zoom,
+      zoom: defaultAppState.zoom,
       remotePointerViewportCoords: {},
       remoteSelectedElementIds: {},
       shouldCacheIgnoreZoom: false,
       remotePointerUsernames: {},
       remotePointerUserStates: {},
+      theme: appState.exportWithDarkMode ? "dark" : "light",
+      imageCache,
     },
     {
       renderScrollbars: false,
       renderSelection: false,
-      renderOptimizations: false,
+      renderOptimizations: true,
       renderGrid: false,
+      isExport: true,
     },
   );
 

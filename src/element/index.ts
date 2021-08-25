@@ -11,6 +11,7 @@ export {
   newTextElement,
   updateTextElement,
   newLinearElement,
+  newImageElement,
   duplicateElement,
 } from "./newElement";
 export {

@@ -44,13 +44,13 @@ export const exportToCanvas = ({
   );
 };
 
-export const exportToBlob = (
+export const exportToBlob = async (
   opts: ExportOpts & {
     mimeType?: string;
     quality?: number;
   },
 ): Promise<Blob | null> => {
-  const canvas = exportToCanvas(opts);
+  const canvas = await exportToCanvas(opts);
 
   let { mimeType = "image/png", quality } = opts;
 

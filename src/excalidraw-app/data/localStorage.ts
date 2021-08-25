@@ -51,7 +51,7 @@ export const saveToLocalStorage = (
     );
     localStorage.setItem(
       STORAGE_KEYS.LOCAL_STORAGE_APP_STATE,
-      JSON.stringify(clearAppStateForLocalStorage(appState)),
+      JSON.stringify(clearAppStateForLocalStorage(appState, elements)),
     );
   } catch (error) {
     // Unable to access window.localStorage
@@ -88,6 +88,7 @@ export const importFromLocalStorage = () => {
         ...getDefaultAppState(),
         ...clearAppStateForLocalStorage(
           JSON.parse(savedState) as Partial<AppState>,
+          elements,
         ),
       };
     } catch (error) {

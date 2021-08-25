@@ -5,6 +5,7 @@ import {
   DEFAULT_TEXT_ALIGN,
   EXPORT_SCALES,
 } from "./constants";
+import { ExcalidrawElement } from "./element/types";
 import { t } from "./i18n";
 import { AppState, NormalizedZoomValue } from "./types";
 import { getDateTime } from "./utils";
@@ -18,6 +19,7 @@ export const getDefaultAppState = (): Omit<
   "offsetTop" | "offsetLeft" | "width" | "height"
 > => {
   return {
+    files: {},
     theme: "light",
     collaborators: new Map(),
     currentChartType: "bar",
@@ -96,6 +98,7 @@ const APP_STATE_STORAGE_CONF = (<
 >(
   config: { [K in keyof T]: K extends keyof AppState ? T[K] : never },
 ) => config)({
+  files: { browser: true, export: true },
   theme: { browser: true, export: false },
   collaborators: { browser: false, export: false },
   currentChartType: { browser: true, export: false },
@@ -164,6 +167,7 @@ const APP_STATE_STORAGE_CONF = (<
 
 const _clearAppStateForStorage = <ExportType extends "export" | "browser">(
   appState: Partial<AppState>,
+  elements: readonly ExcalidrawElement[],
   exportType: ExportType,
 ) => {
   type ExportableKeys = {
@@ -175,17 +179,52 @@ const _clearAppStateForStorage = <ExportType extends "export" | "browser">(
   for (const key of Object.keys(appState) as (keyof typeof appState)[]) {
     const propConfig = APP_STATE_STORAGE_CONF[key];
     if (propConfig?.[exportType]) {
-      // @ts-ignore see https://github.com/microsoft/TypeScript/issues/31445
-      stateForExport[key] = appState[key];
+      let nextValue;
+
+      // remove unused images from `appState.files`
+      if (key === "files") {
+        const currFiles = appState.files || {};
+        const nextFiles = Object.values(appState.files || {}).reduce(
+          (acc, item) => {
+            if (item.type !== "image") {
+              acc[item.id] = item;
+            }
+            return acc;
+          },
+          {} as AppState["files"],
+        );
+        for (const element of elements) {
+          if (
+            element.type === "image" &&
+            !element.isDeleted &&
+            element.imageId &&
+            currFiles[element.imageId]
+          ) {
+            nextFiles[element.imageId] = currFiles[element.imageId];
+          }
+        }
+        nextValue = nextFiles;
+      } else {
+        nextValue = appState[key];
+      }
+
+      // https://github.com/microsoft/TypeScript/issues/31445
+      (stateForExport as any)[key] = nextValue;
     }
   }
   return stateForExport;
 };
 
-export const clearAppStateForLocalStorage = (appState: Partial<AppState>) => {
-  return _clearAppStateForStorage(appState, "browser");
+export const clearAppStateForLocalStorage = (
+  appState: Partial<AppState>,
+  elements: readonly ExcalidrawElement[],
+) => {
+  return _clearAppStateForStorage(appState, elements, "browser");
 };
 
-export const cleanAppStateForExport = (appState: Partial<AppState>) => {
-  return _clearAppStateForStorage(appState, "export");
+export const cleanAppStateForExport = (
+  appState: Partial<AppState>,
+  elements: readonly ExcalidrawElement[],
+) => {
+  return _clearAppStateForStorage(appState, elements, "export");
 };

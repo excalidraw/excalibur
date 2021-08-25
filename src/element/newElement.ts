@@ -1,5 +1,6 @@
 import {
   ExcalidrawElement,
+  ExcalidrawImageElement,
   ExcalidrawTextElement,
   ExcalidrawLinearElement,
   ExcalidrawGenericElement,
@@ -245,6 +246,18 @@ export const newLinearElement = (
     endBinding: null,
     startArrowhead: opts.startArrowhead,
     endArrowhead: opts.endArrowhead,
+  };
+};
+
+export const newImageElement = (
+  opts: {
+    type: ExcalidrawImageElement["type"];
+  } & ElementConstructorOpts,
+): NonDeleted<ExcalidrawImageElement> => {
+  return {
+    ..._newElementBase<ExcalidrawImageElement>("image", opts),
+    imageId: null,
+    scale: [1, 1],
   };
 };
 

@@ -21,9 +21,15 @@ const parseFileContents = async (blob: Blob | File) => {
       ).decodePngMetadata(blob);
     } catch (error) {
       if (error.message === "INVALID") {
-        throw new Error(t("alerts.imageDoesNotContainScene"));
+        throw new DOMException(
+          t("alerts.imageDoesNotContainScene"),
+          "EncodingError",
+        );
       } else {
-        throw new Error(t("alerts.cannotRestoreFromImage"));
+        throw new DOMException(
+          t("alerts.cannotRestoreFromImage"),
+          "EncodingError",
+        );
       }
     }
   } else {
@@ -49,9 +55,15 @@ const parseFileContents = async (blob: Blob | File) => {
         });
       } catch (error) {
         if (error.message === "INVALID") {
-          throw new Error(t("alerts.imageDoesNotContainScene"));
+          throw new DOMException(
+            t("alerts.imageDoesNotContainScene"),
+            "EncodingError",
+          );
         } else {
-          throw new Error(t("alerts.cannotRestoreFromImage"));
+          throw new DOMException(
+            t("alerts.cannotRestoreFromImage"),
+            "EncodingError",
+          );
         }
       }
     }
@@ -100,6 +112,13 @@ export const isImageFileHandle = (handle: FileSystemHandle | null) => {
   return type === "png" || type === "svg";
 };
 
+export const isImageFile = (blob: Blob | null | undefined): blob is File => {
+  const { type } = blob || {};
+  return (
+    type === "image/jpeg" || type === "image/png" || type === "image/svg+xml"
+  );
+};
+
 export const loadFromBlob = async (
   blob: Blob,
   /** @see restore.localAppState */
@@ -118,7 +137,7 @@ export const loadFromBlob = async (
         appState: {
           theme: localAppState?.theme,
           fileHandle: blob.handle || null,
-          ...cleanAppStateForExport(data.appState || {}),
+          ...cleanAppStateForExport(data.appState || {}, data.elements || []),
           ...(localAppState
             ? calculateScrollCenter(data.elements || [], localAppState, null)
             : {}),

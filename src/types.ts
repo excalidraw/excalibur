@@ -10,6 +10,7 @@ import {
   Arrowhead,
   ChartType,
   FontFamilyValues,
+  ImageId,
 } from "./element/types";
 import { SHAPES } from "./shapes";
 import { Point as RoughPoint } from "roughjs/bin/geometry";
@@ -23,6 +24,7 @@ import { Language } from "./i18n";
 import { ClipboardData } from "./clipboard";
 import { isOverScrollBars } from "./scene";
 import { MaybeTransformHandleType } from "./element/transformHandles";
+import Library from "./data/library";
 
 export type Point = Readonly<RoughPoint>;
 
@@ -42,6 +44,10 @@ export type Collaborator = {
 };
 
 export type AppState = {
+  files: Record<
+    ExcalidrawElement["id"],
+    { type: "image"; id: string; data: string }
+  >;
   isLoading: boolean;
   errorMessage: string | null;
   draggingElement: NonDeletedExcalidrawElement | null;
@@ -251,6 +257,16 @@ export type AppProps = ExcalidrawProps & {
   };
   detectScroll: boolean;
   handleKeyboardGlobally: boolean;
+};
+
+/** A subset of App class properties that we need to use elsewhere
+ * in the app, eg Manager. Factored out into a separate type to keep DRY. */
+export type AppClassProperties = {
+  props: AppProps;
+  canvas: HTMLCanvasElement | null;
+  focusContainer(): void;
+  library: Library;
+  imageCache: Map<ImageId, HTMLImageElement>;
 };
 
 export type PointerDownState = Readonly<{

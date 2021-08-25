@@ -10,6 +10,7 @@ import {
   isTextElement,
   isLinearElement,
   isFreeDrawElement,
+  isInitializedImageElement,
 } from "../element/typeChecks";
 import {
   getDiamondPoints,
@@ -33,7 +34,7 @@ import rough from "roughjs/bin/rough";
 import { Zoom } from "../types";
 import { getDefaultAppState } from "../appState";
 import getFreeDrawShape from "perfect-freehand";
-import { MAX_DECIMALS_FOR_SVG_EXPORT } from "../constants";
+import { MAX_DECIMALS_FOR_SVG_EXPORT, THEME_FILTER } from "../constants";
 
 const defaultAppState = getDefaultAppState();
 
@@ -47,6 +48,7 @@ const getCanvasPadding = (element: ExcalidrawElement) =>
 export interface ExcalidrawElementWithCanvas {
   element: ExcalidrawElement | ExcalidrawTextElement;
   canvas: HTMLCanvasElement;
+  theme: SceneState["theme"];
   canvasZoom: Zoom["value"];
   canvasOffsetX: number;
   canvasOffsetY: number;
@@ -55,6 +57,7 @@ export interface ExcalidrawElementWithCanvas {
 const generateElementCanvas = (
   element: NonDeletedExcalidrawElement,
   zoom: Zoom,
+  sceneState: SceneState,
 ): ExcalidrawElementWithCanvas => {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d")!;
@@ -111,21 +114,37 @@ const generateElementCanvas = (
 
   const rc = rough.canvas(canvas);
 
-  drawElementOnCanvas(element, rc, context);
+  if (sceneState.theme === "dark" && isInitializedImageElement(element)) {
+    context.filter = THEME_FILTER;
+  }
+
+  drawElementOnCanvas(element, rc, context, sceneState);
   context.restore();
+
   return {
     element,
     canvas,
+    theme: sceneState.theme,
     canvasZoom: zoom.value,
     canvasOffsetX,
     canvasOffsetY,
   };
 };
 
+const drawImagePlaceholder = (
+  element: NonDeletedExcalidrawElement,
+  rc: RoughCanvas,
+  context: CanvasRenderingContext2D,
+) => {
+  context.fillStyle = "rgba(134, 134, 134, 0.199)";
+  context.fillRect(0, 0, element.width, element.height);
+};
+
 const drawElementOnCanvas = (
   element: NonDeletedExcalidrawElement,
   rc: RoughCanvas,
   context: CanvasRenderingContext2D,
+  sceneState: SceneState,
 ) => {
   context.globalAlpha = element.opacity / 100;
   switch (element.type) {
@@ -158,6 +177,23 @@ const drawElementOnCanvas = (
       context.fill(path);
 
       context.restore();
+      break;
+    }
+    case "image": {
+      const img = isInitializedImageElement(element)
+        ? sceneState.imageCache.get(element.imageId)
+        : undefined;
+      if (img != null) {
+        context.drawImage(
+          img,
+          0 /* hardcoded for the selection box*/,
+          0,
+          element.width,
+          element.height,
+        );
+      } else {
+        drawImagePlaceholder(element, rc, context);
+      }
       break;
     }
     default: {
@@ -254,6 +290,7 @@ export const generateRoughOptions = (
   switch (element.type) {
     case "rectangle":
     case "diamond":
+    case "image":
     case "ellipse": {
       options.fillStyle = element.fillStyle;
       options.fill =
@@ -300,6 +337,7 @@ const generateElementShape = (
 
     switch (element.type) {
       case "rectangle":
+        // case "image":
         if (element.strokeSharpness === "round") {
           const w = element.width;
           const h = element.height;
@@ -464,6 +502,11 @@ const generateElementShape = (
         shape = [];
         break;
       }
+      case "image": {
+        // just to ensure we don't regenerate element.canvas on rerenders
+        shape = [];
+        break;
+      }
     }
     shapeCache.set(element, shape);
   }
@@ -471,7 +514,7 @@ const generateElementShape = (
 
 const generateElementWithCanvas = (
   element: NonDeletedExcalidrawElement,
-  sceneState?: SceneState,
+  sceneState: SceneState,
 ) => {
   const zoom: Zoom = sceneState ? sceneState.zoom : defaultAppState.zoom;
   const prevElementWithCanvas = elementWithCanvasCache.get(element);
@@ -479,8 +522,13 @@ const generateElementWithCanvas = (
     prevElementWithCanvas &&
     prevElementWithCanvas.canvasZoom !== zoom.value &&
     !sceneState?.shouldCacheIgnoreZoom;
-  if (!prevElementWithCanvas || shouldRegenerateBecauseZoom) {
-    const elementWithCanvas = generateElementCanvas(element, zoom);
+
+  if (
+    !prevElementWithCanvas ||
+    shouldRegenerateBecauseZoom ||
+    prevElementWithCanvas.theme !== sceneState.theme
+  ) {
+    const elementWithCanvas = generateElementCanvas(element, zoom, sceneState);
 
     elementWithCanvasCache.set(element, elementWithCanvas);
 
@@ -509,10 +557,23 @@ const drawElementFromCanvas = (
 
   const cx = ((x1 + x2) / 2 + sceneState.scrollX) * window.devicePixelRatio;
   const cy = ((y1 + y2) / 2 + sceneState.scrollY) * window.devicePixelRatio;
+
+  const scaleXFactor =
+    "scale" in elementWithCanvas.element
+      ? elementWithCanvas.element.scale[0]
+      : 1;
+  const scaleYFactor =
+    "scale" in elementWithCanvas.element
+      ? elementWithCanvas.element.scale[1]
+      : 1;
+
   context.save();
-  context.scale(1 / window.devicePixelRatio, 1 / window.devicePixelRatio);
-  context.translate(cx, cy);
-  context.rotate(element.angle);
+  context.scale(
+    (1 / window.devicePixelRatio) * scaleXFactor,
+    (1 / window.devicePixelRatio) * scaleYFactor,
+  );
+  context.translate(cx * scaleXFactor, cy * scaleYFactor);
+  context.rotate(element.angle * scaleXFactor * scaleYFactor);
 
   context.drawImage(
     elementWithCanvas.canvas!,
@@ -567,7 +628,7 @@ export const renderElement = (
         context.translate(cx, cy);
         context.rotate(element.angle);
         context.translate(-shiftX, -shiftY);
-        drawElementOnCanvas(element, rc, context);
+        drawElementOnCanvas(element, rc, context, sceneState);
         context.restore();
       }
 
@@ -578,6 +639,7 @@ export const renderElement = (
     case "ellipse":
     case "line":
     case "arrow":
+    case "image":
     case "text": {
       generateElementShape(element, generator);
       if (renderOptimizations) {
@@ -596,7 +658,7 @@ export const renderElement = (
         context.translate(cx, cy);
         context.rotate(element.angle);
         context.translate(-shiftX, -shiftY);
-        drawElementOnCanvas(element, rc, context);
+        drawElementOnCanvas(element, rc, context, sceneState);
         context.restore();
       }
       break;
