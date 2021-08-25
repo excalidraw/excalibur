@@ -103,7 +103,8 @@
     "share": "Share",
     "showStroke": "Show stroke color picker",
     "showBackground": "Show background color picker",
-    "toggleTheme": "Toggle theme"
+    "toggleTheme": "Toggle theme",
+    "toggleAnchor": "Toggle alignment mode"
   },
   "buttons": {
     "clearReset": "Reset the canvas",

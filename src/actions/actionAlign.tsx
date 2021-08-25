@@ -48,6 +48,7 @@ export const actionAlignTop = register({
       elements: alignSelectedElements(elements, appState, {
         position: "start",
         axis: "y",
+        alignType: appState.alignType,
       }),
       commitToHistory: true,
     };
@@ -77,6 +78,7 @@ export const actionAlignBottom = register({
       elements: alignSelectedElements(elements, appState, {
         position: "end",
         axis: "y",
+        alignType: appState.alignType,
       }),
       commitToHistory: true,
     };
@@ -106,6 +108,7 @@ export const actionAlignLeft = register({
       elements: alignSelectedElements(elements, appState, {
         position: "start",
         axis: "x",
+        alignType: appState.alignType,
       }),
       commitToHistory: true,
     };
@@ -135,6 +138,7 @@ export const actionAlignRight = register({
       elements: alignSelectedElements(elements, appState, {
         position: "end",
         axis: "x",
+        alignType: appState.alignType,
       }),
       commitToHistory: true,
     };
@@ -164,6 +168,7 @@ export const actionAlignVerticallyCentered = register({
       elements: alignSelectedElements(elements, appState, {
         position: "center",
         axis: "y",
+        alignType: appState.alignType,
       }),
       commitToHistory: true,
     };
@@ -189,6 +194,7 @@ export const actionAlignHorizontallyCentered = register({
       elements: alignSelectedElements(elements, appState, {
         position: "center",
         axis: "x",
+        alignType: appState.alignType,
       }),
       commitToHistory: true,
     };

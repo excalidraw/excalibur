@@ -98,6 +98,7 @@ export type AppState = {
   toastMessage: string | null;
   zenModeEnabled: boolean;
   theme: "light" | "dark";
+  alignType: "bounding" | "anchor";
   gridSize: number | null;
   viewModeEnabled: boolean;
 

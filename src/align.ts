@@ -12,6 +12,7 @@ interface Box {
 export interface Alignment {
   position: "start" | "center" | "end";
   axis: "x" | "y";
+  alignType: "bounding" | "anchor";
 }
 
 export const alignElements = (
@@ -19,8 +20,10 @@ export const alignElements = (
   alignment: Alignment,
 ): ExcalidrawElement[] => {
   const groups: ExcalidrawElement[][] = getMaximumGroups(selectedElements);
-
-  const selectionBoundingBox = getCommonBoundingBox(selectedElements);
+  const useBoundingBox = alignment.alignType === "bounding";
+  const selectionBoundingBox = getCommonBoundingBox(
+    useBoundingBox ? selectedElements : [selectedElements[0]],
+  );
 
   return groups.flatMap((group) => {
     const translation = calculateTranslation(

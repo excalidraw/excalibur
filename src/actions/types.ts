@@ -101,7 +101,8 @@ export type ActionName =
   | "flipVertical"
   | "viewMode"
   | "exportWithDarkMode"
-  | "toggleTheme";
+  | "toggleTheme"
+  | "toggleAlign";
 
 export type PanelComponentProps = {
   elements: readonly ExcalidrawElement[];
