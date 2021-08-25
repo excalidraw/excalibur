@@ -3,7 +3,7 @@ FROM node:14-alpine AS build
 WORKDIR /opt/node_app
 
 COPY package.json yarn.lock ./
-RUN yarn --ignore-optional
+RUN yarn --ignore-optional --network-timeout 100000
 
 ARG NODE_ENV=production
 

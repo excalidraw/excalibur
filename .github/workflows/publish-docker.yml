@@ -11,10 +11,40 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: docker/build-push-action@v1
+      
+      - name: Prepare
+        id: prep
+        run: |
+          DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/${GITHUB_REPOSITORY#*/}
+          GITHUB_SHA=${{ github.sha }}
+          TAGS="${DOCKER_IMAGE}:${GITHUB_SHA},${DOCKER_IMAGE}:latest"
+          # Set output parameters.
+          echo ::set-output name=tags::${TAGS}
+      
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@master
+        with:
+          platforms: all
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@master
+
+      - name: Login to DockerHub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: excalidraw/excalidraw
+
+
+      - uses: docker/build-push-action@v2
+        with:
           tag_with_ref: true
           tag_with_sha: true
+          push: true
+          context: .
+          file: ./Dockerfile
+          builder: ${{ steps.buildx.outputs.name }}
+          platforms: linux/amd64,linux/arm,linux/arm64
+          tags: ${{ steps.prep.outputs.tags }}
