@@ -4,6 +4,7 @@ import rough from "roughjs/bin/rough";
 import clsx from "clsx";
 import { supported as fsSupported } from "browser-fs-access";
 import { nanoid } from "nanoid";
+import * as JsSearch from "js-search";
 
 import {
   actionAddToLibrary,
@@ -26,6 +27,7 @@ import {
   actionSendToBack,
   actionToggleGridMode,
   actionToggleStats,
+  actionToggleTextSearch,
   actionToggleZenMode,
   actionUngroup,
 } from "../actions";
@@ -194,6 +196,7 @@ import ContextMenu, { ContextMenuOption } from "./ContextMenu";
 import LayerUI from "./LayerUI";
 import { Stats } from "./Stats";
 import { Toast } from "./Toast";
+import { TextSearch } from "./TextSearch";
 import { actionToggleViewMode } from "../actions/actionToggleViewMode";
 
 const IsMobileContext = React.createContext(false);
@@ -453,6 +456,15 @@ class App extends React.Component<AppProps, AppState> {
                 elements={this.scene.getElements()}
                 onClose={this.toggleStats}
                 renderCustomStats={renderCustomStats}
+              />
+            )}
+            {this.state.textSearchActive && !this.state.textSearchActive && (
+              // TODO: remove second condition when search component is ready
+              <TextSearch
+                appState={this.state}
+                setAppState={this.setAppState}
+                elements={this.scene.getElements()}
+                onClose={this.toggleTextSearch}
               />
             )}
             {this.state.toastMessage !== null && (
@@ -1363,6 +1375,10 @@ class App extends React.Component<AppProps, AppState> {
     this.actionManager.executeAction(actionToggleStats);
   };
 
+  toggleTextSearch = () => {
+    this.actionManager.executeAction(actionToggleTextSearch);
+  };
+
   scrollToContent = (
     target:
       | ExcalidrawElement
@@ -1642,6 +1658,19 @@ class App extends React.Component<AppProps, AppState> {
         ? bindOrUnbindSelectedElements(selectedElements)
         : unbindLinearElements(selectedElements);
       this.setState({ suggestedBindings: [] });
+    }
+    if (this.state.textSearchActive) {
+      const searchMatchText = this.state.searchMatchText;
+      const textElements = this.scene
+        .getElements()
+        .filter((element) => isTextElement(element));
+
+      const textMatchSearch = new JsSearch.Search("id");
+      textMatchSearch.addIndex("text");
+      textMatchSearch.addDocuments(textElements);
+
+      const matchedText = textMatchSearch.search(searchMatchText);
+      console.info(matchedText);
     }
   });
 

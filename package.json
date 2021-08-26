@@ -31,6 +31,7 @@
     "clsx": "1.1.1",
     "firebase": "8.3.3",
     "i18next-browser-languagedetector": "6.1.0",
+    "js-search": "2.0.0",
     "lodash.throttle": "4.1.1",
     "nanoid": "3.1.22",
     "open-color": "1.8.0",
@@ -52,6 +53,7 @@
   "devDependencies": {
     "@excalidraw/eslint-config": "1.0.0",
     "@excalidraw/prettier-config": "1.0.2",
+    "@types/js-search": "1.4.0",
     "@types/lodash.throttle": "4.1.6",
     "@types/pako": "1.0.1",
     "@types/resize-observer-browser": "0.1.5",

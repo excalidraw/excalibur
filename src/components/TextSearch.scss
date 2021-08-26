@@ -1,0 +1,10 @@
+@import "../css/variables.module";
+
+.excalidraw {
+  .TextSearch {
+    position: absolute;
+    top: 20px;
+    right: 250px;
+    z-index: 10;
+  }
+}

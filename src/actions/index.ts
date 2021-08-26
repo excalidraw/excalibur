@@ -78,5 +78,5 @@ export {
 
 export { actionToggleGridMode } from "./actionToggleGridMode";
 export { actionToggleZenMode } from "./actionToggleZenMode";
-
+export { actionToggleTextSearch } from "./actionToggleTextSearch";
 export { actionToggleStats } from "./actionToggleStats";
