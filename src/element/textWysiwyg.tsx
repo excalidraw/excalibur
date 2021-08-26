@@ -5,6 +5,7 @@ import { isTextElement } from "./typeChecks";
 import { CLASSES } from "../constants";
 import { ExcalidrawElement } from "./types";
 import { AppState } from "../types";
+import { clipboardContainsElements, getSystemClipboard } from "../clipboard";
 
 const normalizeText = (text: string) => {
   return (
@@ -163,6 +164,37 @@ export const textWysiwyg = ({
       // We must send an input event to resize the element
       editable.dispatchEvent(new Event("input"));
     }
+  };
+
+  const sanitizeText = (text: string) => {
+    // sanitizes text from clipboard when containing text elements
+    // if normal text is introduced it just returns it
+    try {
+      const parsed = JSON.parse(text);
+      const sanitized: string[] = [];
+      if (clipboardContainsElements(parsed)) {
+        parsed.elements.forEach((el) => {
+          if (el.type === "text") {
+            sanitized.push(el.text);
+          }
+        });
+      }
+      return sanitized.join(" ");
+    } catch {
+      return text;
+    }
+  };
+
+  editable.onpaste = async (event) => {
+    event.preventDefault();
+    const pasted = await getSystemClipboard(event);
+    const { selectionStart, selectionEnd } = editable;
+    const leftSubstr = editable.value.slice(0, selectionStart);
+    const rightSubstr = editable.value.slice(selectionEnd);
+    editable.value = leftSubstr
+      .concat(sanitizeText(pasted))
+      .concat(rightSubstr);
+    editable.dispatchEvent(new Event("input"));
   };
 
   const TAB_SIZE = 4;

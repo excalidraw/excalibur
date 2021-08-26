@@ -35,7 +35,7 @@ export const probablySupportsClipboardBlob =
   "ClipboardItem" in window &&
   "toBlob" in HTMLCanvasElement.prototype;
 
-const clipboardContainsElements = (
+export const clipboardContainsElements = (
   contents: any,
 ): contents is { elements: ExcalidrawElement[] } => {
   if (
@@ -96,7 +96,7 @@ const parsePotentialSpreadsheet = (
  * Retrieves content from system clipboard (either from ClipboardEvent or
  *  via async clipboard API if supported)
  */
-const getSystemClipboard = async (
+export const getSystemClipboard = async (
   event: ClipboardEvent | null,
 ): Promise<string> => {
   try {
