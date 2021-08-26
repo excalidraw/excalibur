@@ -34,7 +34,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "7.14.8",
+    "@babel/core": "7.15.0",
     "@babel/plugin-transform-arrow-functions": "7.14.5",
     "@babel/plugin-transform-async-to-generator": "7.14.5",
     "@babel/plugin-transform-runtime": "^7.14.5",
