@@ -5,6 +5,7 @@ import { isTextElement } from "./typeChecks";
 import { CLASSES } from "../constants";
 import { ExcalidrawElement } from "./types";
 import { AppState } from "../types";
+import { measureText } from "../utils";
 
 const normalizeText = (text: string) => {
   return (
@@ -17,6 +18,7 @@ const normalizeText = (text: string) => {
 };
 
 const getTransform = (
+  offsetX: number,
   width: number,
   height: number,
   angle: number,
@@ -32,7 +34,7 @@ const getTransform = (
   if (width > maxWidth && zoom.value !== 1) {
     translateX = (maxWidth / 2) * (zoom.value - 1);
   }
-  return `translate(${translateX}px, ${translateY}px) scale(${zoom.value}) rotate(${degree}deg)`;
+  return `translate(${translateX}px, ${translateY}px) scale(${zoom.value}) rotate(${degree}deg) translate(${offsetX}px, 0px)`;
 };
 
 export const textWysiwyg = ({
@@ -57,16 +59,27 @@ export const textWysiwyg = ({
   const updateWysiwygStyle = () => {
     const updatedElement = Scene.getScene(element)?.getElement(id);
     if (updatedElement && isTextElement(updatedElement)) {
-      const [viewportX, viewportY] = getViewportCoords(
-        updatedElement.x,
-        updatedElement.y,
-      );
       const { textAlign, angle } = updatedElement;
 
       editable.value = updatedElement.text;
 
       const lines = updatedElement.text.replace(/\r\n?/g, "\n").split("\n");
-      const lineHeight = updatedElement.height / lines.length;
+      const metrics = measureText(
+        updatedElement.text,
+        getFontString(updatedElement),
+      );
+      const lineHeight = metrics.height / lines.length;
+
+      const offsetX =
+        textAlign === "right"
+          ? updatedElement.width - metrics.width
+          : textAlign === "center"
+          ? (updatedElement.width - metrics.width) / 2
+          : 0;
+      const [viewportX, viewportY] = getViewportCoords(
+        updatedElement.x,
+        updatedElement.y,
+      );
       const maxWidth =
         (appState.offsetLeft + appState.width - viewportX - 8) /
           appState.zoom.value -
@@ -81,11 +94,14 @@ export const textWysiwyg = ({
         font: getFontString(updatedElement),
         // must be defined *after* font ¯\_(ツ)_/¯
         lineHeight: `${lineHeight}px`,
-        width: `${updatedElement.width}px`,
-        height: `${updatedElement.height}px`,
+        width: `${metrics.width}px`,
+        height: `${metrics.height}px`,
         left: `${viewportX}px`,
         top: `${viewportY}px`,
+        transformOrigin: `${updatedElement.width / 2}px
+          ${updatedElement.height / 2}px`,
         transform: getTransform(
+          offsetX,
           updatedElement.width,
           updatedElement.height,
           angle,

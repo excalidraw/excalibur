@@ -15,6 +15,10 @@ Please add the latest change on the top under the correct section.
 
 ## Excalidraw Library
 
+### Features
+
+- Plugin-like subtypes for `ExcalidrawTextElement`. These allow easily supporting specialized `ExcalidrawTextElement`s such as for MathJax, Markdown, or inline code. Rendered text dimensions no longer have to match editing text dimensions. [#3915](https://github.com/excalidraw/excalidraw/pull/3915).
+
 ### Fixes
 
 - Prevent gradual misalignment of the canvas due to floating point rounding errors [#3833](https://github.com/excalidraw/excalidraw/pull/3833).

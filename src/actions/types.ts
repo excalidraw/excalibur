@@ -3,6 +3,7 @@ import { ExcalidrawElement } from "../element/types";
 import { AppState, ExcalidrawProps } from "../types";
 import Library from "../data/library";
 import { ToolButtonSize } from "../components/ToolButton";
+import { TextActionName } from "../textlike";
 
 /** if false, the action should be prevented */
 export type ActionResult =
@@ -34,6 +35,7 @@ export type UpdaterFn = (res: ActionResult) => void;
 export type ActionFilterFn = (action: Action) => void;
 
 export type ActionName =
+  | TextActionName
   | "copy"
   | "cut"
   | "paste"

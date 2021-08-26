@@ -11,7 +11,7 @@ import {
   ExcalidrawFreeDrawElement,
   FontFamilyValues,
 } from "../element/types";
-import { measureText, getFontString } from "../utils";
+import { applyTextOpts, measureTextElement, TextOpts } from "../textlike";
 import { randomInteger, randomId } from "../random";
 import { newElementWith } from "./mutateElement";
 import { getNewGroupIdsForDuplication } from "../groups";
@@ -112,9 +112,11 @@ export const newTextElement = (
     fontFamily: FontFamilyValues;
     textAlign: TextAlign;
     verticalAlign: VerticalAlign;
+    subtype: string;
+    textOpts?: TextOpts;
   } & ElementConstructorOpts,
 ): NonDeleted<ExcalidrawTextElement> => {
-  const metrics = measureText(opts.text, getFontString(opts));
+  const metrics = measureTextElement(opts);
   const offsets = getTextElementPositionOffsets(opts, metrics);
   const textElement = newElementWith(
     {
@@ -129,10 +131,14 @@ export const newTextElement = (
       width: metrics.width,
       height: metrics.height,
       baseline: metrics.baseline,
+      subtype: opts.subtype,
     },
     {},
   );
-  return textElement;
+  return applyTextOpts(
+    textElement,
+    opts.textOpts,
+  ) as NonDeleted<ExcalidrawTextElement>;
 };
 
 const getAdjustedDimensions = (
@@ -149,14 +155,14 @@ const getAdjustedDimensions = (
     width: nextWidth,
     height: nextHeight,
     baseline: nextBaseline,
-  } = measureText(nextText, getFontString(element));
+  } = measureTextElement(element, { text: nextText });
   const { textAlign, verticalAlign } = element;
 
   let x: number;
   let y: number;
 
   if (textAlign === "center" && verticalAlign === "middle") {
-    const prevMetrics = measureText(element.text, getFontString(element));
+    const prevMetrics = measureTextElement(element);
     const offsets = getTextElementPositionOffsets(element, {
       width: nextWidth - prevMetrics.width,
       height: nextHeight - prevMetrics.height,
