@@ -20,8 +20,9 @@ import OpenColor from "open-color";
 import { CheckboxItem } from "./CheckboxItem";
 import { DEFAULT_EXPORT_PADDING } from "../constants";
 
-const supportsContextFilters =
-  "filter" in document.createElement("canvas").getContext("2d")!;
+const supportsContextFilters = process.env.REACT_APP_IS_NODE_BUILD
+  ? false
+  : "filter" in document.createElement("canvas").getContext("2d")!;
 
 export const ErrorCanvasPreview = () => {
   return (

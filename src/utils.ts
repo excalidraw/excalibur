@@ -397,6 +397,9 @@ export const getVersion = () => {
 
 // Adapted from https://github.com/Modernizr/Modernizr/blob/master/feature-detects/emoji.js
 export const supportsEmoji = () => {
+  if (process.env.REACT_APP_IS_NODE_BUILD) {
+    return true;
+  }
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
   if (!ctx) {
@@ -443,3 +446,7 @@ export const focusNearestParent = (element: HTMLInputElement) => {
     parent = parent.parentElement;
   }
 };
+
+export const DevicePixelRatio = !process.env.REACT_APP_IS_NODE_BUILD
+  ? window.devicePixelRatio
+  : 1;

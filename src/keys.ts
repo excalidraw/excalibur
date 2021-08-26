@@ -1,5 +1,9 @@
-export const isDarwin = /Mac|iPod|iPhone|iPad/.test(window.navigator.platform);
-export const isWindows = /^Win/.test(window.navigator.platform);
+export const isDarwin = process.env.REACT_APP_IS_NODE_BUILD
+  ? false
+  : /Mac|iPod|iPhone|iPad/.test(window.navigator.platform);
+export const isWindows = process.env.REACT_APP_IS_NODE_BUILD
+  ? false
+  : /^Win/.test(window.navigator.platform);
 
 export const CODES = {
   EQUAL: "Equal",

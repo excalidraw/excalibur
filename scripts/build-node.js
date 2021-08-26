@@ -1,10 +1,6 @@
 #!/usr/bin/env node
 
-// In order to use this, you need to install Cairo on your machine. See
-// instructions here: https://github.com/Automattic/node-canvas#compiling
-
 // In order to run:
-//   npm install canvas # please do not check it in
 //   yarn build-node
 //   node build/static/js/build-node.js
 //   open test.png
@@ -21,7 +17,7 @@ config.optimization.splitChunks = {
   },
 };
 // Set the filename to be deterministic
-config.output.filename = "static/js/build-node.js";
+config.output.filename = "app-node.js";
 // Don't choke on node-specific requires
 config.target = "node";
 // Set the node entrypoint
@@ -30,11 +26,8 @@ config.entry = "./src/index-node";
 // to just a string with the path of the canvas.node file. We need to tell
 // webpack to avoid rewriting that dependency.
 config.externals = (context, request, callback) => {
-  if (/\.node$/.test(request)) {
-    return callback(
-      null,
-      "commonjs ../../../node_modules/canvas/build/Release/canvas.node",
-    );
+  if (/@napi-rs\/canvas$/.test(request)) {
+    return callback(null, "commonjs ../node_modules/@napi-rs/canvas");
   }
   callback();
 };

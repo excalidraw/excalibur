@@ -7,10 +7,10 @@ import {
 } from "./constants";
 import { t } from "./i18n";
 import { AppState, NormalizedZoomValue } from "./types";
-import { getDateTime } from "./utils";
+import { DevicePixelRatio, getDateTime } from "./utils";
 
-const defaultExportScale = EXPORT_SCALES.includes(devicePixelRatio)
-  ? devicePixelRatio
+const defaultExportScale = EXPORT_SCALES.includes(DevicePixelRatio)
+  ? DevicePixelRatio
   : 1;
 
 export const getDefaultAppState = (): Omit<

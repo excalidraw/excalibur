@@ -27,6 +27,7 @@ import {
   getFontString,
   getFontFamilyString,
   isRTL,
+  DevicePixelRatio,
 } from "../utils";
 import { isPathALoop } from "../math";
 import rough from "roughjs/bin/rough";
@@ -72,42 +73,33 @@ const generateElementCanvas = (
     y2 = Math.ceil(y2);
 
     canvas.width =
-      distance(x1, x2) * window.devicePixelRatio * zoom.value +
+      distance(x1, x2) * DevicePixelRatio * zoom.value +
       padding * zoom.value * 2;
     canvas.height =
-      distance(y1, y2) * window.devicePixelRatio * zoom.value +
+      distance(y1, y2) * DevicePixelRatio * zoom.value +
       padding * zoom.value * 2;
 
     canvasOffsetX =
       element.x > x1
-        ? Math.floor(distance(element.x, x1)) *
-          window.devicePixelRatio *
-          zoom.value
+        ? Math.floor(distance(element.x, x1)) * DevicePixelRatio * zoom.value
         : 0;
 
     canvasOffsetY =
       element.y > y1
-        ? Math.floor(distance(element.y, y1)) *
-          window.devicePixelRatio *
-          zoom.value
+        ? Math.floor(distance(element.y, y1)) * DevicePixelRatio * zoom.value
         : 0;
 
     context.translate(canvasOffsetX, canvasOffsetY);
   } else {
     canvas.width =
-      element.width * window.devicePixelRatio * zoom.value +
-      padding * zoom.value * 2;
+      element.width * DevicePixelRatio * zoom.value + padding * zoom.value * 2;
     canvas.height =
-      element.height * window.devicePixelRatio * zoom.value +
-      padding * zoom.value * 2;
+      element.height * DevicePixelRatio * zoom.value + padding * zoom.value * 2;
   }
 
   context.save();
   context.translate(padding * zoom.value, padding * zoom.value);
-  context.scale(
-    window.devicePixelRatio * zoom.value,
-    window.devicePixelRatio * zoom.value,
-  );
+  context.scale(DevicePixelRatio * zoom.value, DevicePixelRatio * zoom.value);
 
   const rc = rough.canvas(canvas);
 
@@ -169,7 +161,11 @@ const drawElementOnCanvas = (
           // to the DOM
           document.body.appendChild(context.canvas);
         }
-        context.canvas.setAttribute("dir", rtl ? "rtl" : "ltr");
+        if (process.env.REACT_APP_IS_NODE_BUILD) {
+          context.direction = rtl ? "rtl" : "ltr";
+        } else {
+          context.canvas.setAttribute("dir", rtl ? "rtl" : "ltr");
+        }
         context.save();
         context.font = getFontString(element);
         context.fillStyle = element.strokeColor;
@@ -507,18 +503,18 @@ const drawElementFromCanvas = (
     y2 = Math.ceil(y2);
   }
 
-  const cx = ((x1 + x2) / 2 + sceneState.scrollX) * window.devicePixelRatio;
-  const cy = ((y1 + y2) / 2 + sceneState.scrollY) * window.devicePixelRatio;
+  const cx = ((x1 + x2) / 2 + sceneState.scrollX) * DevicePixelRatio;
+  const cy = ((y1 + y2) / 2 + sceneState.scrollY) * DevicePixelRatio;
   context.save();
-  context.scale(1 / window.devicePixelRatio, 1 / window.devicePixelRatio);
+  context.scale(1 / DevicePixelRatio, 1 / DevicePixelRatio);
   context.translate(cx, cy);
   context.rotate(element.angle);
 
   context.drawImage(
     elementWithCanvas.canvas!,
-    (-(x2 - x1) / 2) * window.devicePixelRatio -
+    (-(x2 - x1) / 2) * DevicePixelRatio -
       (padding * elementWithCanvas.canvasZoom) / elementWithCanvas.canvasZoom,
-    (-(y2 - y1) / 2) * window.devicePixelRatio -
+    (-(y2 - y1) / 2) * DevicePixelRatio -
       (padding * elementWithCanvas.canvasZoom) / elementWithCanvas.canvasZoom,
     elementWithCanvas.canvas!.width / elementWithCanvas.canvasZoom,
     elementWithCanvas.canvas!.height / elementWithCanvas.canvasZoom,

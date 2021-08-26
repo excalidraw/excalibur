@@ -19,6 +19,7 @@
     ]
   },
   "dependencies": {
+    "@napi-rs/canvas": "0.1.1",
     "@sentry/browser": "6.2.5",
     "@sentry/integrations": "6.2.5",
     "@testing-library/jest-dom": "5.11.10",
@@ -55,6 +56,7 @@
     "@types/lodash.throttle": "4.1.6",
     "@types/pako": "1.0.1",
     "@types/resize-observer-browser": "0.1.5",
+    "cross-env": "7.0.3",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "3.3.1",
     "firebase-tools": "9.9.0",
@@ -84,9 +86,9 @@
   "prettier": "@excalidraw/prettier-config",
   "private": true,
   "scripts": {
-    "build-node": "node ./scripts/build-node.js",
-    "build:app:docker": "REACT_APP_DISABLE_SENTRY=true react-scripts build",
-    "build:app": "REACT_APP_GIT_SHA=$VERCEL_GIT_COMMIT_SHA react-scripts build",
+    "build-node": "cross-env REACT_APP_IS_NODE_BUILD=true node ./scripts/build-node.js",
+    "build:app:docker": "cross-env REACT_APP_IS_NODE_BUILD=false REACT_APP_DISABLE_SENTRY=true react-scripts build",
+    "build:app": "cross-env REACT_APP_IS_NODE_BUILD=false REACT_APP_GIT_SHA=$VERCEL_GIT_COMMIT_SHA react-scripts build",
     "build:version": "node ./scripts/build-version.js",
     "build": "yarn build:app && yarn build:version",
     "eject": "react-scripts eject",

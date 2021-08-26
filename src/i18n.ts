@@ -79,7 +79,6 @@ export const setLanguage = async (lang: Language) => {
   currentLang = lang;
   document.documentElement.dir = currentLang.rtl ? "rtl" : "ltr";
   document.documentElement.lang = currentLang.code;
-
   if (lang.code.startsWith(TEST_LANG_CODE)) {
     currentLangData = {};
   } else {

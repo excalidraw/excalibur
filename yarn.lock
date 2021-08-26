@@ -1554,6 +1554,80 @@
   version "7.1.3"
   resolved "https://registry.npmjs.org/@jsdevtools/ono/-/ono-7.1.3.tgz"
 
+"@napi-rs/canvas-android-arm64@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@napi-rs/canvas-android-arm64/-/canvas-android-arm64-0.1.1.tgz#b0d5971e0ccdc179128388fb50b054dd530fdaa8"
+  integrity sha512-DVHePivabTSAFFeLOiJ4C9zwpyveK3LJnfxTKRZEizfSNRu8xG5YIwJAtRaQ/AN4w4C2JFoDzJIPUfZiDkFmlg==
+
+"@napi-rs/canvas-darwin-arm64@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@napi-rs/canvas-darwin-arm64/-/canvas-darwin-arm64-0.1.1.tgz#71406ba0358e9c30f1c28b466ab208f82b092ba6"
+  integrity sha512-u0wFVh+h2qldD1O8At+ShzhFCAsK+AdqoHdYfbPjOIQmbbuqTuxwNVBLRtd1HiwDXpvGbOcksSQoDlfSSFJJcA==
+
+"@napi-rs/canvas-darwin-x64@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@napi-rs/canvas-darwin-x64/-/canvas-darwin-x64-0.1.1.tgz#16b4c5c05ee8c89138d23005c5082f8bdd605f2c"
+  integrity sha512-TtxLxisRroQaTDKf54rA6yN0A26crW9E8jzTOHIVJk9dmVMrXvsRh8ADBG5D+8+lnspAMtCShtCuhAYnvE/SlA==
+
+"@napi-rs/canvas-linux-arm-gnueabihf@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@napi-rs/canvas-linux-arm-gnueabihf/-/canvas-linux-arm-gnueabihf-0.1.1.tgz#099e6ab04fb1085841f62b7fc65a403c6cf69d96"
+  integrity sha512-P93RYkc0oygT/c9ELVNB/oifLTKXpx/Xjz/awRFVAsQez4UKs9ZW2DeqYcRGW1QxNHM/ORIZl/AX4UtIllI3xA==
+
+"@napi-rs/canvas-linux-arm64-gnu@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@napi-rs/canvas-linux-arm64-gnu/-/canvas-linux-arm64-gnu-0.1.1.tgz#94ed51ed7b44b1c567b180cfb28227a8a1d19bb8"
+  integrity sha512-9O3DR4MKqyfz9E1xK1L1YT1qyKUUNsJ9kOP75JNZAjP6JbczPe386pFnq0SDnZGFbscGcoAyYgfkXTI5INCkSQ==
+
+"@napi-rs/canvas-linux-arm64-musl@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@napi-rs/canvas-linux-arm64-musl/-/canvas-linux-arm64-musl-0.1.1.tgz#de36bd499b2796730c2ac448c2c707ae8e4e70f1"
+  integrity sha512-tMfFQOgu9b2YumDmQtK6ntON8MUbSRcb9FvuU5kr9hBZE6HKeT+B1Mw7Wdn4YanlEZ25WGRs1JqILSrLeqqs6A==
+
+"@napi-rs/canvas-linux-x64-gnu@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@napi-rs/canvas-linux-x64-gnu/-/canvas-linux-x64-gnu-0.1.1.tgz#2fa79f748a39e3f2fe94ba06024d12339142b24f"
+  integrity sha512-zVoWAcD1BQbWDSW+NsvywZiHCaVUvZTYkKnrDxEEbY6u0F3bjDer5NBAYbFz1EwY7YlY7GofurFlVut7NPd0Kg==
+
+"@napi-rs/canvas-linux-x64-musl@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@napi-rs/canvas-linux-x64-musl/-/canvas-linux-x64-musl-0.1.1.tgz#17630593212856139129ae12bfd6d8f259d4ff11"
+  integrity sha512-s+OW2WtxBpJIIw49Bn9JxwavJfWyetVOa6ZEgztz1tFLwrgjj8AGOHp6sM6kIjCUqkxkgaZPlBY0LrKZ2uZ8Cw==
+
+"@napi-rs/canvas-win32-x64-msvc@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@napi-rs/canvas-win32-x64-msvc/-/canvas-win32-x64-msvc-0.1.1.tgz#0dc9c2f8379ed8fee3a4190fac6f7b8bc410f057"
+  integrity sha512-mP5fE/OQ6qhqQ9pmzcydBBZgR3B6jYKOD6idgg1k/iWCZUNU3svTckJmII5hSfgk0Puhl7ftrV5eGQwY4vPXLg==
+
+"@napi-rs/canvas@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/@napi-rs/canvas/-/canvas-0.1.1.tgz#44d80674db020205ad4c6d27ebdfa2539803fe63"
+  integrity sha512-xKpSCIAEHy7MjgKvmGewNguaR36/HGympIC1feoPS3IR9sdoaeeQz9f1nbJSCvWVT1ZRaMIOCDreqfDSeOtafg==
+  dependencies:
+    "@node-rs/helper" "^1.2.0"
+  optionalDependencies:
+    "@napi-rs/canvas-android-arm64" "^0.1.1"
+    "@napi-rs/canvas-darwin-arm64" "^0.1.1"
+    "@napi-rs/canvas-darwin-x64" "^0.1.1"
+    "@napi-rs/canvas-linux-arm-gnueabihf" "^0.1.1"
+    "@napi-rs/canvas-linux-arm64-gnu" "^0.1.1"
+    "@napi-rs/canvas-linux-arm64-musl" "^0.1.1"
+    "@napi-rs/canvas-linux-x64-gnu" "^0.1.1"
+    "@napi-rs/canvas-linux-x64-musl" "^0.1.1"
+    "@napi-rs/canvas-win32-x64-msvc" "^0.1.1"
+
+"@napi-rs/triples@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@napi-rs/triples/-/triples-1.0.3.tgz#76d6d0c3f4d16013c61e45dfca5ff1e6c31ae53c"
+  integrity sha512-jDJTpta+P4p1NZTFVLHJ/TLFVYVcOqv6l8xwOeBKNPMgY/zDYH/YH7SJbvrr/h1RcS9GzbPcLKGzpuK9cV56UA==
+
+"@node-rs/helper@^1.2.0":
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/@node-rs/helper/-/helper-1.2.1.tgz#e079b05f21ff4329d82c4e1f71c0290e4ecdc70c"
+  integrity sha512-R5wEmm8nbuQU0YGGmYVjEc0OHtYsuXdpRG+Ut/3wZ9XAvQWyThN08bTh2cBJgoZxHQUPtvRfeQuxcAgLuiBISg==
+  dependencies:
+    "@napi-rs/triples" "^1.0.3"
+
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz#d4b3549a5db5de2683e0c1071ab4f140904bbf69"
@@ -4108,6 +4182,13 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
+
+cross-env@7.0.3:
+  version "7.0.3"
+  resolved "https://registry.npmjs.org/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
+  integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
+  dependencies:
+    cross-spawn "^7.0.1"
 
 cross-env@^5.1.3:
   version "5.2.1"
