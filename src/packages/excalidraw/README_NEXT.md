@@ -379,6 +379,8 @@ To view the full example visit :point_down:
 | [`handleKeyboardGlobally`](#handleKeyboardGlobally) | boolean | false | Indicates whether to bind the keyboard events to document. |
 | [`onLibraryChange`](#onLibraryChange) | <pre>(items: <a href="https://github.com/excalidraw/excalidraw/blob/master/src/types.ts#L200">LibraryItems</a>) => void &#124; Promise&lt;any&gt; </pre> |  | The callback if supplied is triggered when the library is updated and receives the library items. |
 | [`autoFocus`](#autoFocus) | boolean | false | Implies whether to focus the Excalidraw component on page load |
+| [`onBeforeTextEdit`](#onBeforeTextEdit) | (textElement: ExcalidrawTextElement) => string |  | Callback to be triggered when a text element is about to be edited. |
+| [`onBeforeTextSubmit`](#onBeforeTextSubmit) | (textElement: ExcalidrawTextElement, textToSubmit:string, isDeleted:boolean) => string |  | Callback to be triggered when the editing of a text element is finished. |
 
 ### Dimensions of Excalidraw
 
@@ -665,6 +667,22 @@ The unique id of the excalidraw component. This can be used to identify the exca
 ### autoFocus
 
 This prop implies whether to focus the Excalidraw component on page load. Defaults to false.
+
+### onBeforeTextEdit
+
+Callback to be triggered when a text element is about to be edited. The string returned will replace the element's text. If `null` is returned, the TextElement will not be changed. Use this to pre-process text before editing.
+
+<pre>
+(textElement: ExcalidrawTextElement) => string
+</pre>
+
+### onBeforeTextSubmit
+
+Callback to be triggered when the editing of a TextElement is finished, but right before the result is submitted. The string returned will replace the text element's text. Use this to post-process text after editing has finished.
+
+<pre>
+(textElement: ExcalidrawTextElement, textToSubmit:string, isDeleted:boolean) => string
+</pre>
 
 ### Extra API's
 

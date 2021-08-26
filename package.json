@@ -85,8 +85,8 @@
   "private": true,
   "scripts": {
     "build-node": "node ./scripts/build-node.js",
-    "build:app:docker": "REACT_APP_DISABLE_SENTRY=true react-scripts build",
-    "build:app": "REACT_APP_GIT_SHA=$VERCEL_GIT_COMMIT_SHA react-scripts build",
+    "build:app:docker": "cross-env REACT_APP_DISABLE_SENTRY=true react-scripts build",
+    "build:app": "cross-env REACT_APP_GIT_SHA=$VERCEL_GIT_COMMIT_SHA react-scripts build",
     "build:version": "node ./scripts/build-version.js",
     "build": "yarn build:app && yarn build:version",
     "eject": "react-scripts eject",

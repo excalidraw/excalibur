@@ -34,6 +34,8 @@ const Excalidraw = (props: ExcalidrawProps) => {
     handleKeyboardGlobally = false,
     onLibraryChange,
     autoFocus = false,
+    onBeforeTextEdit,
+    onBeforeTextSubmit,
   } = props;
 
   const canvasActions = props.UIOptions?.canvasActions;
@@ -94,6 +96,8 @@ const Excalidraw = (props: ExcalidrawProps) => {
         handleKeyboardGlobally={handleKeyboardGlobally}
         onLibraryChange={onLibraryChange}
         autoFocus={autoFocus}
+        onBeforeTextEdit={onBeforeTextEdit}
+        onBeforeTextSubmit={onBeforeTextSubmit}
       />
     </InitializeApp>
   );

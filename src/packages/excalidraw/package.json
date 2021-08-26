@@ -1,6 +1,6 @@
 {
-  "name": "@excalidraw/excalidraw",
-  "version": "0.9.0",
+  "name": "@zsviczian/excalidraw",
+  "version": "0.9.0-onTextEditEvents-3",
   "main": "main.js",
   "types": "types/packages/excalidraw/index.d.ts",
   "files": [
