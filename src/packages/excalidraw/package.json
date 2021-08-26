@@ -58,7 +58,7 @@
     "cross-env": "7.0.3",
     "css-loader": "5.2.6",
     "file-loader": "6.2.0",
-    "mini-css-extract-plugin": "1.6.1",
+    "mini-css-extract-plugin": "2.2.0",
     "postcss-loader": "6.1.1",
     "sass-loader": "12.1.0",
     "terser-webpack-plugin": "5.1.4",
