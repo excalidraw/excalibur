@@ -3854,10 +3854,6 @@ compare-semver@^1.0.0:
   dependencies:
     semver "^5.0.1"
 
-compare-versions@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.npmjs.org/compare-versions/-/compare-versions-3.6.0.tgz"
-
 component-bind@1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/component-bind/-/component-bind-1.0.0.tgz"
@@ -5648,19 +5644,6 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
-find-up@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.npmjs.org/find-up/-/find-up-5.0.0.tgz"
-  dependencies:
-    locate-path "^6.0.0"
-    path-exists "^4.0.0"
-
-find-versions@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmjs.org/find-versions/-/find-versions-4.0.0.tgz"
-  dependencies:
-    semver-regex "^3.1.2"
-
 firebase-tools@9.9.0:
   version "9.9.0"
   resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-9.9.0.tgz#acb64d3a7a8f5dac0b1855783a067aabad8d5743"
@@ -6506,20 +6489,10 @@ human-signals@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/human-signals/-/human-signals-1.1.1.tgz"
 
-husky@4.3.8:
-  version "4.3.8"
-  resolved "https://registry.npmjs.org/husky/-/husky-4.3.8.tgz"
-  dependencies:
-    chalk "^4.0.0"
-    ci-info "^2.0.0"
-    compare-versions "^3.6.0"
-    cosmiconfig "^7.0.0"
-    find-versions "^4.0.0"
-    opencollective-postinstall "^2.0.2"
-    pkg-dir "^5.0.0"
-    please-upgrade-node "^3.2.0"
-    slash "^3.0.0"
-    which-pm-runs "^1.0.0"
+husky@7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-7.0.1.tgz#579f4180b5da4520263e8713cc832942b48e1f1c"
+  integrity sha512-gceRaITVZ+cJH9sNHqx5tFwbzlLCVxtVZcusME8JYQ8Edy5mpGDOqD8QBCdMhpyo9a+JXddnujQ4rpY2Ff9SJA==
 
 i18next-browser-languagedetector@6.1.0:
   version "6.1.0"
@@ -7962,12 +7935,6 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-locate-path@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.npmjs.org/locate-path/-/locate-path-6.0.0.tgz"
-  dependencies:
-    p-locate "^5.0.0"
-
 lodash._isnative@~2.4.1:
   version "2.4.1"
   resolved "https://registry.npmjs.org/lodash._isnative/-/lodash._isnative-2.4.1.tgz"
@@ -8924,10 +8891,6 @@ openapi3-ts@^1.2.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/openapi3-ts/-/openapi3-ts-1.4.0.tgz"
 
-opencollective-postinstall@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.npmjs.org/opencollective-postinstall/-/opencollective-postinstall-2.0.3.tgz"
-
 opn@^5.5.0:
   version "5.5.0"
   resolved "https://registry.npmjs.org/opn/-/opn-5.5.0.tgz"
@@ -9039,12 +9002,6 @@ p-locate@^4.1.0:
   resolved "https://registry.npmjs.org/p-locate/-/p-locate-4.1.0.tgz"
   dependencies:
     p-limit "^2.2.0"
-
-p-locate@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.npmjs.org/p-locate/-/p-locate-5.0.0.tgz"
-  dependencies:
-    p-limit "^3.0.2"
 
 p-map@^2.0.0:
   version "2.1.0"
@@ -9314,12 +9271,6 @@ pkg-dir@^4.1.0, pkg-dir@^4.2.0:
   resolved "https://registry.npmjs.org/pkg-dir/-/pkg-dir-4.2.0.tgz"
   dependencies:
     find-up "^4.0.0"
-
-pkg-dir@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.npmjs.org/pkg-dir/-/pkg-dir-5.0.0.tgz"
-  dependencies:
-    find-up "^5.0.0"
 
 pkg-up@3.1.0:
   version "3.1.0"
@@ -11024,10 +10975,6 @@ semver-diff@^3.1.1:
   dependencies:
     semver "^6.3.0"
 
-semver-regex@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.npmjs.org/semver-regex/-/semver-regex-3.1.2.tgz"
-
 "semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0, semver@^5.7.1:
   version "5.7.1"
   resolved "https://registry.npmjs.org/semver/-/semver-5.7.1.tgz"
@@ -12665,10 +12612,6 @@ which-boxed-primitive@^1.0.2:
 which-module@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/which-module/-/which-module-2.0.0.tgz"
-
-which-pm-runs@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/which-pm-runs/-/which-pm-runs-1.0.0.tgz"
 
 which@^1.2.9, which@^1.3.1:
   version "1.3.1"
