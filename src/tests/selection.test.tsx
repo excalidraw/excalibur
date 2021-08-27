@@ -144,6 +144,52 @@ describe("inner box-selection", () => {
   });
 });
 
+describe("selecting with cmd/ctrl modifier", () => {
+  beforeEach(async () => {
+    await render(<ExcalidrawApp />);
+  });
+  it("cycling through elements under cursor", async () => {
+    const rect1 = API.createElement({
+      type: "rectangle",
+      x: 0,
+      y: 0,
+      width: 200,
+      height: 200,
+      backgroundColor: "red",
+      fillStyle: "solid",
+    });
+    const rect2 = API.createElement({
+      type: "rectangle",
+      x: 0,
+      y: 0,
+      width: 200,
+      height: 200,
+      backgroundColor: "red",
+      fillStyle: "solid",
+    });
+    const rect3 = API.createElement({
+      type: "rectangle",
+      x: 0,
+      y: 0,
+      width: 200,
+      height: 200,
+      backgroundColor: "red",
+      fillStyle: "solid",
+    });
+    h.elements = [rect1, rect2, rect3];
+    Keyboard.withModifierKeys({ ctrl: true }, () => {
+      mouse.clickAt(100, 100);
+      assertSelectedElements(rect3);
+      mouse.clickAt(100, 100);
+      assertSelectedElements(rect2);
+      mouse.clickAt(100, 100);
+      assertSelectedElements(rect1);
+      mouse.clickAt(100, 100);
+      assertSelectedElements(rect3);
+    });
+  });
+});
+
 describe("selection element", () => {
   it("create selection element on pointer down", async () => {
     const { getByToolName, container } = await render(<ExcalidrawApp />);
