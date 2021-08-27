@@ -49,6 +49,10 @@ export {
 
 export { actionGroup, actionUngroup } from "./actionGroup";
 
+export { actionGenerateElementLink } from "./actionGenerateElementLink";
+
+export { actionLinkToElement, actionUnlink } from "./actionLinkToElement";
+
 export { actionGoToCollaborator } from "./actionNavigate";
 
 export { actionAddToLibrary } from "./actionAddToLibrary";

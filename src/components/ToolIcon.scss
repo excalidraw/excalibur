@@ -17,8 +17,18 @@
     &:hover {
       background-color: var(--button-gray-2);
     }
+
     &:active {
       background-color: var(--button-gray-3);
+    }
+  }
+
+  .ToolIcon_disabled {
+    &:hover {
+      background-color: var(--button-gray-1);
+    }
+    &:active {
+      background-color: var(--button-gray-1);
     }
   }
 
@@ -122,6 +132,10 @@
 
     &:active + .ToolIcon__icon {
       background-color: var(--button-gray-3);
+    }
+
+    &:active + .ToolIcon__icon.ToolIcon__icon_disabled {
+      background-color: var(--button-gray-1);
     }
   }
 

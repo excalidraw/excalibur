@@ -4,7 +4,7 @@ import { ColorPicker } from "../components/ColorPicker";
 import { trash, zoomIn, zoomOut } from "../components/icons";
 import { ToolButton } from "../components/ToolButton";
 import { DarkModeToggle } from "../components/DarkModeToggle";
-import { ZOOM_STEP } from "../constants";
+import { APPEARENCE, ZOOM_STEP } from "../constants";
 import { getCommonBounds, getNonDeletedElements } from "../element";
 import { newElementWith } from "../element/mutateElement";
 import { ExcalidrawElement } from "../element/types";
@@ -15,7 +15,7 @@ import { getNormalizedZoom, getSelectedElements } from "../scene";
 import { centerScrollOn } from "../scene/scroll";
 import { getNewZoom } from "../scene/zoom";
 import { AppState, NormalizedZoomValue } from "../types";
-import { getShortcutKey } from "../utils";
+import { getShortcutKey, isLightTheme } from "../utils";
 import { register } from "./register";
 import { Tooltip } from "../components/Tooltip";
 
@@ -279,7 +279,9 @@ export const actionToggleTheme = register({
     return {
       appState: {
         ...appState,
-        theme: value || (appState.theme === "light" ? "dark" : "light"),
+        theme:
+          value ||
+          (isLightTheme(appState.theme) ? APPEARENCE.DARK : APPEARENCE.LIGHT),
       },
       commitToHistory: false,
     };

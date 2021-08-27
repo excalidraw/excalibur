@@ -21,6 +21,7 @@ import {
 import { loadFromBlob } from "../data/blob";
 import { ImportedDataState } from "../data/types";
 import {
+  ElementId,
   ExcalidrawElement,
   NonDeletedExcalidrawElement,
 } from "../element/types";
@@ -91,6 +92,7 @@ const initializeScene = async (opts: {
 
   let scene: RestoredDataState & {
     scrollToContent?: boolean;
+    scrollToElement?: ElementId;
   } = await loadScene(null, null, localDataState);
 
   let roomLinkData = getCollaborationLinkData(window.location.href);
@@ -155,6 +157,12 @@ const initializeScene = async (opts: {
         },
       };
     }
+  }
+
+  const elementIdMatch = window.location.hash.match(/^#el=(.*)$/);
+  if (elementIdMatch) {
+    const elementId = elementIdMatch[1];
+    scene.scrollToElement = elementId;
   }
 
   if (roomLinkData) {

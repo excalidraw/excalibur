@@ -1,4 +1,4 @@
-import { ExcalidrawElement } from "../element/types";
+import { ElementId, ExcalidrawElement } from "../element/types";
 import { AppState, LibraryItems } from "../types";
 import type { cleanAppStateForExport } from "../appState";
 
@@ -17,6 +17,7 @@ export interface ImportedDataState {
   elements?: readonly ExcalidrawElement[] | null;
   appState?: Readonly<Partial<AppState>> | null;
   scrollToContent?: boolean;
+  scrollToElement?: ElementId;
   libraryItems?: LibraryItems;
 }
 

@@ -14,8 +14,20 @@ interface Hint {
 }
 
 const getHints = ({ appState, elements }: Hint) => {
-  const { elementType, isResizing, isRotating, lastPointerDownWith } = appState;
+  const {
+    elementType,
+    isResizing,
+    isRotating,
+    lastPointerDownWith,
+    isLinking,
+  } = appState;
+
   const multiMode = appState.multiElement !== null;
+
+  if (isLinking) {
+    return t("hints.link");
+  }
+
   if (elementType === "arrow" || elementType === "line") {
     if (!multiMode) {
       return t("hints.linearElement");

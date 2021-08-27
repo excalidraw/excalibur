@@ -1,5 +1,5 @@
 import React from "react";
-import { ExcalidrawElement } from "../element/types";
+import { ElementId, ExcalidrawElement } from "../element/types";
 import { AppState, ExcalidrawProps } from "../types";
 import Library from "../data/library";
 import { ToolButtonSize } from "../components/ToolButton";
@@ -101,14 +101,17 @@ export type ActionName =
   | "flipVertical"
   | "viewMode"
   | "exportWithDarkMode"
-  | "toggleTheme";
+  | "toggleTheme"
+  | "link"
+  | "unlink"
+  | "copyElementLink";
 
 export type PanelComponentProps = {
   elements: readonly ExcalidrawElement[];
   appState: AppState;
   updateData: (formData?: any) => void;
   appProps: ExcalidrawProps;
-  data?: Partial<{ id: string; size: ToolButtonSize }>;
+  data?: Partial<{ id: ElementId; size: ToolButtonSize }>;
 };
 
 export interface Action {

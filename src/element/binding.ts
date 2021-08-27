@@ -5,6 +5,7 @@ import {
   NonDeletedExcalidrawElement,
   PointBinding,
   ExcalidrawElement,
+  ElementId,
 } from "./types";
 import { getElementAtPosition } from "../scene";
 import { AppState } from "../types";
@@ -632,7 +633,7 @@ export const fixBindingsAfterDeletion = (
     deletedElements.map((element) => element.id),
   );
   // Non deleted and need an update
-  const boundElementIds: Set<ExcalidrawElement["id"]> = new Set();
+  const boundElementIds: Set<ElementId> = new Set();
   deletedElements.forEach((deletedElement) => {
     if (isBindableElement(deletedElement)) {
       deletedElement.boundElementIds?.forEach((id) => {

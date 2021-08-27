@@ -19,6 +19,7 @@ type ToolButtonBaseProps = {
   keyBindingLabel?: string;
   showAriaLabel?: boolean;
   hidden?: boolean;
+  disabled?: boolean;
   visible?: boolean;
   selected?: boolean;
   className?: string;
@@ -65,6 +66,7 @@ export const ToolButton = React.forwardRef((props: ToolButtonProps, ref) => {
         )}
         data-testid={props["data-testid"]}
         hidden={props.hidden}
+        disabled={props.disabled}
         title={props.title}
         aria-label={props["aria-label"]}
         type="button"
@@ -90,11 +92,19 @@ export const ToolButton = React.forwardRef((props: ToolButtonProps, ref) => {
   }
 
   return (
-    <label className={clsx("ToolIcon", props.className)} title={props.title}>
+    <label
+      className={clsx(
+        "ToolIcon",
+        props.className,
+        props.disabled ? "ToolIcon_disabled" : "",
+      )}
+      title={props.title}
+    >
       <input
         className={`ToolIcon_type_radio ${sizeCn}`}
         type="radio"
         name={props.name}
+        disabled={props.disabled}
         aria-label={props["aria-label"]}
         aria-keyshortcuts={props["aria-keyshortcuts"]}
         data-testid={props["data-testid"]}
@@ -103,7 +113,12 @@ export const ToolButton = React.forwardRef((props: ToolButtonProps, ref) => {
         checked={props.checked}
         ref={innerRef}
       />
-      <div className="ToolIcon__icon">
+      <div
+        className={clsx(
+          "ToolIcon__icon",
+          props.disabled ? "ToolIcon__icon_disabled" : "",
+        )}
+      >
         {props.icon}
         {props.keyBindingLabel && (
           <span className="ToolIcon__keybinding">{props.keyBindingLabel}</span>

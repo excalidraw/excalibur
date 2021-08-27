@@ -7,6 +7,7 @@ export type FontFamilyKeys = keyof typeof FONT_FAMILY;
 export type FontFamilyValues = typeof FONT_FAMILY[FontFamilyKeys];
 export type FontString = string & { _brand: "fontString" };
 export type GroupId = string;
+export type ElementId = string;
 export type PointerType = "mouse" | "pen" | "touch";
 export type StrokeSharpness = "round" | "sharp";
 export type StrokeStyle = "solid" | "dashed" | "dotted";
@@ -14,7 +15,7 @@ export type TextAlign = "left" | "center" | "right";
 export type VerticalAlign = "top" | "middle";
 
 type _ExcalidrawElementBase = Readonly<{
-  id: string;
+  id: ElementId;
   x: number;
   y: number;
   strokeColor: string;
@@ -42,6 +43,9 @@ type _ExcalidrawElementBase = Readonly<{
   /** List of groups the element belongs to.
       Ordered from deepest to shallowest. */
   groupIds: readonly GroupId[];
+  /** ElementId where the scene has to focus after
+   * the user dispatch the anchor behavior on this element. */
+  linkedTo: ElementId | null | undefined;
   /** Ids of (linear) elements that are bound to this element. */
   boundElementIds: readonly ExcalidrawLinearElement["id"][] | null;
 }>;

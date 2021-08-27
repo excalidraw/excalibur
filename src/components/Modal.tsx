@@ -1,11 +1,11 @@
-import "./Modal.scss";
-
-import React, { useState, useLayoutEffect, useRef } from "react";
-import { createPortal } from "react-dom";
 import clsx from "clsx";
+import React, { useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { APPEARENCE } from "../constants";
 import { KEYS } from "../keys";
-import { useExcalidrawContainer, useIsMobile } from "./App";
 import { AppState } from "../types";
+import { useExcalidrawContainer, useIsMobile } from "./App";
+import "./Modal.scss";
 
 export const Modal = (props: {
   className?: string;
@@ -15,7 +15,7 @@ export const Modal = (props: {
   labelledBy: string;
   theme?: AppState["theme"];
 }) => {
-  const { theme = "light" } = props;
+  const { theme = APPEARENCE.LIGHT } = props;
   const modalRoot = useBodyRoot(theme);
 
   if (!modalRoot) {
@@ -69,7 +69,7 @@ const useBodyRoot = (theme: AppState["theme"]) => {
   useLayoutEffect(() => {
     const isDarkTheme =
       !!excalidrawContainer?.classList.contains("theme--dark") ||
-      theme === "dark";
+      theme === APPEARENCE.DARK;
     const div = document.createElement("div");
 
     div.classList.add("excalidraw", "excalidraw-modal-container");

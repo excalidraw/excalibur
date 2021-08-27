@@ -1,55 +1,56 @@
+import oc from "open-color";
 import { RoughCanvas } from "roughjs/bin/canvas";
 import { RoughSVG } from "roughjs/bin/svg";
-import oc from "open-color";
-
-import { AppState, Zoom } from "../types";
+import { getClientColors } from "../clients";
+import { THEME_FILTER } from "../constants";
 import {
-  ExcalidrawElement,
-  NonDeletedExcalidrawElement,
-  ExcalidrawLinearElement,
-  NonDeleted,
-  GroupId,
+  getCommonBounds,
+  getElementAbsoluteCoords,
+  getElementBounds,
+  getTransformHandles,
+  getTransformHandlesFromCoords,
+  OMIT_SIDES_FOR_MULTIPLE_ELEMENTS,
+} from "../element";
+import {
+  isBindingEnabled,
+  SuggestedBinding,
+  SuggestedPointBinding,
+} from "../element/binding";
+import { maxBindingGap } from "../element/collision";
+import { LinearElementEditor } from "../element/linearElementEditor";
+import {
+  TransformHandles,
+  TransformHandleType,
+} from "../element/transformHandles";
+import {
   ExcalidrawBindableElement,
+  ExcalidrawElement,
+  ExcalidrawLinearElement,
+  GroupId,
+  NonDeleted,
+  NonDeletedExcalidrawElement,
 } from "../element/types";
 import {
-  getElementAbsoluteCoords,
-  OMIT_SIDES_FOR_MULTIPLE_ELEMENTS,
-  getTransformHandlesFromCoords,
-  getTransformHandles,
-  getElementBounds,
-  getCommonBounds,
-} from "../element";
-
-import { roundRect } from "./roundRect";
-import { SceneState } from "../scene/types";
+  getElementsInGroup,
+  getSelectedGroupIds,
+  isSelectedViaGroup,
+} from "../groups";
 import {
   getScrollBars,
   SCROLLBAR_COLOR,
   SCROLLBAR_WIDTH,
 } from "../scene/scrollbars";
 import { getSelectedElements } from "../scene/selection";
-
+import { SceneState } from "../scene/types";
+import { AppState, UserIdleState, Zoom } from "../types";
+import {
+  isLightTheme,
+  isLinking,
+  supportsEmoji,
+  viewportCoordsToSceneCoords,
+} from "../utils";
 import { renderElement, renderElementToSvg } from "./renderElement";
-import { getClientColors } from "../clients";
-import { LinearElementEditor } from "../element/linearElementEditor";
-import {
-  isSelectedViaGroup,
-  getSelectedGroupIds,
-  getElementsInGroup,
-} from "../groups";
-import { maxBindingGap } from "../element/collision";
-import {
-  SuggestedBinding,
-  SuggestedPointBinding,
-  isBindingEnabled,
-} from "../element/binding";
-import {
-  TransformHandles,
-  TransformHandleType,
-} from "../element/transformHandles";
-import { viewportCoordsToSceneCoords, supportsEmoji } from "../utils";
-import { UserIdleState } from "../types";
-import { THEME_FILTER } from "../constants";
+import { roundRect } from "./roundRect";
 
 const hasEmojiSupport = supportsEmoji();
 
@@ -375,7 +376,7 @@ export const renderScene = (
     }
 
     selections.forEach((selection) =>
-      renderSelectionBorder(context, sceneState, selection),
+      renderSelectionBorder(context, sceneState, selection, appState.theme),
     );
 
     const locallySelectedElements = getSelectedElements(elements, appState);
@@ -587,6 +588,10 @@ const renderTransformHandles = (
   Object.keys(transformHandles).forEach((key) => {
     const transformHandle = transformHandles[key as TransformHandleType];
     if (transformHandle !== undefined) {
+      if (isLinking(context.canvas)) {
+        return;
+      }
+
       context.save();
       context.lineWidth = 1 / sceneState.zoom.value;
       if (key === "rotation") {
@@ -625,6 +630,7 @@ const renderSelectionBorder = (
     elementY2: number;
     selectionColors: string[];
   },
+  theme: AppState["theme"],
 ) => {
   const {
     angle,
@@ -637,6 +643,7 @@ const renderSelectionBorder = (
   const elementWidth = elementX2 - elementX1;
   const elementHeight = elementY2 - elementY1;
 
+  const isAppLinking = isLinking(context.canvas);
   const dashedLinePadding = 4 / sceneState.zoom.value;
   const dashWidth = 8 / sceneState.zoom.value;
   const spaceWidth = 4 / sceneState.zoom.value;
@@ -647,7 +654,12 @@ const renderSelectionBorder = (
 
   const count = selectionColors.length;
   for (let index = 0; index < count; ++index) {
-    context.strokeStyle = selectionColors[index];
+    context.strokeStyle = isAppLinking
+      ? isLightTheme(theme)
+        ? oc.blue[8]
+        : oc.red[8]
+      : selectionColors[index];
+
     context.setLineDash([
       dashWidth,
       spaceWidth + (dashWidth + spaceWidth) * (count - 1),

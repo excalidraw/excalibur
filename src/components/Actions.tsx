@@ -15,7 +15,12 @@ import {
 } from "../scene";
 import { SHAPES } from "../shapes";
 import { AppState, Zoom } from "../types";
-import { capitalizeString, isTransparent, setCursorForShape } from "../utils";
+import {
+  capitalizeString,
+  isLinking,
+  isTransparent,
+  setCursorForShape,
+} from "../utils";
 import Stack from "./Stack";
 import { ToolButton } from "./ToolButton";
 
@@ -144,6 +149,8 @@ export const SelectedShapeActions = ({
             {renderAction("deleteSelectedElements")}
             {renderAction("group")}
             {renderAction("ungroup")}
+            {renderAction("link")}
+            {renderAction("unlink")}
           </div>
         </fieldset>
       )}
@@ -167,6 +174,7 @@ export const ShapesSwitcher = ({
       const shortcut = `${capitalizeString(letter)} ${t("helpDialog.or")} ${
         index + 1
       }`;
+
       return (
         <ToolButton
           className="Shape"
@@ -174,6 +182,7 @@ export const ShapesSwitcher = ({
           type="radio"
           icon={icon}
           checked={elementType === value}
+          disabled={isLinking(canvas)}
           name="editor-current-shape"
           title={`${capitalizeString(label)} — ${shortcut}`}
           keyBindingLabel={`${index + 1}`}

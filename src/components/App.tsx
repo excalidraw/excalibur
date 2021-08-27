@@ -1,10 +1,9 @@
+import { supported as fsSupported } from "browser-fs-access";
+import clsx from "clsx";
+import { nanoid } from "nanoid";
 import React, { useContext } from "react";
 import { RoughCanvas } from "roughjs/bin/canvas";
 import rough from "roughjs/bin/rough";
-import clsx from "clsx";
-import { supported as fsSupported } from "browser-fs-access";
-import { nanoid } from "nanoid";
-
 import {
   actionAddToLibrary,
   actionBringForward,
@@ -20,6 +19,7 @@ import {
   actionFlipHorizontal,
   actionFlipVertical,
   actionGroup,
+  actionLinkToElement,
   actionPasteStyles,
   actionSelectAll,
   actionSendBackward,
@@ -28,8 +28,11 @@ import {
   actionToggleStats,
   actionToggleZenMode,
   actionUngroup,
+  actionUnlink,
 } from "../actions";
+import { actionGenerateElementLink } from "../actions/actionGenerateElementLink";
 import { createRedoAction, createUndoAction } from "../actions/actionHistory";
+import { actionToggleViewMode } from "../actions/actionToggleViewMode";
 import { ActionManager } from "../actions/manager";
 import { actions } from "../actions/register";
 import { ActionResult } from "../actions/types";
@@ -42,6 +45,7 @@ import {
   probablySupportsClipboardWriteText,
 } from "../clipboard";
 import {
+  APPEARENCE,
   APP_NAME,
   CURSOR_TYPE,
   DEFAULT_UI_OPTIONS,
@@ -70,6 +74,7 @@ import { loadFromBlob } from "../data";
 import { isValidLibrary } from "../data/json";
 import Library from "../data/library";
 import { restore, restoreElements } from "../data/restore";
+import { ImportedDataState } from "../data/types";
 import {
   dragNewElement,
   dragSelectedElements,
@@ -178,7 +183,9 @@ import {
   debounce,
   distance,
   getNearestScrollableContainer,
+  isDarkTheme,
   isInputLike,
+  isLinking,
   isToolIcon,
   isWritableElement,
   resetCursor,
@@ -194,7 +201,6 @@ import ContextMenu, { ContextMenuOption } from "./ContextMenu";
 import LayerUI from "./LayerUI";
 import { Stats } from "./Stats";
 import { Toast } from "./Toast";
-import { actionToggleViewMode } from "../actions/actionToggleViewMode";
 
 const IsMobileContext = React.createContext(false);
 export const useIsMobile = () => useContext(IsMobileContext);
@@ -513,7 +519,7 @@ class App extends React.Component<AppProps, AppState> {
         let viewModeEnabled = actionResult?.appState?.viewModeEnabled || false;
         let zenModeEnabled = actionResult?.appState?.zenModeEnabled || false;
         let gridSize = actionResult?.appState?.gridSize || null;
-        let theme = actionResult?.appState?.theme || "light";
+        let theme = actionResult?.appState?.theme || APPEARENCE.LIGHT;
         let name = actionResult?.appState?.name ?? this.state.name;
         if (typeof this.props.viewModeEnabled !== "undefined") {
           viewModeEnabled = this.props.viewModeEnabled;
@@ -680,7 +686,7 @@ class App extends React.Component<AppProps, AppState> {
     if (!this.state.isLoading) {
       this.setState({ isLoading: true });
     }
-    let initialData = null;
+    let initialData: ImportedDataState | null;
     try {
       initialData = (await this.props.initialData) || null;
       if (initialData?.libraryItems) {
@@ -702,11 +708,31 @@ class App extends React.Component<AppProps, AppState> {
       ...scene.appState,
       isLoading: false,
     };
+
     if (initialData?.scrollToContent) {
       scene.appState = {
         ...scene.appState,
         ...calculateScrollCenter(
           scene.elements,
+          {
+            ...scene.appState,
+            width: this.state.width,
+            height: this.state.height,
+            offsetTop: this.state.offsetTop,
+            offsetLeft: this.state.offsetLeft,
+          },
+          null,
+        ),
+      };
+    }
+
+    if (initialData?.scrollToElement) {
+      scene.appState = {
+        ...scene.appState,
+        ...calculateScrollCenter(
+          scene.elements.filter(
+            ({ id }) => id === initialData?.scrollToElement,
+          ),
           {
             ...scene.appState,
             width: this.state.width,
@@ -959,7 +985,7 @@ class App extends React.Component<AppProps, AppState> {
 
     this.excalidrawContainerRef.current?.classList.toggle(
       "theme--dark",
-      this.state.theme === "dark",
+      isDarkTheme(this.state.theme),
     );
 
     if (
@@ -1463,6 +1489,15 @@ class App extends React.Component<AppProps, AppState> {
               : value;
           },
         });
+      }
+
+      if (this.state.isLinking) {
+        if (event.key === KEYS.ESCAPE) {
+          (this.canvas as any).isLinking = false;
+
+          this.setState({ isLinking: false });
+        }
+        return;
       }
 
       if (
@@ -3183,6 +3218,10 @@ class App extends React.Component<AppProps, AppState> {
         // prevent dragging even if we're no longer holding cmd/ctrl otherwise
         // it would have weird results (stuff jumping all over the screen)
         if (selectedElements.length > 0 && !pointerDownState.withCmdOrCtrl) {
+          if (isLinking(this.canvas)) {
+            return;
+          }
+
           const [dragX, dragY] = getGridPoint(
             pointerCoords.x - pointerDownState.drag.offset.x,
             pointerCoords.y - pointerDownState.drag.offset.y,
@@ -4045,6 +4084,21 @@ class App extends React.Component<AppProps, AppState> {
     },
     type: "canvas" | "element",
   ) => {
+    const maybeGenerateElementLinkAction = actionGenerateElementLink.contextItemPredicate!(
+      this.actionManager.getElementsIncludingDeleted(),
+      this.actionManager.getAppState(),
+    );
+
+    const maybeLinkToElementAction = actionLinkToElement.contextItemPredicate!(
+      this.actionManager.getElementsIncludingDeleted(),
+      this.actionManager.getAppState(),
+    );
+
+    const maybeUnlinkAction = actionUnlink.contextItemPredicate!(
+      this.actionManager.getElementsIncludingDeleted(),
+      this.actionManager.getAppState(),
+    );
+
     const maybeGroupAction = actionGroup.contextItemPredicate!(
       this.actionManager.getElementsIncludingDeleted(),
       this.actionManager.getAppState(),
@@ -4179,6 +4233,11 @@ class App extends React.Component<AppProps, AppState> {
         maybeGroupAction && actionGroup,
         maybeUngroupAction && actionUngroup,
         (maybeGroupAction || maybeUngroupAction) && separator,
+        maybeLinkToElementAction && actionLinkToElement,
+        maybeUnlinkAction && actionUnlink,
+        (maybeLinkToElementAction || maybeUnlinkAction) && separator,
+        maybeGenerateElementLinkAction && actionGenerateElementLink,
+        maybeGenerateElementLinkAction && separator,
         actionAddToLibrary,
         separator,
         actionSendBackward,

@@ -19,12 +19,18 @@ export const CURSOR_TYPE = {
   MOVE: "move",
   AUTO: "",
 };
+
 export const POINTER_BUTTON = {
   MAIN: 0,
   WHEEL: 1,
   SECONDARY: 2,
   TOUCH: -1,
 };
+
+export const APPEARENCE = {
+  LIGHT: "light",
+  DARK: "dark",
+} as const;
 
 export enum EVENT {
   COPY = "copy",
@@ -122,10 +128,12 @@ export const THEME_FILTER = cssVariables.themeFilter;
 
 export const URL_QUERY_KEYS = {
   addLibrary: "addLibrary",
+  elementRef: "el",
 } as const;
 
 export const URL_HASH_KEYS = {
   addLibrary: "addLibrary",
+  elementRef: "el",
 } as const;
 
 export const DEFAULT_UI_OPTIONS: AppProps["UIOptions"] = {

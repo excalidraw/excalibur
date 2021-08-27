@@ -1,5 +1,6 @@
 import oc from "open-color";
 import {
+  APPEARENCE,
   DEFAULT_FONT_FAMILY,
   DEFAULT_FONT_SIZE,
   DEFAULT_TEXT_ALIGN,
@@ -18,7 +19,7 @@ export const getDefaultAppState = (): Omit<
   "offsetTop" | "offsetLeft" | "width" | "height"
 > => {
   return {
-    theme: "light",
+    theme: APPEARENCE.LIGHT,
     collaborators: new Map(),
     currentChartType: "bar",
     currentItemBackgroundColor: "transparent",
@@ -53,6 +54,7 @@ export const getDefaultAppState = (): Omit<
     isLibraryOpen: false,
     isLoading: false,
     isResizing: false,
+    isLinking: false,
     isRotating: false,
     lastPointerDownWith: "mouse",
     multiElement: null,
@@ -132,6 +134,7 @@ const APP_STATE_STORAGE_CONF = (<
   isLibraryOpen: { browser: false, export: false },
   isLoading: { browser: false, export: false },
   isResizing: { browser: false, export: false },
+  isLinking: { browser: false, export: false },
   isRotating: { browser: false, export: false },
   lastPointerDownWith: { browser: true, export: false },
   multiElement: { browser: false, export: false },

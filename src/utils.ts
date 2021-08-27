@@ -1,14 +1,15 @@
+import { unstable_batchedUpdates } from "react-dom";
 import colors from "./colors";
 import {
+  APPEARENCE,
   CURSOR_TYPE,
   DEFAULT_VERSION,
   FONT_FAMILY,
   WINDOWS_EMOJI_FALLBACK_FONT,
 } from "./constants";
 import { FontFamilyValues, FontString } from "./element/types";
-import { Zoom } from "./types";
-import { unstable_batchedUpdates } from "react-dom";
 import { isDarwin } from "./keys";
+import { Appearence, Zoom } from "./types";
 
 export const SVG_NS = "http://www.w3.org/2000/svg";
 
@@ -171,13 +172,28 @@ export const removeSelection = () => {
 
 export const distance = (x: number, y: number) => Math.abs(x - y);
 
+export const isLightTheme = (theme: Appearence) => theme === APPEARENCE.LIGHT;
+
+export const isDarkTheme = (theme: Appearence) => !isLightTheme(theme);
+
+export const isLinking = (canvas: HTMLCanvasElement | null) =>
+  canvas &&
+  ((canvas as any)?.isLinking || false) &&
+  !!(canvas.style.cursor = CURSOR_TYPE.CROSSHAIR);
+
 export const resetCursor = (canvas: HTMLCanvasElement | null) => {
-  if (canvas) {
-    canvas.style.cursor = "";
+  if (isLinking(canvas)) {
+    return;
   }
+
+  setCursor(canvas, "");
 };
 
 export const setCursor = (canvas: HTMLCanvasElement | null, cursor: string) => {
+  if (isLinking(canvas)) {
+    return;
+  }
+
   if (canvas) {
     canvas.style.cursor = cursor;
   }

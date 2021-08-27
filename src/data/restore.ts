@@ -91,6 +91,7 @@ const restoreElementWithProperties = <
       element.strokeSharpness ??
       (isLinearElementType(element.type) ? "round" : "sharp"),
     boundElementIds: element.boundElementIds ?? [],
+    linkedTo: element.linkedTo,
   };
 
   return ({
@@ -100,9 +101,9 @@ const restoreElementWithProperties = <
   } as unknown) as T;
 };
 
-const restoreElement = (
-  element: Exclude<ExcalidrawElement, ExcalidrawSelectionElement>,
-): typeof element => {
+type RestoreElement = Exclude<ExcalidrawElement, ExcalidrawSelectionElement>;
+
+const restoreElement = (element: RestoreElement): RestoreElement => {
   switch (element.type) {
     case "text":
       let fontSize = element.fontSize;

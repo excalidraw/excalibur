@@ -1,5 +1,8 @@
 {
   "labels": {
+    "copyElementLink": "Copy element link",
+    "link": "Link",
+    "unlink": "Unlink",
     "paste": "Paste",
     "pasteCharts": "Paste charts",
     "selectAll": "Select all",
@@ -182,6 +185,7 @@
     "text": "Tip: you can also add text by double-clicking anywhere with the selection tool",
     "text_selected": "Double-click or press ENTER to edit text",
     "text_editing": "Press Escape or CtrlOrCmd+ENTER to finish editing",
+    "link": "Click to other element to finish link or press Escape",
     "linearElementMulti": "Click on last point or press Escape or Enter to finish",
     "lockAngle": "You can constrain angle by holding SHIFT",
     "resize": "You can constrain proportions by holding SHIFT while resizing,\nhold ALT to resize from the center",

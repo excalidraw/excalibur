@@ -1,5 +1,5 @@
 import { AppState } from "./types";
-import { ExcalidrawElement } from "./element/types";
+import { ElementId, ExcalidrawElement } from "./element/types";
 import { isLinearElement } from "./element/typeChecks";
 import { deepCopyElement } from "./element/newElement";
 
@@ -9,7 +9,7 @@ export interface HistoryEntry {
 }
 
 interface DehydratedExcalidrawElement {
-  id: string;
+  id: ElementId;
   versionNonce: number;
 }
 

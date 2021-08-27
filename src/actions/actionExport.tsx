@@ -1,25 +1,31 @@
+import { supported as fsSupported } from "browser-fs-access";
 import React from "react";
 import { trackEvent } from "../analytics";
+import { ActiveFile } from "../components/ActiveFile";
+import { useIsMobile } from "../components/App";
+import { CheckboxItem } from "../components/CheckboxItem";
+import { DarkModeToggle } from "../components/DarkModeToggle";
 import { load, questionCircle, saveAs } from "../components/icons";
 import { ProjectName } from "../components/ProjectName";
 import { ToolButton } from "../components/ToolButton";
 import "../components/ToolIcon.scss";
 import { Tooltip } from "../components/Tooltip";
-import { DarkModeToggle, Appearence } from "../components/DarkModeToggle";
+import {
+  APPEARENCE,
+  DEFAULT_EXPORT_PADDING,
+  EXPORT_SCALES,
+} from "../constants";
 import { loadFromJSON, saveAsJSON } from "../data";
-import { resaveAsImageWithScene } from "../data/resave";
-import { t } from "../i18n";
-import { useIsMobile } from "../components/App";
-import { KEYS } from "../keys";
-import { register } from "./register";
-import { supported as fsSupported } from "browser-fs-access";
-import { CheckboxItem } from "../components/CheckboxItem";
-import { getExportSize } from "../scene/export";
-import { DEFAULT_EXPORT_PADDING, EXPORT_SCALES } from "../constants";
-import { getSelectedElements, isSomeElementSelected } from "../scene";
-import { getNonDeletedElements } from "../element";
-import { ActiveFile } from "../components/ActiveFile";
 import { isImageFileHandle } from "../data/blob";
+import { resaveAsImageWithScene } from "../data/resave";
+import { getNonDeletedElements } from "../element";
+import { t } from "../i18n";
+import { KEYS } from "../keys";
+import { getSelectedElements, isSomeElementSelected } from "../scene";
+import { getExportSize } from "../scene/export";
+import { Appearence } from "../types";
+import { isDarkTheme } from "../utils";
+import { register } from "./register";
 
 export const actionChangeProjectName = register({
   name: "changeProjectName",
@@ -256,9 +262,9 @@ export const actionExportWithDarkMode = register({
       }}
     >
       <DarkModeToggle
-        value={appState.exportWithDarkMode ? "dark" : "light"}
+        value={appState.exportWithDarkMode ? APPEARENCE.DARK : APPEARENCE.LIGHT}
         onChange={(theme: Appearence) => {
-          updateData(theme === "dark");
+          updateData(isDarkTheme(theme));
         }}
         title={t("labels.toggleExportColorScheme")}
       />
