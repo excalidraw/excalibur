@@ -146,6 +146,64 @@ docker run --rm -dit --name excalidraw -p 5000:80 excalidraw/excalidraw:latest
 
 The Docker image is free of analytics and other tracking libraries.
 
+## Helm chart
+
+This project comes with its own helm chart. The chart is currently hosted
+through this repository under the `helm` directory.
+
+To install using the helm chart, simply do the following:
+
+```shell script
+cd helm/
+helm install excalidraw .
+```
+
+Chart configuration is as follows:
+
+| Property | Default value | Description |
+|----------|---------------|-------------|
+| `replicaCount` | `1` | How many replicas to start |
+| `image.repository` | `excalidraw/excalidraw` | This docker image repository |
+| `image.tag` | latest | Docker image tag, by default uses `latest` |
+| `image.pullPolicy` | `IfNotPresent` | [Pull policy](https://kubernetes.io/docs/concepts/containers/images/#updating-images) for the image |
+| `imagePullSecrets` | `[]` | Pull secrets, if neccessary |
+
+TODO: finish filling out this table
+
+You can pass in overrides to the helm deployment in a few different ways:
+
+```helm install excalidraw --set 'image.tag=latest' --set 'service.type=NodePort'```
+
+Or you can maintain your own helm chart values.yaml file:
+
+```# Default values for chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 3
+
+service:
+  type: NodePort
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  labels: {}
+  path: /
+  hosts:
+    - excalidraw.example.com
+  tls:
+  - hosts:
+    - excalidraw.example.com
+    secretName: excalidraw-certificate
+```    
+
+And then use this command to deploy using your values.yaml file
+
+```helm install excalidraw --values ~/Desktop/values.yaml .```
+
+
 **At the moment, self-hosting your own instance doesn't support sharing or collaboration features.**
 
 We are working towards providing a full-fledged solution for self-hosting your own Excalidraw.

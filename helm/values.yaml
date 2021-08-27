@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: excalidraw/excalidraw
+  tag: latest
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+
+service:
+  enabled: true
+  type: ClusterIP
+  port: 587
+  labels: {}
+  annotations: {}
+  externalPort: 5000
+  internalPort: 80
+
+ingress: {}
+  

@@ -1,0 +1,14 @@
+apiVersion: v1
+name: excalidraw
+version: 0.1.0
+appVersion: 0.1.0
+description: Helm chart for installing ecalidraw
+keywords:
+  - excalidraw
+home: https://excalidraw.com/
+icon: https://www.google.com
+sources:
+  - https://github.com/excalidraw/excalidraw
+maintainers:
+  - name: aboutte
+    email: andyboutte@gmail.com
