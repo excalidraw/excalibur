@@ -192,6 +192,7 @@ const chartXLabels = (
         fontSize: 16,
         textAlign: "center",
         verticalAlign: "top",
+        subtype: "none",
       });
     }) || []
   );
@@ -212,6 +213,7 @@ const chartYLabels = (
     y: y - BAR_GAP,
     text: "0",
     textAlign: "right",
+    subtype: "none",
   });
 
   const maxYLabel = newTextElement({
@@ -222,6 +224,7 @@ const chartYLabels = (
     y: y - BAR_HEIGHT - minYLabel.height / 2,
     text: Math.max(...spreadsheet.values).toLocaleString(),
     textAlign: "right",
+    subtype: "none",
   });
 
   return [minYLabel, maxYLabel];
@@ -310,6 +313,7 @@ const chartBaseElements = (
         strokeSharpness: "sharp",
         strokeStyle: "solid",
         textAlign: "center",
+        subtype: "none",
       })
     : null;
 

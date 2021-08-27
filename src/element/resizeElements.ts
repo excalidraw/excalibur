@@ -25,7 +25,7 @@ import {
 } from "./typeChecks";
 import { mutateElement } from "./mutateElement";
 import { getPerfectElementSize } from "./sizeHelpers";
-import { measureText, getFontString } from "../utils";
+import { measureTextElement } from "../textlike";
 import { updateBoundElements } from "./binding";
 import {
   TransformHandleType,
@@ -269,10 +269,7 @@ const measureFontSizeFromWH = (
   if (nextFontSize < MIN_FONT_SIZE) {
     return null;
   }
-  const metrics = measureText(
-    element.text,
-    getFontString({ fontSize: nextFontSize, fontFamily: element.fontFamily }),
-  );
+  const metrics = measureTextElement(element, { fontSize: nextFontSize });
   return {
     size: nextFontSize,
     baseline: metrics.baseline + (nextHeight - metrics.height),

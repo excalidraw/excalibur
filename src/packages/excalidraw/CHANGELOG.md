@@ -15,6 +15,10 @@ Please add the latest change on the top under the correct section.
 
 ## Excalidraw Library
 
+### Features
+
+- Plugin-like subtypes for `ExcalidrawTextElement`. These allow easily supporting specialized `ExcalidrawTextElement`s such as for MathJax, Markdown, or inline code. Rendered text dimensions no longer have to match editing text dimensions. [#3915](https://github.com/excalidraw/excalidraw/pull/3915).
+
 ### Fixes
 
 - Prevent gradual misalignment of the canvas due to floating point rounding errors [#3833](https://github.com/excalidraw/excalidraw/pull/3833).
@@ -456,6 +460,10 @@ Please add the latest change on the top under the correct section.
 ## Excalidraw API
 
 ### Features
+
+- Render math notation using the MathJax library. Both Latex input (the default) and AsciiMath input are supported. Math mode is activated by selecting the "normal" font and typing math between delimiters. [#2993](https://github.com/excalidraw/excalidraw/pull/2993).
+
+  The delimiters are double dollar signs ('$$') for Latex and grave accents ('`') for AsciiMath. Press "Control Shift M" to toggle between Latex and AsciiMath. This toggles the input mode for each selected text element which could be in math mode. With only one text element selected, this also sets the default input mode for new text elements. Press "Shift M" to check which input mode the selected text element uses, or the default input mode if no text element is selected.
 
 - Expose `window.EXCALIDRAW_ASSET_PATH` which host can use to load assets from a different URL. By default it will be loaded from `https://unpkg.com/@excalidraw/excalidraw{currentVersion}/dist/`[#3068](https://github.com/excalidraw/excalidraw/pull/3068).
 

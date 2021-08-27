@@ -2,6 +2,9 @@ import { duplicateElement } from "./newElement";
 import { mutateElement } from "./mutateElement";
 import { API } from "../tests/helpers/api";
 import { FONT_FAMILY } from "../constants";
+import { registerTextElementSubtypes } from "../textlike";
+
+registerTextElementSubtypes();
 
 const isPrimitive = (val: any) => {
   const type = typeof val;

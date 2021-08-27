@@ -97,6 +97,7 @@ export type ExcalidrawTextElement = _ExcalidrawElementBase &
     baseline: number;
     textAlign: TextAlign;
     verticalAlign: VerticalAlign;
+    subtype: string;
   }>;
 
 export type ExcalidrawBindableElement =

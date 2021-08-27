@@ -32,6 +32,7 @@
     "firebase": "8.3.3",
     "i18next-browser-languagedetector": "6.1.0",
     "lodash.throttle": "4.1.1",
+    "mathjax-full": "3.2.0",
     "nanoid": "3.1.22",
     "open-color": "1.8.0",
     "pako": "1.0.11",

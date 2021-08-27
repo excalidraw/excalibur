@@ -21,17 +21,12 @@ import { Drawable, Options } from "roughjs/bin/core";
 import { RoughSVG } from "roughjs/bin/svg";
 import { RoughGenerator } from "roughjs/bin/generator";
 import { SceneState } from "../scene/types";
-import {
-  SVG_NS,
-  distance,
-  getFontString,
-  getFontFamilyString,
-  isRTL,
-} from "../utils";
+import { SVG_NS, distance, isRTL } from "../utils";
 import { isPathALoop } from "../math";
 import rough from "roughjs/bin/rough";
 import { Zoom } from "../types";
 import { getDefaultAppState } from "../appState";
+import { renderTextElement, renderSvgTextElement } from "../textlike";
 import getFreeDrawShape from "perfect-freehand";
 import { MAX_DECIMALS_FOR_SVG_EXPORT } from "../constants";
 
@@ -55,6 +50,7 @@ export interface ExcalidrawElementWithCanvas {
 const generateElementCanvas = (
   element: NonDeletedExcalidrawElement,
   zoom: Zoom,
+  renderCb?: () => void,
 ): ExcalidrawElementWithCanvas => {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d")!;
@@ -111,8 +107,10 @@ const generateElementCanvas = (
 
   const rc = rough.canvas(canvas);
 
-  drawElementOnCanvas(element, rc, context);
+  drawElementOnCanvas(element, rc, context, renderCb);
+
   context.restore();
+
   return {
     element,
     canvas,
@@ -126,6 +124,7 @@ const drawElementOnCanvas = (
   element: NonDeletedExcalidrawElement,
   rc: RoughCanvas,
   context: CanvasRenderingContext2D,
+  renderCb?: () => void,
 ) => {
   context.globalAlpha = element.opacity / 100;
   switch (element.type) {
@@ -169,30 +168,7 @@ const drawElementOnCanvas = (
           // to the DOM
           document.body.appendChild(context.canvas);
         }
-        context.canvas.setAttribute("dir", rtl ? "rtl" : "ltr");
-        context.save();
-        context.font = getFontString(element);
-        context.fillStyle = element.strokeColor;
-        context.textAlign = element.textAlign as CanvasTextAlign;
-
-        // Canvas does not support multiline text by default
-        const lines = element.text.replace(/\r\n?/g, "\n").split("\n");
-        const lineHeight = element.height / lines.length;
-        const verticalOffset = element.height - element.baseline;
-        const horizontalOffset =
-          element.textAlign === "center"
-            ? element.width / 2
-            : element.textAlign === "right"
-            ? element.width
-            : 0;
-        for (let index = 0; index < lines.length; index++) {
-          context.fillText(
-            lines[index],
-            horizontalOffset,
-            (index + 1) * lineHeight - verticalOffset,
-          );
-        }
-        context.restore();
+        renderTextElement(element, context, renderCb);
         if (shouldTemporarilyAttach) {
           context.canvas.remove();
         }
@@ -472,6 +448,7 @@ const generateElementShape = (
 const generateElementWithCanvas = (
   element: NonDeletedExcalidrawElement,
   sceneState?: SceneState,
+  renderCb?: () => void,
 ) => {
   const zoom: Zoom = sceneState ? sceneState.zoom : defaultAppState.zoom;
   const prevElementWithCanvas = elementWithCanvasCache.get(element);
@@ -480,7 +457,7 @@ const generateElementWithCanvas = (
     prevElementWithCanvas.canvasZoom !== zoom.value &&
     !sceneState?.shouldCacheIgnoreZoom;
   if (!prevElementWithCanvas || shouldRegenerateBecauseZoom) {
-    const elementWithCanvas = generateElementCanvas(element, zoom);
+    const elementWithCanvas = generateElementCanvas(element, zoom, renderCb);
 
     elementWithCanvasCache.set(element, elementWithCanvas);
 
@@ -534,6 +511,7 @@ export const renderElement = (
   context: CanvasRenderingContext2D,
   renderOptimizations: boolean,
   sceneState: SceneState,
+  renderCb?: () => void,
 ) => {
   const generator = rc.generator;
   switch (element.type) {
@@ -555,6 +533,7 @@ export const renderElement = (
         const elementWithCanvas = generateElementWithCanvas(
           element,
           sceneState,
+          renderCb,
         );
         drawElementFromCanvas(elementWithCanvas, rc, context, sceneState);
       } else {
@@ -567,7 +546,7 @@ export const renderElement = (
         context.translate(cx, cy);
         context.rotate(element.angle);
         context.translate(-shiftX, -shiftY);
-        drawElementOnCanvas(element, rc, context);
+        drawElementOnCanvas(element, rc, context, renderCb);
         context.restore();
       }
 
@@ -584,6 +563,7 @@ export const renderElement = (
         const elementWithCanvas = generateElementWithCanvas(
           element,
           sceneState,
+          renderCb,
         );
         drawElementFromCanvas(elementWithCanvas, rc, context, sceneState);
       } else {
@@ -596,7 +576,7 @@ export const renderElement = (
         context.translate(cx, cy);
         context.rotate(element.angle);
         context.translate(-shiftX, -shiftY);
-        drawElementOnCanvas(element, rc, context);
+        drawElementOnCanvas(element, rc, context, renderCb);
         context.restore();
       }
       break;
@@ -737,35 +717,7 @@ export const renderElementToSvg = (
             offsetY || 0
           }) rotate(${degree} ${cx} ${cy})`,
         );
-        const lines = element.text.replace(/\r\n?/g, "\n").split("\n");
-        const lineHeight = element.height / lines.length;
-        const verticalOffset = element.height - element.baseline;
-        const horizontalOffset =
-          element.textAlign === "center"
-            ? element.width / 2
-            : element.textAlign === "right"
-            ? element.width
-            : 0;
-        const direction = isRTL(element.text) ? "rtl" : "ltr";
-        const textAnchor =
-          element.textAlign === "center"
-            ? "middle"
-            : element.textAlign === "right" || direction === "rtl"
-            ? "end"
-            : "start";
-        for (let i = 0; i < lines.length; i++) {
-          const text = svgRoot.ownerDocument!.createElementNS(SVG_NS, "text");
-          text.textContent = lines[i];
-          text.setAttribute("x", `${horizontalOffset}`);
-          text.setAttribute("y", `${(i + 1) * lineHeight - verticalOffset}`);
-          text.setAttribute("font-family", getFontFamilyString(element));
-          text.setAttribute("font-size", `${element.fontSize}px`);
-          text.setAttribute("fill", element.strokeColor);
-          text.setAttribute("text-anchor", textAnchor);
-          text.setAttribute("style", "white-space: pre;");
-          text.setAttribute("direction", direction);
-          node.appendChild(text);
-        }
+        renderSvgTextElement(svgRoot, node, element);
         svgRoot.appendChild(node);
       } else {
         // @ts-ignore

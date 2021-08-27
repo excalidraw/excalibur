@@ -1,11 +1,13 @@
-import { ExcalidrawElement } from "./types";
+import { ExcalidrawElement, ExcalidrawTextElement } from "./types";
 import { invalidateShapeForElement } from "../renderer/renderElement";
 import Scene from "../scene/Scene";
 import { getSizeFromPoints } from "../points";
 import { randomInteger } from "../random";
 import { Point } from "../types";
+import { isTextElement } from "./typeChecks";
+import { cleanTextOptUpdates } from "../textlike";
 
-type ElementUpdate<TElement extends ExcalidrawElement> = Omit<
+export type ElementUpdate<TElement extends ExcalidrawElement> = Omit<
   Partial<TElement>,
   "id" | "version" | "versionNonce"
 >;
@@ -18,6 +20,13 @@ export const mutateElement = <TElement extends Mutable<ExcalidrawElement>>(
   element: TElement,
   updates: ElementUpdate<TElement>,
 ) => {
+  if (isTextElement(element)) {
+    updates = cleanTextOptUpdates(
+      element,
+      updates as ElementUpdate<ExcalidrawTextElement>,
+    ) as ElementUpdate<TElement>;
+  }
+
   let didChange = false;
 
   // casting to any because can't use `in` operator
@@ -88,6 +97,12 @@ export const newElementWith = <TElement extends ExcalidrawElement>(
   element: TElement,
   updates: ElementUpdate<TElement>,
 ): TElement => {
+  if (isTextElement(element)) {
+    updates = cleanTextOptUpdates(
+      element,
+      updates as ElementUpdate<ExcalidrawTextElement>,
+    ) as ElementUpdate<TElement>;
+  }
   let didChange = false;
   for (const key in updates) {
     const value = (updates as any)[key];
