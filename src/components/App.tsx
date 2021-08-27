@@ -2171,7 +2171,13 @@ class App extends React.Component<AppProps, AppState> {
         // update last uncommitted point
         mutateElement(multiElement, {
           points: [
-            ...points.slice(0, -1),
+            ...(!this.state.gridSize
+              ? points.slice(0, -1)
+              : points
+                  .slice(0, -1)
+                  .map((point) =>
+                    getGridPoint(point[0], point[1], this.state.gridSize),
+                  )),
             [scenePointerX - rx, scenePointerY - ry],
           ],
         });
