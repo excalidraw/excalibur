@@ -9,14 +9,6 @@ const Header = () => (
   <div className="HelpDialog--header">
     <a
       className="HelpDialog--btn"
-      href="https://github.com/excalidraw/excalidraw#documentation"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {t("helpDialog.documentation")}
-    </a>
-    <a
-      className="HelpDialog--btn"
       href="https://blog.excalidraw.com"
       target="_blank"
       rel="noopener noreferrer"
