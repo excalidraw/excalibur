@@ -30,6 +30,7 @@ Object {
   "exportEmbedScene": false,
   "exportPadding": undefined,
   "exportScale": 1,
+  "exportSvgFont": false,
   "exportWithDarkMode": false,
   "fileHandle": null,
   "gridSize": null,

@@ -59,6 +59,7 @@ export type AppState = {
   elementLocked: boolean;
   exportBackground: boolean;
   exportEmbedScene: boolean;
+  exportSvgFont: boolean;
   exportWithDarkMode: boolean;
   exportScale: number;
   currentItemStrokeColor: string;

@@ -67,6 +67,7 @@ export type ActionName =
   | "changeProjectName"
   | "changeExportBackground"
   | "changeExportEmbedScene"
+  | "changeExportSvgFont"
   | "changeExportScale"
   | "saveToActiveFile"
   | "saveFileToDisk"

@@ -166,6 +166,7 @@ const ImageExportModal = ({
             </CheckboxItem>
           )}
           {actionManager.renderAction("changeExportEmbedScene")}
+          {actionManager.renderAction("changeExportSvgFont")}
         </div>
       </div>
       <div style={{ display: "flex", alignItems: "center", marginTop: ".6em" }}>

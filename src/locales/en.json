@@ -45,6 +45,8 @@
     "withBackground": "Background",
     "exportEmbedScene": "Embed scene",
     "exportEmbedScene_details": "Scene data will be saved into the exported PNG/SVG file so that the scene can be restored from it.\nWill increase exported file size.",
+    "exportSvgFont": "Include font in SVG files",
+    "exportSvgFont_details": "Font will be embedded in SVG file so that the scene can be rendered in a browser.\nWill add ~250KB per SVG.\nPlease use https://vecta.io/nano to minify for web use.",
     "addWatermark": "Add \"Made with Excalidraw\"",
     "handDrawn": "Hand-drawn",
     "normal": "Normal",

@@ -126,6 +126,27 @@ export const actionChangeExportEmbedScene = register({
   ),
 });
 
+export const actionChangeExportSvgFont = register({
+  name: "changeExportSvgFont",
+  perform: (_elements, appState, value) => {
+    return {
+      appState: { ...appState, exportSvgFont: value },
+      commitToHistory: false,
+    };
+  },
+  PanelComponent: ({ appState, updateData }) => (
+    <CheckboxItem
+      checked={appState.exportSvgFont}
+      onChange={(checked) => updateData(checked)}
+    >
+      {t("labels.exportSvgFont")}
+      <Tooltip label={t("labels.exportSvgFont_details")} long={true}>
+        <div className="Tooltip-icon">{questionCircle}</div>
+      </Tooltip>
+    </CheckboxItem>
+  ),
+});
+
 export const actionSaveToActiveFile = register({
   name: "saveToActiveFile",
   perform: async (elements, appState, value) => {

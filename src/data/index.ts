@@ -6,7 +6,7 @@ import {
 import { DEFAULT_EXPORT_PADDING } from "../constants";
 import { NonDeletedExcalidrawElement } from "../element/types";
 import { t } from "../i18n";
-import { exportToCanvas, exportToSvg } from "../scene/export";
+import { exportToCanvas, exportToSvg, getFontUrls } from "../scene/export";
 import { ExportType } from "../scene/types";
 import { AppState } from "../types";
 import { canvasToBlob } from "./blob";
@@ -37,6 +37,7 @@ export const exportCanvas = async (
     throw new Error(t("alerts.cannotExportEmptyCanvas"));
   }
   if (type === "svg" || type === "clipboard-svg") {
+    const fontUrls = await getFontUrls(appState.exportSvgFont);
     const tempSvg = await exportToSvg(elements, {
       exportBackground,
       exportWithDarkMode: appState.exportWithDarkMode,
@@ -44,6 +45,7 @@ export const exportCanvas = async (
       exportPadding,
       exportScale: appState.exportScale,
       exportEmbedScene: appState.exportEmbedScene && type === "svg",
+      fontUrls,
     });
     if (type === "svg") {
       return await fileSave(

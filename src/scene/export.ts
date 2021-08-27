@@ -9,6 +9,10 @@ import { getDefaultAppState } from "../appState";
 import { serializeAsJSON } from "../data/json";
 
 export const SVG_EXPORT_TAG = `<!-- svg-source:excalidraw -->`;
+const DEFAULT_FONT_URLS = {
+  virgil: "https://excalidraw.com/Virgil.woff2",
+  cascadia: "https://excalidraw.com/Cascadia.woff2",
+};
 
 export const exportToCanvas = (
   elements: readonly NonDeletedExcalidrawElement[],
@@ -75,6 +79,8 @@ export const exportToSvg = async (
     viewBackgroundColor: string;
     exportWithDarkMode?: boolean;
     exportEmbedScene?: boolean;
+    metadata?: string;
+    fontUrls?: { virgil: string; cascadia: string };
   },
 ): Promise<SVGSVGElement> => {
   const {
@@ -82,6 +88,7 @@ export const exportToSvg = async (
     viewBackgroundColor,
     exportScale = 1,
     exportEmbedScene,
+    fontUrls = DEFAULT_FONT_URLS,
   } = appState;
   let metadata = "";
   if (exportEmbedScene) {
@@ -115,11 +122,11 @@ export const exportToSvg = async (
     <style>
       @font-face {
         font-family: "Virgil";
-        src: url("https://excalidraw.com/Virgil.woff2");
+        src: url("${fontUrls.virgil}");
       }
       @font-face {
         font-family: "Cascadia";
-        src: url("https://excalidraw.com/Cascadia.woff2");
+        src: url("${fontUrls.cascadia}");
       }
     </style>
   </defs>
@@ -168,4 +175,30 @@ export const getExportSize = (
   ).map((dimension) => Math.trunc(dimension * scale));
 
   return [width, height];
+};
+
+export const convertBlobToBase64 = (blob: Blob): Promise<string> =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = reject;
+    reader.onload = () => {
+      resolve(reader.result as string);
+    };
+    reader.readAsDataURL(blob);
+  });
+
+export const getFontUrls = async (
+  exportSvgFont: boolean,
+): Promise<{ virgil: string; cascadia: string }> => {
+  if (!exportSvgFont) {
+    return DEFAULT_FONT_URLS;
+  }
+  const fontUrls = { ...DEFAULT_FONT_URLS };
+  for (const k of Object.keys(fontUrls) as Array<keyof typeof fontUrls>) {
+    const response = await fetch(fontUrls[k]);
+    const blob = await response.blob();
+    const encoded = await convertBlobToBase64(blob);
+    fontUrls[k] = encoded;
+  }
+  return fontUrls;
 };
