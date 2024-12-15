@@ -11,8 +11,8 @@
     "copyAsPng": "Panoya PNG olarak kopyala",
     "copyAsSvg": "Panoya SVG olarak kopyala",
     "copyText": "Panoya metin olarak kopyala",
-    "copySource": "",
-    "convertToCode": "",
+    "copySource": "Kaynağı panoya kopyala",
+    "convertToCode": "Koda çevir",
     "bringForward": "Bir öne getir",
     "sendToBack": "Arkaya gönder",
     "bringToFront": "En öne getir",
@@ -38,12 +38,12 @@
     "arrowhead_none": "Yok",
     "arrowhead_arrow": "Ok",
     "arrowhead_bar": "Çizgi",
-    "arrowhead_circle": "",
-    "arrowhead_circle_outline": "",
+    "arrowhead_circle": "Daire",
+    "arrowhead_circle_outline": "Daire anahattı",
     "arrowhead_triangle": "Üçgen",
-    "arrowhead_triangle_outline": "",
-    "arrowhead_diamond": "",
-    "arrowhead_diamond_outline": "",
+    "arrowhead_triangle_outline": "Üçgen anahattı",
+    "arrowhead_diamond": "Elmas",
+    "arrowhead_diamond_outline": "Elmas anahattı",
     "fontSize": "Yazı tipi boyutu",
     "fontFamily": "Yazı tipi ailesi",
     "addWatermark": "\"Excalidraw ile yapıldı\" yazısını ekle",
@@ -137,8 +137,8 @@
     "selectAllElementsInFrame": "Çerçevedeki tüm bileşenleri seç",
     "removeAllElementsFromFrame": "Çerçevedeki tüm bileşenleri sil",
     "eyeDropper": "Tuvalden renk seç",
-    "textToDiagram": "",
-    "prompt": ""
+    "textToDiagram": "Yazıdan diyagrama",
+    "prompt": "Komut"
   },
   "library": {
     "noItems": "Öğe eklenmedi...",
@@ -177,7 +177,7 @@
     "cancel": "İptal",
     "clear": "Temizle",
     "remove": "Kaldır",
-    "embed": "",
+    "embed": "Yerleştirmeyi aç / kapat",
     "publishLibrary": "Yayınla",
     "submit": "Gönder",
     "confirm": "Onayla",
@@ -211,27 +211,27 @@
     "imageInsertError": "Görsel eklenemedi. Daha sonra tekrar deneyin...",
     "fileTooBig": "Dosya çok büyük. İzin verilen maksimum boyut {{maxSize}}.",
     "svgImageInsertError": "SVG resmi eklenemedi. SVG işaretlemesi geçersiz görünüyor.",
-    "failedToFetchImage": "",
+    "failedToFetchImage": "Görüntü alınamadı.",
     "invalidSVGString": "Geçersiz SVG.",
     "cannotResolveCollabServer": "İş birliği sunucusuna bağlanılamıyor. Lütfen sayfayı yenileyip tekrar deneyin.",
     "importLibraryError": "Kütüphane yüklenemedi",
     "collabSaveFailed": "Backend veritabanına kaydedilemedi. Eğer problem devam ederse, çalışmanızı korumak için dosyayı yerel olarak kaydetmelisiniz.",
     "collabSaveFailed_sizeExceeded": "Backend veritabanına kaydedilemedi; tuval çok büyük. Çalışmanızı korumak için dosyayı yerel olarak kaydetmelisiniz.",
-    "imageToolNotSupported": "",
+    "imageToolNotSupported": "Görüntüler devre dışı",
     "brave_measure_text_error": {
-      "line1": "",
-      "line2": "",
-      "line3": "",
-      "line4": ""
+      "line1": "Görünüşe göre <bold>Agresif Parmak İzi Engelleme</bold> ayarı etkinleştirilmiş Brave tarayıcısını kullanıyorsunuz.",
+      "line2": "Bu, çizimlerinizdeki <bold>Metin Öğelerinin</bold> kırılmasına neden olabilir.",
+      "line3": "Bu ayarı devre dışı bırakmanızı şiddetle tavsiye ederiz. Bunu nasıl yapacağınız konusunda <link>bu adımları</link> takip edebilirsiniz.",
+      "line4": "Bu ayarın devre dışı bırakılması metin öğelerinin görüntülenmesini düzeltmezse, lütfen GitHub'ımızda bir <issueLink>issue</issueLink> açın veya <discordLink>Discord</discordLink> adresinden bize yazın."
     },
     "libraryElementTypeError": {
-      "embeddable": "",
-      "iframe": "",
+      "embeddable": "Gömülebilir öğeler kütüphaneye eklenemez.",
+      "iframe": "IFrame öğeleri kütüphaneye eklenemez.",
       "image": "Resimleri kütüphaneye ekleme desteği yakında geliyor!"
     },
-    "asyncPasteFailedOnRead": "",
-    "asyncPasteFailedOnParse": "",
-    "copyToSystemClipboardFailed": ""
+    "asyncPasteFailedOnRead": "Yapıştırılamadı (sistem panosundan okunamadı).",
+    "asyncPasteFailedOnParse": "Yapıştırılamadı.",
+    "copyToSystemClipboardFailed": "Panoya kopyalanamadı."
   },
   "toolBar": {
     "selection": "Seçme",
@@ -249,13 +249,13 @@
     "link": "Seçilen şekil için bağlantı Ekle/Güncelle",
     "eraser": "Silgi",
     "frame": "Çerçeve aracı",
-    "magicframe": "",
+    "magicframe": "Wireframe'den koda",
     "embeddable": "Web Yerleştirme",
     "laser": "Lazer işaretçisi",
-    "hand": "",
+    "hand": "El (kaydırma aracı)",
     "extraTools": "Daha fazla araç",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "mermaidToExcalidraw": "Mermaid'den Excalidraw'a",
+    "magicSettings": "Yapay zeka ayarları"
   },
   "headings": {
     "canvasActions": "Tuval eylemleri",
@@ -263,7 +263,7 @@
     "shapes": "Şekiller"
   },
   "hints": {
-    "canvasPanning": "",
+    "canvasPanning": "Tuvali taşımak için sürüklerken fare tekerleğine veya boşluk çubuğuna basılı tutun ya da el aracını kullanın",
     "linearElement": "Birden fazla nokta için tıklayın, tek çizgi için sürükleyin",
     "freeDraw": "Tıkla ve sürükle, bitirdiğinde serbest bırak",
     "text": "İpucu: seçme aracıyla herhangi bir yere çift tıklayarak da yazı ekleyebilirsin",
@@ -283,8 +283,8 @@
     "bindTextToElement": "Enter tuşuna basarak metin ekleyin",
     "deepBoxSelect": "Ctrl/Cmd tuşuna basılı tutarak derin seçim yapın ya da sürüklemeyi engelleyin",
     "eraserRevert": "Alt tuşuna basılı tutarak silinme için işaretlenmiş ögeleri tersine çevirin",
-    "firefox_clipboard_write": "",
-    "disableSnapping": ""
+    "firefox_clipboard_write": "Bu özellik muhtemelen \"dom.events.asyncClipboard.clipboardItem\" bayrağı \"true\" olarak ayarlanarak etkinleştirilebilir. Firefox'ta tarayıcı bayraklarını değiştirmek için \"about:config\" sayfasını ziyaret edin.",
+    "disableSnapping": "Yakalama özelliğini devre dışı bırakmak için Ctrl veya Cmd tuşuna basılı tutun"
   },
   "canvasError": {
     "cannotShowPreview": "Önizleme gösterilemiyor",
@@ -407,7 +407,7 @@
     "title": {
       "exportToPng": "PNG olarak dışa aktar",
       "exportToSvg": "SVG olarak dışa aktar",
-      "copyPngToClipboard": ""
+      "copyPngToClipboard": "PNG'yi panoya kopyala"
     },
     "button": {
       "exportToPng": "PNG",
@@ -444,8 +444,8 @@
     "canvas": "tuval",
     "selection": "seçim",
     "pasteAsSingleElement": "Tekil obje olarak yapıştırmak için veya var olan bir metin editörüne yapıştırmak için {{shortcut}} kullanın",
-    "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "unableToEmbed": "Bu url'nin gömülmesine şu anda izin verilmiyor. URL'nin beyaz listeye alınmasını istemek için GitHub'da bir issue oluşturun",
+    "unrecognizedLinkFormat": "Yerleştirdiğiniz bağlantı beklenen biçimle eşleşmiyor. Lütfen kaynak site tarafından sağlanan 'embed' dizesini yapıştırmayı deneyin"
   },
   "colors": {
     "transparent": "Şeffaf",
@@ -462,17 +462,17 @@
     "green": "Yeşil",
     "yellow": "Sarı",
     "orange": "Turuncu",
-    "bronze": ""
+    "bronze": "Bronz"
   },
   "welcomeScreen": {
     "app": {
-      "center_heading": "",
+      "center_heading": "Tüm verileriniz tarayıcınızda yerel olarak kaydedildi.",
       "center_heading_plus": "Ecalidraw+'a mı gitmek istediniz?",
       "menuHint": "Dışa aktar, seçenekler, diller, ..."
     },
     "defaults": {
       "menuHint": "Dışa aktar, seçenekler, ve daha fazlası...",
-      "center_heading": "",
+      "center_heading": "Diyagramlar. Kolayca. Yapılır.",
       "toolbarHint": "Bir araç seçin ve çizime başlayın!",
       "helpHint": "Kısayollar & yardım"
     }
@@ -480,46 +480,46 @@
   "colorPicker": {
     "mostUsedCustomColors": "En çok kullanılan özel renkler",
     "colors": "Renkler",
-    "shades": "",
+    "shades": "Gölgeler",
     "hexCode": "Hex kodu",
-    "noShades": ""
+    "noShades": "Bu renk için gölge mevcut değil"
   },
   "overwriteConfirm": {
     "action": {
       "exportToImage": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "Görüntü olarak kaydet",
+        "button": "Görüntü olarak kaydet",
+        "description": "Sahne verilerini daha sonra içe aktarabileceğiniz bir görüntü olarak dışa aktarın."
       },
       "saveToDisk": {
-        "title": "",
+        "title": "Diske kaydet",
         "button": "Diske Kaydet",
-        "description": ""
+        "description": "Sahne verilerini daha sonra içe aktarabileceğiniz bir veri olarak dışa aktarın."
       },
       "excalidrawPlus": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "Excalidraw+",
+        "button": "Excalidraw+'a aktar",
+        "description": "Sahneyi Excalidraw+ çalışma alanınıza kaydedin."
       }
     },
     "modal": {
       "loadFromFile": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "Dosyadan yükle",
+        "button": "Dosyadan yükle",
+        "description": "Bir dosyadan yükleme <bold>mevcut içeriğinizi değiştirecektir</bold>.<br></br>Önce aşağıdaki seçeneklerden birini kullanarak çiziminizi yedekleyebilirsiniz."
       },
       "shareableLink": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "Bağlantıdan yükle",
+        "button": "İçeriğimi değiştir",
+        "description": "Harici çizim yüklemek <bold>mevcut içeriğinizi değiştirecektir</bold>.<br></br>Önce aşağıdaki seçeneklerden birini kullanarak çiziminizi yedekleyebilirsiniz."
       }
     }
   },
   "mermaid": {
-    "title": "",
-    "button": "",
-    "description": "",
-    "syntax": "",
-    "preview": ""
+    "title": "Mermaid'den Excalidraw'a",
+    "button": "Ekle",
+    "description": "Şu anda yalnızca <flowchartLink>Flowchart</flowchartLink>,<sequenceLink> Sequence, </sequenceLink> ve <classLink>Class </classLink>Diagramları desteklenmektedir. Diğer türler Excalidraw'da görüntü olarak işlenecektir.",
+    "syntax": "Mermaid Syntax",
+    "preview": "Önizleme"
   }
 }
