@@ -22,8 +22,9 @@ Once the library is installed, its ready to use.
 import { parseMermaidToExcalidraw } from "@excalidraw/mermaid-to-excalidraw";
 import { convertToExcalidrawElements}  from "@excalidraw/excalidraw"
 
+const DEFAULT_FONT_SIZE = 20;
 try {
-  const { elements, files } = await parseMermaid(diagramDefinition, {
+  const { elements, files } = await parseMermaidToExcalidraw(diagramDefinition, {
     fontSize: DEFAULT_FONT_SIZE,
   });
   // currently the elements returned from the parser are in a "skeleton" format
