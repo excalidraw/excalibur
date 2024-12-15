@@ -3039,18 +3039,19 @@ class App extends React.Component<AppProps, AppState> {
           this.setState({ errorMessage: t("errors.imageToolNotSupported") });
           return;
         }
-
-        const imageElement = this.createImageElement({ sceneX, sceneY });
-        this.insertImageElement(imageElement, file);
-        this.initializeImageDimensions(imageElement);
-        this.setState({
-          selectedElementIds: makeNextSelectedElementIds(
-            {
-              [imageElement.id]: true,
-            },
-            this.state,
-          ),
-        });
+        for (const file of event.clipboardData?.files ?? []) {
+          const imageElement = this.createImageElement({ sceneX, sceneY });
+          this.insertImageElement(imageElement, file);
+          this.initializeImageDimensions(imageElement);
+          this.setState({
+            selectedElementIds: makeNextSelectedElementIds(
+              {
+                [imageElement.id]: true,
+              },
+              this.state,
+            ),
+          });
+        }
 
         return;
       }
