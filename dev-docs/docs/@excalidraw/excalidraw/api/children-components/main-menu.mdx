@@ -167,3 +167,35 @@ function App() {
 | Prop | Type | Required | Default | Description |
 | --- | --- | :-: | :-: | --- |
 | `children ` | `React.ReactNode` | Yes | - | The content of the `Menu Group` |
+
+### MainMenu.Sub
+
+The MainMenu component now supports submenus. To render a submenu, you can use `MainMenu.Sub`, `MainMenu.Sub.Trigger`, `MainMenu.Sub.Content` and `MainMenu.Sub.Item`. Note that `MainMenu.Sub.Trigger` and `MainMenu.Sub.Content` must be direct children of `MainMenu.Sub`.
+
+```jsx live
+function App() {
+  return (
+    <div style={{ height: "500px" }}>
+      <Excalidraw>
+        <MainMenu>
+          <MainMenu.Sub>
+            <MainMenu.Sub.Trigger>Submenu</MainMenu.Sub.Trigger>
+            <MainMenu.Sub.Content>
+              <MainMenu.Sub.Item
+                onSelect={() => window.alert("Submenu item 1")}
+              >
+                Submenu item 1
+              </MainMenu.Sub.Item>
+              <MainMenu.Sub.Item
+                onSelect={() => window.alert("Submenu item 2")}
+              >
+                Submenu item 2
+              </MainMenu.Sub.Item>
+            </MainMenu.Sub.Content>
+          </MainMenu.Sub>
+        </MainMenu>
+      </Excalidraw>
+    </div>
+  );
+}
+```
