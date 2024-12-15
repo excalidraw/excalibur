@@ -11,8 +11,8 @@
     "copyAsPng": "நகலகத்திற்கு PNG ஆக நகலெடு",
     "copyAsSvg": "நகலகத்திற்கு SVG ஆக நகலெடு",
     "copyText": "நகலகத்திற்கு உரையாக நகலெடு",
-    "copySource": "",
-    "convertToCode": "",
+    "copySource": "மூலத்தை கிளிப்போர்டுக்கு நகலெடுக்கவும்",
+    "convertToCode": "குறியீட்டிற்கு மாற்றவும்",
     "bringForward": "முன்நோக்கி கொண்டுவா",
     "sendToBack": "பின்னே அனுப்பு",
     "bringToFront": "முன்னே கொண்டுவா",
@@ -38,12 +38,12 @@
     "arrowhead_none": "ஏதுமில்லை",
     "arrowhead_arrow": "அம்பு",
     "arrowhead_bar": "பட்டை",
-    "arrowhead_circle": "",
-    "arrowhead_circle_outline": "",
+    "arrowhead_circle": "வட்டம்",
+    "arrowhead_circle_outline": "வட்டம் (அவுட்லைன்)",
     "arrowhead_triangle": "முக்கோணம்",
-    "arrowhead_triangle_outline": "",
-    "arrowhead_diamond": "",
-    "arrowhead_diamond_outline": "",
+    "arrowhead_triangle_outline": "முக்கோணம் (அவுட்லைன்)",
+    "arrowhead_diamond": "வைரம்",
+    "arrowhead_diamond_outline": "வைரம் (அவுட்லைன்)",
     "fontSize": "எழுத்துரு அளவு",
     "fontFamily": "எழுத்துரு குடும்பம்",
     "addWatermark": "\"எக்ஸ்கேலிட்ரா கொண்டு ஆனது\"-ஐச் சேர்",
@@ -115,12 +115,12 @@
     "createContainerFromText": "உரையைக் கொள்கலனுள் சுருட்டு",
     "link": {
       "edit": "தொடுப்பைத் திருத்து",
-      "editEmbed": "",
+      "editEmbed": "இணைப்பைத் திருத்தி உட்பொதிக்கவும்",
       "create": "தொடுப்பைப் படை",
-      "createEmbed": "",
+      "createEmbed": "இணைப்பை உருவாக்கி உட்பொதிக்கவும்",
       "label": "தொடுப்பு",
-      "labelEmbed": "",
-      "empty": ""
+      "labelEmbed": "இணைப்பு மற்றும் உட்பொதி",
+      "empty": "இணைப்பு எதுவும் அமைக்கப்படவில்லை"
     },
     "lineEditor": {
       "edit": "தொடுப்பைத் திருத்து",
@@ -134,11 +134,11 @@
     },
     "statusPublished": "வெளியிடப்பட்டது",
     "sidebarLock": "பக்கப்பட்டையைத் திறந்தே வை",
-    "selectAllElementsInFrame": "",
-    "removeAllElementsFromFrame": "",
+    "selectAllElementsInFrame": "சட்டத்தில் உள்ள அனைத்து கூறுகளையும் தேர்ந்தெடுக்கவும்",
+    "removeAllElementsFromFrame": "சட்டத்திலிருந்து அனைத்து கூறுகளையும் அகற்றவும்",
     "eyeDropper": "கித்தானிலிருந்து நிறம் தேர்ந்தெடு",
-    "textToDiagram": "",
-    "prompt": ""
+    "textToDiagram": "வரைபடத்திற்கு உரை",
+    "prompt": "உடனடியாக"
   },
   "library": {
     "noItems": "இதுவரை உருப்படிகள் சேரக்கப்படவில்லை...",
@@ -172,16 +172,16 @@
     "darkMode": "கருமை பயன்முறை",
     "lightMode": "வெளிர்ந்த பயன்முறை",
     "zenMode": "ஜென் பயன்முறை",
-    "objectsSnapMode": "",
+    "objectsSnapMode": "பொருள்களுக்கு ஸ்னாப்",
     "exitZenMode": "ஜென் பயன்முறையை விலகு",
     "cancel": "ரத்துசெய்",
     "clear": "துடை",
     "remove": "நீக்கு",
-    "embed": "",
+    "embed": "உட்பொதிப்பதை நிலைமாற்று",
     "publishLibrary": "பிரசுரி",
     "submit": "சமர்ப்பி",
     "confirm": "உறுதிசெய்",
-    "embeddableInteractionButton": ""
+    "embeddableInteractionButton": "தொடர்புகொள்ள கிளிக் செய்யவும்"
   },
   "alerts": {
     "clearReset": "இது முழு கித்தானையும் துடைக்கும். நீங்கள் உறுதியா?",
@@ -211,27 +211,27 @@
     "imageInsertError": "படத்தைப் புகுத்தவியலா. பிறகு மீண்டும் முயலவும்...",
     "fileTooBig": "கோப்பு மிகப்பெரிது. அனுமதிக்கப்பட்ட அதிகபட்ச அளவு {{maxSize}}.",
     "svgImageInsertError": "எஸ்விஜி படத்தைப் புகுத்தவியலா. எஸ்விஜியின் மார்க்அப் செல்லாததாக தெரிகிறது.",
-    "failedToFetchImage": "",
+    "failedToFetchImage": "படத்தைப் பெற முடியவில்லை.",
     "invalidSVGString": "செல்லாத SVG.",
     "cannotResolveCollabServer": "கூட்டுப்பணிச் சேவையகத்துடன் இணைக்க முடியவில்லை. பக்கத்தை மீளேற்றி மீண்டும் முயலவும்.",
     "importLibraryError": "நூலகத்தை ஏற்ற முடியவில்லை",
     "collabSaveFailed": "பின்முனை தரவுத்தளத்தில் சேமிக்க முடியவில்லை. சிக்கல்கள் நீடித்தால், உமது வேலைகளை இழக்காமலிருப்பதை உறுதிசெய்ய உமது கோப்பை உள்ளகத்தில் சேமிக்க வேண்டும்.",
     "collabSaveFailed_sizeExceeded": "பின்முனை தரவுத்தளத்தில் சேமிக்க முடியவில்லை, கித்தான் மிகப்பெரிதாகத் தெரிகிறது. உமது வேலைகளை இழக்காமலிருப்பதை உறுதிசெய்ய உமது கோப்பை உள்ளகத்தில் சேமிக்க வேண்டும்.",
-    "imageToolNotSupported": "",
+    "imageToolNotSupported": "படங்கள் முடக்கப்பட்டுள்ளன.",
     "brave_measure_text_error": {
-      "line1": "",
-      "line2": "",
-      "line3": "",
-      "line4": ""
+      "line1": "<bold>ஆக்ரஸிவ்லி பிளாக் கைரேகை</bold> அமைப்பு இயக்கப்பட்ட துணிச்சலான உலாவியைப் பயன்படுத்துவது போல் தெரிகிறது.",
+      "line2": "இது உங்கள் வரைபடத்தில் உள்ள <bold>உரை உறுப்பு</bold> உடைக்கப்படலாம்.",
+      "line3": "இந்த அமைப்பை முடக்குமாறு கடுமையாக பரிந்துரைக்கிறோம். அதை எப்படி செய்வது என்று <link>இந்தப் படிகளைப்</link> நீங்கள் பின்பற்றலாம்.",
+      "line4": "இந்த அமைப்பை முடக்குவது உரை உறுப்புகளின் காட்சியை சரிசெய்யவில்லை என்றால், எங்கள் GitHub இல் <issueLink>சிக்கல்</issueLink> ஐத் திறக்கவும் அல்லது எங்களுக்கு <discordLink>Discord</discordLink> இல் எழுதவும்."
     },
     "libraryElementTypeError": {
-      "embeddable": "",
-      "iframe": "",
-      "image": ""
+      "embeddable": "உட்பொதிக்கக்கூடிய கூறுகளை நூலகத்தில் சேர்க்க முடியாது.",
+      "iframe": "IFrame கூறுகளை நூலகத்தில் சேர்க்க முடியாது.",
+      "image": "லைப்ரரியில் படங்களை சேர்ப்பதற்கான ஆதரவு விரைவில்!"
     },
-    "asyncPasteFailedOnRead": "",
-    "asyncPasteFailedOnParse": "",
-    "copyToSystemClipboardFailed": ""
+    "asyncPasteFailedOnRead": "ஒட்ட முடியவில்லை (கணினி கிளிப்போர்டில் இருந்து படிக்க முடியவில்லை).",
+    "asyncPasteFailedOnParse": "ஒட்ட முடியவில்லை.",
+    "copyToSystemClipboardFailed": "கிளிப்போர்டுக்கு நகலெடுக்க முடியவில்லை."
   },
   "toolBar": {
     "selection": "தெரிவு",
@@ -249,12 +249,12 @@
     "link": "தேர்தெடுத்த வடிவத்திற்குத் தொடுப்பைச் சேர்/ புதுப்பி",
     "eraser": "அழிப்பி",
     "frame": "சட்டகம் கருவி",
-    "magicframe": "",
-    "embeddable": "",
-    "laser": "",
+    "magicframe": "குறியீட்டுக்கு வயர்ஃப்ரேம்",
+    "embeddable": "வலை உட்பொதி",
+    "laser": "லேசர் சுட்டிக்காட்டி",
     "hand": "கை (பார்வை நகர்கும் கருவி)",
     "extraTools": "மற்ற கருவிகள்",
-    "mermaidToExcalidraw": "",
+    "mermaidToExcalidraw": "மெர்மெய்ட் டு எக்ஸ்காலிட்ரா",
     "magicSettings": ""
   },
   "headings": {
@@ -263,11 +263,11 @@
     "shapes": "வடிவங்கள்"
   },
   "hints": {
-    "canvasPanning": "",
+    "canvasPanning": "கேன்வாஸை நகர்த்த, இழுக்கும்போது மவுஸ் வீல் அல்லது ஸ்பேஸ்பாரைப் பிடிக்கவும் அல்லது கைக் கருவியைப் பயன்படுத்தவும்",
     "linearElement": "பல புள்ளிகளைத் துவக்க சொடுக்கு, ஒற்றை வரிக்கு பிடித்திழு",
     "freeDraw": "சொடுக்கி பிடித்திழு, முடித்ததும் விடுவி",
     "text": "துணுக்குதவி: தெரிவு கருவி கொண்டு எங்காவது இரு-சொடுக்கி உரையைச் சேர்க்கலாம்",
-    "embeddable": "",
+    "embeddable": "இணையதள உட்பொதியை உருவாக்க கிளிக் செய்து இழுக்கவும்",
     "text_selected": "உரையைத் திருத்த இரு-சொடுக்கு அ ENTERஐ அழுத்து",
     "text_editing": "திருத்துவதை முடிக்க Escape அ CtrlOrCmd+ENTERஐ அழுத்து",
     "linearElementMulti": "கடைசி புள்ளியில் சொடுக்கு அ முடிக்க Escape அ Enter அழுத்து",
@@ -275,16 +275,16 @@
     "resize": "மறுஅளவிடுகையில் SHIFTஐ அழுத்திப்பிடித்து விகிதசமத்தை வற்புறுத்தலாம்,\nமையத்திலிருந்து மறுஅளவிட ALTஐ அழுத்திப்பிடி",
     "resizeImage": "SHIFTஐ நீண்டழுத்தி கட்டற்று அளவுமாற்றலாம்,\nமையத்திலிருந்து அளவுமாற்ற ALTஐ நீண்டழுத்துக",
     "rotate": "சுழற்றுகையில் SHIFTஐ அழுத்திப்பிடித்து கோணங்களை வற்புறுத்தலாம்",
-    "lineEditor_info": "",
+    "lineEditor_info": "புள்ளிகளைத் திருத்த CtrlOrCmd ஐப் பிடித்து இருமுறை கிளிக் செய்யவும் அல்லது CtrlOrCmd + Enter ஐ அழுத்தவும்",
     "lineEditor_pointSelected": "புள்ளி(கள்)ஐ நீக்க Deleteஐ அழுத்து,\nநகலாக்க CtrlOrCmd+D, அ நகர்த்த பிடித்திழு",
     "lineEditor_nothingSelected": "திருத்த புள்ளியைத் தேர்ந்தெடு (பலவற்றை தேர SHIFTஐ அழுத்திப்பிடி),\nஅ புதிய புள்ளிகளைச் சேர்க்க Altஐ அழுத்திப்பிடித்துச் சொடுக்கு",
     "placeImage": "படத்தை வைக்கச் சொடுக்கு, அ கைமுறையாக அளவு அமைக்க சொடுக்கி பிடித்திழு",
     "publishLibrary": "உம் சொந்த நூலகத்தைப் பிரசுரி",
     "bindTextToElement": "உரையைச் சேர்க்க enterஐ அழுத்து",
     "deepBoxSelect": "ஆழ்ந்துத் தேரவும் பிடித்திழுத்தலைத் தவிர்க்கவும் CtrlOrCmdஐ அழுத்திப்பிடி",
-    "eraserRevert": "",
-    "firefox_clipboard_write": "",
-    "disableSnapping": ""
+    "eraserRevert": "நீக்குவதற்காகக் குறிக்கப்பட்ட உறுப்புகளை மாற்ற Alt ஐ அழுத்திப் பிடிக்கவும்",
+    "firefox_clipboard_write": "\"dom.events.asyncClipboard.clipboardItem\" கொடியை \"true\" என அமைப்பதன் மூலம் இந்த அம்சத்தை இயக்கலாம். Firefox இல் உலாவிக் கொடிகளை மாற்ற, \"about:config\" பக்கத்தைப் பார்வையிடவும்.",
+    "disableSnapping": "ஸ்னாப்பிங்கை முடக்க CtrlOrCmd ஐ அழுத்திப் பிடிக்கவும்"
   },
   "canvasError": {
     "cannotShowPreview": "முன்னோட்டம் காட்ட இயலவில்லை",
@@ -334,8 +334,8 @@
     "doubleClick": "இரு-சொடுக்கு",
     "drag": "பிடித்திழு",
     "editor": "திருத்தி",
-    "editLineArrowPoints": "",
-    "editText": "",
+    "editLineArrowPoints": "வரி/அம்பு புள்ளிகளைத் திருத்தவும்",
+    "editText": "உரையைத் திருத்தவும் / லேபிளைச் சேர்க்கவும்",
     "github": "சிக்கலைக் கண்டீரா? சமர்ப்பி",
     "howto": "எங்கள் கையேடுகளைப் பின்பற்றுக",
     "or": "அ",
@@ -381,7 +381,7 @@
     "noteLicense": "சமர்ப்பிப்பதனால், நூலகம் இதனடியில் பிரசரிக்கப்பட ஏற்கிறீர்கள் <link>MIT உரிமம், </link>சுருக்கமாக எவருமிதைப் வரையறையின்றி பயன்படுத்தலாமென குறிக்கிறது.",
     "noteItems": "வடிக்கட்டக்கூடியதாகவிருக்க ஒவ்வொரு நூலகவுருப்படிக்கும் சொந்த பெயர் இருக்கவேண்டும். பின்வரும் நூலகவுருப்படிகள் உள்ளடக்கப்படும்:",
     "atleastOneLibItem": "ஆரம்பிக்க ஒரு நூலக உருப்படியையாவது தேர்ந்தெடுக்கவும்",
-    "republishWarning": ""
+    "republishWarning": "குறிப்பு: தேர்ந்தெடுக்கப்பட்ட சில உருப்படிகள் ஏற்கனவே வெளியிடப்பட்ட/சமர்ப்பிக்கப்பட்டதாகக் குறிக்கப்பட்டுள்ளன. ஏற்கனவே உள்ள நூலகம் அல்லது சமர்ப்பிப்பை புதுப்பிக்கும் போது மட்டுமே நீங்கள் உருப்படிகளை மீண்டும் சமர்ப்பிக்க வேண்டும்."
   },
   "publishSuccessDialog": {
     "title": "நூலகம் சமர்ப்பிக்கப்பட்டது",
@@ -399,20 +399,20 @@
       "darkMode": "இருள் பயன்முறை",
       "embedScene": "காட்சியை உட்பொதி",
       "scale": "அளவுகோல்",
-      "padding": ""
+      "padding": "திணிப்பு"
     },
     "tooltip": {
-      "embedScene": ""
+      "embedScene": "காட்சி தரவு ஏற்றுமதி செய்யப்பட்ட PNG/SVG கோப்பில் சேமிக்கப்படும், இதனால் காட்சியை மீட்டெடுக்க முடியும்.\nஏற்றுமதி செய்யப்பட்ட கோப்பு அளவு அதிகரிக்கும்."
     },
     "title": {
       "exportToPng": "PNGக்கு ஏற்றுமதிசெய்",
       "exportToSvg": "SVGக்கு ஏற்றுமதிசெய்",
-      "copyPngToClipboard": ""
+      "copyPngToClipboard": "கிளிப்போர்டுக்கு PNGயை நகலெடுக்கவும்"
     },
     "button": {
       "exportToPng": "PNG",
       "exportToSvg": "SVG",
-      "copyPngToClipboard": ""
+      "copyPngToClipboard": "கிளிப்போர்டுக்கு நகலெடுக்கவும்"
     }
   },
   "encrypted": {
@@ -443,9 +443,9 @@
     "fileSavedToFilename": "{filename}-க்கு சேமிக்கப்பட்டது",
     "canvas": "கித்தான்",
     "selection": "தெரிவு",
-    "pasteAsSingleElement": "",
-    "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "pasteAsSingleElement": "ஒற்றை உறுப்பாக ஒட்டுவதற்கு {{shortcut}} பயன்படுத்தவும்,\nஅல்லது ஏற்கனவே உள்ள உரை திருத்தியில் ஒட்டவும்",
+    "unableToEmbed": "இந்த url ஐ உட்பொதிப்பது தற்போது அனுமதிக்கப்படவில்லை. அனுமதிப்பட்டியலில் உள்ள urlஐக் கோர GitHub இல் சிக்கலை எழுப்பவும்",
+    "unrecognizedLinkFormat": "நீங்கள் உட்பொதித்த இணைப்பு எதிர்பார்த்த வடிவத்துடன் பொருந்தவில்லை. மூல தளம் வழங்கிய 'உட்பொதி' சரத்தை ஒட்ட முயற்சிக்கவும்"
   },
   "colors": {
     "transparent": "ஒளிபுகுத்தன்மை",
@@ -466,60 +466,60 @@
   },
   "welcomeScreen": {
     "app": {
-      "center_heading": "",
-      "center_heading_plus": "",
-      "menuHint": ""
+      "center_heading": "உங்கள் எல்லா தரவும் உங்கள் உலாவியில் உள்ளூரில் சேமிக்கப்படும்.",
+      "center_heading_plus": "அதற்குப் பதிலாக எக்ஸ்காலிட்ராவுக்குச் செல்ல விரும்புகிறீர்களா?",
+      "menuHint": "ஏற்றுமதி, விருப்பத்தேர்வுகள், மொழிகள், ..."
     },
     "defaults": {
-      "menuHint": "",
+      "menuHint": "ஏற்றுமதி, விருப்பத்தேர்வுகள் மற்றும் பல...",
       "center_heading": "எளிமையாக வரைபடங்கள் உருவாக்க!",
       "toolbarHint": "கருவியைத் தேர்ந்தெடு & வரை!",
       "helpHint": "குறுக்குவழிகள் & உதவி"
     }
   },
   "colorPicker": {
-    "mostUsedCustomColors": "",
-    "colors": "",
-    "shades": "",
-    "hexCode": "",
-    "noShades": ""
+    "mostUsedCustomColors": "பெரும்பாலும் பயன்படுத்தப்படும் தனிப்பயன் வண்ணங்கள்",
+    "colors": "நிறங்கள்",
+    "shades": "நிழல்கள்",
+    "hexCode": "ஹெக்ஸ் குறியீடு",
+    "noShades": "இந்த நிறத்திற்கு நிழல்கள் இல்லை"
   },
   "overwriteConfirm": {
     "action": {
       "exportToImage": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "படமாக ஏற்றுமதி செய்யவும்",
+        "button": "படமாக ஏற்றுமதி செய்யவும்",
+        "description": "காட்சித் தரவை ஒரு படமாக ஏற்றுமதி செய்யவும், அதில் இருந்து நீங்கள் பின்னர் இறக்குமதி செய்யலாம்."
       },
       "saveToDisk": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "வட்டில் சேமிக்கவும்",
+        "button": "வட்டில் சேமிக்கவும்",
+        "description": "காட்சித் தரவை நீங்கள் பின்னர் இறக்குமதி செய்யக்கூடிய ஒரு கோப்பிற்கு ஏற்றுமதி செய்யவும்."
       },
       "excalidrawPlus": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "எக்ஸ்காலிட்ரா",
+        "button": "Excalidra க்கு ஏற்றுமதி செய்யவும்",
+        "description": "காட்சியை உங்கள் Excalidraw பணியிடத்தில் சேமிக்கவும்."
       }
     },
     "modal": {
       "loadFromFile": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "கோப்பிலிருந்து ஏற்றவும்",
+        "button": "Load from file",
+        "description": "ஒரு கோப்பிலிருந்து ஏற்றுவது <bold>உங்கள் தற்போதைய உள்ளடக்கத்தை மாற்றும்</bold>.<br></br>கீழே உள்ள விருப்பங்களில் ஒன்றைப் பயன்படுத்தி முதலில் உங்கள் வரைபடத்தை காப்புப் பிரதி எடுக்கலாம்."
       },
       "shareableLink": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "இணைப்பிலிருந்து ஏற்றவும்",
+        "button": "எனது உள்ளடக்கத்தை மாற்றவும்",
+        "description": "வெளிப்புற வரைபடத்தை ஏற்றுவது <bold>உங்கள் தற்போதைய உள்ளடக்கத்தை மாற்றிவிடும்</bold>.<br></br>கீழே உள்ள விருப்பங்களில் ஒன்றைப் பயன்படுத்தி முதலில் உங்கள் வரைபடத்தை காப்புப் பிரதி எடுக்கலாம்."
       }
     }
   },
   "mermaid": {
-    "title": "",
-    "button": "",
-    "description": "",
-    "syntax": "",
-    "preview": ""
+    "title": "மெர்மெய்ட் டு எக்ஸ்காலிட்ரா",
+    "button": "செருகு",
+    "description": "தற்போது <flowchartLink>Flowchart</flowchartLink>,<sequenceLink> Sequence, </sequenceLink> மற்றும் <classLink>Class </classLink>வரைபடங்கள் மட்டுமே ஆதரிக்கப்படுகின்றன. மற்ற வகைகள் Excalidraw இல் படமாக வழங்கப்படும்.",
+    "syntax": "தேவதை தொடரியல்",
+    "preview": "முன்னோட்டம்"
   }
 }
