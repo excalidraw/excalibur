@@ -55,6 +55,18 @@
       "destination": "https://for-webex.excalidraw.com"
     },
     {
+      "source": "/Virgil.woff2",
+      "destination": "https://excalidraw.nyc3.cdn.digitaloceanspaces.com/fonts/Virgil.woff2"
+    },
+    {
+      "source": "/Cascadia.woff2",
+      "destination": "https://excalidraw.nyc3.cdn.digitaloceanspaces.com/fonts/Cascadia.woff2"
+    },
+    {
+      "source": "/Assistant-Regular.woff2",
+      "destination": "https://excalidraw.nyc3.cdn.digitaloceanspaces.com/fonts/Assistant-Regular.woff2"
+    },
+    {
       "source": "/:path*",
       "has": [
         {
