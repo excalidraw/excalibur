@@ -45,7 +45,6 @@ import {
 } from "../actions/actionCanvas";
 import type App from "../components/App";
 import { LinearElementEditor } from "./linearElementEditor";
-import { parseClipboard } from "../clipboard";
 import {
   originalContainerCache,
   updateOriginalContainerCache,
@@ -322,37 +321,32 @@ export const textWysiwyg = ({
   updateWysiwygStyle();
 
   if (onChange) {
-    editable.onpaste = async (event) => {
-      const clipboardData = await parseClipboard(event, true);
-      if (!clipboardData.text) {
-        return;
-      }
-      const data = normalizeText(clipboardData.text);
-      if (!data) {
-        return;
-      }
-      const container = getContainerElement(
-        element,
-        app.scene.getNonDeletedElementsMap(),
-      );
-
-      const font = getFontString({
-        fontSize: app.state.currentItemFontSize,
-        fontFamily: app.state.currentItemFontFamily,
-      });
-      if (container) {
-        const boundTextElement = getBoundTextElement(
-          container,
+    editable.onpaste = () => {
+      // wait for text to finish pasting
+      queueMicrotask(() => {
+        const container = getContainerElement(
+          element,
           app.scene.getNonDeletedElementsMap(),
         );
-        const wrappedText = wrapText(
-          `${editable.value}${data}`,
-          font,
-          getBoundTextMaxWidth(container, boundTextElement),
-        );
-        const width = getTextWidth(wrappedText, font, true);
-        editable.style.width = `${width}px`;
-      }
+        const font = getFontString({
+          fontSize: app.state.currentItemFontSize,
+          fontFamily: app.state.currentItemFontFamily,
+        });
+
+        if (container) {
+          const boundTextElement = getBoundTextElement(
+            container,
+            app.scene.getNonDeletedElementsMap(),
+          );
+          const wrappedText = wrapText(
+            editable.value,
+            font,
+            getBoundTextMaxWidth(container, boundTextElement),
+          );
+          const width = getTextWidth(wrappedText, font, true);
+          editable.style.width = `${width}px`;
+        }
+      });
     };
 
     editable.oninput = () => {
