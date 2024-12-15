@@ -14,6 +14,7 @@ export {
   newArrowElement,
   newImageElement,
   duplicateElement,
+  duplicateElements,
 } from "./newElement";
 export {
   getElementAbsoluteCoords,
