@@ -74,10 +74,10 @@ export const getElementsWithinSelection = (
       element.locked === false &&
       element.type !== "selection" &&
       !isBoundToContainer(element) &&
-      selectionX1 <= elementX1 &&
-      selectionY1 <= elementY1 &&
-      selectionX2 >= elementX2 &&
-      selectionY2 >= elementY2
+      selectionX1 <= elementX2 &&
+      selectionY1 <= elementY2 &&
+      selectionX2 >= elementX1 &&
+      selectionY2 >= elementY1
     );
   });
 
