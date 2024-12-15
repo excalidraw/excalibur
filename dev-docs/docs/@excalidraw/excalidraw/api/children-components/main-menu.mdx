@@ -167,3 +167,27 @@ function App() {
 | Prop | Type | Required | Default | Description |
 | --- | --- | :-: | :-: | --- |
 | `children ` | `React.ReactNode` | Yes | - | The content of the `Menu Group` |
+
+### MainMenu.Separator
+
+To put a horizontal line between items, you can use `MainMenu.Separator`.
+
+```jsx live
+function App() {
+  return (
+    <div style={{ height: "500px" }}>
+      <Excalidraw>
+        <MainMenu>
+          <MainMenu.Item onSelect={() => window.alert("Item1")}>
+            Item1
+          </MainMenu.Item>
+          <MainMenu.Separator />
+          <MainMenu.Item onSelect={() => window.alert("Item2")}>
+            Item 2
+          </MainMenu.Item>
+        </MainMenu>
+      </Excalidraw>
+    </div>
+  );
+}
+```
