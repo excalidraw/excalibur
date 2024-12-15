@@ -387,6 +387,23 @@ export const parseClipboard = async (
 
   try {
     const systemClipboardData = JSON.parse(parsedEventData.value);
+    try{
+      // If object is being pasted in textbox, insted of returning whole object return only text
+      const isTextBox = (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement);
+      if(isTextBox){
+        var onlyTexts = ""
+        for(const element of systemClipboardData.elements){
+          if(element.type == 'text'){
+            onlyTexts += " " + element.text
+          }
+        }
+        return {
+          text : onlyTexts
+        }
+      }
+    }catch (error: any) {
+      console.error(error);
+    }
     const programmaticAPI =
       systemClipboardData.type === EXPORT_DATA_TYPES.excalidrawClipboardWithAPI;
     if (clipboardContainsElements(systemClipboardData)) {

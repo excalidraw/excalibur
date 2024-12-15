@@ -323,38 +323,60 @@ export const textWysiwyg = ({
 
   if (onChange) {
     editable.onpaste = async (event) => {
+      event.preventDefault(); // Prevent the default paste action
+  
       const clipboardData = await parseClipboard(event, true);
       if (!clipboardData.text) {
         return;
       }
-      const data = normalizeText(clipboardData.text);
+  
+      const data = normalizeText(clipboardData.text)
       if (!data) {
         return;
       }
+  
+      // Handle text selection and replace the selected text with the pasted data
+      const selectionStart = editable.selectionStart;
+      const selectionEnd = editable.selectionEnd;
+  
+      const beforeText = editable.value.substring(0, selectionStart);
+      const afterText = editable.value.substring(selectionEnd);
+  
+      editable.value = beforeText + data + afterText;
+  
+      // Move the cursor to the end of the pasted text
+      const newCursorPos = selectionStart + data.length;
+      editable.selectionStart = newCursorPos;
+      editable.selectionEnd = newCursorPos;
+  
       const container = getContainerElement(
         element,
         app.scene.getNonDeletedElementsMap(),
       );
-
+  
       const font = getFontString({
         fontSize: app.state.currentItemFontSize,
         fontFamily: app.state.currentItemFontFamily,
       });
+  
       if (container) {
         const boundTextElement = getBoundTextElement(
           container,
           app.scene.getNonDeletedElementsMap(),
         );
         const wrappedText = wrapText(
-          `${editable.value}${data}`,
+          editable.value,
           font,
           getBoundTextMaxWidth(container, boundTextElement),
         );
         const width = getTextWidth(wrappedText, font, true);
         editable.style.width = `${width}px`;
       }
+  
+      // Trigger the onChange callback with the updated value
+      onChange(editable.value);
     };
-
+  
     editable.oninput = () => {
       const normalized = normalizeText(editable.value);
       if (editable.value !== normalized) {
@@ -368,6 +390,7 @@ export const textWysiwyg = ({
       onChange(editable.value);
     };
   }
+  
 
   editable.onkeydown = (event) => {
     if (!event.shiftKey && actionZoomIn.keyTest(event)) {
