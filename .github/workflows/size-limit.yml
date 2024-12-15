@@ -3,6 +3,10 @@ on:
   pull_request:
     branches:
       - master
+
+permissions:
+  pull-requests: read
+
 jobs:
   size:
     runs-on: ubuntu-latest
