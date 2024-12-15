@@ -7147,8 +7147,9 @@ class App extends React.Component<AppProps, AppState> {
             // With shift-selection, we want to make sure that frames and their containing
             // elements are not selected at the same time.
             if (
-              !someHitElementIsSelected &&
-              !pointerDownState.hit.hasHitCommonBoundingBoxOfSelectedElements
+              event.shiftKey ||
+              (!someHitElementIsSelected &&
+                !pointerDownState.hit.hasHitCommonBoundingBoxOfSelectedElements)
             ) {
               this.setState((prevState) => {
                 let nextSelectedElementIds: { [id: string]: true } = {
