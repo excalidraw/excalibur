@@ -73,10 +73,10 @@ Here you can try saving the data to your backend or local storage for example.
 This callback is triggered when mouse pointer is updated.
 
 ```js
-({ x, y }, button, pointersMap}) => void;
+({pointer, button, pointersMap}) => void;
 ```
 
-1.`{x, y}`: Pointer coordinates
+1.`pointer`: [`CollaboratorPointer`](https://github.com/excalidraw/excalidraw/blob/master/src/types.ts#L61) having the pointer coordinates and type.
 
 2.`button`: The position of the button. This will be one of `["down", "up"]`
 
