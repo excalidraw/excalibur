@@ -1139,23 +1139,9 @@ export class LinearElementEditor {
   static duplicateSelectedPoints(
     appState: AppState,
     elementsMap: NonDeletedSceneElementsMap | SceneElementsMap,
+    element: NonDeleted<ExcalidrawLinearElement>,
+    selectedPointsIndices: readonly number[],
   ): AppState {
-    invariant(
-      appState.editingLinearElement,
-      "Not currently editing a linear element",
-    );
-
-    const { selectedPointsIndices, elementId } = appState.editingLinearElement;
-    const element = LinearElementEditor.getElement(elementId, elementsMap);
-
-    invariant(
-      element,
-      "The linear element does not exist in the provided Scene",
-    );
-    invariant(
-      selectedPointsIndices != null,
-      "There are no selected points to duplicate",
-    );
 
     const { points } = element;
 
@@ -1207,7 +1193,7 @@ export class LinearElementEditor {
 
     return {
       ...appState,
-      editingLinearElement: {
+      editingLinearElement: appState.editingLinearElement && {
         ...appState.editingLinearElement,
         selectedPointsIndices: nextSelectedIndices,
       },

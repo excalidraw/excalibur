@@ -1,11 +1,11 @@
 import { KEYS } from "../keys";
 import { register } from "./register";
-import type { ExcalidrawElement } from "../element/types";
+import type { ExcalidrawElement, SceneElementsMap } from "../element/types";
 import { duplicateElement, getNonDeletedElements } from "../element";
 import { isSomeElementSelected } from "../scene";
 import { ToolButton } from "../components/ToolButton";
 import { t } from "../i18n";
-import { arrayToMap, getShortcutKey } from "../utils";
+import { invariant, arrayToMap, getShortcutKey } from "../utils";
 import { LinearElementEditor } from "../element/linearElementEditor";
 import {
   selectGroupsForSelectedElements,
@@ -39,14 +39,36 @@ export const actionDuplicateSelection = register({
   label: "labels.duplicateSelection",
   icon: DuplicateIcon,
   trackEvent: { category: "element" },
-  perform: (elements, appState, formData, app) => {
+  perform: (elements, appState, app) => {
     // duplicate selected point(s) if editing a line
     if (appState.editingLinearElement) {
-      // TODO: Invariants should be checked here instead of duplicateSelectedPoints()
+      invariant(
+        appState.editingLinearElement,
+        "Not currently editing a linear element",
+      );
+      
+      const elementsMap = app.scene.getNonDeletedElementsMap();
+      const { selectedPointsIndices, elementId } = appState.editingLinearElement;
+      const element = LinearElementEditor.getElement(elementId, elementsMap);
+  
+      invariant(
+        element,
+        "The linear element does not exist in the provided Scene",
+      );
+      invariant(
+        selectedPointsIndices != null,
+        "There are no selected points to duplicate",
+      );
+      invariant(
+        appState.editingLinearElement,
+        "Not currently editing a linear element",
+      );
       try {
         const newAppState = LinearElementEditor.duplicateSelectedPoints(
           appState,
-          app.scene.getNonDeletedElementsMap(),
+          elementsMap,
+          element,
+          selectedPointsIndices,
         );
 
         return {
