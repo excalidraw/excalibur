@@ -994,3 +994,17 @@ export const getCenterForBounds = (bounds: Bounds): GlobalPoint =>
     bounds[0] + (bounds[2] - bounds[0]) / 2,
     bounds[1] + (bounds[3] - bounds[1]) / 2,
   );
+
+export const doBoundsIntersect = (
+  bounds1: Bounds | null,
+  bounds2: Bounds | null,
+): boolean => {
+  if (bounds1 == null || bounds2 == null) {
+    return false;
+  }
+
+  const [minX1, minY1, maxX1, maxY1] = bounds1;
+  const [minX2, minY2, maxX2, maxY2] = bounds2;
+
+  return minX1 < maxX2 && maxX1 > minX2 && minY1 < maxY2 && maxY1 > minY2;
+};

@@ -197,7 +197,7 @@ exports[`move element > rectangles with binding arrow 7`] = `
   "fillStyle": "solid",
   "frameId": null,
   "groupIds": [],
-  "height": "81.47368",
+  "height": "81.40630",
   "id": "id2",
   "index": "a2",
   "isDeleted": false,
@@ -212,7 +212,7 @@ exports[`move element > rectangles with binding arrow 7`] = `
     ],
     [
       81,
-      "81.47368",
+      "81.40630",
     ],
   ],
   "roughness": 1,
