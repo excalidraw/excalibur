@@ -66,6 +66,7 @@ const ALLOWED_DOMAINS = new Set([
   "val.town",
   "giphy.com",
   "reddit.com",
+  "tutar.app"
 ]);
 
 const ALLOW_SAME_ORIGIN = new Set([
@@ -79,6 +80,7 @@ const ALLOW_SAME_ORIGIN = new Set([
   "*.simplepdf.eu",
   "stackblitz.com",
   "reddit.com",
+  "turar.app"
 ]);
 
 export const createSrcDoc = (body: string) => {
