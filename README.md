@@ -52,24 +52,24 @@
   </figure>
 </div>
 
-## Features
 
-The Excalidraw editor (npm package) supports:
+##Features
+The Excalidraw editor (npm package) offers an array of powerful features:
 
-- 💯&nbsp;Free & open-source.
-- 🎨&nbsp;Infinite, canvas-based whiteboard.
-- ✍️&nbsp;Hand-drawn like style.
-- 🌓&nbsp;Dark mode.
-- 🏗️&nbsp;Customizable.
-- 📷&nbsp;Image support.
-- 😀&nbsp;Shape libraries support.
-- 👅&nbsp;Localization (i18n) support.
-- 🖼️&nbsp;Export to PNG, SVG & clipboard.
-- 💾&nbsp;Open format - export drawings as an `.excalidraw` json file.
-- ⚒️&nbsp;Wide range of tools - rectangle, circle, diamond, arrow, line, free-draw, eraser...
-- ➡️&nbsp;Arrow-binding & labeled arrows.
-- 🔙&nbsp;Undo / Redo.
-- 🔍&nbsp;Zoom and panning support.
+💯 Free & Open-Source: Enjoy the freedom of an open-source tool.
+🎨 Infinite Canvas: Let your ideas flow freely on an infinite canvas.
+✍️ Hand-Drawn Style: Embrace a hand-drawn-like style for your creations.
+🌓 Dark Mode: Switch seamlessly between light and dark modes.
+🏗️ Customizable: Tailor the editor to fit your needs.
+📷 Image Support: Easily incorporate images into your drawings.
+😀 Shape Libraries: Access a wide range of shapes to enhance your designs.
+👅 Localization (i18n) Support: Use the editor in your preferred language.
+🖼️ Export Options: Export your creations to PNG, SVG, or clipboard with ease.
+💾 Open Format: Save and share your drawings as .excalidraw json files.
+⚒️ Wide Range of Tools: Choose from various tools including rectangle, circle, diamond, arrow, line, free-draw, and eraser.
+➡️ Arrow Binding & Labeled Arrows: Create arrows with labels for clear communication.
+🔙 Undo / Redo: Easily correct mistakes or backtrack as needed.
+🔍 Zoom and Panning: Get a closer look and navigate your canvas effortlessly.
 
 ## Excalidraw.com
 
