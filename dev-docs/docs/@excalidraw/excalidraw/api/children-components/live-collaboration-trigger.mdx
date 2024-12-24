@@ -45,7 +45,7 @@ function App() {
         Show Collaborators
       </label>
       <Excalidraw
-        ref={(api) => setExcalidrawAPI(api)}
+        excalidrawAPI={(api) => setExcalidrawAPI(api)}
         renderTopRightUI={() => (
           <LiveCollaborationTrigger
             isCollaborating={isCollaborating}
