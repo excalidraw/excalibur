@@ -1,0 +1,17 @@
+github_checks:
+  annotations: true
+
+codecov:
+  require_ci_to_pass: yes
+
+coverage:
+  precision: 2
+  round: down
+  range: 65...100
+
+  status:
+    # Learn more at https://docs.codecov.io/docs/commit-status
+    project:
+      default:
+        target: 65%
+        threshold: 0.05 # allow this much decrease on project
