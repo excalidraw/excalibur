@@ -8397,8 +8397,17 @@ class App extends React.Component<AppProps, AppState> {
 
         if (newElement.type === "freedraw") {
           const points = newElement.points;
-          const dx = pointerCoords.x - newElement.x;
-          const dy = pointerCoords.y - newElement.y;
+          let dx = pointerCoords.x - newElement.x;
+          let dy = pointerCoords.y - newElement.y;
+
+          if (shouldRotateWithDiscreteAngle(event)) {
+            ({ width: dx, height: dy } = getLockedLinearCursorAlignSize(
+              newElement.x,
+              newElement.y,
+              pointerCoords.x,
+              pointerCoords.y,
+            ));
+          }
 
           const lastPoint = points.length > 0 && points[points.length - 1];
           const discardPoint =
