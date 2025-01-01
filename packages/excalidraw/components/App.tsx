@@ -4012,17 +4012,21 @@ class App extends React.Component<AppProps, AppState> {
 
   public getEditorUIOffsets = (): Offsets => {
     const toolbarBottom =
-      this.excalidrawContainerRef?.current
+      (this.excalidrawContainerRef?.current
         ?.querySelector(".App-toolbar")
-        ?.getBoundingClientRect()?.bottom ?? 0;
+        ?.getBoundingClientRect()?.bottom ?? 0) - this.state.offsetTop;
     const sidebarRect = this.excalidrawContainerRef?.current
       ?.querySelector(".sidebar")
       ?.getBoundingClientRect();
     const propertiesPanelRect = this.excalidrawContainerRef?.current
       ?.querySelector(".App-menu__left")
       ?.getBoundingClientRect();
-
     const PADDING = 16;
+
+    const adjustRectValueForOffset = (
+      value: number | undefined,
+      fallback: number,
+    ) => (value ?? fallback + this.state.offsetLeft) - this.state.offsetLeft;
 
     return getLanguage().rtl
       ? {
@@ -4030,22 +4034,31 @@ class App extends React.Component<AppProps, AppState> {
           right:
             Math.max(
               this.state.width -
-                (propertiesPanelRect?.left ?? this.state.width),
+                adjustRectValueForOffset(
+                  propertiesPanelRect?.left,
+                  this.state.width,
+                ),
               0,
             ) + PADDING,
           bottom: PADDING,
-          left: Math.max(sidebarRect?.right ?? 0, 0) + PADDING,
+          left:
+            Math.max(adjustRectValueForOffset(sidebarRect?.right, 0), 0) +
+            PADDING,
         }
       : {
           top: toolbarBottom + PADDING,
           right: Math.max(
             this.state.width -
-              (sidebarRect?.left ?? this.state.width) +
+              adjustRectValueForOffset(sidebarRect?.left, this.state.width) +
               PADDING,
             0,
           ),
           bottom: PADDING,
-          left: Math.max(propertiesPanelRect?.right ?? 0, 0) + PADDING,
+          left:
+            Math.max(
+              adjustRectValueForOffset(propertiesPanelRect?.right, 0),
+              0,
+            ) + PADDING,
         };
   };
 
