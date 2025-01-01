@@ -20,7 +20,7 @@ type IframeDataWithSandbox = MarkRequired<IframeData, "sandbox">;
 const embeddedLinkCache = new Map<string, IframeDataWithSandbox>();
 
 const RE_YOUTUBE =
-  /^(?:http(?:s)?:\/\/)?(?:www\.)?youtu(?:be\.com|\.be)\/(embed\/|watch\?v=|shorts\/|playlist\?list=|embed\/videoseries\?list=)?([a-zA-Z0-9_-]+)(?:\?t=|&t=|\?start=|&start=)?([a-zA-Z0-9_-]+)?[^\s]*$/;
+  /^(?:http(?:s)?:\/\/)?(?:www\.)?youtu(?:be\.com|\.be)\/(?:embed\/|watch\?v=|shorts\/|playlist\?list=|embed\/videoseries\?list=)?([a-zA-Z0-9_-]+)(?:.*?[&?](?:t=|start=)([a-zA-Z0-9_-]+))?.*$/;
 
 const RE_VIMEO =
   /^(?:http(?:s)?:\/\/)?(?:(?:w){3}\.)?(?:player\.)?vimeo\.com\/(?:video\/)?([^?\s]+)(?:\?.*)?$/;
@@ -105,22 +105,23 @@ export const getEmbedLink = (
   let type: "video" | "generic" = "generic";
   let aspectRatio = { w: 560, h: 840 };
   const ytLink = link.match(RE_YOUTUBE);
-  if (ytLink?.[2]) {
-    const time = ytLink[3] ? `&start=${ytLink[3]}` : ``;
+  const id = ytLink?.[1];
+  if (id) {
+    const time = ytLink[2] ? `&start=${ytLink[2]}` : ``;
     const isPortrait = link.includes("shorts");
     type = "video";
     switch (ytLink[1]) {
       case "embed/":
       case "watch?v=":
       case "shorts/":
-        link = `https://www.youtube.com/embed/${ytLink[2]}?enablejsapi=1${time}`;
+        link = `https://www.youtube.com/embed/${id}?enablejsapi=1${time}`;
         break;
       case "playlist?list=":
       case "embed/videoseries?list=":
-        link = `https://www.youtube.com/embed/videoseries?list=${ytLink[2]}&enablejsapi=1${time}`;
+        link = `https://www.youtube.com/embed/videoseries?list=${id}&enablejsapi=1${time}`;
         break;
       default:
-        link = `https://www.youtube.com/embed/${ytLink[2]}?enablejsapi=1${time}`;
+        link = `https://www.youtube.com/embed/${id}?enablejsapi=1${time}`;
         break;
     }
     aspectRatio = isPortrait ? { w: 315, h: 560 } : { w: 560, h: 315 };
