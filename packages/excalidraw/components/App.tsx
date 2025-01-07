@@ -538,6 +538,7 @@ let isDraggingScrollBar: boolean = false;
 let currentScrollBars: ScrollBars = { horizontal: null, vertical: null };
 let touchTimeout = 0;
 let invalidateContextMenu = false;
+let elementStartedMoving = false;
 
 /**
  * Map of youtube embed video states
@@ -8123,6 +8124,30 @@ class App extends React.Component<AppProps, AppState> {
           !this.state.editingTextElement &&
           this.state.activeEmbeddable?.state !== "active"
         ) {
+
+          if(!this.state.editingLinearElement && !this.state.editingFrame && !this.state.resizingElement){
+
+            // this determines the threshold for dragging the element initially
+            const MOVEMENT_BUFFER = 4;
+  
+            // this calculates the buffer for the movement based on the zoom level
+            const ZOOM_RELETIVE_MOVEMENT_BUFFER: number = MOVEMENT_BUFFER / this.state.zoom.value;
+
+            console.log(ZOOM_RELETIVE_MOVEMENT_BUFFER); // TODO: remove
+            
+              if (
+                  !elementStartedMoving && pointDistance(
+                  pointFrom(pointerCoords.x, pointerCoords.y),
+                  pointFrom(pointerDownState.origin.x, pointerDownState.origin.y),
+                ) < ZOOM_RELETIVE_MOVEMENT_BUFFER
+              ) {
+                return;
+              }
+  
+            // sets the elementStartedMoving to true so that the buffer is only used once
+            elementStartedMoving = true;
+          }
+
           const dragOffset = {
             x: pointerCoords.x - pointerDownState.origin.x,
             y: pointerCoords.y - pointerDownState.origin.y,
@@ -8634,6 +8659,9 @@ class App extends React.Component<AppProps, AppState> {
         isRotating,
         isCropping,
       } = this.state;
+
+      // sets the elementStartedMoving to false so that the buffer can be used again
+      elementStartedMoving = false;
 
       this.setState((prevState) => ({
         isResizing: false,
