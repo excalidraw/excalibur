@@ -36,7 +36,7 @@
     "prettier": "2.6.2",
     "rewire": "6.0.0",
     "typescript": "4.9.4",
-    "vite": "5.0.12",
+    "vite": "5.1.8",
     "vite-plugin-checker": "0.7.2",
     "vite-plugin-ejs": "1.7.0",
     "vite-plugin-pwa": "0.17.4",
