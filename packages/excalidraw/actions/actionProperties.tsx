@@ -120,6 +120,7 @@ import { mutateElbowArrow } from "../element/routing";
 import { LinearElementEditor } from "../element/linearElementEditor";
 import type { LocalPoint } from "../../math";
 import { pointFrom, vector } from "../../math";
+import { Range } from "../components/Range";
 
 const FONT_SIZE_RELATIVE_INCREASE_STEP = 0.1;
 
@@ -615,25 +616,30 @@ export const actionChangeOpacity = register({
     };
   },
   PanelComponent: ({ elements, appState, updateData }) => (
-    <label className="control-label">
-      {t("labels.opacity")}
-      <input
-        type="range"
-        min="0"
-        max="100"
-        step="10"
-        onChange={(event) => updateData(+event.target.value)}
-        value={
-          getFormValue(
-            elements,
-            appState,
-            (element) => element.opacity,
-            true,
-            appState.currentItemOpacity,
-          ) ?? undefined
-        }
-      />
-    </label>
+    // <label className="control-label">
+    //   {t("labels.opacity")}
+    //   <div className="range-wrapper">
+    //   <input
+    //     type="range"
+    //     min="0"
+    //     max="100"
+    //     step="10"
+    //     onChange={(event) => updateData(+event.target.value)}
+    //     value={
+    //       getFormValue(
+    //         elements,
+    //         appState,
+    //         (element) => element.opacity,
+    //         true,
+    //         appState.currentItemOpacity,
+    //       ) ?? undefined
+    //     }
+    //   />
+    //   <div className="value-bubble">80</div>
+    //   <div className="zero-lebel">0</div>
+    //   </div>
+    // </label>
+    <Range updateData={updateData} elements={elements} appState={appState} />
   ),
 });
 
