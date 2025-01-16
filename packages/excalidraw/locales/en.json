@@ -95,6 +95,7 @@
     "group": "Group selection",
     "ungroup": "Ungroup selection",
     "collaborators": "Collaborators",
+    "toggleShowGrid": "Toggle show grid",
     "toggleGrid": "Toggle grid",
     "addToLibrary": "Add to library",
     "removeFromLibrary": "Remove from library",
