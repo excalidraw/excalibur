@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@excalidraw/random-username": "1.0.0",
-    "@sentry/browser": "6.2.5",
+    "@sentry/browser": "7.119.1",
     "@sentry/integrations": "6.2.5",
     "firebase": "8.3.3",
     "i18next-browser-languagedetector": "6.1.4",
