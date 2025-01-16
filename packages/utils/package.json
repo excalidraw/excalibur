@@ -72,7 +72,7 @@
     "ts-loader": "9.3.1",
     "typescript": "4.9.4",
     "wawoff2": "2.0.1",
-    "webpack": "5.76.0",
+    "webpack": "5.94.0",
     "webpack-bundle-analyzer": "4.5.0",
     "webpack-cli": "4.10.0",
     "which": "4.0.0"
