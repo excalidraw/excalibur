@@ -1,10 +1,13 @@
 import clsx from "clsx";
-import type { ColorPickerType } from "./colorPickerUtils";
+import { type ColorPickerType } from "./colorPickerUtils";
 import {
+  ColorTuple,
   DEFAULT_CANVAS_BACKGROUND_PICKS,
   DEFAULT_ELEMENT_BACKGROUND_PICKS,
   DEFAULT_ELEMENT_STROKE_PICKS,
 } from "../../colors";
+import HotkeyLabel from "./HotkeyLabel";
+import { topPicksColorPickerKeyNavHandler } from "./keyboardNavHandlers";
 
 interface TopPicksProps {
   onChange: (color: string) => void;
@@ -19,7 +22,7 @@ export const TopPicks = ({
   activeColor,
   topPicks,
 }: TopPicksProps) => {
-  let colors;
+  let colors: ColorTuple | readonly string[] | undefined;
   if (type === "elementStroke") {
     colors = DEFAULT_ELEMENT_STROKE_PICKS;
   }
@@ -43,8 +46,22 @@ export const TopPicks = ({
   }
 
   return (
-    <div className="color-picker__top-picks">
-      {colors.map((color: string) => (
+    <div
+      className="color-picker__top-picks"
+      onKeyDown={(event) => {
+        const handled = topPicksColorPickerKeyNavHandler({
+          event,
+          onChange,
+          colors,
+        });
+
+        if (handled) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      }}
+    >
+      {colors.map((color: string, index: number) => (
         <button
           className={clsx("color-picker__button", {
             active: color === activeColor,
@@ -58,6 +75,7 @@ export const TopPicks = ({
           data-testid={`color-top-pick-${color}`}
         >
           <div className="color-picker__button-outline" />
+          <HotkeyLabel color={color} keyLabel={index + 1} />
         </button>
       ))}
     </div>
