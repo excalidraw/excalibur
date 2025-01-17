@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { t } from "../../i18n";
 
 import type { ExcalidrawElement } from "../../element/types";
@@ -80,6 +80,19 @@ export const Picker = ({
           : "baseColors",
       );
     }
+
+    // handle overflow of ColorPicker from viewport
+    if(colorPickerRef.current){
+    const popup = colorPickerRef.current;
+    if(window.innerHeight < 380){
+      popup.style.maxHeight = `${Math.max(window.innerHeight - 200, 140)}px`;
+      popup.style.overflowY = "scroll";
+    }
+    else{
+      popup.style.maxHeight = "fit-content";
+    } 
+  }
+  
   }, [
     activeColorPickerSection,
     color,
@@ -113,9 +126,11 @@ export const Picker = ({
   }, [colorObj, onEyeDropperToggle]);
 
   const pickerRef = React.useRef<HTMLDivElement>(null);
+  const colorPickerRef = useRef<HTMLDivElement | null>(null)
+    
 
   return (
-    <div role="dialog" aria-modal="true" aria-label={t("labels.colorPicker")}>
+    <div role="dialog" aria-modal="true" aria-label={t("labels.colorPicker")} ref={colorPickerRef}>
       <div
         ref={pickerRef}
         onKeyDown={(event) => {

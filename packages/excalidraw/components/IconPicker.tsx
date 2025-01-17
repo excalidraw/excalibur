@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import * as Popover from "@radix-ui/react-popover";
 import { isArrowKey, KEYS } from "../keys";
 import { getLanguage, t } from "../i18n";
@@ -146,7 +146,24 @@ function Picker<T>({
       </div>
     );
   };
+  
+  // Handles popup overflowing viewport after getting More options 
+  const arrowHeadRef = useRef<HTMLDivElement|null>(null); 
+  useEffect(()=>{
+    const adjustHeight = ()=>{
+      if(arrowHeadRef.current){
+        const popup = arrowHeadRef.current;
+        const rect = popup.getBoundingClientRect();
+        if (showMoreOptions && rect.bottom >= window.innerHeight){
+          popup.style.maxHeight = `${rect.height - (rect.bottom - window.innerHeight)- 20}px`;
+          popup.style.overflowY = "scroll";
+        }
+      }
+    }
 
+    adjustHeight();
+  },[showMoreOptions])
+  
   return (
     <Popover.Content
       side={
@@ -164,6 +181,7 @@ function Picker<T>({
         role="dialog"
         aria-modal="true"
         aria-label={label}
+        ref={arrowHeadRef}
       >
         {renderOptions(alwaysVisibleOptions)}
 
@@ -207,6 +225,35 @@ export function IconPicker<T>({
   const [isActive, setActive] = React.useState(false);
   const rPickerButton = React.useRef<any>(null);
 
+  // Handles popup directly overflowing viewport when triggered 
+  const arrowHeadRef = useRef<HTMLDivElement|null>(null); 
+  useEffect(()=>{
+    const adjustHeight = ()=>{
+      if(arrowHeadRef.current){
+        const popup = arrowHeadRef.current;
+        const currDiv = popup?.childNodes[0]?.childNodes[0]?.childNodes[0] as HTMLElement;
+        const PosRect = popup.getBoundingClientRect();
+        const HeightRect = currDiv.getBoundingClientRect();
+        
+        // posRect.top contains the y axis position of the div's top
+        // HeightRect.height contains height of div
+        // DivBottom gives y axis position of bottom of div
+        const DivBottom = PosRect.top + HeightRect.height;
+        
+        // in Case divBottom below windoHeight; the Picker is overflowing viewport; 
+        if (isActive &&  DivBottom >= window.innerHeight){
+          currDiv.style.maxHeight = `${HeightRect.bottom - (DivBottom - window.innerHeight) - 20}px`;  
+          currDiv.style.overflowY = "scroll";
+        }
+        else{
+          popup.style.maxHeight = "fit-content";
+        }
+      }
+    }
+
+    adjustHeight();
+  },[isActive])
+  
   return (
     <div>
       <Popover.Root open={isActive} onOpenChange={(open) => setActive(open)}>
@@ -221,6 +268,7 @@ export function IconPicker<T>({
           {options.find((option) => option.value === value)?.icon}
         </Popover.Trigger>
         {isActive && (
+          <div ref = {arrowHeadRef}>
           <Picker
             options={options}
             value={value}
@@ -231,6 +279,7 @@ export function IconPicker<T>({
             }}
             numberOfOptionsToAlwaysShow={numberOfOptionsToAlwaysShow}
           />
+          </div>
         )}
       </Popover.Root>
     </div>
