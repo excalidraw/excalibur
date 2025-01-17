@@ -320,7 +320,7 @@
   },
   "hints": {
     "dismissSearch": "Escape to dismiss search",
-    "canvasPanning": "To move canvas, hold mouse wheel or spacebar while dragging, or use the hand tool",
+    "canvasPanning": "To move canvas, hold mouse wheel or spacebar while dragging, drag with right click, or use the hand tool",
     "linearElement": "Click to start multiple points, drag for single line",
     "arrowTool": "Click to start multiple points, drag for single line. Press {{arrowShortcut}} again to change arrow type.",
     "freeDraw": "Click and drag, release when you're finished",
