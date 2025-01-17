@@ -12,6 +12,8 @@ import { frameToolIcon } from "../components/icons";
 import { StoreAction } from "../store";
 import { getSelectedElements } from "../scene";
 import { newFrameElement } from "../element/newElement";
+import { getElementsInGroup } from "../groups";
+import { mutateElement } from "../element/mutateElement";
 
 const isSingleFrameSelected = (
   appState: UIAppState,
@@ -173,6 +175,26 @@ export const actionWrapSelectionInFrame = register({
       width: x2 - x1 + PADDING * 2,
       height: y2 - y1 + PADDING * 2,
     });
+
+    // for a selected partial group, we want to remove it from the remainder of the group
+    if (appState.editingGroupId) {
+      const elementsInGroup = getElementsInGroup(
+        selectedElements,
+        appState.editingGroupId,
+      );
+
+      for (const elementInGroup of elementsInGroup) {
+        const index = elementInGroup.groupIds.indexOf(appState.editingGroupId);
+
+        mutateElement(
+          elementInGroup,
+          {
+            groupIds: elementInGroup.groupIds.slice(0, index),
+          },
+          false,
+        );
+      }
+    }
 
     const nextElements = addElementsToFrame(
       [...app.scene.getElementsIncludingDeleted(), frame],

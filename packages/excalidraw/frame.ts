@@ -370,10 +370,55 @@ export const getElementsInNewFrame = (
   frame: ExcalidrawFrameLikeElement,
   elementsMap: ElementsMap,
 ) => {
-  return omitGroupsContainingFrameLikes(
-    elements,
-    getElementsCompletelyInFrame(elements, frame, elementsMap),
+  return omitPartialGroups(
+    omitGroupsContainingFrameLikes(
+      elements,
+      getElementsCompletelyInFrame(elements, frame, elementsMap),
+    ),
+    frame,
+    elementsMap,
   );
+};
+
+export const omitPartialGroups = (
+  elements: ExcalidrawElement[],
+  frame: ExcalidrawFrameLikeElement,
+  allElementsMap: ElementsMap,
+) => {
+  const elementsToReturn = [];
+  const checkedGroups = new Map<string, boolean>();
+
+  for (const element of elements) {
+    let shouldOmit = false;
+    if (element.groupIds.length > 0) {
+      // if some partial group should be omitted, then all elements in that group should be omitted
+      if (element.groupIds.some((gid) => checkedGroups.get(gid))) {
+        shouldOmit = true;
+      } else {
+        const allElementsInGroup = new Set(
+          element.groupIds.flatMap((gid) =>
+            getElementsInGroup(allElementsMap, gid),
+          ),
+        );
+
+        shouldOmit = !elementsAreInFrameBounds(
+          Array.from(allElementsInGroup),
+          frame,
+          allElementsMap,
+        );
+      }
+
+      element.groupIds.forEach((gid) => {
+        checkedGroups.set(gid, shouldOmit);
+      });
+    }
+
+    if (!shouldOmit) {
+      elementsToReturn.push(element);
+    }
+  }
+
+  return elementsToReturn;
 };
 
 export const getContainingFrame = (
