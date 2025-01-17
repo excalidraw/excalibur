@@ -89,6 +89,7 @@ import type {
   FontFamilyValues,
   TextAlign,
   VerticalAlign,
+  NonDeletedSceneElementsMap,
 } from "../element/types";
 import { getLanguage, t } from "../i18n";
 import { KEYS } from "../keys";
@@ -115,6 +116,7 @@ import {
   bindPointToSnapToElementOutline,
   calculateFixedPointForElbowArrowBinding,
   getHoveredElementForBinding,
+  updateBoundElements,
 } from "../element/binding";
 import { LinearElementEditor } from "../element/linearElementEditor";
 import type { LocalPoint } from "../../math";
@@ -218,33 +220,47 @@ const changeFontSize = (
 ) => {
   const newFontSizes = new Set<number>();
 
+  const updatedElements = changeProperty(
+    elements,
+    appState,
+    (oldElement) => {
+      if (isTextElement(oldElement)) {
+        const newFontSize = getNewFontSize(oldElement);
+        newFontSizes.add(newFontSize);
+
+        let newElement: ExcalidrawTextElement = newElementWith(oldElement, {
+          fontSize: newFontSize,
+        });
+        redrawTextBoundingBox(
+          newElement,
+          app.scene.getContainerElement(oldElement),
+          app.scene.getNonDeletedElementsMap(),
+        );
+
+        newElement = offsetElementAfterFontResize(oldElement, newElement);
+
+        return newElement;
+      }
+      return oldElement;
+    },
+    true,
+  );
+
+  // Update arrow elements after text elements have been updated
+  const updatedElementsMap = arrayToMap(updatedElements);
+  getSelectedElements(elements, appState, {
+    includeBoundTextElement: true,
+  }).forEach((element) => {
+    if (isTextElement(element)) {
+      updateBoundElements(
+        element,
+        updatedElementsMap as NonDeletedSceneElementsMap,
+      );
+    }
+  });
+
   return {
-    elements: changeProperty(
-      elements,
-      appState,
-      (oldElement) => {
-        if (isTextElement(oldElement)) {
-          const newFontSize = getNewFontSize(oldElement);
-          newFontSizes.add(newFontSize);
-
-          let newElement: ExcalidrawTextElement = newElementWith(oldElement, {
-            fontSize: newFontSize,
-          });
-          redrawTextBoundingBox(
-            newElement,
-            app.scene.getContainerElement(oldElement),
-            app.scene.getNonDeletedElementsMap(),
-          );
-
-          newElement = offsetElementAfterFontResize(oldElement, newElement);
-
-          return newElement;
-        }
-
-        return oldElement;
-      },
-      true,
-    ),
+    elements: updatedElements,
     appState: {
       ...appState,
       // update state only if we've set all select text elements to
