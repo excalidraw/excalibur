@@ -18,8 +18,9 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
+          platforms: linux/amd64,linux/arm64
           context: .
           push: true
           tags: excalidraw/excalidraw:latest
