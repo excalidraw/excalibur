@@ -38,6 +38,7 @@ const ExcalidrawBase = (props: ExcalidrawProps) => {
     onPaste,
     detectScroll = true,
     handleKeyboardGlobally = false,
+    handleGestureGlobally = true,
     onLibraryChange,
     autoFocus = false,
     generateIdForFile,
@@ -128,6 +129,7 @@ const ExcalidrawBase = (props: ExcalidrawProps) => {
           onPaste={onPaste}
           detectScroll={detectScroll}
           handleKeyboardGlobally={handleKeyboardGlobally}
+          handleGestureGlobally={handleGestureGlobally}
           onLibraryChange={onLibraryChange}
           autoFocus={autoFocus}
           generateIdForFile={generateIdForFile}

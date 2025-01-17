@@ -834,6 +834,7 @@ const ExcalidrawWrapper = () => {
         renderCustomStats={renderCustomStats}
         detectScroll={false}
         handleKeyboardGlobally={true}
+        handleGestureGlobally={true}
         autoFocus={true}
         theme={editorTheme}
         renderTopRightUI={(isMobile) => {

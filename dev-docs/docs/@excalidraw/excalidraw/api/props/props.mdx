@@ -27,6 +27,7 @@ All `props` are _optional_.
 | [`UIOptions`](/docs/@excalidraw/excalidraw/api/props/ui-options) | `object` | [DEFAULT UI OPTIONS](https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/constants.ts#L151) | To customise UI options. Currently we support customising [`canvas actions`](/docs/@excalidraw/excalidraw/api/props/ui-options#canvasactions) |
 | [`detectScroll`](#detectscroll) | `boolean` | `true` | Indicates whether to update the offsets when nearest ancestor is scrolled. |
 | [`handleKeyboardGlobally`](#handlekeyboardglobally) | `boolean` | `false` | Indicates whether to bind the keyboard events to document. |
+| [`handleGestureGlobally`](#handleGestureGlobally) | `boolean` | `true` | Indicates whether to bind the gesture events to document.(Safari only) |
 | [`autoFocus`](#autofocus) | `boolean` | `false` | Indicates whether to focus the Excalidraw component on page load |
 | [`generateIdForFile`](#generateidforfile) | `function` | \_ | Allows you to override `id` generation for files added on canvas |
 | [`validateEmbeddable`](#validateEmbeddable) | string[] | `boolean | RegExp | RegExp[] | ((link: string) => boolean | undefined)` | \_ | use for custom src url validation |
