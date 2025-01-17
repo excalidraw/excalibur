@@ -48,6 +48,7 @@ const alignSelectedElements = (
     selectedElements,
     elementsMap,
     alignment,
+    app.scene,
   );
 
   const updatedElementsMap = arrayToMap(updatedElements);
