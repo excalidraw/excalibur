@@ -1,11 +1,11 @@
 import "./Modal.scss";
 
-import { createPortal } from "react-dom";
 import clsx from "clsx";
+import { useRef } from "react";
+import { createPortal } from "react-dom";
+import { useCreatePortalContainer } from "../hooks/useCreatePortalContainer";
 import { KEYS } from "../keys";
 import type { AppState } from "../types";
-import { useCreatePortalContainer } from "../hooks/useCreatePortalContainer";
-import { useRef } from "react";
 
 export const Modal: React.FC<{
   className?: string;
@@ -38,11 +38,10 @@ export const Modal: React.FC<{
   };
 
   return createPortal(
-    <div
+    <dialog
       className={clsx("Modal", props.className, {
         "animations-disabled": animationsDisabledRef.current,
       })}
-      role="dialog"
       aria-modal="true"
       onKeyDown={handleKeydown}
       aria-labelledby={props.labelledBy}
@@ -59,7 +58,7 @@ export const Modal: React.FC<{
       >
         {props.children}
       </div>
-    </div>,
+    </dialog>,
     modalRoot,
   );
 };
