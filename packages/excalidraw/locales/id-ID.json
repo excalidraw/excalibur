@@ -4,15 +4,15 @@
     "pasteAsPlaintext": "Tempel sebagai teks biasa",
     "pasteCharts": "Tempel diagram",
     "selectAll": "Pilih semua",
-    "multiSelect": "Tambahkan elemen ke pilihan",
+    "multiSelect": "Tambah unsur ke seleksi",
     "moveCanvas": "Pindahkan kanvas",
     "cut": "Potong",
     "copy": "Salin",
     "copyAsPng": "Salin ke papan klip sebagai PNG",
     "copyAsSvg": "Salin ke papan klip sebagai SVG",
     "copyText": "Salin ke papan klip sebagai teks",
-    "copySource": "",
-    "convertToCode": "",
+    "copySource": "Salin sumber ke papan klip",
+    "convertToCode": "Konversi ke kode",
     "bringForward": "Bawa maju",
     "sendToBack": "Kirim ke belakang",
     "bringToFront": "Bawa ke depan",
@@ -21,7 +21,9 @@
     "copyStyles": "Salin gaya",
     "pasteStyles": "Tempelkan gaya",
     "stroke": "Guratan",
+    "changeStroke": "Ubah warna garis",
     "background": "Latar",
+    "changeBackground": "Ubah warna background",
     "fill": "Isian",
     "strokeWidth": "Lebar guratan",
     "strokeStyle": "Gaya guratan",
@@ -38,12 +40,20 @@
     "arrowhead_none": "Tidak ada",
     "arrowhead_arrow": "Panah",
     "arrowhead_bar": "Batang",
-    "arrowhead_circle": "",
-    "arrowhead_circle_outline": "",
+    "arrowhead_circle": "Lingkaran",
+    "arrowhead_circle_outline": "Lingkaran (garis)",
     "arrowhead_triangle": "Segitiga",
-    "arrowhead_triangle_outline": "",
-    "arrowhead_diamond": "",
-    "arrowhead_diamond_outline": "",
+    "arrowhead_triangle_outline": "Segitiga (garis)",
+    "arrowhead_diamond": "Diamond",
+    "arrowhead_diamond_outline": "Diamond (garis)",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "Jenis panah",
+    "arrowtype_sharp": "Panah runcing",
+    "arrowtype_round": "Panah melengkung",
+    "arrowtype_elbowed": "Panah siku",
     "fontSize": "Ukuran font",
     "fontFamily": "Jenis font",
     "addWatermark": "Tambahkan \"Dibuat dengan Excalidraw\"",
@@ -56,7 +66,7 @@
     "veryLarge": "Sangat besar",
     "solid": "Padat",
     "hachure": "Garis-garis",
-    "zigzag": "Zigzag",
+    "zigzag": "Bentuk Z",
     "crossHatch": "Asiran silang",
     "thin": "Lembut",
     "bold": "Tebal",
@@ -72,6 +82,7 @@
     "canvasColors": "Digunakan di kanvas",
     "canvasBackground": "Latar Kanvas",
     "drawingCanvas": "Kanvas",
+    "clearCanvas": "Hapus kanvas",
     "layers": "Lapisan",
     "actions": "Aksi",
     "language": "Bahasa",
@@ -84,12 +95,13 @@
     "group": "Kelompokan pilihan",
     "ungroup": "Pisahkan pilihan",
     "collaborators": "Kolaborator",
-    "showGrid": "Tampilkan grid",
+    "toggleGrid": "Toggle grid",
     "addToLibrary": "Tambahkan ke pustaka",
     "removeFromLibrary": "Hapus dari pustaka",
     "libraryLoadingMessage": "Memuat pustaka…",
     "libraries": "Telusur pustaka",
     "loadingScene": "Memuat pemandangan…",
+    "loadScene": "Muat dari file",
     "align": "Perataan",
     "alignTop": "Rata atas",
     "alignBottom": "Rata bawah",
@@ -105,7 +117,9 @@
     "share": "Bagikan",
     "showStroke": "Tampilkan garis pengambil warna",
     "showBackground": "Tampilkan latar pengambil warna",
-    "toggleTheme": "Ubah tema",
+    "showFonts": "Tampilkan pilihan warna",
+    "toggleTheme": "Toggle tema terang/gelap",
+    "theme": "Tema",
     "personalLib": "Pustaka Pribadi",
     "excalidrawLib": "Pustaka Excalidraw",
     "decreaseFontSize": "Kecilkan ukuran font",
@@ -115,35 +129,60 @@
     "createContainerFromText": "Bungkus teks dalam kontainer",
     "link": {
       "edit": "Edit tautan",
-      "editEmbed": "",
-      "create": "Buat tautan",
-      "createEmbed": "",
+      "editEmbed": "Sunting tautan bisa semat",
+      "create": "Tambah tautan",
       "label": "Tautan",
-      "labelEmbed": "",
-      "empty": ""
+      "labelEmbed": "Tautan & sematan",
+      "empty": "Tidak ada tautan yang ditetapkan",
+      "hint": "Ketik atau tempel tautan di sini",
+      "goToElement": "Ke unsur sasaran"
     },
     "lineEditor": {
       "edit": "Edit tautan",
-      "exit": "Keluar editor garis"
+      "editArrow": "Ubah Panah"
     },
     "elementLock": {
-      "lock": "Kunci",
+      "lock": "Kuncikan",
       "unlock": "Lepas",
-      "lockAll": "Kunci semua",
+      "lockAll": "Kuncikan semua",
       "unlockAll": "Lepas semua"
     },
     "statusPublished": "Telah terbit",
     "sidebarLock": "Biarkan sidebar tetap terbuka",
-    "selectAllElementsInFrame": "Pilih semua elemen di bingkai",
-    "removeAllElementsFromFrame": "Hapus semua elemen dari bingkai",
+    "selectAllElementsInFrame": "Pilih semua unsur di bingkai",
+    "removeAllElementsFromFrame": "Hapus semua unsur dari bingkai",
     "eyeDropper": "Ambil warna dari kanvas",
-    "textToDiagram": "",
-    "prompt": ""
+    "textToDiagram": "Teks menjadi diagram",
+    "prompt": "Prompt",
+    "followUs": "Ikuti kami",
+    "discordChat": "Obrolan Discord",
+    "zoomToFitViewport": "Perbesar agar sesuai dengan viewport",
+    "zoomToFitSelection": "Memperbesar agar sesuai dengan pilihan",
+    "zoomToFit": "Memperbesar agar unsur pas semua",
+    "installPWA": "Install Excalidraw secara lokal (PWA)",
+    "autoResize": "Mengaktifkan pengubahan ukuran teks secara otomatis",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "Salin tautan ke objek",
+    "linkToElement": "Taut ke objek",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "Taut ke objek",
+    "desc": "Pencet bentuk pada kanvas atau tempel tautan.",
+    "notFound": "Objek tertaut tidak ditemukan di kanvas."
   },
   "library": {
     "noItems": "Belum ada item yang ditambahkan...",
     "hint_emptyLibrary": "Pilih item pada kanvas untuk menambahkan nya di sini, atau pasang pustaka dari gudang di bawah ini.",
     "hint_emptyPrivateLibrary": "Pilih item pada kanvas untuk menambahkan nya di sini."
+  },
+  "search": {
+    "title": "Temukan di kanvas",
+    "noMatch": "Tidak ada kecocokan yang ditemukan...",
+    "singleResult": "hasil",
+    "multipleResults": "semua hasil",
+    "placeholder": "Temukan teks di kanvas..."
   },
   "buttons": {
     "clearReset": "Setel Ulang Kanvas",
@@ -151,6 +190,7 @@
     "exportImage": "Ekspor gambar...",
     "export": "Simpan ke...",
     "copyToClipboard": "Salin ke Papan Klip",
+    "copyLink": "Salin tautan",
     "save": "Simpan ke file sekarang",
     "saveAs": "Simpan sebagai",
     "load": "Buka",
@@ -163,7 +203,7 @@
     "resetZoom": "Reset Pembesaran",
     "menu": "Menu",
     "done": "Selesai",
-    "edit": "Edit",
+    "edit": "Sunting",
     "undo": "Urungkan",
     "redo": "Ulangi",
     "resetLibrary": "Reset pustaka",
@@ -171,17 +211,18 @@
     "fullScreen": "Layar penuh",
     "darkMode": "Mode gelap",
     "lightMode": "Mode terang",
+    "systemMode": "Mode sistem",
     "zenMode": "Mode zen",
-    "objectsSnapMode": "",
+    "objectsSnapMode": "Snap to objects",
     "exitZenMode": "Keluar dari mode zen",
     "cancel": "Batal",
     "clear": "Hapus",
     "remove": "Hapus",
-    "embed": "",
+    "embed": "Mati/nyala penyematan",
     "publishLibrary": "Terbitkan",
     "submit": "Kirimkan",
     "confirm": "Konfirmasi",
-    "embeddableInteractionButton": ""
+    "embeddableInteractionButton": "Pencet untuk interaksi"
   },
   "alerts": {
     "clearReset": "Ini akan menghapus semua yang ada dikanvas. Apakah kamu yakin ?",
@@ -198,7 +239,7 @@
     "errorAddingToLibrary": "Tidak dapat menambahkan item ke pustaka",
     "errorRemovingFromLibrary": "Tidak dapat membuang item dari pustaka",
     "confirmAddLibrary": "Ini akan menambahkan {{numShapes}} bentuk ke pustaka Anda. Anda yakin?",
-    "imageDoesNotContainScene": "Gambar ini sepertinya tidak terdapat data pemandangan. Sudahkah Anda mengaktifkan penyematan pemandangan ketika ekspor?",
+    "imageDoesNotContainScene": "Gambar ini tampaknya tidak ada data pemandangan. Apakah penyematan pemandangan sudah diaktifkan saat ekspor?",
     "cannotRestoreFromImage": "Pemandangan tidak dapat dipulihkan dari file gambar ini",
     "invalidSceneUrl": "Tidak dapat impor pemandangan dari URL. Kemungkinan URL itu rusak atau tidak berisi data JSON Excalidraw yang valid.",
     "resetLibrary": "Ini akan menghapus pustaka Anda. Anda yakin?",
@@ -211,27 +252,27 @@
     "imageInsertError": "Tidak dapat menyisipkan gambar. Coba lagi nanti...",
     "fileTooBig": "File terlalu besar. Ukuran maksimum yang dibolehkan {{maxSize}}.",
     "svgImageInsertError": "Tidak dapat menyisipkan gambar SVG. Markup SVG sepertinya tidak valid.",
-    "failedToFetchImage": "",
-    "invalidSVGString": "SVG tidak valid.",
+    "failedToFetchImage": "Gagal memuat gambar.",
     "cannotResolveCollabServer": "Tidak dapat terhubung ke server kolab. Muat ulang laman dan coba lagi.",
     "importLibraryError": "Tidak dapat memuat pustaka",
+    "saveLibraryError": "Tidak dapat menyimpan library ke penyimpanan. Simpanlah library Anda ke file secara lokal untuk memastikan Anda tidak kehilangan perubahan.",
     "collabSaveFailed": "Tidak dapat menyimpan ke dalam basis data server. Jika masih berlanjut, Anda sebaiknya simpan berkas Anda secara lokal untuk memastikan pekerjaan Anda tidak hilang.",
     "collabSaveFailed_sizeExceeded": "Tidak dapat menyimpan ke dalam basis data server, tampaknya ukuran kanvas terlalu besar. Anda sebaiknya simpan berkas Anda secara lokal untuk memastikan pekerjaan Anda tidak hilang.",
-    "imageToolNotSupported": "",
+    "imageToolNotSupported": "Gambar dinonaktifkan.",
     "brave_measure_text_error": {
       "line1": "Sepertinya Anda menggunkan peramban Brave dengan pengaturan <bold>Blokir Fingerprinting yang Agresif</bold> diaktifkan.",
-      "line2": "Ini dapat membuat <bold>Elemen Teks</bold> dalam gambar mu.",
+      "line2": "Ini dapat merusak <bold>Unsur Teks</bold> pada gambarmu.",
       "line3": "Kami sangat menyarankan mematikan pengaturan ini. Anda dapat mengikuti <link>langkah-langkah ini</link> untuk melakukannya.",
-      "line4": "Jika mematikan pengaturan ini tidak membenarkan tampilan elemen teks, mohon buka\n<issueLink>isu</issueLink> di GitHub kami, atau chat kami di <discordLink>Discord</discordLink>"
+      "line4": "Jika mematikan pengaturan ini tidak memperbaiki unsur teks, silakan buka <issueLink>issue</issueLink> di GitHub kami, atau hubungi kami di <discordLink>Discord</discordLink>"
     },
     "libraryElementTypeError": {
-      "embeddable": "",
-      "iframe": "",
-      "image": ""
+      "embeddable": "Unsur bisa semat tidak dapat ditambah ke pustaka.",
+      "iframe": "Unsur IFrame tidak dapat ditambah ke pustaka.",
+      "image": "Dukungan menambah gambar ke pustaka segera hadir!"
     },
-    "asyncPasteFailedOnRead": "",
-    "asyncPasteFailedOnParse": "",
-    "copyToSystemClipboardFailed": ""
+    "asyncPasteFailedOnRead": "Tidak dapat menempel (tidak dapat membaca dari papan klip sistem).",
+    "asyncPasteFailedOnParse": "Tidak dapat menempel.",
+    "copyToSystemClipboardFailed": "Tidak bisa menyalin ke papan klip."
   },
   "toolBar": {
     "selection": "Pilihan",
@@ -249,13 +290,28 @@
     "link": "Tambah/Perbarui tautan untuk bentuk yang dipilih",
     "eraser": "Penghapus",
     "frame": "Alat bingkai",
-    "magicframe": "",
-    "embeddable": "",
-    "laser": "",
+    "magicframe": "Wireframe menjadi code",
+    "embeddable": "Sematan Web",
+    "laser": "Penunjuk laser",
     "hand": "Tangan (alat panning)",
     "extraTools": "Alat-alat lain",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "mermaidToExcalidraw": "Mermaid menjadi Excalidraw"
+  },
+  "element": {
+    "rectangle": "Persegi Panjang",
+    "diamond": "Wajik",
+    "ellipse": "Elips",
+    "arrow": "Panah",
+    "line": "Garis",
+    "freedraw": "Gambar bebas",
+    "text": "Teks",
+    "image": "Gambar",
+    "group": "Kelompok",
+    "frame": "Bingkai",
+    "magicframe": "Wireframe-kan code",
+    "embeddable": "Sematan Web",
+    "selection": "Seleksi",
+    "iframe": "IFrame"
   },
   "headings": {
     "canvasActions": "Opsi Kanvas",
@@ -263,33 +319,38 @@
     "shapes": "Bentuk"
   },
   "hints": {
+    "dismissSearch": "Tekan Esc untuk batal cari",
     "canvasPanning": "Untuk memindahkan kanvas, tekan roda mouse atau spacebar sambil menyeret, atau menggunakan alat tangan",
-    "linearElement": "Klik untuk memulai banyak poin, seret untuk satu baris",
+    "linearElement": "Pencet untuk membuat titik-titik, seret untuk satu garis",
+    "arrowTool": "Pencet untuk membuat titik-titik, seret untuk satu garis. Tekan {{arrowShortcut}} lagi untuk ganti jenis arah.",
     "freeDraw": "Klik dan seret, lepaskan jika Anda selesai",
     "text": "Tip: Anda juga dapat menambahkan teks dengan klik ganda di mana saja dengan alat pemilihan",
-    "embeddable": "",
+    "embeddable": "Pencet-seret untuk membuat sematan situs",
     "text_selected": "Klik ganda atau tekan ENTER untuk edit teks",
     "text_editing": "Tekan Escape atau CtrlAtauCmd+ENTER untuk selesai mengedit",
-    "linearElementMulti": "Klik pada titik akhir atau tekan Escape atau Enter untuk menyelesaikan",
+    "linearElementMulti": "Pencet titik terakhir; atau tekan Esc atau Enter untuk sudahi",
     "lockAngle": "Anda dapat menjaga sudut dengan menahan SHIFT",
     "resize": "Anda dapat menjaga proposi dengan menekan SHIFT sambil mengubah ukuran,\ntekan AlT untuk mengubah ukuran dari tengah",
     "resizeImage": "Anda dapat mengubah secara bebas dengan menekan SHIFT,\nTekan ALT untuk mengubah dari tengah",
     "rotate": "Anda dapat menjaga sudut dengan menahan SHIFT sambil memutar",
     "lineEditor_info": "Tekan Ctrl/Cmd dan Dobel-klik atau tekan Ctrl/Cmd +Enter untuk mengedit poin",
     "lineEditor_pointSelected": "Tekan Delete untuk menghapus titik, Ctrl/Cmd + D untuk menduplikasi, atau seret untuk memindahkan",
-    "lineEditor_nothingSelected": "Pilih titik untuk mengedit (tekan SHIFT untuk pilih banyak), atau tekan Alt dan klik untuk tambahkan titik baru",
+    "lineEditor_nothingSelected": "Pilih titik untuk diubah (tahan Shift untuk pilih banyak),\natau tahan Alt dan pencet untuk tambah titik",
     "placeImage": "Klik untuk tempatkan gambar, atau klik dan jatuhkan untuk tetapkan ukuran secara manual",
     "publishLibrary": "Terbitkan pustaka Anda",
-    "bindTextToElement": "Tekan enter untuk tambahkan teks",
+    "bindTextToElement": "Tekan Enter untuk tambah teks",
+    "createFlowchart": "Tahan Ctrl/Cmd dan tombol arah untuk ada bagan alir",
     "deepBoxSelect": "Tekan Ctrl atau Cmd untuk memilih yang di dalam, dan mencegah penggeseran",
-    "eraserRevert": "Tahan Alt untuk mengembalikan elemen yang ditandai untuk dihapus",
+    "eraserRevert": "Tahan Alt untuk batal menandai unsur ingin dihapus",
     "firefox_clipboard_write": "Fitur ini dapat diaktifkan melalui pengaturan flag \"dom.events.asyncClipboard.clipboardItem\" ke \"true\". Untuk mengganti flag di Firefox, pergi ke laman \"about:config\".",
-    "disableSnapping": ""
+    "disableSnapping": "Tahan Ctrl/Cmd untuk lepas cantol",
+    "enterCropEditor": "Pencet 2x gambar atau tekan Enter untuk memangkas gambar",
+    "leaveCropEditor": "Pencet bagian luar gambar atau tekan Enter atau Esc untuk sudahi pangkas"
   },
   "canvasError": {
     "cannotShowPreview": "Tidak dapat menampilkan pratinjau",
     "canvasTooBig": "Kanvas mungkin terlalu besar.",
-    "canvasTooBigTip": "Tip: coba pindahkan elemen-terjauh lebih dekat bersama."
+    "canvasTooBigTip": "Kiat: coba pindahkan unsur terjauh lebih dekat lagi."
   },
   "errorSplash": {
     "headingMain": "Mengalami sebuah kesalahan. Cobalah <button>muat ulang halaman.</button>",
@@ -299,9 +360,12 @@
     "openIssueMessage": "Kami sangat berhati-hati untuk tidak menyertakan informasi pemandangan Anda pada kesalahan. Jika pemandangan Anda tidak bersifat pribadi, mohon pertimbangkan menindak lanjut pada <button>pelacak bug.</button> Mohon sertakan informasi dibawah ini dengan menyalin dan menempelkan di Github issue.",
     "sceneContent": "Pemandangan konten:"
   },
+  "shareDialog": {
+    "or": "Atau"
+  },
   "roomDialog": {
-    "desc_intro": "Anda dapat mengundang orang ke pemandangan Anda saat ini untuk berkolaborasi dengan Anda.",
-    "desc_privacy": "Jangan khawatir, sesi menggunakan enkripsi end-to-end, sehingga apa pun yang Anda gambar akan tetap bersifat pribadi. Bahkan server kami tidak dapat melihat apa yang Anda lakukan.",
+    "desc_intro": "Ajak orang-orang ikut menggambar denganmu.",
+    "desc_privacy": "Tenang, sesi ini terenkripsi ujung-ke-ujung, sepenuhnya privat. Bahkan gambarmu tidak terlihat server kami.",
     "button_startSession": "Mulai sesi",
     "button_stopSession": "Hentikan sesi",
     "desc_inProgressIntro": "Sesi kolaborasi sedang berlangsung sekarang.",
@@ -328,12 +392,14 @@
     "click": "klik",
     "deepSelect": "Pilih dalam",
     "deepBoxSelect": "Pilih dalam kotak, dan cegah penggeseran",
+    "createFlowchart": "Buat bagan alir dari unsur generik",
+    "navigateFlowchart": "Menavigasi bagan alir",
     "curvedArrow": "Panah lengkung",
     "curvedLine": "Garis lengkung",
     "documentation": "Dokumentasi",
     "doubleClick": "klik-ganda",
     "drag": "seret",
-    "editor": "Editor",
+    "editor": "Penyunting",
     "editLineArrowPoints": "Edit titik garis/panah",
     "editText": "Edit teks / tambah label",
     "github": "Menemukan masalah? Kirimkan",
@@ -346,11 +412,13 @@
     "textNewLine": "Tambahkan garis baru (editor teks)",
     "title": "Bantuan",
     "view": "Tampilan",
-    "zoomToFit": "Perbesar agar sesuai dengan semua elemen",
+    "zoomToFit": "Memperbesar agar unsur pas semua",
     "zoomToSelection": "Perbesar ke seleksi",
-    "toggleElementLock": "Kunci/lepas seleksi",
+    "toggleElementLock": "Lepas/kuncikan seleksi",
     "movePageUpDown": "Pindah halaman keatas/kebawah",
-    "movePageLeftRight": "Pindah halaman kebawah/keatas"
+    "movePageLeftRight": "Pindah halaman kebawah/keatas",
+    "cropStart": "Pangkas gambar",
+    "cropFinish": "Sudahi pangkas gambar"
   },
   "clearCanvasDialog": {
     "title": "Hapus kanvas"
@@ -402,7 +470,7 @@
       "padding": "Lapisan"
     },
     "tooltip": {
-      "embedScene": "Data pemandangan akan disimpan dalam file PNG/SVG yang diekspor sehingga pemandangan itu dapat dipulihkan darinya.\nAkan membesarkan ukuran file yang diekspor."
+      "embedScene": "Data pemandangan akan diekspor ke bentuk PNG/SVG sehingga pemandangan dapat dipulihkan darinya.\nUkuran berkas ekspor akan membesar."
     },
     "title": {
       "exportToPng": "Ekspor ke PNG",
@@ -421,14 +489,16 @@
   },
   "stats": {
     "angle": "Sudut",
-    "element": "Elemen",
-    "elements": "Elemen",
+    "shapes": "Bentuk",
     "height": "Tinggi",
     "scene": "Pemandangan",
     "selected": "Terpilih",
     "storage": "Penyimpanan",
-    "title": "Statistik untuk nerd",
-    "total": "Total",
+    "fullTitle": "Properti Kanvas & Bentuk",
+    "title": "Properti",
+    "generalStats": "Umum",
+    "elementProperties": "Properti bentuk",
+    "total": "Jumlah",
     "version": "Versi",
     "versionCopy": "Klik untuk salin",
     "versionNotAvailable": "Versi tidak tersedia",
@@ -439,13 +509,15 @@
     "copyStyles": "Gaya tersalin.",
     "copyToClipboard": "Tersalin ke papan klip.",
     "copyToClipboardAsPng": "Tersalin {{exportSelection}} ke clipboard sebagai PNG\n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "{{exportSelection}} tersalin ke papan klip sebagai SVG\n({{exportColorScheme}})",
     "fileSaved": "File tersimpan.",
     "fileSavedToFilename": "Disimpan ke {filename}",
     "canvas": "kanvas",
     "selection": "pilihan",
-    "pasteAsSingleElement": "Gunakan {{shortcut}} untuk menempelkan sebagai satu elemen,\natau tempelkan ke teks editor yang ada",
-    "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "pasteAsSingleElement": "Gunakan {{shortcut}} untuk menempel unsur tunggal,\natau tempel ke penyunting teks",
+    "unableToEmbed": "Menyemat URL ini saat ini tidak boleh. Ajukan \"Issue\" di GitHub untuk meminta URL masuk daftar putih",
+    "unrecognizedLinkFormat": "Tautan yang disematkan tidak sesuai dengan syarat format. Coba tempel untaian 'embed' (semat) yang disediakan situs sumber",
+    "elementLinkCopied": "Tautan disalin ke papan klip"
   },
   "colors": {
     "transparent": "Transparan",
@@ -516,10 +588,46 @@
     }
   },
   "mermaid": {
-    "title": "",
-    "button": "",
-    "description": "",
-    "syntax": "",
-    "preview": ""
+    "title": "Mermaid menjadi Excalidraw",
+    "button": "Sisipkan",
+    "description": "Saat ini hanya <flowchartLink>Flowchart</flowchartLink>, <sequenceLink>Sekuen, </sequenceLink>, dan <classLink>Kelas</classLink>Diagram yang didukung. Jenis lainnya akan dirender sebagai gambar di Excalidraw.",
+    "syntax": "Syntax Mermaid",
+    "preview": "Pratinjau"
+  },
+  "quickSearch": {
+    "placeholder": "Pencarian Cepat"
+  },
+  "fontList": {
+    "badge": {
+      "old": "lebih lama"
+    },
+    "sceneFonts": "Pada layar ini",
+    "availableFonts": "Font yang tersedia",
+    "empty": "Tidak ada font yang ditemukan"
+  },
+  "userList": {
+    "empty": "Tidak ada pengguna yang ditemukan",
+    "hint": {
+      "text": "Klik pada pengguna untuk mengikuti",
+      "followStatus": "Anda saat ini mengikuti pengguna ini",
+      "inCall": "Pengguna sedang dalam panggilan telephon",
+      "micMuted": "Mikrofon user sedang dimatikan",
+      "isSpeaking": "Pengguna sedang berbicara"
+    }
+  },
+  "commandPalette": {
+    "title": "Daftar Perintah",
+    "shortcuts": {
+      "select": "Pilih",
+      "confirm": "Konfirmasi",
+      "close": "Keluar"
+    },
+    "recents": "Baru digunakan",
+    "search": {
+      "placeholder": "Cari menu, perintah dan temukan hidden gems",
+      "noMatch": "Tidak ada perintah yang sesuai..."
+    },
+    "itemNotAvailable": "Perintah tidak tersedia...",
+    "shortcutHint": "Untuk palet perintah, gunakan {{shortcut}}"
   }
 }

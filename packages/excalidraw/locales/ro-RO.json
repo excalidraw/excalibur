@@ -21,7 +21,9 @@
     "copyStyles": "Copiere stiluri",
     "pasteStyles": "Lipire stiluri",
     "stroke": "Contur",
+    "changeStroke": "Modificare culoare contur",
     "background": "Fundal",
+    "changeBackground": "Modificare culoare de contur",
     "fill": "Umplere",
     "strokeWidth": "Lățimea conturului",
     "strokeStyle": "Stilul conturului",
@@ -44,6 +46,14 @@
     "arrowhead_triangle_outline": "Triunghi (contur)",
     "arrowhead_diamond": "Romb",
     "arrowhead_diamond_outline": "Romb (contur)",
+    "arrowhead_crowfoot_many": "Model entitate-asociere (multe)",
+    "arrowhead_crowfoot_one": "Model entitate-asociere (unul)",
+    "arrowhead_crowfoot_one_or_many": "Model entitate-asociere (unul sau multe)",
+    "more_options": "Mai multe opțiuni",
+    "arrowtypes": "Tip de săgeată",
+    "arrowtype_sharp": "Săgeată ascuțită",
+    "arrowtype_round": "Săgeată curbată",
+    "arrowtype_elbowed": "Săgeată arcuită",
     "fontSize": "Dimensiune font",
     "fontFamily": "Familia de fonturi",
     "addWatermark": "Adaugă „Realizat cu Excalidraw”",
@@ -72,6 +82,7 @@
     "canvasColors": "Folosite pe pânză",
     "canvasBackground": "Fundalul pânzei",
     "drawingCanvas": "Pânză pentru desenat",
+    "clearCanvas": "Ștergere pânză",
     "layers": "Straturi",
     "actions": "Acțiuni",
     "language": "Limbă",
@@ -84,12 +95,13 @@
     "group": "Grupare selecție",
     "ungroup": "Degrupare selecție",
     "collaborators": "Colaboratori",
-    "showGrid": "Afișare grilă",
+    "toggleGrid": "Comutare grilă",
     "addToLibrary": "Adăugare la bibliotecă",
     "removeFromLibrary": "Eliminare din bibliotecă",
     "libraryLoadingMessage": "Se încarcă biblioteca…",
     "libraries": "Răsfoiește bibliotecile",
     "loadingScene": "Se încarcă scena…",
+    "loadScene": "Încărcare scenă din fișier",
     "align": "Aliniere",
     "alignTop": "Aliniere sus",
     "alignBottom": "Aliniere jos",
@@ -105,7 +117,9 @@
     "share": "Distribuie",
     "showStroke": "Afișare selector culoare contur",
     "showBackground": "Afișare selector culoare fundal",
-    "toggleTheme": "Comutare temă",
+    "showFonts": "Afișare selector font",
+    "toggleTheme": "Comutare temă luminoasă/întunecată",
+    "theme": "Temă",
     "personalLib": "Biblioteca personală",
     "excalidrawLib": "Biblioteca Excalidraw",
     "decreaseFontSize": "Micșorează dimensiunea fontului",
@@ -115,16 +129,17 @@
     "createContainerFromText": "Încadrare text într-un container",
     "link": {
       "edit": "Editare URL",
-      "editEmbed": "Editare URL și încorporare",
-      "create": "Creare URL",
-      "createEmbed": "Creare URL și încorporare",
+      "editEmbed": "Editare link încorporabil",
+      "create": "Adăugare link",
       "label": "URL",
       "labelEmbed": "URL și încorporare",
-      "empty": "Nu este setat niciun URL"
+      "empty": "Nu este setat niciun URL",
+      "hint": "Tastează-ți sau lipsește-ți linkul aici",
+      "goToElement": "Accesează elementul țintă"
     },
     "lineEditor": {
       "edit": "Editare linie",
-      "exit": "Părăsire editor de linii"
+      "editArrow": "Editare săgeată"
     },
     "elementLock": {
       "lock": "Blocare",
@@ -134,16 +149,40 @@
     },
     "statusPublished": "Publicat",
     "sidebarLock": "Păstrează deschisă bara laterală",
-    "selectAllElementsInFrame": "",
-    "removeAllElementsFromFrame": "",
+    "selectAllElementsInFrame": "Selectează toate elementele din cadru",
+    "removeAllElementsFromFrame": "Elimină toate elementele din cadru",
     "eyeDropper": "Alegere culoare din pânză",
     "textToDiagram": "Text la diagramă",
-    "prompt": "Solicitare"
+    "prompt": "Mesaj sistem",
+    "followUs": "Urmărește-ne",
+    "discordChat": "Conversații pe Discord",
+    "zoomToFitViewport": "Transfocare pentru a se potrivi în poarta de vizualizare",
+    "zoomToFitSelection": "Transfocare pentru a cuprinde selecția",
+    "zoomToFit": "Transfocare pentru a cuprinde toate elementele",
+    "installPWA": "Instalează Excalidraw la nivel local (PWA)",
+    "autoResize": "Activare autoredimensionare text",
+    "imageCropping": "Decupare imagine",
+    "unCroppedDimension": "Dimensiune nedecupată",
+    "copyElementLink": "Copiere link către obiect",
+    "linkToElement": "Link către obiect",
+    "wrapSelectionInFrame": "Încapsulare selecție în cadru"
+  },
+  "elementLink": {
+    "title": "Link către obiect",
+    "desc": "Dă clic pe o formă pe pânză sau lipește un link.",
+    "notFound": "Obiectul linkuit nu a fost găsit pe pânză."
   },
   "library": {
     "noItems": "Niciun element adăugat încă...",
     "hint_emptyLibrary": "Selectează un element de pe pânză pentru a-l adăuga aici sau instalează o bibliotecă din depozitul public, de mai jos.",
     "hint_emptyPrivateLibrary": "Selectează un element de pe pânză pentru a-l adăuga aici."
+  },
+  "search": {
+    "title": "Găsire pe pânză",
+    "noMatch": "Nicio potrivire găsită...",
+    "singleResult": "rezultat",
+    "multipleResults": "rezultate",
+    "placeholder": "Găsire text pe pânză..."
   },
   "buttons": {
     "clearReset": "Resetare pânză",
@@ -151,6 +190,7 @@
     "exportImage": "Exportare imagine...",
     "export": "Salvare în...",
     "copyToClipboard": "Copiere în memoria temporară",
+    "copyLink": "Copiere link",
     "save": "Salvare în fișierul curent",
     "saveAs": "Salvare ca",
     "load": "Deschidere",
@@ -163,7 +203,7 @@
     "resetZoom": "Resetare transfocare",
     "menu": "Meniu",
     "done": "Efectuat",
-    "edit": "Edit",
+    "edit": "Editare",
     "undo": "Anulare",
     "redo": "Refacere",
     "resetLibrary": "Resetare bibliotecă",
@@ -171,6 +211,7 @@
     "fullScreen": "Ecran complet",
     "darkMode": "Mod întunecat",
     "lightMode": "Mod luminos",
+    "systemMode": "Mod de sistem",
     "zenMode": "Mod zen",
     "objectsSnapMode": "Ancorare la obiecte",
     "exitZenMode": "Ieșire din modul zen",
@@ -212,9 +253,9 @@
     "fileTooBig": "Fișierul este prea mare. Dimensiunea maximă permisă este de {{maxSize}}.",
     "svgImageInsertError": "Imaginea SVG nu a putut fi introdus. Marcajul SVG pare invalid.",
     "failedToFetchImage": "Preluarea imaginii a eșuat.",
-    "invalidSVGString": "SVG invalid.",
     "cannotResolveCollabServer": "Nu a putut fi realizată conexiunea la serverul de colaborare. Reîncarcă pagina și încearcă din nou.",
     "importLibraryError": "Biblioteca nu a putut fi încărcată",
+    "saveLibraryError": "Nu s-a putut salva biblioteca în spațiul de stocare. Salvează-ți biblioteca într-un fișier local pentru a te asigura că nu pierzi modificările.",
     "collabSaveFailed": "Nu s-a putut salva în baza de date la nivel de server. Dacă problemele persistă, ar trebui să salvezi fișierul la nivel local pentru a te asigura că nu îți pierzi munca.",
     "collabSaveFailed_sizeExceeded": "Nu s-a putut salva în baza de date la nivel de server, întrucât se pare că pânza este prea mare. Ar trebui să salvezi fișierul la nivel local pentru a te asigura că nu îți pierzi munca.",
     "imageToolNotSupported": "Imaginile sunt dezactivate.",
@@ -246,16 +287,31 @@
     "library": "Bibliotecă",
     "lock": "Menține activ instrumentul selectat după desenare",
     "penMode": "Mod stilou – împiedică atingerea",
-    "link": "Adăugare/actualizare URL pentru forma selectată",
+    "link": "Adăugare/actualizare link pentru o formă selectată",
     "eraser": "Radieră",
-    "frame": "",
+    "frame": "Instrument cadru",
     "magicframe": "Structură-de-fire la cod",
     "embeddable": "Încorporare web",
     "laser": "Indicator laser",
     "hand": "Mână (instrument de panoramare)",
-    "extraTools": "",
-    "mermaidToExcalidraw": "Mermaid la Excalidraw",
-    "magicSettings": "Setări IA"
+    "extraTools": "Mai multe instrumente",
+    "mermaidToExcalidraw": "Mermaid la Excalidraw"
+  },
+  "element": {
+    "rectangle": "Dreptunghi",
+    "diamond": "Romb",
+    "ellipse": "Elipsă",
+    "arrow": "Săgeată",
+    "line": "Linie",
+    "freedraw": "Desenare liberă",
+    "text": "Text",
+    "image": "Imagine",
+    "group": "Grup",
+    "frame": "Cadru",
+    "magicframe": "Structură-de-fire la cod",
+    "embeddable": "Încorporare web",
+    "selection": "Selecție",
+    "iframe": "iFrame"
   },
   "headings": {
     "canvasActions": "Acțiuni pentru pânză",
@@ -263,8 +319,10 @@
     "shapes": "Forme"
   },
   "hints": {
+    "dismissSearch": "Apasă tasta Escape pentru a închide căutarea",
     "canvasPanning": "Pentru a muta pânză, ține apăsată rotița mausului sau bara de spațiu sau folosește instrumentul în formă de mână",
     "linearElement": "Dă clic pentru a crea mai multe puncte, glisează pentru a forma o singură linie",
+    "arrowTool": "Dă clic pentru a crea mai multe puncte, glisează pentru a forma o singură linie. Apasă {{arrowShortcut}} din nou pentru a schimba tipul săgeții.",
     "freeDraw": "Dă clic pe pânză și glisează cursorul, apoi eliberează-l când ai terminat",
     "text": "Sfat: poți adăuga text și dând dublu clic oriunde cu instrumentul de selecție",
     "embeddable": "Dă clic și trage pentru a crea un cod de încorporare de pagină web",
@@ -281,10 +339,13 @@
     "placeImage": "Dă clic pentru a poziționa imaginea sau dă clic și glisează pentru a seta manual dimensiunea imaginii",
     "publishLibrary": "Publică propria bibliotecă",
     "bindTextToElement": "Apasă tasta Enter pentru a adăuga text",
+    "createFlowchart": "Ține apăsată tasta CtrlOrCmd și tasta săgeată pentru a crea o organigramă",
     "deepBoxSelect": "Ține apăsată tasta Ctrl sau Cmd pentru a efectua selectarea de adâncime și pentru a preveni glisarea",
     "eraserRevert": "Ține apăsată tasta Alt pentru a anula elementele marcate pentru ștergere",
     "firefox_clipboard_write": "Această caracteristică poate fi probabil activată prin setarea preferinței „dom.events.asyncClipboard.clipboardItem” ca „true”. Pentru a schimba preferințele navigatorului în Firefox, accesează pagina „about:config”.",
-    "disableSnapping": "Ține apăsat CtrlOrCmd pentru a dezactiva ancorarea"
+    "disableSnapping": "Ține apăsat CtrlOrCmd pentru a dezactiva ancorarea",
+    "enterCropEditor": "Dă dublu clic pe imagine sau apasă ENTER pentru a decupa imaginea",
+    "leaveCropEditor": "Dă clic în afara imaginii sau apasă ENTER sau ESCAPE pentru a finaliza decuparea"
   },
   "canvasError": {
     "cannotShowPreview": "Nu se poate afișa previzualizarea",
@@ -299,9 +360,12 @@
     "openIssueMessage": "Am luat măsuri de precauție pentru a nu include informații despre scenă în eroare. Dacă scena nu este privată, oferă-ne mai multe informații în <button>monitorul nostru pentru erori</button>. Include informațiile de mai jos copiindu-le și lipindu-le în tichetul cu problemă de pe GitHub.",
     "sceneContent": "Conținutul scenei:"
   },
+  "shareDialog": {
+    "or": "Sau"
+  },
   "roomDialog": {
-    "desc_intro": "Poți invita alte persoane pentru a colabora la scena actuală.",
-    "desc_privacy": "Nu te îngrijora. Sesiunea utilizează criptarea integrală, astfel încât orice desenezi va rămâne privat. Nici măcar serverul nostru nu va putea vedea pe ce ai lucrat.",
+    "desc_intro": "Invită persoane să colaboreze la desenul tău.",
+    "desc_privacy": "Nu-ți face griji, sesiunea este criptată integral și complet privată. Nici măcar serverul nostru nu poate vedea ce desenezi.",
     "button_startSession": "Pornire sesiune",
     "button_stopSession": "Oprire sesiune",
     "desc_inProgressIntro": "Sesiunea de colaborare în direct este în curs de desfășurare.",
@@ -328,6 +392,8 @@
     "click": "clic",
     "deepSelect": "Selectare de adâncime",
     "deepBoxSelect": "Selectare de adâncime în casetă și prevenire glisare",
+    "createFlowchart": "Crează o organigramă dintr-un element generic",
+    "navigateFlowchart": "Navighează o organigramă",
     "curvedArrow": "Săgeată curbată",
     "curvedLine": "Linie curbată",
     "documentation": "Documentație",
@@ -346,11 +412,13 @@
     "textNewLine": "Adaugă o linie nouă (editor de text)",
     "title": "Ajutor",
     "view": "Vizualizare",
-    "zoomToFit": "Transfocare pentru a cuprinde totul",
+    "zoomToFit": "Transfocare pentru a cuprinde toate elementele",
     "zoomToSelection": "Transfocare la selecție",
     "toggleElementLock": "Blocare/deblocare selecție",
     "movePageUpDown": "Deplasare pagină sus/jos",
-    "movePageLeftRight": "Deplasare pagină stânga/dreapta"
+    "movePageLeftRight": "Deplasare pagină stânga/dreapta",
+    "cropStart": "Decupare imagine",
+    "cropFinish": "Finalizare decupare imagine"
   },
   "clearCanvasDialog": {
     "title": "Ștergere pânză"
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "Unghi",
-    "element": "Element",
-    "elements": "Elemente",
+    "shapes": "Forme",
     "height": "Înălțime",
     "scene": "Scenă",
     "selected": "Selectate",
     "storage": "Stocare",
-    "title": "Statistici pentru pasionați",
+    "fullTitle": "Proprietăți pentru pânză și forme",
+    "title": "Proprietăți",
+    "generalStats": "General",
+    "elementProperties": "Proprietăți pentru forme",
     "total": "Total",
     "version": "Versiune",
     "versionCopy": "Clic pentru copiere",
@@ -439,13 +509,15 @@
     "copyStyles": "Stiluri copiate.",
     "copyToClipboard": "Copiat în memoria temporară.",
     "copyToClipboardAsPng": "S-a copiat {{exportSelection}} în memoria temporară sub formă de PNG\n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "S-a copiat {{exportSelection}} în memoria temporară sub formă de SVG\n({{exportColorScheme}})",
     "fileSaved": "Fișier salvat.",
     "fileSavedToFilename": "Salvat în {filename}",
     "canvas": "pânza",
     "selection": "selecția",
     "pasteAsSingleElement": "Folosește {{shortcut}} pentru a insera ca un singur element\nsau insera într-un editor de text existent",
     "unableToEmbed": "Încorporarea acestui URL nu este permisă momentan. Deschideți un tichet cu probleme pe GitHub pentru a solicita adăugarea acestui URL în lista albă",
-    "unrecognizedLinkFormat": "URL-ul pe care l-ai încorporat nu coincide cu formatul așteptat. Încearcă să lipești șirul „de încorporat” furnizat de pagina sursă"
+    "unrecognizedLinkFormat": "URL-ul pe care l-ai încorporat nu coincide cu formatul așteptat. Încearcă să lipești șirul „de încorporat” furnizat de pagina sursă",
+    "elementLinkCopied": "Link copiat în memoria temporară"
   },
   "colors": {
     "transparent": "Transparent",
@@ -521,5 +593,41 @@
     "description": "În prezent, numai <flowchartLink>Organigramele</flowchartLink>, <sequenceLink>Diagramele de secvență</sequenceLink> și <classLink>Diagramele de clasă</classLink> sunt acceptate. Celelalte tipuri vor fi redate ca imagine în Excalidraw.",
     "syntax": "Sintaxă Mermaid",
     "preview": "Previzualizare"
+  },
+  "quickSearch": {
+    "placeholder": "Căutare rapidă"
+  },
+  "fontList": {
+    "badge": {
+      "old": "vechi"
+    },
+    "sceneFonts": "În această scenă",
+    "availableFonts": "Fonturi disponibile",
+    "empty": "Niciun font găsit"
+  },
+  "userList": {
+    "empty": "Niciun utilizator găsit",
+    "hint": {
+      "text": "Dă clic pe un utilizator pentru a-l urmări",
+      "followStatus": "În prezent urmărești acest utilizator",
+      "inCall": "Utilizatorul este angajat într-un apel vocal",
+      "micMuted": "Microfonul utilizatorul este pus pe mut",
+      "isSpeaking": "Utilizatorul vorbește"
+    }
+  },
+  "commandPalette": {
+    "title": "Paletă de comenzi",
+    "shortcuts": {
+      "select": "Selectare",
+      "confirm": "Confirmare",
+      "close": "Închidere"
+    },
+    "recents": "Utilizate recent",
+    "search": {
+      "placeholder": "Caută meniuri, comenzi și descoperă nestemate ascunse",
+      "noMatch": "Nicio comandă potrivită..."
+    },
+    "itemNotAvailable": "Comanda nu este disponibilă...",
+    "shortcutHint": "Pentru paleta de comenzi, folosește {{shortcut}}"
   }
 }

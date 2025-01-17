@@ -21,7 +21,9 @@
     "copyStyles": "ចម្លងរចនាប័ទ្ម",
     "pasteStyles": "បិទភ្ជាប់រចនាប័ទ្ម",
     "stroke": "ខ្វាច់",
+    "changeStroke": "",
     "background": "ផ្ទៃខាងក្រោយ",
+    "changeBackground": "",
     "fill": "បំពេញ",
     "strokeWidth": "ទទឹងខ្វាច់",
     "strokeStyle": "រចនាប័ទ្មរបស់ខ្វាច់",
@@ -44,6 +46,14 @@
     "arrowhead_triangle_outline": "",
     "arrowhead_diamond": "",
     "arrowhead_diamond_outline": "",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "",
+    "arrowtype_sharp": "",
+    "arrowtype_round": "",
+    "arrowtype_elbowed": "",
     "fontSize": "ទំហំពុម្ពអក្សរ",
     "fontFamily": "ក្រុម​ពុម្ពអក្សរ",
     "addWatermark": "បន្ថែមវ៉ាត់ធើម៉ាក \"Made with Excalidraw\"",
@@ -55,8 +65,8 @@
     "large": "ធំ",
     "veryLarge": "ធំខ្លាំង",
     "solid": "តាន់",
-    "hachure": "Hachure",
-    "zigzag": "Zigzag",
+    "hachure": "",
+    "zigzag": "",
     "crossHatch": "បន្ទាត់ឆ្នូតៗ",
     "thin": "ស្តើង",
     "bold": "ដឹត",
@@ -72,6 +82,7 @@
     "canvasColors": "ប្រើលើបាវ",
     "canvasBackground": "ផ្ទៃខាងក្រោយបាវ",
     "drawingCanvas": "តំបន់គំនូរ",
+    "clearCanvas": "",
     "layers": "ស្រទាប់",
     "actions": "សកម្មភាព",
     "language": "ភាសា",
@@ -84,12 +95,13 @@
     "group": "ការជ្រើសរើសជាក្រុម",
     "ungroup": "បំបែកក្រុមការជ្រើសរើសជាក្រុម",
     "collaborators": "អ្នកសហការ",
-    "showGrid": "បង្ហាញក្រឡាចត្រង្គ",
+    "toggleGrid": "",
     "addToLibrary": "បន្ថែមទៅបណ្ណាល័យ",
     "removeFromLibrary": "លុបចេញពីបណ្ណាល័យ",
     "libraryLoadingMessage": "កំពុងផ្ទុកបណ្ណាល័យ...",
     "libraries": "រកមើលបណ្ណាល័យ",
     "loadingScene": "កំពុង​ផ្ទុក​ស៊ីន...",
+    "loadScene": "",
     "align": "តម្រឹម",
     "alignTop": "តម្រឹមផ្នែកខាងលើ",
     "alignBottom": "តម្រឹមផ្នែកខាងក្រោម",
@@ -105,7 +117,9 @@
     "share": "ចែករំលែក",
     "showStroke": "បង្ហាញឧបករណ៍ជ្រើសរើសពណ៌ខ្វាច់",
     "showBackground": "បង្ហាញឧបករណ៍ជ្រើសរើសពណ៌ផ្ទៃខាងក្រោយ",
-    "toggleTheme": "បិទ/បើកប្រធានបទ",
+    "showFonts": "",
+    "toggleTheme": "",
+    "theme": "",
     "personalLib": "បណ្ណាល័យផ្ទាល់ខ្លួន",
     "excalidrawLib": "បណ្ណាល័យ Excalidraw",
     "decreaseFontSize": "បន្ថយទំហំពុម្ពអក្សរ",
@@ -116,15 +130,16 @@
     "link": {
       "edit": "កែតំណភ្ជាប់",
       "editEmbed": "",
-      "create": "បង្កើតតំណភ្ជាប់",
-      "createEmbed": "",
+      "create": "",
       "label": "តំណ",
       "labelEmbed": "",
-      "empty": ""
+      "empty": "",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "កែសម្រួលបន្ទាត់",
-      "exit": "ចាកចេញពីការកែសម្រួលបន្ទាត់"
+      "editArrow": ""
     },
     "elementLock": {
       "lock": "ចាក់សោ",
@@ -138,12 +153,36 @@
     "removeAllElementsFromFrame": "",
     "eyeDropper": "",
     "textToDiagram": "",
-    "prompt": ""
+    "prompt": "",
+    "followUs": "",
+    "discordChat": "",
+    "zoomToFitViewport": "",
+    "zoomToFitSelection": "",
+    "zoomToFit": "",
+    "installPWA": "",
+    "autoResize": "",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "មិនទាន់មានធាតុបន្ថែមទេ...",
     "hint_emptyLibrary": "ជ្រើសរើសធាតុនៅលើបាវដើម្បីបន្ថែមវានៅទីនេះ ឬដំឡើងបណ្ណាល័យពីឃ្លាំងសាធារណៈខាងក្រោម។",
     "hint_emptyPrivateLibrary": "ជ្រើសរើសធាតុនៅលើបាវដើម្បីបន្ថែមវានៅទីនេះ"
+  },
+  "search": {
+    "title": "",
+    "noMatch": "",
+    "singleResult": "",
+    "multipleResults": "",
+    "placeholder": ""
   },
   "buttons": {
     "clearReset": "កំណត់បាវឡើងវិញ",
@@ -151,6 +190,7 @@
     "exportImage": "នាំរូបភាពចេញ",
     "export": "រក្សាទុក​នៅ...",
     "copyToClipboard": "ចម្លងទៅក្តារតម្បៀតខ្ទាស់",
+    "copyLink": "",
     "save": "រក្សាទុកទៅឯកសារបច្ចុប្បន្ន",
     "saveAs": "រក្សាទុក​ជា",
     "load": "បើក",
@@ -171,6 +211,7 @@
     "fullScreen": "ពេញ​អេក្រង់",
     "darkMode": "ម៉ូដងងឹត",
     "lightMode": "ម៉ូដភ្លឺ",
+    "systemMode": "",
     "zenMode": "ម៉ូត Zen",
     "objectsSnapMode": "",
     "exitZenMode": "ចេញពី zen​ ម៉ូត",
@@ -212,9 +253,9 @@
     "fileTooBig": "ឯកសារធំពេក។ ទំហំអតិបរមាដែលអនុញ្ញាតគឺ {{maxSize}}។",
     "svgImageInsertError": "មិនអាចបញ្ចូលរូបភាព SVG បានទេ។ ស្លាក SVG ហាក់ដូចជាមិនត្រឹមត្រូវ។",
     "failedToFetchImage": "",
-    "invalidSVGString": "SVG មិន​ត្រឹមត្រូវ។",
     "cannotResolveCollabServer": "មិនអាចភ្ជាប់ទៅម៉ាស៊ីនមេសហការផ្ទាល់បានទេ។ សូមផ្ទុកទំព័រឡើងវិញ ហើយព្យាយាមម្តងទៀត។",
     "importLibraryError": "មិនអាចផ្ទុកបណ្ណាល័យបានទេ។",
+    "saveLibraryError": "",
     "collabSaveFailed": "មិនអាចរក្សាទុកទៅម៉ាស៊ីនមេបានទេ។ ប្រសិនបើបញ្ហានៅតែបន្តកើតមាន​ អ្នកគួរតែរក្សាទុកឯកសាររបស់អ្នកនៅលើកុំព្យូទ័ររបស់អ្នកសិន ដើម្បីធានាថាការងាររបស់អ្នកមិនបាត់បង់។",
     "collabSaveFailed_sizeExceeded": "មិនអាចរក្សាទុកទៅម៉ាស៊ីនមេបានទេ, ផ្ទាំងបាវហាក់ដូចជាធំពេក។ អ្នកគួរតែរក្សាទុកឯកសាររបស់អ្នកនៅលើកុំព្យូទ័ររបស់អ្នកសិន ដើម្បីធានាថាការងាររបស់អ្នកមិនបាត់បង់។",
     "imageToolNotSupported": "",
@@ -246,7 +287,7 @@
     "library": "បណ្ណាល័យ",
     "lock": "រក្សារឧបករណ៍ដែលបានជ្រើសរើសបន្ទាប់ពីគូររួច",
     "penMode": "របៀបប៊ិច - ជៀសវាងការប៉ះ",
-    "link": "បន្ថែម/ធ្វើបច្ចុប្បន្នភាពតំណភ្ជាប់សម្រាប់រូបរាងដែលបានជ្រើសរើស",
+    "link": "",
     "eraser": "ជ័រលុប",
     "frame": "",
     "magicframe": "",
@@ -254,8 +295,23 @@
     "laser": "",
     "hand": "ដៃ (panning tool)",
     "extraTools": "",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "mermaidToExcalidraw": ""
+  },
+  "element": {
+    "rectangle": "",
+    "diamond": "",
+    "ellipse": "",
+    "arrow": "",
+    "line": "",
+    "freedraw": "",
+    "text": "",
+    "image": "",
+    "group": "",
+    "frame": "",
+    "magicframe": "",
+    "embeddable": "",
+    "selection": "",
+    "iframe": ""
   },
   "headings": {
     "canvasActions": "សកម្មភាពបាវ",
@@ -263,8 +319,10 @@
     "shapes": "រាង"
   },
   "hints": {
+    "dismissSearch": "",
     "canvasPanning": "ដើម្បីផ្លាស់ទីបាវ សូមសង្កត់កង់កណ្ដុរឬគ្រាប់ចុចspacebarខណៈពេលកំពុងអូស ឬប្រើឧបករណ៍ដៃ។",
     "linearElement": "ចុចដើម្បីបង្កើតចំណុចច្រើន អូសដើម្បីបង្កើតបន្ទាត់មួយ",
+    "arrowTool": "",
     "freeDraw": "ចុច​ហើយ​អូស លែង​ពេល​រួចរាល់",
     "text": "គន្លឹះ៖ អ្នកក៏អាចបន្ថែមអត្ថបទដោយចុចពីរដងនៅកន្លែងណាមួយដោយប្រើឧបករណ៍ជ្រើសរើស",
     "embeddable": "",
@@ -281,10 +339,13 @@
     "placeImage": "ចុចដើម្បីដាក់រូបភាព ឬចុចហើយអូសដើម្បីកំណត់ទំហំរបស់រូបភាពដោយដៃ",
     "publishLibrary": "បោះពុម្ពផ្សាយបណ្ណាល័យផ្ទាល់ខ្លួនរបស់អ្នក",
     "bindTextToElement": "ចុច Enter ដើម្បីបន្ថែមអត្ថបទ",
+    "createFlowchart": "",
     "deepBoxSelect": "សង្កត់ CtrlOrCmd ដើម្បីជ្រើសរើសយ៉ាងជ្រៅ និងជៀសវាងការអូស",
     "eraserRevert": "សង្កត់ Alt ដើម្បីដកការជ្រើសរើសធាតុដែលត្រូវបានសម្គាល់សម្រាប់ការលុប",
     "firefox_clipboard_write": "បើកមុខងារនេះដោយកំណត់ទង់ \"dom.events.asyncClipboard.clipboardItem\" ទៅ \"true\" \nដើម្បីផ្លាស់ប្តូរទង់កម្មវិធីរុករកនៅក្នុង Firefox សូមចូលទៅកាន់ទំព័រ \"about:config\"។",
-    "disableSnapping": ""
+    "disableSnapping": "",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "មិនអាចបង្ហាញការមើលជាមុនបាន",
@@ -299,9 +360,12 @@
     "openIssueMessage": "យើងមានការប្រុងប្រយ័ត្នខ្លាំងណាស់ក្នុងការមិនបញ្ចូលព័ត៌មានរបស់ស៊ីនរបស់អ្នកទៅលើកំហុស។ ប្រសិនបើស៊ីនរបស់អ្នកមិនមានលក្ខណៈឯកជនទេ សូមពិចារណាបន្តទៅកាន់ <button>កម្មវិធីតាមដានកំហុសរបស់យើង។</button> សូមបញ្ចូលព័ត៌មានខាងក្រោមដោយចម្លង និងបិទភ្ជាប់វាទៅក្នុងបញ្ហារបស់ GitHub។",
     "sceneContent": "មាតិកាបាវ៖"
   },
+  "shareDialog": {
+    "or": ""
+  },
   "roomDialog": {
-    "desc_intro": "អ្នកអាចអញ្ជើញអ្នកដទៃឱ្យសហការជាមួយអ្នកនៅលើស៊ីនបច្ចុប្បន្ន។",
-    "desc_privacy": "កុំបារម្ភ វគ្គប្រើការអ៊ិនគ្រីបពីចុងដល់ចប់ ដូច្នេះអ្វីដែលអ្នកគូរនឹងនៅតែជាឯកជន។ សូម្បីតែម៉ាស៊ីនមេរបស់យើងក៏នឹងមិនអាចមើលឃើញអ្វីដែលអ្នកកំពុងធ្វើដែរ។",
+    "desc_intro": "",
+    "desc_privacy": "",
     "button_startSession": "ចាប់ផ្តើមវគ្គ",
     "button_stopSession": "បញ្ឈប់វគ្គ",
     "desc_inProgressIntro": "វគ្គសហការផ្ទាល់ឥឡូវនេះកំពុងដំណើរការ។",
@@ -328,6 +392,8 @@
     "click": "ចុច",
     "deepSelect": "ការជ្រើសរើសជាក្រុម",
     "deepBoxSelect": "ជ្រើសរើសជាក្រុម និង ជៀសវាងការអូសទាញផ្លាស់ទី",
+    "createFlowchart": "",
+    "navigateFlowchart": "",
     "curvedArrow": "ព្រួញកោង",
     "curvedLine": "ព្រួញកោង",
     "documentation": "ឯកសារ",
@@ -350,7 +416,9 @@
     "zoomToSelection": "ពង្រីកទៅការជ្រើសរើស",
     "toggleElementLock": "ចាក់សោ/ដោះសោការជ្រើសរើស",
     "movePageUpDown": "ផ្លាស់ទីទំព័រឡើងលើ/ចុះក្រោម",
-    "movePageLeftRight": "ផ្លាស់ទីទំព័រទៅឆ្វេង/ស្ដាំ"
+    "movePageLeftRight": "ផ្លាស់ទីទំព័រទៅឆ្វេង/ស្ដាំ",
+    "cropStart": "",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": "សម្អាតបាវ"
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "មុំ",
-    "element": "ធាតុ",
-    "elements": "ធាតុច្រើន",
+    "shapes": "",
     "height": "កម្ពស់",
     "scene": "ស៊ីន",
     "selected": "បានជ្រើសរើស",
     "storage": "ការផ្ទុក",
-    "title": "ស្ថិតិសម្រាប់ nerds",
+    "fullTitle": "",
+    "title": "",
+    "generalStats": "",
+    "elementProperties": "",
     "total": "សរុប",
     "version": "ជំនាន់:",
     "versionCopy": "ចុចដើម្បីចម្លង",
@@ -439,13 +509,15 @@
     "copyStyles": "រចនាប័ទ្មត្រូវបានចម្លង។",
     "copyToClipboard": "បានចម្លងទៅក្ដារតម្បៀតខ្ទាស់។",
     "copyToClipboardAsPng": "បានចម្លង {{exportSelection}} ទៅក្ដារតម្បៀតខ្ទាស់ជា PNG\n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "ឯកសារត្រូវបានរក្សាទុក។",
     "fileSavedToFilename": "បានរក្សាទុកនៅក្នុង {filename}",
     "canvas": "តំបន់គំនូរ",
     "selection": "ការជ្រើសរើស",
     "pasteAsSingleElement": "ប្រើ {{shortcut}} ដើម្បីបិទភ្ជាប់ជាធាតុតែមួយ,\nឬបិទភ្ជាប់ទៅក្នុងកម្មវិធីនិពន្ធអត្ថបទដែលមានស្រាប់",
     "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "unrecognizedLinkFormat": "",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "ថ្លាមើលធ្លុះ",
@@ -521,5 +593,41 @@
     "description": "",
     "syntax": "",
     "preview": ""
+  },
+  "quickSearch": {
+    "placeholder": ""
+  },
+  "fontList": {
+    "badge": {
+      "old": ""
+    },
+    "sceneFonts": "",
+    "availableFonts": "",
+    "empty": ""
+  },
+  "userList": {
+    "empty": "",
+    "hint": {
+      "text": "",
+      "followStatus": "",
+      "inCall": "",
+      "micMuted": "",
+      "isSpeaking": ""
+    }
+  },
+  "commandPalette": {
+    "title": "",
+    "shortcuts": {
+      "select": "",
+      "confirm": "",
+      "close": ""
+    },
+    "recents": "",
+    "search": {
+      "placeholder": "",
+      "noMatch": ""
+    },
+    "itemNotAvailable": "",
+    "shortcutHint": ""
   }
 }

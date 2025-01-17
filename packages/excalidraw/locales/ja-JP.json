@@ -11,8 +11,8 @@
     "copyAsPng": "PNGとしてクリップボードへコピー",
     "copyAsSvg": "SVGとしてクリップボードへコピー",
     "copyText": "テキストとしてクリップボードにコピー",
-    "copySource": "",
-    "convertToCode": "",
+    "copySource": "ソースをクリップボードにコピー",
+    "convertToCode": "コードに変換",
     "bringForward": "前面に移動",
     "sendToBack": "最背面に移動",
     "bringToFront": "最前面に移動",
@@ -21,7 +21,9 @@
     "copyStyles": "スタイルのコピー",
     "pasteStyles": "スタイルの貼り付け",
     "stroke": "線",
+    "changeStroke": "",
     "background": "背景",
+    "changeBackground": "",
     "fill": "塗りつぶし",
     "strokeWidth": "線の太さ",
     "strokeStyle": "線の種類",
@@ -38,12 +40,20 @@
     "arrowhead_none": "なし",
     "arrowhead_arrow": "矢印",
     "arrowhead_bar": "バー",
-    "arrowhead_circle": "",
-    "arrowhead_circle_outline": "",
+    "arrowhead_circle": "丸",
+    "arrowhead_circle_outline": "丸 (中抜き)",
     "arrowhead_triangle": "三角",
-    "arrowhead_triangle_outline": "",
-    "arrowhead_diamond": "",
-    "arrowhead_diamond_outline": "",
+    "arrowhead_triangle_outline": "三角 (中抜き)",
+    "arrowhead_diamond": "ひし形",
+    "arrowhead_diamond_outline": "ひし形 (中抜き)",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "",
+    "arrowtype_sharp": "鋭い矢印",
+    "arrowtype_round": "",
+    "arrowtype_elbowed": "",
     "fontSize": "フォントの大きさ",
     "fontFamily": "フォントの種類",
     "addWatermark": "\"Made with Excalidraw\"と表示",
@@ -58,20 +68,21 @@
     "hachure": "斜線",
     "zigzag": "ジグザグ",
     "crossHatch": "網掛け",
-    "thin": "細",
+    "thin": "細字",
     "bold": "太字",
     "left": "左寄せ",
     "center": "中央寄せ",
     "right": "右寄せ",
     "extraBold": "極太",
-    "architect": "正確",
-    "artist": "アート",
-    "cartoonist": "漫画風",
+    "architect": "建築家",
+    "artist": "アーティスト",
+    "cartoonist": "漫画家",
     "fileTitle": "ファイル名",
-    "colorPicker": "色選択",
+    "colorPicker": "カラーピッカー",
     "canvasColors": "キャンバス上で使用",
     "canvasBackground": "キャンバスの背景",
     "drawingCanvas": "キャンバスの描画",
+    "clearCanvas": "キャンバスを片付ける",
     "layers": "レイヤー",
     "actions": "操作",
     "language": "言語",
@@ -84,19 +95,20 @@
     "group": "グループ化",
     "ungroup": "グループ化を解除",
     "collaborators": "共同編集者",
-    "showGrid": "グリッドを表示",
+    "toggleGrid": "",
     "addToLibrary": "ライブラリに追加",
     "removeFromLibrary": "ライブラリから削除",
     "libraryLoadingMessage": "ライブラリを読み込み中…",
     "libraries": "ライブラリを参照する",
     "loadingScene": "シーンを読み込み中…",
+    "loadScene": "",
     "align": "配置",
     "alignTop": "上揃え",
     "alignBottom": "下揃え",
     "alignLeft": "左揃え",
     "alignRight": "右揃え",
-    "centerVertically": "縦方向に中央揃え",
-    "centerHorizontally": "横方向に中央揃え",
+    "centerVertically": "垂直方向に中央揃え",
+    "centerHorizontally": "水平方向に中央揃え",
     "distributeHorizontally": "水平方向に分散配置",
     "distributeVertically": "垂直方向に分散配置",
     "flipHorizontal": "水平方向に反転",
@@ -105,7 +117,9 @@
     "share": "共有",
     "showStroke": "ストロークカラーピッカーを表示",
     "showBackground": "背景色ピッカーを表示",
-    "toggleTheme": "テーマの切り替え",
+    "showFonts": "",
+    "toggleTheme": "ライト/ダークテーマに変更",
+    "theme": "テーマ",
     "personalLib": "個人ライブラリ",
     "excalidrawLib": "Excalidrawライブラリ",
     "decreaseFontSize": "フォントサイズを縮小",
@@ -115,16 +129,17 @@
     "createContainerFromText": "コンテナ内でテキストを折り返す",
     "link": {
       "edit": "リンクを編集",
-      "editEmbed": "リンクの編集と埋め込み",
-      "create": "リンクを作成",
-      "createEmbed": "リンクの作成と埋め込み",
+      "editEmbed": "",
+      "create": "",
       "label": "リンク",
       "labelEmbed": "リンクと埋め込み",
-      "empty": "リンクが設定されていません"
+      "empty": "リンクが設定されていません",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "行を編集",
-      "exit": "行エディタを終了"
+      "editArrow": "矢印を編集"
     },
     "elementLock": {
       "lock": "ロック",
@@ -137,13 +152,37 @@
     "selectAllElementsInFrame": "フレーム内のすべての要素を選択",
     "removeAllElementsFromFrame": "フレーム内のすべての要素を削除",
     "eyeDropper": "キャンバスから色を選択",
-    "textToDiagram": "",
-    "prompt": ""
+    "textToDiagram": "テキストからダイアグラムを生成",
+    "prompt": "プロンプト",
+    "followUs": "フォローする",
+    "discordChat": "Discord チャット",
+    "zoomToFitViewport": "",
+    "zoomToFitSelection": "",
+    "zoomToFit": "",
+    "installPWA": "",
+    "autoResize": "",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "まだアイテムが追加されていません…",
     "hint_emptyLibrary": "キャンバス上のアイテムを選択してここに追加するか、以下の公開リポジトリからライブラリをインストールしてください。",
     "hint_emptyPrivateLibrary": "キャンバス上のアイテムを選択すると、ここに追加されます。"
+  },
+  "search": {
+    "title": "キャンバスで検索",
+    "noMatch": "",
+    "singleResult": "",
+    "multipleResults": "",
+    "placeholder": ""
   },
   "buttons": {
     "clearReset": "キャンバスのリセット",
@@ -151,10 +190,11 @@
     "exportImage": "画像のエクスポート...",
     "export": "名前を付けて保存...",
     "copyToClipboard": "クリップボードにコピー",
+    "copyLink": "リンクをコピー",
     "save": "現在のファイルに保存",
     "saveAs": "名前を付けて保存",
     "load": "開く",
-    "getShareableLink": "共有URLの取得",
+    "getShareableLink": "共有可能なリンクを取得する",
     "close": "閉じる",
     "selectLanguage": "言語の選択",
     "scrollBackToContent": "コンテンツまでスクロールで戻る",
@@ -171,8 +211,9 @@
     "fullScreen": "フルスクリーン",
     "darkMode": "ダークモード",
     "lightMode": "ライトモード",
-    "zenMode": "Zenモード",
-    "objectsSnapMode": "",
+    "systemMode": "",
+    "zenMode": "集中モード",
+    "objectsSnapMode": "オブジェクトにスナップ",
     "exitZenMode": "集中モードをやめる",
     "cancel": "キャンセル",
     "clear": "消去",
@@ -181,7 +222,7 @@
     "publishLibrary": "公開",
     "submit": "送信",
     "confirm": "確認",
-    "embeddableInteractionButton": ""
+    "embeddableInteractionButton": "クリックして操作"
   },
   "alerts": {
     "clearReset": "この操作によってキャンバス全体が消えます。よろしいですか？",
@@ -203,7 +244,7 @@
     "invalidSceneUrl": "指定された URL からシーンをインポートできませんでした。不正な形式であるか、有効な Excalidraw JSON データが含まれていません。",
     "resetLibrary": "ライブラリを消去します。本当によろしいですか？",
     "removeItemsFromsLibrary": "{{count}} 個のアイテムをライブラリから削除しますか？",
-    "invalidEncryptionKey": "暗号化キーは22文字でなければなりません。ライブコラボレーションは無効化されています。",
+    "invalidEncryptionKey": "暗号化キーは22文字でなければなりません。共同編集は無効化されています。",
     "collabOfflineWarning": "インターネットに接続されていません。\n変更は保存されません！"
   },
   "errors": {
@@ -211,13 +252,13 @@
     "imageInsertError": "画像を挿入できませんでした。後でもう一度お試しください...",
     "fileTooBig": "ファイルが大きすぎます。許可される最大サイズは {{maxSize}} です。",
     "svgImageInsertError": "SVGイメージを挿入できませんでした。SVGマークアップは無効に見えます。",
-    "failedToFetchImage": "",
-    "invalidSVGString": "無効なSVGです。",
+    "failedToFetchImage": "画像の読み込みに失敗しました。",
     "cannotResolveCollabServer": "コラボレーションサーバに接続できませんでした。ページを再読み込みして、もう一度お試しください。",
     "importLibraryError": "ライブラリを読み込めませんでした。",
+    "saveLibraryError": "",
     "collabSaveFailed": "バックエンドデータベースに保存できませんでした。問題が解決しない場合は、作業を失わないようにローカルにファイルを保存してください。",
     "collabSaveFailed_sizeExceeded": "キャンバスが大きすぎるため、バックエンドデータベースに保存できませんでした。問題が解決しない場合は、作業を失わないようにローカルにファイルを保存してください。",
-    "imageToolNotSupported": "",
+    "imageToolNotSupported": "画像ツールは使用不可です。",
     "brave_measure_text_error": {
       "line1": "<bold>Aggressly Block Fingerprinting</bold> の設定が有効なBraveブラウザを使用しているようです。",
       "line2": "これにより、図面の <bold>テキスト要素</bold> が壊れる可能性があります。",
@@ -225,13 +266,13 @@
       "line4": "この設定を無効にすると、テキスト要素の表示が修正されません。 GitHub で <issueLink>Issue</issueLink> を開くか、 <discordLink>Discord</discordLink> にご記入ください"
     },
     "libraryElementTypeError": {
-      "embeddable": "",
-      "iframe": "",
-      "image": ""
+      "embeddable": "埋め込み要素はライブラリに追加できません。",
+      "iframe": "IFrame 要素はライブラリに追加できません。",
+      "image": "ライブラリに画像を追加する機能はもうすぐ実装されます！"
     },
-    "asyncPasteFailedOnRead": "",
-    "asyncPasteFailedOnParse": "",
-    "copyToSystemClipboardFailed": ""
+    "asyncPasteFailedOnRead": "貼り付けできませんでした (システムのクリップボードを読み取れませんでした)。",
+    "asyncPasteFailedOnParse": "貼り付けできませんでした。",
+    "copyToSystemClipboardFailed": "クリップボードにコピーできませんでした。"
   },
   "toolBar": {
     "selection": "選択",
@@ -246,16 +287,31 @@
     "library": "ライブラリ",
     "lock": "描画後も使用中のツールを選択したままにする",
     "penMode": "ペンモード - タッチ防止",
-    "link": "選択した図形のリンクを追加/更新",
+    "link": "",
     "eraser": "消しゴム",
     "frame": "フレームツール",
-    "magicframe": "",
+    "magicframe": "ワイヤーフレームからコードを生成",
     "embeddable": "Web埋め込み",
-    "laser": "",
+    "laser": "レーザーポインター",
     "hand": "手 (パンニングツール)",
     "extraTools": "その他のツール",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "mermaidToExcalidraw": "Mermaid を Excalidraw に変換"
+  },
+  "element": {
+    "rectangle": "",
+    "diamond": "",
+    "ellipse": "楕円",
+    "arrow": "",
+    "line": "",
+    "freedraw": "",
+    "text": "文字",
+    "image": "画像",
+    "group": "",
+    "frame": "",
+    "magicframe": "ワイヤーフレームからコードを生成",
+    "embeddable": "",
+    "selection": "",
+    "iframe": "IFrame"
   },
   "headings": {
     "canvasActions": "キャンバス操作",
@@ -263,14 +319,16 @@
     "shapes": "図形"
   },
   "hints": {
+    "dismissSearch": "",
     "canvasPanning": "キャンバスを移動するには、マウスホイールまたはスペースバーを押しながらドラッグするか、手ツールを使用します",
     "linearElement": "クリックすると複数の頂点からなる曲線を開始、ドラッグすると直線",
+    "arrowTool": "",
     "freeDraw": "クリックしてドラッグします。離すと終了します",
     "text": "ヒント: 選択ツールを使用して任意の場所をダブルクリックしてテキストを追加することもできます",
-    "embeddable": "",
+    "embeddable": "クリックしてドラッグし、ウェブサイトを埋め込む",
     "text_selected": "テキストを編集するには、ダブルクリックまたはEnterキーを押します",
     "text_editing": "Esc キーまたは CtrlOrCmd+ENTER キーを押して編集を終了します",
-    "linearElementMulti": "最後のポイントをクリックするか、エスケープまたはEnterを押して終了します",
+    "linearElementMulti": "最後のポイントをクリックするか、EscまたはEnterを押して終了します",
     "lockAngle": "SHIFTを押したままにすると、角度を制限することができます",
     "resize": "サイズを変更中にSHIFTを押すと縦横比を固定できます。Altを押すと中央からサイズを変更できます",
     "resizeImage": "SHIFTを長押しすると自由にサイズを変更できます。\n中央からサイズを変更するにはALTを長押しします",
@@ -281,10 +339,13 @@
     "placeImage": "クリックして画像を配置するか、クリックしてドラッグしてサイズを手動で設定します",
     "publishLibrary": "自分のライブラリを公開",
     "bindTextToElement": "Enterを押してテキストを追加",
+    "createFlowchart": "",
     "deepBoxSelect": "CtrlOrCmd を押し続けることでドラッグを抑止し、深い選択を行います",
     "eraserRevert": "Alt を押し続けることで削除マークされた要素を元に戻す",
     "firefox_clipboard_write": "この機能は、\"dom.events.asyncClipboard.clipboardItem\" フラグを \"true\" に設定することで有効になる可能性があります。Firefox でブラウザーの設定を変更するには、\"about:config\" ページを参照してください。",
-    "disableSnapping": ""
+    "disableSnapping": "CtrlOrCmd を押している間スナップを無効化",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "プレビューを表示できません",
@@ -299,9 +360,12 @@
     "openIssueMessage": "エラーに関するシーン情報を含めないように非常に慎重に設定しました。もしあなたのシーンがプライベートでない場合は、私たちのフォローアップを検討してください。 <button>バグ報告</button> GitHub のIssueに以下の情報をコピーして貼り付けてください。",
     "sceneContent": "シーンの内容:"
   },
+  "shareDialog": {
+    "or": "または"
+  },
   "roomDialog": {
-    "desc_intro": "他の人を編集中のあなたの画面に招待して共同編集することができます。",
-    "desc_privacy": "このセッションはエンドツーエンド暗号化されており、描画内容は保護されています。運営サーバーからも内容は見えません。",
+    "desc_intro": "図面にコラボレーションするよう人々を招待します。",
+    "desc_privacy": "心配しないでください、セッションはエンドツーエンドで暗号化されており、完全にプライベートです。私たちのサーバーでさえも、あなたが描いたものを見ることができません。",
     "button_startSession": "セッションを開始する",
     "button_stopSession": "セッションを終了する",
     "desc_inProgressIntro": "共同編集セッションが有効になっています。",
@@ -328,13 +392,15 @@
     "click": "クリック",
     "deepSelect": "深い選択",
     "deepBoxSelect": "ボックス内の深い選択、およびドラッグの抑止",
+    "createFlowchart": "",
+    "navigateFlowchart": "",
     "curvedArrow": "カーブした矢印",
     "curvedLine": "曲線",
     "documentation": "ドキュメント",
     "doubleClick": "ダブルクリック",
     "drag": "ドラッグ",
     "editor": "エディタ",
-    "editLineArrowPoints": "",
+    "editLineArrowPoints": "線/矢印の点を編集",
     "editText": "テキストの編集 / ラベルの追加",
     "github": "不具合報告はこちら",
     "howto": "ヘルプ・マニュアル",
@@ -350,7 +416,9 @@
     "zoomToSelection": "選択要素にズーム",
     "toggleElementLock": "選択したアイテムをロック/ロック解除",
     "movePageUpDown": "ページを上下に移動",
-    "movePageLeftRight": "ページを左右に移動"
+    "movePageLeftRight": "ページを左右に移動",
+    "cropStart": "",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": "キャンバスを消去"
@@ -395,14 +463,14 @@
     "header": "画像をエクスポート",
     "label": {
       "withBackground": "背景",
-      "onlySelected": "",
+      "onlySelected": "選択した図形のみ",
       "darkMode": "ダークモード",
-      "embedScene": "",
+      "embedScene": "シーンを埋め込む",
       "scale": "スケール",
       "padding": "余白"
     },
     "tooltip": {
-      "embedScene": ""
+      "embedScene": "シーンデータをエクスポートする PNG/SVG ファイルに保存し、シーンを復元できるようにします。\nファイルサイズは増加します。"
     },
     "title": {
       "exportToPng": "PNG にエクスポート",
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "角度",
-    "element": "要素",
-    "elements": "要素",
+    "shapes": "",
     "height": "高さ",
     "scene": "シーン",
     "selected": "選択済み",
     "storage": "ストレージ",
-    "title": "詳細統計情報",
+    "fullTitle": "",
+    "title": "プロパティ",
+    "generalStats": "",
+    "elementProperties": "",
     "total": "合計",
     "version": "バージョン",
     "versionCopy": "クリックしてコピー",
@@ -439,13 +509,15 @@
     "copyStyles": "スタイルをコピーしました。",
     "copyToClipboard": "クリップボードにコピー",
     "copyToClipboardAsPng": "{{exportSelection}} を PNG 形式でクリップボードにコピーしました\n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "ファイルを保存しました",
     "fileSavedToFilename": "{filename} に保存しました",
     "canvas": "キャンバス",
     "selection": "選択",
     "pasteAsSingleElement": "{{shortcut}} を使用して単一の要素として貼り付けるか、\n既存のテキストエディタに貼り付け",
-    "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "unableToEmbed": "この URL の埋め込みは現在許可されていません。URL のホワイトリストへの追加をリクエストするには、GitHub で Issue を上げてください。",
+    "unrecognizedLinkFormat": "埋め込もうとしたリンクは期待するフォーマットと一致しません。埋め込み元のサイトで提供される「embed」の文字列を貼り付けてください。",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "透明",
@@ -454,11 +526,11 @@
     "red": "赤",
     "pink": "ピンク",
     "grape": "グレープ",
-    "violet": "バイオレット",
+    "violet": "紫",
     "gray": "灰色",
     "blue": "青",
     "cyan": "シアン",
-    "teal": "ティール",
+    "teal": "青緑",
     "green": "緑",
     "yellow": "黄",
     "orange": "オレンジ",
@@ -481,20 +553,20 @@
     "mostUsedCustomColors": "最も使用されているカスタム色",
     "colors": "色",
     "shades": "影",
-    "hexCode": "Hexコード",
-    "noShades": ""
+    "hexCode": "16進コード",
+    "noShades": "この色で利用できる影はありません"
   },
   "overwriteConfirm": {
     "action": {
       "exportToImage": {
         "title": "画像としてエクスポート",
         "button": "画像としてエクスポート",
-        "description": ""
+        "description": "シーンデータを後でインポートできる画像としてエクスポートします。"
       },
       "saveToDisk": {
         "title": "ディスクに保存",
         "button": "ディスクに保存",
-        "description": ""
+        "description": "シーンデータを後でインポートできるファイルにエクスポートします。"
       },
       "excalidrawPlus": {
         "title": "Excalidraw+",
@@ -506,20 +578,56 @@
       "loadFromFile": {
         "title": "ファイルからロード",
         "button": "ファイルからロード",
-        "description": ""
+        "description": "ファイルからのロードは、<bold>現在の描画内容を置き換えます</bold>。<br></br>その前に、以下の選択肢のいずれかにより描画内容を保存できます。"
       },
       "shareableLink": {
         "title": "リンクからロード",
-        "button": "",
-        "description": ""
+        "button": "描画内容を置き換える",
+        "description": "外部図面のロードは、<bold>現在の描画内容を置き換えます</bold>。<br></br>その前に、以下の選択肢のいずれかにより描画内容を保存できます。"
       }
     }
   },
   "mermaid": {
+    "title": "Mermaid を Excalidraw に変換",
+    "button": "挿入",
+    "description": "現在、<flowchartLink>Flowchart</flowchartLink>、<sequenceLink>Sequence</sequenceLink>、<classLink>Class</classLink> のダイアグラムのみに対応しています。その他の種類は、Excalidraw では画像として描画されます。",
+    "syntax": "Mermaid 構文",
+    "preview": "プレビュー"
+  },
+  "quickSearch": {
+    "placeholder": ""
+  },
+  "fontList": {
+    "badge": {
+      "old": ""
+    },
+    "sceneFonts": "",
+    "availableFonts": "",
+    "empty": ""
+  },
+  "userList": {
+    "empty": "",
+    "hint": {
+      "text": "ユーザーをクリックしてフォロー",
+      "followStatus": "現在このユーザーをフォローしています",
+      "inCall": "",
+      "micMuted": "",
+      "isSpeaking": ""
+    }
+  },
+  "commandPalette": {
     "title": "",
-    "button": "",
-    "description": "",
-    "syntax": "",
-    "preview": ""
+    "shortcuts": {
+      "select": "",
+      "confirm": "",
+      "close": ""
+    },
+    "recents": "",
+    "search": {
+      "placeholder": "",
+      "noMatch": ""
+    },
+    "itemNotAvailable": "",
+    "shortcutHint": ""
   }
 }

@@ -21,7 +21,9 @@
     "copyStyles": "Kopier stiler",
     "pasteStyles": "Lim inn stiler",
     "stroke": "Strek",
+    "changeStroke": "",
     "background": "Bakgrunn",
+    "changeBackground": "",
     "fill": "Fyll",
     "strokeWidth": "Strektykkelse",
     "strokeStyle": "Strekstil",
@@ -44,14 +46,22 @@
     "arrowhead_triangle_outline": "",
     "arrowhead_diamond": "",
     "arrowhead_diamond_outline": "",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "",
+    "arrowtype_sharp": "",
+    "arrowtype_round": "",
+    "arrowtype_elbowed": "",
     "fontSize": "Skriftstørrelse",
     "fontFamily": "Fontfamilie",
     "addWatermark": "Legg til \"Laget med Excalidraw\"",
     "handDrawn": "Håndtegnet",
-    "normal": "Normal",
+    "normal": "",
     "code": "Kode",
     "small": "Liten",
-    "medium": "Medium",
+    "medium": "",
     "large": "Stor",
     "veryLarge": "Svært stor",
     "solid": "Helfarge",
@@ -72,6 +82,7 @@
     "canvasColors": "Brukes på lerretet",
     "canvasBackground": "Lerretsbakgrunn",
     "drawingCanvas": "Lerret",
+    "clearCanvas": "",
     "layers": "Lag",
     "actions": "Handlinger",
     "language": "Språk",
@@ -84,12 +95,13 @@
     "group": "Gruppér utvalg",
     "ungroup": "Avgruppér utvalg",
     "collaborators": "Samarbeidspartnere",
-    "showGrid": "Vis rutenett",
+    "toggleGrid": "",
     "addToLibrary": "Legg til i bibliotek",
     "removeFromLibrary": "Fjern fra bibliotek",
     "libraryLoadingMessage": "Laster bibliotek…",
     "libraries": "Bla gjennom biblioteker",
     "loadingScene": "Laster inn scene…",
+    "loadScene": "",
     "align": "Juster",
     "alignTop": "Juster øverst",
     "alignBottom": "Juster nederst",
@@ -105,7 +117,9 @@
     "share": "Del",
     "showStroke": "Vis fargevelger for kantfarge",
     "showBackground": "Vis fargevelger for bakgrunnsfarge",
-    "toggleTheme": "Veksle tema",
+    "showFonts": "",
+    "toggleTheme": "",
+    "theme": "",
     "personalLib": "Personlig bibliotek",
     "excalidrawLib": "Excalidraw-bibliotek",
     "decreaseFontSize": "Reduser skriftstørrelse",
@@ -115,16 +129,17 @@
     "createContainerFromText": "La tekst flyte i en beholder",
     "link": {
       "edit": "Rediger lenke",
-      "editEmbed": "Rediger lenke og bygg inn",
-      "create": "Opprett lenke",
-      "createEmbed": "Opprett lenke og bygg inn",
+      "editEmbed": "",
+      "create": "",
       "label": "Lenke",
       "labelEmbed": "Lenk & bygg inn",
-      "empty": "Ingen lenke er valgt"
+      "empty": "Ingen lenke er valgt",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "Rediger linje",
-      "exit": "Avslutt linjeredigering"
+      "editArrow": ""
     },
     "elementLock": {
       "lock": "Lås",
@@ -138,12 +153,36 @@
     "removeAllElementsFromFrame": "Fjern alle elementer fra rammen",
     "eyeDropper": "Velg farge fra lerretet",
     "textToDiagram": "",
-    "prompt": ""
+    "prompt": "",
+    "followUs": "",
+    "discordChat": "",
+    "zoomToFitViewport": "",
+    "zoomToFitSelection": "",
+    "zoomToFit": "",
+    "installPWA": "",
+    "autoResize": "",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "Ingen elementer lagt til ennå...",
     "hint_emptyLibrary": "Velg et objekt på lerretet for å legge det til her, eller installer et bibliotek fra den offentlige samlingen under.",
     "hint_emptyPrivateLibrary": "Velg et objekt på lerretet for å legge det til her."
+  },
+  "search": {
+    "title": "",
+    "noMatch": "",
+    "singleResult": "",
+    "multipleResults": "",
+    "placeholder": ""
   },
   "buttons": {
     "clearReset": "Tøm lerretet og tilbakestill bakgrunnsfargen",
@@ -151,6 +190,7 @@
     "exportImage": "Eksporter bilde...",
     "export": "Lagre som...",
     "copyToClipboard": "Kopier til utklippstavle",
+    "copyLink": "",
     "save": "Lagre til aktiv fil",
     "saveAs": "Lagre som",
     "load": "Åpne",
@@ -171,6 +211,7 @@
     "fullScreen": "Fullskjerm",
     "darkMode": "Mørk modus",
     "lightMode": "Lys modus",
+    "systemMode": "",
     "zenMode": "Zen-modus",
     "objectsSnapMode": "",
     "exitZenMode": "Avslutt zen-modus",
@@ -212,9 +253,9 @@
     "fileTooBig": "Filen er for stor. Maksimal tillatt størrelse er {{maxSize}}.",
     "svgImageInsertError": "Kunne ikke sette inn SVG-bilde. SVG-koden ser ugyldig ut.",
     "failedToFetchImage": "",
-    "invalidSVGString": "Ugyldig SVG.",
     "cannotResolveCollabServer": "Kunne ikke koble til samarbeidsserveren. Vennligst oppdater siden og prøv på nytt.",
     "importLibraryError": "Kunne ikke laste bibliotek",
+    "saveLibraryError": "",
     "collabSaveFailed": "Kan ikke lagre i backend-databasen. Hvis problemer vedvarer, bør du lagre filen lokalt for å sikre at du ikke mister arbeidet.",
     "collabSaveFailed_sizeExceeded": "Kunne ikke lagre til backend-databasen, lerretet ser ut til å være for stort. Du bør lagre filen lokalt for å sikre at du ikke mister arbeidet ditt.",
     "imageToolNotSupported": "",
@@ -238,7 +279,7 @@
     "image": "Sett inn bilde",
     "rectangle": "Rektangel",
     "diamond": "Diamant",
-    "ellipse": "Ellipse",
+    "ellipse": "",
     "arrow": "Pil",
     "line": "Linje",
     "freedraw": "Tegn",
@@ -246,7 +287,7 @@
     "library": "Bibliotek",
     "lock": "Behold merket verktøy som aktivt",
     "penMode": "Pennemodus - forhindre berøring",
-    "link": "Legg til / oppdater link for en valgt figur",
+    "link": "",
     "eraser": "Viskelær",
     "frame": "Rammeverktøy",
     "magicframe": "",
@@ -254,8 +295,23 @@
     "laser": "",
     "hand": "Hånd (panoreringsverktøy)",
     "extraTools": "Flere verktøy",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "mermaidToExcalidraw": ""
+  },
+  "element": {
+    "rectangle": "",
+    "diamond": "",
+    "ellipse": "",
+    "arrow": "",
+    "line": "",
+    "freedraw": "",
+    "text": "",
+    "image": "",
+    "group": "",
+    "frame": "",
+    "magicframe": "",
+    "embeddable": "",
+    "selection": "",
+    "iframe": ""
   },
   "headings": {
     "canvasActions": "Handlinger: lerret",
@@ -263,8 +319,10 @@
     "shapes": "Former"
   },
   "hints": {
+    "dismissSearch": "",
     "canvasPanning": "For å flytte lerretet, hold musehjulet eller mellomromstasten mens du drar, eller bruk hånd-verktøyet",
     "linearElement": "Klikk for å starte linje med flere punkter, eller dra for en enkel linje",
+    "arrowTool": "",
     "freeDraw": "Klikk og dra, slipp når du er ferdig",
     "text": "Tips: du kan også legge til tekst ved å dobbeltklikke hvor som helst med utvalgsverktøyet",
     "embeddable": "Klikk og dra for å opprette en nettside innebygd",
@@ -281,10 +339,13 @@
     "placeImage": "Klikk for å plassere bildet, eller klikk og dra for å angi størrelsen manuelt",
     "publishLibrary": "Publiser ditt eget bibliotek",
     "bindTextToElement": "Trykk Enter for å legge til tekst",
+    "createFlowchart": "",
     "deepBoxSelect": "Hold CTRL/CMD for å markere dypt og forhindre flytting",
     "eraserRevert": "Hold Alt for å reversere elementene merket for sletting",
     "firefox_clipboard_write": "Denne funksjonen kan sannsynligvis aktiveres ved å sette \"dom.events.asyncClipboard.clipboardItem\" flagget til \"true\". For å endre nettleserens flagg i Firefox, besøk \"about:config\"-siden.",
-    "disableSnapping": ""
+    "disableSnapping": "",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "Kan ikke vise forhåndsvisning",
@@ -299,9 +360,12 @@
     "openIssueMessage": "Vi er veldig nøye med å ikke inkludere dine scene-opplysninger i feilen. Hvis din scene ikke er privat, vurder å følge opp i vårt <button>feilrapporteringssystem.</button> Ta med opplysningene nedenfor ved å kopiere og lime inn i GitHub-saken.",
     "sceneContent": "Scene-innhold:"
   },
+  "shareDialog": {
+    "or": ""
+  },
   "roomDialog": {
-    "desc_intro": "Du kan invitere personer til scenen din for å samarbeide med deg.",
-    "desc_privacy": "Ta det med ro, sesjonen bruker ende-til-ende-kryptering, så alt du tegner forblir privat. Ikke en gang serveren vår kan se hva du lager.",
+    "desc_intro": "",
+    "desc_privacy": "",
     "button_startSession": "Start økt",
     "button_stopSession": "Stopp sesjon",
     "desc_inProgressIntro": "Sanntids-samarbeidsøkt er nå i gang.",
@@ -328,6 +392,8 @@
     "click": "klikk",
     "deepSelect": "Marker dypt",
     "deepBoxSelect": "Marker dypt innad i boks og forhindre flytting",
+    "createFlowchart": "",
+    "navigateFlowchart": "",
     "curvedArrow": "Buet pil",
     "curvedLine": "Buet linje",
     "documentation": "Dokumentasjon",
@@ -350,7 +416,9 @@
     "zoomToSelection": "Zoom til utvalg",
     "toggleElementLock": "Lås/lås opp utvalg",
     "movePageUpDown": "Flytt side opp/ned",
-    "movePageLeftRight": "Flytt siden til venstre/høyre"
+    "movePageLeftRight": "Flytt siden til venstre/høyre",
+    "cropStart": "",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": "Tøm lerret"
@@ -410,8 +478,8 @@
       "copyPngToClipboard": "Kopier PNG til utklippstavlen"
     },
     "button": {
-      "exportToPng": "PNG",
-      "exportToSvg": "SVG",
+      "exportToPng": "",
+      "exportToSvg": "",
       "copyPngToClipboard": "Kopier til utklippstavle"
     }
   },
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "Vinkel",
-    "element": "Element",
-    "elements": "Elementer",
+    "shapes": "",
     "height": "Høyde",
-    "scene": "Scene",
+    "scene": "",
     "selected": "Valgt",
     "storage": "Lagring",
-    "title": "Statistikk for nerder",
+    "fullTitle": "",
+    "title": "",
+    "generalStats": "",
+    "elementProperties": "",
     "total": "Totalt",
     "version": "Versjon",
     "versionCopy": "Klikk for å kopiere",
@@ -439,13 +509,15 @@
     "copyStyles": "Kopierte stiler.",
     "copyToClipboard": "Kopiert til utklippstavlen.",
     "copyToClipboardAsPng": "Kopierte {{exportSelection}} til utklippstavlen som PNG\n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "Fil lagret.",
     "fileSavedToFilename": "Lagret til {filename}",
     "canvas": "lerret",
     "selection": "utvalg",
     "pasteAsSingleElement": "Bruk {{shortcut}} for å lime inn som ett enkelt element,\neller lim inn i en eksisterende tekstbehandler",
     "unableToEmbed": "Innbygging av denne nettadressen er ikke tillatt. Oppret en sak på GitHub for å be om url-hvitelisting",
-    "unrecognizedLinkFormat": "Linken du bygget inn samsvarer ikke med det forventede formatet. Prøv å lime inn \"bygg inn\"-strengen fra kildesiden"
+    "unrecognizedLinkFormat": "Linken du bygget inn samsvarer ikke med det forventede formatet. Prøv å lime inn \"bygg inn\"-strengen fra kildesiden",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "Gjennomsiktig",
@@ -497,7 +569,7 @@
         "description": "Eksporter scene-dataene til en fil som du kan importere fra senere."
       },
       "excalidrawPlus": {
-        "title": "Excalidraw+",
+        "title": "",
         "button": "Eksporter til Excalidraw+",
         "description": "Lagre scenen til ditt Excalidraw+-arbeidsområde."
       }
@@ -521,5 +593,41 @@
     "description": "",
     "syntax": "",
     "preview": ""
+  },
+  "quickSearch": {
+    "placeholder": ""
+  },
+  "fontList": {
+    "badge": {
+      "old": ""
+    },
+    "sceneFonts": "",
+    "availableFonts": "",
+    "empty": ""
+  },
+  "userList": {
+    "empty": "",
+    "hint": {
+      "text": "",
+      "followStatus": "",
+      "inCall": "",
+      "micMuted": "",
+      "isSpeaking": ""
+    }
+  },
+  "commandPalette": {
+    "title": "",
+    "shortcuts": {
+      "select": "",
+      "confirm": "",
+      "close": ""
+    },
+    "recents": "",
+    "search": {
+      "placeholder": "",
+      "noMatch": ""
+    },
+    "itemNotAvailable": "",
+    "shortcutHint": ""
   }
 }

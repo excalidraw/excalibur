@@ -11,17 +11,19 @@
     "copyAsPng": "Αντιγραφή στο πρόχειρο ως PNG",
     "copyAsSvg": "Αντιγραφή στο πρόχειρο ως SVG",
     "copyText": "Αντιγραφή στο πρόχειρο ως κείμενο",
-    "copySource": "",
-    "convertToCode": "",
-    "bringForward": "Στο προσκήνιο",
-    "sendToBack": "Ένα επίπεδο πίσω",
-    "bringToFront": "Ένα επίπεδο μπροστά",
+    "copySource": "Αντιγραφή προέλευσης στο πρόχειρο",
+    "convertToCode": "Μετατροπή σε κώδικα",
+    "bringForward": "Μεταφορά μπροστά",
+    "sendToBack": "Στείλ' το στο τέλος",
+    "bringToFront": "Φερ' το μπροστά",
     "sendBackward": "Στο παρασκήνιο",
     "delete": "Διαγραφή",
     "copyStyles": "Αντιγραφή εμφάνισης",
     "pasteStyles": "Επικόλληση εμφάνισης",
     "stroke": "Μολυβιά",
+    "changeStroke": "Αλλαγή χρώματος πινελιάς",
     "background": "Φόντο",
+    "changeBackground": "Αλλαγή χρώματος παρασκηνίου",
     "fill": "Γέμισμα",
     "strokeWidth": "Πάχος μολυβιάς",
     "strokeStyle": "Στυλ περιγράμματος",
@@ -38,12 +40,20 @@
     "arrowhead_none": "Κανένα",
     "arrowhead_arrow": "Βέλος",
     "arrowhead_bar": "Μπάρα",
-    "arrowhead_circle": "",
-    "arrowhead_circle_outline": "",
+    "arrowhead_circle": "Κύκλος",
+    "arrowhead_circle_outline": "Κύκλος (περίγραμμα)",
     "arrowhead_triangle": "Τρίγωνο",
-    "arrowhead_triangle_outline": "",
-    "arrowhead_diamond": "",
-    "arrowhead_diamond_outline": "",
+    "arrowhead_triangle_outline": "Τρίγωνο (περίγραμμα)",
+    "arrowhead_diamond": "Ρόμβος",
+    "arrowhead_diamond_outline": "Ρόμβος (περίγραμμα)",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "Τύπος βέλους",
+    "arrowtype_sharp": "Αιχμηρό βέλος",
+    "arrowtype_round": "Κυρτό βέλος",
+    "arrowtype_elbowed": "Γωνιακό βέλος",
     "fontSize": "Μέγεθος γραμματοσειράς",
     "fontFamily": "Γραμματοσειρά",
     "addWatermark": "Προσθήκη \"Φτιαγμένο με Excalidraw\"",
@@ -56,7 +66,7 @@
     "veryLarge": "Πολύ μεγάλο",
     "solid": "Συμπαγής",
     "hachure": "Εκκόλαψη",
-    "zigzag": "",
+    "zigzag": "Τεθλασμένη γραμμή",
     "crossHatch": "Διασταυρούμενη εκκόλαψη",
     "thin": "Λεπτή",
     "bold": "Έντονη",
@@ -72,6 +82,7 @@
     "canvasColors": "Χρησιμοποείται στον καμβά",
     "canvasBackground": "Φόντο καμβά",
     "drawingCanvas": "Σχεδίαση καμβά",
+    "clearCanvas": "Καθαρισμός καμβά",
     "layers": "Στρώματα",
     "actions": "Ενέργειες",
     "language": "Γλώσσα",
@@ -84,12 +95,13 @@
     "group": "Δημιουργία ομάδας από επιλογή",
     "ungroup": "Κατάργηση ομάδας από επιλογή",
     "collaborators": "Συνεργάτες",
-    "showGrid": "Προβολή πλέγματος",
+    "toggleGrid": "Εναλλαγή ορατότητας πλέγματος",
     "addToLibrary": "Προσθήκη στη βιβλιοθήκη",
     "removeFromLibrary": "Αφαίρεση από τη βιβλιοθήκη",
     "libraryLoadingMessage": "Φόρτωση βιβλιοθήκης…",
     "libraries": "Άλλες βιβλιοθήκες",
     "loadingScene": "Φόρτωση σκηνής…",
+    "loadScene": "Φόρτωση σκηνής από αρχείο",
     "align": "Στοίχιση",
     "alignTop": "Στοίχιση πάνω",
     "alignBottom": "Στοίχιση κάτω",
@@ -105,26 +117,29 @@
     "share": "Κοινοποίηση",
     "showStroke": "Εμφάνιση επιλογέα χρωμάτων πινελιάς",
     "showBackground": "Εμφάνιση επιλογέα χρώματος φόντου",
-    "toggleTheme": "Εναλλαγή θέματος",
+    "showFonts": "Εμφάνιση επιλογέα γραμματοσειράς",
+    "toggleTheme": "Εναλλαγή φωτεινού/σκοτεινού θέματος",
+    "theme": "Θέμα",
     "personalLib": "Προσωπική Βιβλιοθήκη",
     "excalidrawLib": "Βιβλιοθήκη Excalidraw",
     "decreaseFontSize": "Μείωση μεγέθους γραμματοσειράς",
     "increaseFontSize": "Αύξηση μεγέθους γραμματοσειράς",
     "unbindText": "Αποσύνδεση κειμένου",
     "bindText": "Δέσμευση κειμένου στο δοχείο",
-    "createContainerFromText": "",
+    "createContainerFromText": "Αναδίπλωση κειμένου σε δοχείο",
     "link": {
       "edit": "Επεξεργασία συνδέσμου",
       "editEmbed": "",
-      "create": "Δημιουργία συνδέσμου",
-      "createEmbed": "",
+      "create": "",
       "label": "Σύνδεσμος",
-      "labelEmbed": "",
-      "empty": ""
+      "labelEmbed": "Σύνδεσμος & ενσωμάτωση",
+      "empty": "Δεν έχει οριστεί σύνδεσμος",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "Επεξεργασία γραμμής",
-      "exit": "Έξοδος επεξεργαστή κειμένου"
+      "editArrow": "Επεξεργασία βέλους"
     },
     "elementLock": {
       "lock": "Κλείδωμα",
@@ -134,16 +149,40 @@
     },
     "statusPublished": "Δημοσιευμένο",
     "sidebarLock": "Κρατήστε την πλαϊνή μπάρα ανοιχτή",
-    "selectAllElementsInFrame": "",
-    "removeAllElementsFromFrame": "",
-    "eyeDropper": "",
-    "textToDiagram": "",
-    "prompt": ""
+    "selectAllElementsInFrame": "Επιλογή όλων των στοιχείων στο πλαίσιο",
+    "removeAllElementsFromFrame": "Αφαίρεση όλων των στοιχείων από το πλαίσιο",
+    "eyeDropper": "Διαλέξτε χρώμα απ' τον καμβά",
+    "textToDiagram": "Κείμενο σε διάγραμμα",
+    "prompt": "Εντολή",
+    "followUs": "Ακολουθήστε μας",
+    "discordChat": "Συνομιλία Discord",
+    "zoomToFitViewport": "Εστίαση για να χωρέσει στο παράθυρο προβολής",
+    "zoomToFitSelection": "Εστίαση για να χωρέσει στην επιλογή",
+    "zoomToFit": "Εστίαση για να χωρέσει σε όλα τα στοιχεία",
+    "installPWA": "Τοπική εγκατάσταση Excalidraw (PWA)",
+    "autoResize": "Ενεργοποίηση αυτόματης αλλαγής μεγέθους κειμένου",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "Δεν έχουν προστεθεί αντικείμενα ακόμη...",
     "hint_emptyLibrary": "Επιλέξτε ένα στοιχείο στον καμβά για να το προσθέσετε εδώ, ή εγκαταστήστε μια βιβλιοθήκη από το δημόσιο αποθετήριο, παρακάτω.",
     "hint_emptyPrivateLibrary": "Επιλέξτε ένα στοιχείο στον καμβά για να το προσθέσετε εδώ."
+  },
+  "search": {
+    "title": "",
+    "noMatch": "",
+    "singleResult": "",
+    "multipleResults": "",
+    "placeholder": ""
   },
   "buttons": {
     "clearReset": "Επαναφορά του καμβά",
@@ -151,6 +190,7 @@
     "exportImage": "Εξαγωγή εικόνας...",
     "export": "Αποθήκευση ως...",
     "copyToClipboard": "Αντιγραφή στο πρόχειρο",
+    "copyLink": "Αντιγραφή συνδέσμου",
     "save": "Αποθήκευση στο τρέχον αρχείο",
     "saveAs": "Αποθήκευση ως",
     "load": "Άνοιγμα",
@@ -171,17 +211,18 @@
     "fullScreen": "Πλήρης οθόνη",
     "darkMode": "Σκοτεινή λειτουργία",
     "lightMode": "Φωτεινή λειτουργία",
+    "systemMode": "Λειτουργία συστήματος",
     "zenMode": "Λειτουργία Zεν",
-    "objectsSnapMode": "",
+    "objectsSnapMode": "Προσκόλληση σε αντικείμενα",
     "exitZenMode": "Έξοδος από την λειτουργία Zen",
     "cancel": "Ακύρωση",
     "clear": "Καθαρισμός",
     "remove": "Κατάργηση",
-    "embed": "",
+    "embed": "Εναλλαγή ενσωμάτωσης",
     "publishLibrary": "Δημοσίευση",
     "submit": "Υποβολή",
     "confirm": "Επιβεβαίωση",
-    "embeddableInteractionButton": ""
+    "embeddableInteractionButton": "Κάντε κλικ για αλληλεπίδραση"
   },
   "alerts": {
     "clearReset": "Αυτό θα σβήσει ολόκληρο τον καμβά. Είσαι σίγουρος;",
@@ -211,27 +252,27 @@
     "imageInsertError": "Αδυναμία εισαγωγής εικόνας. Προσπαθήστε ξανά αργότερα...",
     "fileTooBig": "Το αρχείο είναι πολύ μεγάλο. Το μέγιστο επιτρεπόμενο μέγεθος είναι {{maxSize}}.",
     "svgImageInsertError": "Αδυναμία εισαγωγής εικόνας SVG. Η σήμανση της SVG δεν φαίνεται έγκυρη.",
-    "failedToFetchImage": "",
-    "invalidSVGString": "Μη έγκυρο SVG.",
+    "failedToFetchImage": "Αποτυχία ανάκτησης εικόνας.",
     "cannotResolveCollabServer": "Αδυναμία σύνδεσης με τον διακομιστή συνεργασίας. Παρακαλώ ανανεώστε τη σελίδα και προσπαθήστε ξανά.",
     "importLibraryError": "Αδυναμία φόρτωσης βιβλιοθήκης",
+    "saveLibraryError": "Αδύνατη η αποθήκευση της βιβλιοθήκης στον δίσκο. Παρακαλώ αποθηκεύστε τη βιβλιοθήκη σας σε ένα αρχείο τοπικά για να βεβαιωθείτε ότι δε θα χάσετε τις αλλαγές.",
     "collabSaveFailed": "Η αποθήκευση στη βάση δεδομένων δεν ήταν δυνατή. Αν το προβλήματα παραμείνει, θα πρέπει να αποθηκεύσετε το αρχείο σας τοπικά για να βεβαιωθείτε ότι δεν χάνετε την εργασία σας.",
     "collabSaveFailed_sizeExceeded": "Η αποθήκευση στη βάση δεδομένων δεν ήταν δυνατή, ο καμβάς φαίνεται να είναι πολύ μεγάλος. Θα πρέπει να αποθηκεύσετε το αρχείο τοπικά για να βεβαιωθείτε ότι δεν θα χάσετε την εργασία σας.",
-    "imageToolNotSupported": "",
+    "imageToolNotSupported": "Οι εικόνες είναι απενεργοποιημένες.",
     "brave_measure_text_error": {
-      "line1": "",
-      "line2": "",
-      "line3": "",
-      "line4": ""
+      "line1": "Φαίνεται ότι χρησιμοποιείτε τον περιηγητή Brave με ενεργοποιημένη τη ρύθμιση <bold>Aggressively Block Fingerprinting</bold>.",
+      "line2": "Αυτό θα μπορεί να οδηγήσει στη διάλυση των <bold>Στοιχείων Κειμένου</bold> στο σχέδιό σας.",
+      "line3": "Σας συνιστούμε να απενεργοποιήσετε αυτή τη ρύθμιση. Μπορείτε να ακολουθήσετε <link>αυτά τα βήματα</link> για το πώς να το κάνετε.",
+      "line4": "Εάν η απενεργοποίηση αυτής της ρύθμισης δε διορθώσει την εμφάνιση των στοιχείων κειμένου, παρακαλώ ανοίξτε ένα <issueLink>θέμα</issueLink> στο GitHub, ή γράψτε μας στο <discordLink>Discord</discordLink>"
     },
     "libraryElementTypeError": {
-      "embeddable": "",
-      "iframe": "",
-      "image": ""
+      "embeddable": "Τα ενσωματώσιμα στοιχεία δεν μπορούν να προστεθούν στη βιβλιοθήκη.",
+      "iframe": "Τα στοιχεία IFrame δεν μπορούν να προστεθούν στη βιβλιοθήκη.",
+      "image": "Η υποστήριξη για προσθήκη εικόνων στη βιβλιοθήκη έρχεται σύντομα!"
     },
-    "asyncPasteFailedOnRead": "",
-    "asyncPasteFailedOnParse": "",
-    "copyToSystemClipboardFailed": ""
+    "asyncPasteFailedOnRead": "Δεν ήταν δυνατή η επικόλληση (δεν ήταν δυνατή η ανάγνωση από το πρόχειρο του συστήματος).",
+    "asyncPasteFailedOnParse": "Αδυναμία επικόλλησης.",
+    "copyToSystemClipboardFailed": "Αδυναμία αντιγραφής στο πρόχειρο."
   },
   "toolBar": {
     "selection": "Επιλογή",
@@ -246,16 +287,31 @@
     "library": "Βιβλιοθήκη",
     "lock": "Κράτησε επιλεγμένο το εργαλείο μετά το σχέδιο",
     "penMode": "Λειτουργία μολυβιού - αποτροπή αφής",
-    "link": "Προσθήκη/ Ενημέρωση συνδέσμου για ένα επιλεγμένο σχήμα",
+    "link": "Προσθήκη / Ενημέρωση συνδέσμου για επιλεγμένο σχήμα",
     "eraser": "Γόμα",
-    "frame": "",
-    "magicframe": "",
-    "embeddable": "",
-    "laser": "",
-    "hand": "",
-    "extraTools": "",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "frame": "Εργαλείο πλαισίου",
+    "magicframe": "Wireframe σε κώδικα",
+    "embeddable": "Web Embed",
+    "laser": "Δείκτης λέιζερ",
+    "hand": "Χέρι (εργαλείο μετακίνησης)",
+    "extraTools": "Περισσότερα εργαλεία",
+    "mermaidToExcalidraw": "Mermaid σε Excalidraw"
+  },
+  "element": {
+    "rectangle": "Ορθογώνιο",
+    "diamond": "Ρόμβος",
+    "ellipse": "Έλλειψη",
+    "arrow": "Βέλος",
+    "line": "Γραμμή",
+    "freedraw": "Ελεύθερη σχεδίαση",
+    "text": "Κείμενο",
+    "image": "Εικόνα",
+    "group": "Ομάδα",
+    "frame": "Πλαίσιο",
+    "magicframe": "Wireframe σε κώδικα",
+    "embeddable": "Web Embed",
+    "selection": "Επιλογή",
+    "iframe": "IFrame"
   },
   "headings": {
     "canvasActions": "Ενέργειες καμβά",
@@ -263,11 +319,13 @@
     "shapes": "Σχήματα"
   },
   "hints": {
-    "canvasPanning": "",
+    "dismissSearch": "",
+    "canvasPanning": "Για να μετακινήσετε τον καμβά, κρατήστε πατημένο τον τροχό του ποντικιού ή το πλήκτρο κενού ενώ σύρετε, ή χρησιμοποιήστε το εργαλείο χειρός",
     "linearElement": "Κάνε κλικ για να ξεκινήσεις πολλαπλά σημεία, σύρε για μια γραμμή",
+    "arrowTool": "Κάντε κλικ για να ξεκινήσετε πολλά σημεία, σύρετε για μία γραμμή. Πατήστε {{arrowShortcut}} ξανά για να αλλάξετε τον τύπο βέλους.",
     "freeDraw": "Κάντε κλικ και σύρτε, απελευθερώσατε όταν έχετε τελειώσει",
     "text": "Tip: μπορείτε επίσης να προσθέστε κείμενο με διπλό-κλικ οπουδήποτε με το εργαλείο επιλογών",
-    "embeddable": "",
+    "embeddable": "Κάντε κλικ και σύρετε για να δημιουργήσετε μια ενσωματωμένη ιστοσελίδα",
     "text_selected": "Κάντε διπλό κλικ ή πατήστε ENTER για να επεξεργαστείτε το κείμενο",
     "text_editing": "Πατήστε Escape ή CtrlOrCmd+ENTER για να ολοκληρώσετε την επεξεργασία",
     "linearElementMulti": "Κάνε κλικ στο τελευταίο σημείο ή πάτησε Escape ή Enter για να τελειώσεις",
@@ -281,10 +339,13 @@
     "placeImage": "Κάντε κλικ για να τοποθετήσετε την εικόνα ή κάντε κλικ και σύρετε για να ορίσετε το μέγεθός της χειροκίνητα",
     "publishLibrary": "Δημοσιεύστε τη δική σας βιβλιοθήκη",
     "bindTextToElement": "Πατήστε Enter για προσθήκη κειμένου",
+    "createFlowchart": "Κρατήστε το πλήκτρο Ctrl ή Cmd και το βελάκι για να δημιουργήσετε ένα διάγραμμα ροής",
     "deepBoxSelect": "Κρατήστε πατημένο το CtrlOrCmd για να επιλέξετε βαθιά, και να αποτρέψετε τη μεταφορά",
     "eraserRevert": "Κρατήστε πατημένο το Alt για να επαναφέρετε τα στοιχεία που σημειώθηκαν για διαγραφή",
     "firefox_clipboard_write": "Αυτή η επιλογή μπορεί πιθανώς να ενεργοποιηθεί αλλάζοντας την ρύθμιση \"dom.events.asyncClipboard.clipboardItem\" σε \"true\". Για να αλλάξετε τις ρυθμίσεις του προγράμματος περιήγησης στο Firefox, επισκεφθείτε τη σελίδα \"about:config\".",
-    "disableSnapping": ""
+    "disableSnapping": "Κρατήστε πατημένο το Ctrl ή το Cmd για απενεργοποίηση προσκόλλησης",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "Αδυναμία εμφάνισης προεπισκόπησης",
@@ -299,9 +360,12 @@
     "openIssueMessage": "Ήμασταν πολύ προσεκτικοί για να μην συμπεριλάβουμε τις πληροφορίες της σκηνής σου στο σφάλμα. Αν η σκηνή σου δεν είναι ιδιωτική, παρακαλώ σκέψου να ακολουθήσεις το δικό μας <button>ανιχνευτής σφαλμάτων.</button> Παρακαλώ να συμπεριλάβετε τις παρακάτω πληροφορίες, αντιγράφοντας και επικολλώντας το ζήτημα στο GitHub.",
     "sceneContent": "Περιεχόμενο σκηνής:"
   },
+  "shareDialog": {
+    "or": "Ή"
+  },
   "roomDialog": {
-    "desc_intro": "Μπορείς να προσκαλέσεις άλλους να δουλέψουν μαζί σου.",
-    "desc_privacy": "Μην ανησυχείς, η συνεδρία χρησιμοποιεί κρυπτογράφηση από σημείο σε σημείο, άρα οτιδήποτε κάνεις θα παραμείνει ανοιχτό μόνο σε εσένα. Ούτε οι μηχανές μας μπορούν να δουν τι κάνεις.",
+    "desc_intro": "Προσκαλέστε άτομα για να συνεργαστείτε στο σχέδιό σας.",
+    "desc_privacy": "Μην ανησυχείτε, η συνεδρία είναι κρυπτογραφημένη από άκρο σε άκρο, και πλήρως ιδιωτική. Ούτε ο διακομιστής μας μπορεί να δει τι σχεδιάζετε.",
     "button_startSession": "Έναρξη Συνεδρίας",
     "button_stopSession": "Τερματισμός Συνεδρίας",
     "desc_inProgressIntro": "Η ζωντανή συνεργασία με άλλους είναι σε ενεργή.",
@@ -328,14 +392,16 @@
     "click": "κλικ",
     "deepSelect": "Βαθιά επιλογή",
     "deepBoxSelect": "Βαθιά επιλογή μέσα στο πλαίσιο και αποτροπή συρσίματος",
+    "createFlowchart": "Δημιουργία διαγράμματος ροής από ένα γενικό στοιχείο",
+    "navigateFlowchart": "Πλοήγηση σε ένα διάγραμμα ροής",
     "curvedArrow": "Κυρτό βέλος",
     "curvedLine": "Κυρτή γραμμή",
     "documentation": "Εγχειρίδιο",
     "doubleClick": "διπλό κλικ",
     "drag": "σύρε",
     "editor": "Επεξεργαστής",
-    "editLineArrowPoints": "",
-    "editText": "",
+    "editLineArrowPoints": "Επεξεργασία σημείων γραμμής/βέλους",
+    "editText": "Επεξεργασία κειμένου / προσθήκη ετικέτας",
     "github": "Βρήκατε πρόβλημα; Υποβάλετε το",
     "howto": "Ακολουθήστε τους οδηγούς μας",
     "or": "ή",
@@ -350,7 +416,9 @@
     "zoomToSelection": "Ζουμ στην επιλογή",
     "toggleElementLock": "Κλείδωμα/Ξεκλείδωμα επιλογής",
     "movePageUpDown": "Μετακίνηση σελίδας πάνω/κάτω",
-    "movePageLeftRight": "Μετακίνηση σελίδας αριστερά/δεξιά"
+    "movePageLeftRight": "Μετακίνηση σελίδας αριστερά/δεξιά",
+    "cropStart": "",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": "Καθαρισμός καμβά"
@@ -359,8 +427,8 @@
     "title": "Δημοσίευση βιβλιοθήκης",
     "itemName": "Όνομα αντικειμένου",
     "authorName": "Όνομα δημιουργού",
-    "githubUsername": "GitHub username",
-    "twitterUsername": "Twitter username",
+    "githubUsername": "Όνομα χρήστη GitHub",
+    "twitterUsername": "Όνομα χρήστη Twitter",
     "libraryName": "Όνομα βιβλιοθήκης",
     "libraryDesc": "Περιγραφή βιβλιοθήκης",
     "website": "Ιστοσελίδα",
@@ -392,27 +460,27 @@
     "removeItemsFromLib": "Αφαίρεση επιλεγμένων αντικειμένων από τη βιβλιοθήκη"
   },
   "imageExportDialog": {
-    "header": "",
+    "header": "Εξαγωγή εικόνας",
     "label": {
-      "withBackground": "",
-      "onlySelected": "",
-      "darkMode": "",
-      "embedScene": "",
-      "scale": "",
-      "padding": ""
+      "withBackground": "Παρασκήνιο",
+      "onlySelected": "Μόνο τα επιλεγμένα",
+      "darkMode": "Σκοτεινό θέμα",
+      "embedScene": "Ενσωμάτωση σκηνής",
+      "scale": "Κλιμάκωση",
+      "padding": "Περιθώριο"
     },
     "tooltip": {
-      "embedScene": ""
+      "embedScene": "Τα δεδομένα σκηνής θα αποθηκευτούν στο αρχείο PNG/SVG προς εξαγωγή ώστε η σκηνή να είναι δυνατό να αποκατασταθεί από αυτό.\nΘα αυξήσει το μέγεθος του αρχείου προς εξαγωγή."
     },
     "title": {
-      "exportToPng": "",
-      "exportToSvg": "",
-      "copyPngToClipboard": ""
+      "exportToPng": "Εξαγωγή σε PNG",
+      "exportToSvg": "Εξαγωγή σε SVG",
+      "copyPngToClipboard": "Αντιγραφή PNG στο πρόχειρο"
     },
     "button": {
-      "exportToPng": "",
-      "exportToSvg": "",
-      "copyPngToClipboard": ""
+      "exportToPng": "PNG",
+      "exportToSvg": "SVG",
+      "copyPngToClipboard": "Αντιγραφή στο πρόχειρο"
     }
   },
   "encrypted": {
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "Γωνία",
-    "element": "Στοιχείο",
-    "elements": "Στοιχεία",
+    "shapes": "Σχήματα",
     "height": "Ύψος",
     "scene": "Σκηνή",
     "selected": "Επιλεγμένα",
     "storage": "Χώρος",
-    "title": "Στατιστικά για σπασίκλες",
+    "fullTitle": "Ιδιότητες Καμβά & Σχήματος",
+    "title": "Ιδιότητες",
+    "generalStats": "Γενικά",
+    "elementProperties": "Ιδιότητες σχήματος",
     "total": "Σύνολο ",
     "version": "Έκδοση",
     "versionCopy": "Κάνε κλικ για αντιγραφή",
@@ -439,13 +509,15 @@
     "copyStyles": "Αντιγράφηκαν στυλ.",
     "copyToClipboard": "Αντιγράφηκε στο πρόχειρο.",
     "copyToClipboardAsPng": "Αντιγράφηκε {{exportSelection}} στο πρόχειρο ως PNG\n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "Το αρχείο αποθηκεύτηκε.",
     "fileSavedToFilename": "Αποθηκεύτηκε στο {filename}",
     "canvas": "καμβάς",
     "selection": "επιλογή",
     "pasteAsSingleElement": "Χρησιμοποίησε το {{shortcut}} για να επικολλήσεις ως ένα μόνο στοιχείο,\nή να επικολλήσεις σε έναν υπάρχοντα επεξεργαστή κειμένου",
-    "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "unableToEmbed": "Η ενσωμάτωση αυτού του url δεν επιτρέπεται αυτήν τη στιγμή. Θέστε ένα πρόβλημα στο GitHub για να ζητήσετε το url να είναι στη λίστα των επιτρεπόμενων.",
+    "unrecognizedLinkFormat": "Ο σύνδεσμος που ενσωματώσατε δεν ταιριάζει με την αναμενόμενη μορφή. Παρακαλώ προσπαθήστε να επικολλήσετε τη συμβολοσειρά 'embed' που παρέχεται από τον ιστότοπο προορισμού",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "Διαφανές",
@@ -487,39 +559,75 @@
   "overwriteConfirm": {
     "action": {
       "exportToImage": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "Εξαγωγή ως εικόνα",
+        "button": "Εξαγωγή ως εικόνα",
+        "description": "Εξαγωγή δεδομένων σκηνής σε ένα αρχείο από το οποίο μπορείτε να εισάγετε αργότερα."
       },
       "saveToDisk": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "Αποθήκευση στο δίσκο",
+        "button": "Αποθήκευση στο δίσκο",
+        "description": "Εξαγωγή δεδομένων σκηνής σε ένα αρχείο από το οποίο μπορείτε να εισάγετε αργότερα."
       },
       "excalidrawPlus": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "Excalidraw+",
+        "button": "Εξαγωγή σε Excalidraw+",
+        "description": "Αποθηκεύστε τη σκηνή στο χώρο εργασίας σας Excalidraw+."
       }
     },
     "modal": {
       "loadFromFile": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "Φόρτωση από αρχείο",
+        "button": "Φόρτωση από αρχείο",
+        "description": "Η φόρτωση από αρχείο θα <bold>αντικαταστήσει το υπάρχον περιεχόμενό σας</bold>.<br></br>Μπορείτε πρώτα να δημιουργήσετε αντίγραφα ασφαλείας του σχεδίου σας χρησιμοποιώντας μία από τις παρακάτω επιλογές."
       },
       "shareableLink": {
-        "title": "",
-        "button": "",
-        "description": ""
+        "title": "Φόρτωση από σύνδεσμο",
+        "button": "Αντικατάσταση του περιεχομένου μου",
+        "description": "Η φόρτωση εξωτερικού σχεδίου θα <bold>αντικαταστήσει το υπάρχον περιεχόμενο</bold>.<br></br>Μπορείτε να δημιουργήσετε αντίγραφα ασφαλείας του σχεδίου σας πρώτα χρησιμοποιώντας μία από τις παρακάτω επιλογές."
       }
     }
   },
   "mermaid": {
-    "title": "",
-    "button": "",
-    "description": "",
-    "syntax": "",
-    "preview": ""
+    "title": "Mermaid σε Excalidraw",
+    "button": "Εισαγωγή",
+    "description": "Επί του παρόντος υποστηρίζονται μόνο Διαγράμματα <flowchartLink>Ροής</flowchartLink>,<sequenceLink> Ακολουθίας, </sequenceLink> και <classLink>Κλάσεων</classLink>. Οι άλλοι τύποι θα αποδοθούν ως εικόνα στο Excalidraw.",
+    "syntax": "Σύνταξη Mermaid",
+    "preview": "Προεπισκόπηση"
+  },
+  "quickSearch": {
+    "placeholder": "Γρήγορη αναζήτηση"
+  },
+  "fontList": {
+    "badge": {
+      "old": "παλιό"
+    },
+    "sceneFonts": "Σε αυτή τη σκηνή",
+    "availableFonts": "Διαθέσιμες γραμματοσειρές",
+    "empty": "Δεν βρέθηκαν γραμματοσειρές"
+  },
+  "userList": {
+    "empty": "Δεν βρέθηκαν χρήστες",
+    "hint": {
+      "text": "Κάντε κλικ στο χρήστη για να τον ακολουθήσετε",
+      "followStatus": "Ακολουθείτε αυτόν τον χρήστη",
+      "inCall": "Ο χρήστης βρίσκεται σε κλήση",
+      "micMuted": "Το μικρόφωνο του χρήστη είναι σε σίγαση",
+      "isSpeaking": "Ο χρήστης μιλάει"
+    }
+  },
+  "commandPalette": {
+    "title": "Παλέτα Εντολών",
+    "shortcuts": {
+      "select": "Επιλογή",
+      "confirm": "Επιβεβαίωση",
+      "close": "Κλείσιμο"
+    },
+    "recents": "Πρόσφατα χρησιμοποιημένα",
+    "search": {
+      "placeholder": "Αναζητήστε μενού, εντολές και ανακαλύψτε κρυμμένα διαμάντια",
+      "noMatch": "Δεν υπάρχουν εντολές που ταιριάζουν..."
+    },
+    "itemNotAvailable": "Η εντολή δεν είναι διαθέσιμη...",
+    "shortcutHint": "Για την παλέτα εντολών, χρησιμοποιήστε το {{shortcut}}"
   }
 }

@@ -12,7 +12,7 @@
     "copyAsSvg": "Skopiuj do schowka jako plik SVG",
     "copyText": "Skopiuj do schowka jako tekst",
     "copySource": "Skopiuj źródło do schowka",
-    "convertToCode": "Skonwertuj do kodu",
+    "convertToCode": "Skonwertuj na kod",
     "bringForward": "Przenieś wyżej",
     "sendToBack": "Przenieś na spód",
     "bringToFront": "Przenieś na wierzch",
@@ -21,7 +21,9 @@
     "copyStyles": "Kopiuj style",
     "pasteStyles": "Wklej style",
     "stroke": "Kolor obramowania",
+    "changeStroke": "Zmień kolor kreski",
     "background": "Kolor wypełnienia",
+    "changeBackground": "Zmień kolor tła",
     "fill": "Wypełnienie",
     "strokeWidth": "Grubość obramowania",
     "strokeStyle": "Styl obrysu",
@@ -29,7 +31,7 @@
     "strokeStyle_dashed": "Kreskowany",
     "strokeStyle_dotted": "Kropkowany",
     "sloppiness": "Styl kreski",
-    "opacity": "Przeźroczystość",
+    "opacity": "Przezroczystość",
     "textAlign": "Wyrównanie tekstu",
     "edges": "Krawędzie",
     "sharp": "Ostry",
@@ -38,12 +40,20 @@
     "arrowhead_none": "Brak",
     "arrowhead_arrow": "Strzałka",
     "arrowhead_bar": "Kreska",
-    "arrowhead_circle": "Okrąg",
-    "arrowhead_circle_outline": "Okrąg (obrys)",
+    "arrowhead_circle": "Koło",
+    "arrowhead_circle_outline": "Koło (puste)",
     "arrowhead_triangle": "Trójkąt",
-    "arrowhead_triangle_outline": "Trójkąt (obrys)",
+    "arrowhead_triangle_outline": "Trójkąt (pusty)",
     "arrowhead_diamond": "Romb",
-    "arrowhead_diamond_outline": "Romb (obrys)",
+    "arrowhead_diamond_outline": "Romb (pusty)",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "Typ strzałki",
+    "arrowtype_sharp": "Ostra strzałka",
+    "arrowtype_round": "Zaokrąglona strzałka",
+    "arrowtype_elbowed": "Łamana strzałka",
     "fontSize": "Rozmiar tekstu",
     "fontFamily": "Krój pisma",
     "addWatermark": "Dodaj \"Zrobione w Excalidraw\"",
@@ -72,6 +82,7 @@
     "canvasColors": "Używane na płótnie",
     "canvasBackground": "Kolor dokumentu",
     "drawingCanvas": "Obszar roboczy",
+    "clearCanvas": "Wyczyść płótno",
     "layers": "Warstwy",
     "actions": "Akcje",
     "language": "Język",
@@ -84,12 +95,13 @@
     "group": "Zgrupuj wybrane",
     "ungroup": "Rozgrupuj wybrane",
     "collaborators": "Współtwórcy",
-    "showGrid": "Pokaż siatkę",
+    "toggleGrid": "Przełącz widoczność siatki",
     "addToLibrary": "Dodaj do biblioteki",
     "removeFromLibrary": "Usuń z biblioteki",
     "libraryLoadingMessage": "Wczytywanie biblioteki…",
     "libraries": "Przeglądaj biblioteki",
     "loadingScene": "Wczytywanie sceny…",
+    "loadScene": "Wczytaj scenę z pliku",
     "align": "Wyrównaj",
     "alignTop": "Wyrównaj do góry",
     "alignBottom": "Wyrównaj do dołu",
@@ -105,7 +117,9 @@
     "share": "Udostępnij",
     "showStroke": "Pokaż próbnik kolorów obrysu",
     "showBackground": "Pokaż próbnik koloru tła",
-    "toggleTheme": "Przełącz motyw",
+    "showFonts": "Pokaż selektor czcionek",
+    "toggleTheme": "Przełącz motyw jasny / ciemny",
+    "theme": "Motyw",
     "personalLib": "Biblioteka prywatna",
     "excalidrawLib": "Biblioteka Excalidraw",
     "decreaseFontSize": "Zmniejsz rozmiar czcionki",
@@ -115,16 +129,17 @@
     "createContainerFromText": "Zawijaj tekst w kontenerze",
     "link": {
       "edit": "Edytuj łącze",
-      "editEmbed": "Edytuj i osadź link",
-      "create": "Utwórz łącze",
-      "createEmbed": "Stwórz i osadź link",
+      "editEmbed": "",
+      "create": "",
       "label": "Łącze",
       "labelEmbed": "Podlinkuj i osadź",
-      "empty": "Nie ustawiono linku"
+      "empty": "Brakujący link",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "Edytuj linię",
-      "exit": "Wyjdź z edytora linii"
+      "editArrow": "Edytuj strzałkę"
     },
     "elementLock": {
       "lock": "Zablokuj",
@@ -137,13 +152,37 @@
     "selectAllElementsInFrame": "Zaznacz wszystkie elementy w ramce",
     "removeAllElementsFromFrame": "Usuń wszystkie elementy z ramki",
     "eyeDropper": "Wybierz kolor z płótna",
-    "textToDiagram": "Tekst do diagramu",
-    "prompt": ""
+    "textToDiagram": "Generuj diagram z opisu",
+    "prompt": "Opis",
+    "followUs": "Obserwuj nas",
+    "discordChat": "Czat Discorda",
+    "zoomToFitViewport": "Dopasuj widok do ekranu",
+    "zoomToFitSelection": "Dopasuj widok do zaznaczenia",
+    "zoomToFit": "Dopasuj widok do całej zawartości",
+    "installPWA": "Zainstaluj Excalidraw lokalnie (PWA)",
+    "autoResize": "Włącz automatyczne zmiany rozmiaru tekstu",
+    "imageCropping": "Przycinanie obrazu",
+    "unCroppedDimension": "Nieprzycięty wymiar",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "Nie dodano jeszcze żadnych elementów...",
     "hint_emptyLibrary": "Wybierz element na płótnie, aby go tutaj dodać, lub zainstaluj bibliotekę z poniższego publicznego repozytorium.",
     "hint_emptyPrivateLibrary": "Wybierz element, aby dodać go tutaj."
+  },
+  "search": {
+    "title": "Znajdź na płótnie",
+    "noMatch": "Nie znaleziono pasujących elementów...",
+    "singleResult": "wynik",
+    "multipleResults": "wyniki",
+    "placeholder": "Znajdź tekst na płótnie..."
   },
   "buttons": {
     "clearReset": "Wyczyść dokument i zresetuj kolor dokumentu",
@@ -151,6 +190,7 @@
     "exportImage": "Eksportuj obraz...",
     "export": "Zapisz jako...",
     "copyToClipboard": "Skopiuj do schowka",
+    "copyLink": "Kopiuj link",
     "save": "Zapisz do bieżącego pliku",
     "saveAs": "Zapisz jako",
     "load": "Otwórz",
@@ -171,6 +211,7 @@
     "fullScreen": "Pełny ekran",
     "darkMode": "Ciemny motyw",
     "lightMode": "Jasny motyw",
+    "systemMode": "Motyw systemowy",
     "zenMode": "Tryb Zen",
     "objectsSnapMode": "Przyciąganie do obiektów",
     "exitZenMode": "Wyjdź z trybu Zen",
@@ -212,9 +253,9 @@
     "fileTooBig": "Plik jest zbyt duży. Maksymalny dozwolony rozmiar to {{maxSize}}.",
     "svgImageInsertError": "Nie udało się wstawić obrazu SVG. Znacznik SVG wygląda na nieprawidłowy.",
     "failedToFetchImage": "Nie udało się załadować obrazu.",
-    "invalidSVGString": "Nieprawidłowy SVG.",
     "cannotResolveCollabServer": "Nie można połączyć się z serwerem współpracy w czasie rzeczywistym. Proszę odświeżyć stronę i spróbować ponownie.",
     "importLibraryError": "Wystąpił błąd w trakcie ładowania biblioteki",
+    "saveLibraryError": "Nie można zapisać biblioteki do pamięci. Proszę zapisać bibliotekę do pliku lokalnie, aby upewnić się, że nie stracisz zmian.",
     "collabSaveFailed": "Nie udało się zapisać w bazie danych. Jeśli problemy nie ustąpią, zapisz plik lokalnie, aby nie utracić swojej pracy.",
     "collabSaveFailed_sizeExceeded": "Nie udało się zapisać w bazie danych — dokument jest za duży. Zapisz plik lokalnie, aby nie utracić swojej pracy.",
     "imageToolNotSupported": "Dodawanie obrazów jest wyłączone.",
@@ -254,8 +295,23 @@
     "laser": "Wskaźnik laserowy",
     "hand": "Ręka (narzędzie do przesuwania)",
     "extraTools": "Więcej narzędzi",
-    "mermaidToExcalidraw": "Konwertuj diagram Mermaid do Excalidraw",
-    "magicSettings": "Ustawienia AI"
+    "mermaidToExcalidraw": "Konwertuj diagram Mermaid do Excalidraw"
+  },
+  "element": {
+    "rectangle": "Prostokąt",
+    "diamond": "Romb",
+    "ellipse": "Elipsa",
+    "arrow": "Strzałka",
+    "line": "Linia",
+    "freedraw": "Rysowanie odręczne",
+    "text": "Tekst",
+    "image": "Obraz",
+    "group": "Grupa",
+    "frame": "Ramka",
+    "magicframe": "Kod ze szkicu",
+    "embeddable": "Osadzenie",
+    "selection": "Zaznaczenie",
+    "iframe": "IFrame"
   },
   "headings": {
     "canvasActions": "Narzędzia",
@@ -263,8 +319,10 @@
     "shapes": "Kształty"
   },
   "hints": {
+    "dismissSearch": "Wyjdź, aby odrzucić wyszukiwanie",
     "canvasPanning": "Aby przesunąć płótno, przytrzymaj kółko myszy lub spację podczas przeciągania, albo użyj narzędzia ręki",
     "linearElement": "Naciśnij, aby zrobić punkt, przeciągnij, aby narysować linię",
+    "arrowTool": "Kliknij, aby rozpocząć dodawanie wielu punktów, przeciągnij, aby narysować pojedynczą linię. Naciśnij przycisk {{arrowShortcut}} ponownie, aby zmienić typ strzałki.",
     "freeDraw": "Naciśnij i przeciągnij by rysować, puść kiedy skończysz",
     "text": "Wskazówka: możesz również dodać tekst klikając dwukrotnie gdziekolwiek za pomocą narzędzia zaznaczania",
     "embeddable": "Kliknij i przeciągnij, aby stworzyć osadzenie strony",
@@ -281,10 +339,13 @@
     "placeImage": "Kliknij, aby umieścić obraz, lub kliknij i przeciągnij, aby ustawić jego rozmiar ręcznie",
     "publishLibrary": "Opublikuj własną bibliotekę",
     "bindTextToElement": "Wciśnij enter, aby dodać tekst",
+    "createFlowchart": "Przytrzymaj klawisz CtrlOrCmd i Arrow, aby utworzyć graf",
     "deepBoxSelect": "Przytrzymaj CtrlOrCmd, aby wybrać w obrębie grupy i uniknąć przeciągania",
     "eraserRevert": "Przytrzymaj Alt, aby przywrócić elementy oznaczone do usunięcia",
     "firefox_clipboard_write": "Ta funkcja może być włączona poprzez ustawienie flagi \"dom.events.asyncClipboard.clipboardItem\" na \"true\". Aby zmienić flagi przeglądarki w Firefox, odwiedź stronę \"about:config\".",
-    "disableSnapping": "Przytrzymaj Ctrl lub Cmd, aby wyłączyć przyciąganie"
+    "disableSnapping": "Przytrzymaj Ctrl lub Cmd, aby wyłączyć przyciąganie",
+    "enterCropEditor": "Kliknij dwukrotnie na obraz lub naciśnij ENTER, aby przyciąć obraz",
+    "leaveCropEditor": "Kliknij poza obrazem albo naciśnij ENTER lub ESCAPE, aby zakończyć przycinanie"
   },
   "canvasError": {
     "cannotShowPreview": "Nie można wyświetlić podglądu",
@@ -299,9 +360,12 @@
     "openIssueMessage": "Szanujemy twoją prywatność i raport nie zawierał żadnych danych dotyczących tego nad czym pracowałeś, natomiast jeżeli jesteś w stanie podzielić się tym nad czym pracowałeś, prosimy o dodatkowy raport poprzez <button>nasze narzędzie do raportowania błędów.</button> Prosimy o dołączenie poniższej informacji poprzez skopiowanie jej i umieszczenie jej w zgłoszeniu na portalu GitHub.",
     "sceneContent": "Zawartość dokumentu:"
   },
+  "shareDialog": {
+    "or": "Lub"
+  },
   "roomDialog": {
-    "desc_intro": "Będziesz w stanie pracować wraz z osobami które zaprosisz do współpracy.",
-    "desc_privacy": "By zapewnić Ci prywatność, sesja współpracy na żywo jest zabezpieczona szyfrowaniem end-to-end, co oznacza, że poza tobą i osobami z którymi podzielisz się linkiem, nikt nie ma dostępu do tego co będziecie tworzyć.",
+    "desc_intro": "Zaproś ludzi do wspólnego rysunku.",
+    "desc_privacy": "Nie martw się, sesja jest szyfrowana end-to-end i w pełni prywatna. Nawet nasz serwer nie widzi co rysujesz.",
     "button_startSession": "Rozpocznij sesję",
     "button_stopSession": "Zakończ sesję",
     "desc_inProgressIntro": "Sesja współpracy na żywo właśnie się rozpoczęła.",
@@ -328,6 +392,8 @@
     "click": "kliknięcie",
     "deepSelect": "Wybór w obrębie grupy",
     "deepBoxSelect": "Wybór w obrębie grupy i unikanie przeciągania",
+    "createFlowchart": "Twórz diagram używając generycznych elementów",
+    "navigateFlowchart": "Nawiguj diagram",
     "curvedArrow": "Zakrzywiona strzałka",
     "curvedLine": "Zakrzywiona linia",
     "documentation": "Dokumentacja",
@@ -350,7 +416,9 @@
     "zoomToSelection": "Przybliż do zaznaczenia",
     "toggleElementLock": "Zablokuj/odblokuj zaznaczenie",
     "movePageUpDown": "Przesuń stronę w górę/w dół",
-    "movePageLeftRight": "Przenieś stronę w lewo/prawo"
+    "movePageLeftRight": "Przenieś stronę w lewo/prawo",
+    "cropStart": "Przytnij obraz",
+    "cropFinish": "Zakończ przycinanie obrazu"
   },
   "clearCanvasDialog": {
     "title": "Wyczyść płótno"
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "Kąt",
-    "element": "Element",
-    "elements": "Elementy",
+    "shapes": "Kształty",
     "height": "Wysokość",
     "scene": "Scena",
     "selected": "Zaznaczenie",
     "storage": "Pamięć",
-    "title": "Statystyki dla nerdów",
+    "fullTitle": "Właściwości płótna i kształtu",
+    "title": "Właściwości",
+    "generalStats": "Ogólne",
+    "elementProperties": "Właściwości kształtu",
     "total": "Łącznie",
     "version": "Wersja",
     "versionCopy": "Kliknij, aby skopiować",
@@ -439,13 +509,15 @@
     "copyStyles": "Skopiowano style.",
     "copyToClipboard": "Skopiowano do schowka.",
     "copyToClipboardAsPng": "Skopiowano {{exportSelection}} do schowka jako PNG\n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "Skopiowano {{exportSelection}} do schowka jako SVG\n({{exportColorScheme}})",
     "fileSaved": "Zapisano plik.",
     "fileSavedToFilename": "Zapisano jako {filename}",
     "canvas": "płótno",
     "selection": "zaznaczenie",
     "pasteAsSingleElement": "Użyj {{shortcut}}, aby wkleić jako pojedynczy element,\nlub wklej do istniejącego edytora tekstu",
     "unableToEmbed": "Osadzenie tego linku jest obecnie niedozwolone. Zgłoś propozycję na portalu GitHub, aby dodać go do listy dozwolonych wyjątków",
-    "unrecognizedLinkFormat": "Osadzony link ma niewłaściwy format. Spróbuj wkleić całą zawartość pola \"embed\" z oryginalnej strony."
+    "unrecognizedLinkFormat": "Osadzony link ma niewłaściwy format. Spróbuj wkleić całą zawartość pola \"embed\" z oryginalnej strony.",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "Przezroczysty",
@@ -521,5 +593,41 @@
     "description": "Obecnie wspierane są jedynie <flowchartLink>proste grafy</flowchartLink>, <sequenceLink>sekwencje</sequenceLink> i <classLink>diagramy klas</classLink>. Pozostałe typy będą wyświetlane jako obrazy w Excalidraw.",
     "syntax": "Składnia diagramów Mermaid",
     "preview": "Podgląd"
+  },
+  "quickSearch": {
+    "placeholder": "Szybkie wyszukiwanie"
+  },
+  "fontList": {
+    "badge": {
+      "old": "stara"
+    },
+    "sceneFonts": "W tej scenie",
+    "availableFonts": "Dostępne czcionki",
+    "empty": "Nie znaleziono czcionek"
+  },
+  "userList": {
+    "empty": "Nie znaleziono użytkowników",
+    "hint": {
+      "text": "Kliknij na użytkownika, aby obserwować",
+      "followStatus": "Obserwujesz tego użytkownika",
+      "inCall": "Użytkownik jest w trakcie połączenia głosowego",
+      "micMuted": "Mikrofon użytkownik jest wyciszony",
+      "isSpeaking": "Użytkownik przemawia"
+    }
+  },
+  "commandPalette": {
+    "title": "Paleta poleceń",
+    "shortcuts": {
+      "select": "Wybierz",
+      "confirm": "Potwierdź",
+      "close": "Zamknij"
+    },
+    "recents": "Ostatnio używane",
+    "search": {
+      "placeholder": "Szukaj w menu, poleceniach i odkrywaj ukryte funkcje",
+      "noMatch": "Brak pasujących komend..."
+    },
+    "itemNotAvailable": "Polecenie jest niedostępne...",
+    "shortcutHint": "Przywołaj paletę poleceń za pomocą {{shortcut}}"
   }
 }

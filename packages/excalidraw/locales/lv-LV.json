@@ -21,7 +21,9 @@
     "copyStyles": "Kopēt stilus",
     "pasteStyles": "Ielīmēt stilus",
     "stroke": "Svītras krāsa",
+    "changeStroke": "",
     "background": "Fona krāsa",
+    "changeBackground": "",
     "fill": "Aizpildījums",
     "strokeWidth": "Svītras platums",
     "strokeStyle": "Svītras stils",
@@ -44,6 +46,14 @@
     "arrowhead_triangle_outline": "",
     "arrowhead_diamond": "",
     "arrowhead_diamond_outline": "",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "",
+    "arrowtype_sharp": "",
+    "arrowtype_round": "",
+    "arrowtype_elbowed": "",
     "fontSize": "Teksta lielums",
     "fontFamily": "Fontu saime",
     "addWatermark": "Pievienot \"Radīts ar Excalidraw\"",
@@ -72,6 +82,7 @@
     "canvasColors": "Izmantots tāfelei",
     "canvasBackground": "Ainas fons",
     "drawingCanvas": "Tāfele",
+    "clearCanvas": "",
     "layers": "Slāņi",
     "actions": "Darbības",
     "language": "Valoda",
@@ -84,12 +95,13 @@
     "group": "Grupēt atlasīto",
     "ungroup": "Atgrupēt atlasīto",
     "collaborators": "Dalībnieki",
-    "showGrid": "Rādīt režģi",
+    "toggleGrid": "",
     "addToLibrary": "Pievienot bibliotēkai",
     "removeFromLibrary": "Izņemt no bibliotēkas",
     "libraryLoadingMessage": "Ielādē bibliotēku…",
     "libraries": "Apskatīt bibliotēkas",
     "loadingScene": "Ielādē ainu…",
+    "loadScene": "",
     "align": "Līdzināt",
     "alignTop": "Līdzināt augšpusē",
     "alignBottom": "Līdzināt lejā",
@@ -105,7 +117,9 @@
     "share": "Kopīgot",
     "showStroke": "Rādīt svītras krāsas atlasītāju",
     "showBackground": "Rādīt fona krāsas atlasītāju",
-    "toggleTheme": "Pārslēgt krāsu tēmu",
+    "showFonts": "",
+    "toggleTheme": "",
+    "theme": "",
     "personalLib": "Personīgā bibliotēka",
     "excalidrawLib": "Excalidraw bibliotēka",
     "decreaseFontSize": "Samazināt fonta izmēru",
@@ -116,15 +130,16 @@
     "link": {
       "edit": "Rediģēt saiti",
       "editEmbed": "",
-      "create": "Izveidot saiti",
-      "createEmbed": "",
+      "create": "",
       "label": "Saite",
       "labelEmbed": "",
-      "empty": ""
+      "empty": "",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "Rediģēt līniju",
-      "exit": "Aizvērt līnijas redaktoru"
+      "editArrow": ""
     },
     "elementLock": {
       "lock": "Fiksēt",
@@ -138,12 +153,36 @@
     "removeAllElementsFromFrame": "",
     "eyeDropper": "",
     "textToDiagram": "",
-    "prompt": ""
+    "prompt": "",
+    "followUs": "",
+    "discordChat": "",
+    "zoomToFitViewport": "",
+    "zoomToFitSelection": "",
+    "zoomToFit": "",
+    "installPWA": "",
+    "autoResize": "",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "Neviena vienība vēl nav pievienota...",
     "hint_emptyLibrary": "Atlasiet objektu tāfelē, lai to šeit pievienotu, vai pievienojiet publisku bibliotēku zemāk.",
     "hint_emptyPrivateLibrary": "Atlasiet objektu tāfelē, lai to šeit pievienotu."
+  },
+  "search": {
+    "title": "",
+    "noMatch": "",
+    "singleResult": "",
+    "multipleResults": "",
+    "placeholder": ""
   },
   "buttons": {
     "clearReset": "Atiestatīt tāfeli",
@@ -151,6 +190,7 @@
     "exportImage": "Eksportēt attēlu...",
     "export": "Saglabāt uz...",
     "copyToClipboard": "Kopēt starpliktuvē",
+    "copyLink": "",
     "save": "Saglabāt pašreizējo datni",
     "saveAs": "Saglabāt kā",
     "load": "Atvērt",
@@ -171,6 +211,7 @@
     "fullScreen": "Pilnekrāna režīms",
     "darkMode": "Tumšais režīms",
     "lightMode": "Gaišais režīms",
+    "systemMode": "",
     "zenMode": "Zen režīms",
     "objectsSnapMode": "",
     "exitZenMode": "Pamest Zen režīmu",
@@ -212,9 +253,9 @@
     "fileTooBig": "Datne ir par lielu. Lielākais atļautais izmērs ir {{maxSize}}.",
     "svgImageInsertError": "Nevarēja ievietot SVG attēlu. Šķiet, ka SVG marķējums nav derīgs.",
     "failedToFetchImage": "",
-    "invalidSVGString": "Nederīgs SVG.",
     "cannotResolveCollabServer": "Nevarēja savienoties ar sadarbošanās serveri. Lūdzu, pārlādējiet lapu un mēģiniet vēlreiz.",
     "importLibraryError": "Nevarēja ielādēt bibliotēku",
+    "saveLibraryError": "",
     "collabSaveFailed": "Darbs nav saglabāts datubāzē. Ja problēma turpinās, saglabājiet datni lokālajā krātuvē, lai nodrošinātos pret darba pazaudēšanu.",
     "collabSaveFailed_sizeExceeded": "Darbs nav saglabāts datubāzē, šķiet, ka tāfele ir pārāk liela. Saglabājiet datni lokālajā krātuvē, lai nodrošinātos pret darba pazaudēšanu.",
     "imageToolNotSupported": "",
@@ -246,7 +287,7 @@
     "library": "Bibliotēka",
     "lock": "Paturēt izvēlēto rīku pēc darbības",
     "penMode": "Pildspalvas režīms – novērst pieskaršanos",
-    "link": "Pievienot/rediģēt atlasītās figūras saiti",
+    "link": "",
     "eraser": "Dzēšgumija",
     "frame": "",
     "magicframe": "",
@@ -254,8 +295,23 @@
     "laser": "",
     "hand": "Roka (panoramēšanas rīks)",
     "extraTools": "",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "mermaidToExcalidraw": ""
+  },
+  "element": {
+    "rectangle": "",
+    "diamond": "",
+    "ellipse": "",
+    "arrow": "",
+    "line": "",
+    "freedraw": "",
+    "text": "",
+    "image": "",
+    "group": "",
+    "frame": "",
+    "magicframe": "",
+    "embeddable": "",
+    "selection": "",
+    "iframe": ""
   },
   "headings": {
     "canvasActions": "Tāfeles darbības",
@@ -263,8 +319,10 @@
     "shapes": "Formas"
   },
   "hints": {
+    "dismissSearch": "",
     "canvasPanning": "Lai bīdītu tāfeli, turiet nospiestu ritināšanas vai atstarpes taustiņu, vai izmanto rokas rīku",
     "linearElement": "Klikšķiniet, lai sāktu zīmēt vairākus punktus; velciet, lai zīmētu līniju",
+    "arrowTool": "",
     "freeDraw": "Spiediet un velciet; atlaidiet, kad pabeidzat",
     "text": "Ieteikums: lai pievienotu tekstu, varat arī jebkur dubultklikšķināt ar atlases rīku",
     "embeddable": "",
@@ -281,10 +339,13 @@
     "placeImage": "Klikšķiniet, lai novietotu attēlu, vai spiediet un velciet, lai iestatītu tā izmēru",
     "publishLibrary": "Publicēt savu bibliotēku",
     "bindTextToElement": "Spiediet ievades taustiņu, lai pievienotu tekstu",
+    "createFlowchart": "",
     "deepBoxSelect": "Turient nospiestu Ctrl vai Cmd, lai atlasītu dziļumā un lai nepieļautu objektu pavilkšanu",
     "eraserRevert": "Turiet Alt, lai noņemtu elementus no dzēsšanas atlases",
     "firefox_clipboard_write": "Šis iestatījums var tikt ieslēgts ar \"dom.events.asyncClipboard.clipboardItem\" marķieri pārslēgtu uz \"true\". Lai mainītu pārlūka marķierus Firefox, apmeklē \"about:config\" lapu.",
-    "disableSnapping": ""
+    "disableSnapping": "",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "Nevar rādīt priekšskatījumu",
@@ -299,9 +360,12 @@
     "openIssueMessage": "Mēs uzmanījāmies, lai neiekļautu jūsu ainas informāciju šajā kļūdā. Ja jūsu aina nav privāta, lūdzu ziņojiet par šo kļūdu mūsu <button>kļūdu uzskaitē.</button> Lūdzu, miniet sekojošo informāciju to kopējot un ielīmējot jūsu ziņojumā platformā GitHub.",
     "sceneContent": "Ainas saturs:"
   },
+  "shareDialog": {
+    "or": ""
+  },
   "roomDialog": {
-    "desc_intro": "Varat ielūgt cilvēkus pašreizējajā ainā, lai sadarbotos ar tiem.",
-    "desc_privacy": "Neuztraucieties, sesija izmanto šifrēšanu no gala līdz galam, tātad jūsu zīmējums paliks privāts. Pat mūsu serveri nevarēs redzēt, ar ko esat nācis klajā.",
+    "desc_intro": "",
+    "desc_privacy": "",
     "button_startSession": "Sākt sesiju",
     "button_stopSession": "Beigt sesiju",
     "desc_inProgressIntro": "Notiek tiešsaistes sadarbības sesija.",
@@ -328,6 +392,8 @@
     "click": "klikšķis",
     "deepSelect": "Atlasīt dziļumā",
     "deepBoxSelect": "Atlasīt dziļumā kastes ietvaros, un nepieļaut pavilkšanu",
+    "createFlowchart": "",
+    "navigateFlowchart": "",
     "curvedArrow": "Liekta bulta",
     "curvedLine": "Liekta līnija",
     "documentation": "Dokumentācija",
@@ -350,7 +416,9 @@
     "zoomToSelection": "Iestatīt mērogu, lai rādītu atlasi",
     "toggleElementLock": "Fiksēt/atbrīvot atlasīto",
     "movePageUpDown": "Pārvietot lapu augšup/lejup",
-    "movePageLeftRight": "Pārvietot lapu pa labi/kreisi"
+    "movePageLeftRight": "Pārvietot lapu pa labi/kreisi",
+    "cropStart": "",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": "Notīrīt tāfeli"
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "Leņķis",
-    "element": "Elements",
-    "elements": "Elementi",
+    "shapes": "",
     "height": "Augstums",
     "scene": "Aina",
     "selected": "Atlasīti",
     "storage": "Krātuve",
-    "title": "Statistika entuziastiem",
+    "fullTitle": "",
+    "title": "",
+    "generalStats": "",
+    "elementProperties": "",
     "total": "Kopā",
     "version": "Versija",
     "versionCopy": "Klikšķiniet, lai nokopētu",
@@ -439,13 +509,15 @@
     "copyStyles": "Nokopēja stilus.",
     "copyToClipboard": "Nokopēja starpliktuvē.",
     "copyToClipboardAsPng": "Nokopēja {{exportSelection}} starpliktuvē kā PNG ({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "Datne saglabāta.",
     "fileSavedToFilename": "Saglabāts kā {filename}",
     "canvas": "tāfeli",
     "selection": "atlasi",
     "pasteAsSingleElement": "Izmantojiet {{shortcut}}, lai ielīmētu kā jaunu elementu, vai ielīmētu esošā teksta lauciņā",
     "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "unrecognizedLinkFormat": "",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "Caurspīdīgs",
@@ -521,5 +593,41 @@
     "description": "",
     "syntax": "",
     "preview": ""
+  },
+  "quickSearch": {
+    "placeholder": ""
+  },
+  "fontList": {
+    "badge": {
+      "old": ""
+    },
+    "sceneFonts": "",
+    "availableFonts": "",
+    "empty": ""
+  },
+  "userList": {
+    "empty": "",
+    "hint": {
+      "text": "",
+      "followStatus": "",
+      "inCall": "",
+      "micMuted": "",
+      "isSpeaking": ""
+    }
+  },
+  "commandPalette": {
+    "title": "",
+    "shortcuts": {
+      "select": "",
+      "confirm": "",
+      "close": ""
+    },
+    "recents": "",
+    "search": {
+      "placeholder": "",
+      "noMatch": ""
+    },
+    "itemNotAvailable": "",
+    "shortcutHint": ""
   }
 }

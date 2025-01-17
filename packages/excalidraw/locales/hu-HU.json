@@ -21,7 +21,9 @@
     "copyStyles": "Stílus másolása",
     "pasteStyles": "Stílus beillesztése",
     "stroke": "Körvonal",
+    "changeStroke": "Vonal szín megváltoztatása",
     "background": "Háttér",
+    "changeBackground": "Háttérszín megváltoztatása",
     "fill": "Kitöltés",
     "strokeWidth": "Körvonal vastagsága",
     "strokeStyle": "Körvonal stílusa",
@@ -38,12 +40,20 @@
     "arrowhead_none": "Nincs",
     "arrowhead_arrow": "Nyíl",
     "arrowhead_bar": "Oszlop",
-    "arrowhead_circle": "",
-    "arrowhead_circle_outline": "",
+    "arrowhead_circle": "Kör",
+    "arrowhead_circle_outline": "Kör (Körvonal)",
     "arrowhead_triangle": "Háromszög",
-    "arrowhead_triangle_outline": "",
-    "arrowhead_diamond": "",
-    "arrowhead_diamond_outline": "",
+    "arrowhead_triangle_outline": "Háromszög (Körvonal)",
+    "arrowhead_diamond": "Rombusz",
+    "arrowhead_diamond_outline": "Rombusz (Körvonal)",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "Nyíl típus",
+    "arrowtype_sharp": "Hegyes nyíl",
+    "arrowtype_round": "Ívelt nyíl",
+    "arrowtype_elbowed": "",
     "fontSize": "Betűméret",
     "fontFamily": "Betűkészlet család",
     "addWatermark": "Add hozzá, hogy \"Excalidraw-val készült\"",
@@ -72,10 +82,11 @@
     "canvasColors": "Rajzvászonon használt",
     "canvasBackground": "Vászon háttérszíne",
     "drawingCanvas": "Rajzvászon",
+    "clearCanvas": "Rajzfelület törlése",
     "layers": "Rétegek",
     "actions": "Műveletek",
     "language": "Nyelv",
-    "liveCollaboration": "Élő együttműködés...",
+    "liveCollaboration": "",
     "duplicateSelection": "Duplikálás",
     "untitled": "Névtelen",
     "name": "Név",
@@ -84,12 +95,13 @@
     "group": "Csoportosítás",
     "ungroup": "Csoportbontás",
     "collaborators": "Közreműködők",
-    "showGrid": "Rács megjelenítése",
+    "toggleGrid": "",
     "addToLibrary": "Hozzáadás a könyvtárhoz",
     "removeFromLibrary": "Eltávólítás a könyvtárból",
     "libraryLoadingMessage": "Könyvtár betöltése…",
     "libraries": "Könyvtárak böngészése",
     "loadingScene": "Jelenet betöltése…",
+    "loadScene": "",
     "align": "Igazítás",
     "alignTop": "Felülre igazítás",
     "alignBottom": "Alulra igazítás",
@@ -105,55 +117,83 @@
     "share": "Megosztás",
     "showStroke": "Körvonal színválasztó megjelenítése",
     "showBackground": "Háttérszín-választó megjelenítése",
-    "toggleTheme": "Téma váltása",
+    "showFonts": "",
+    "toggleTheme": "",
+    "theme": "Téma",
     "personalLib": "Személyes könyvtár",
     "excalidrawLib": "Excalidraw könyvtár",
     "decreaseFontSize": "Betűméret csökkentése",
     "increaseFontSize": "Betűméret növelése",
     "unbindText": "Szövegkötés feloldása",
     "bindText": "",
-    "createContainerFromText": "Szöveg bekeretezése",
+    "createContainerFromText": "",
     "link": {
       "edit": "Hivatkozás szerkesztése",
-      "editEmbed": "Link szerkesztése / beágyazása",
-      "create": "Hivatkozás létrehozása",
-      "createEmbed": "Link létrehozása / beágyazása",
+      "editEmbed": "",
+      "create": "Hivatkozás hozzáadása",
       "label": "Hivatkozás",
       "labelEmbed": "",
-      "empty": ""
+      "empty": "",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "",
-      "exit": ""
+      "editArrow": ""
     },
     "elementLock": {
-      "lock": "Rögzítés",
-      "unlock": "Rögzítés feloldása",
-      "lockAll": "Összes rögzítése",
+      "lock": "",
+      "unlock": "",
+      "lockAll": "Összes zárolása",
       "unlockAll": "Összes feloldása"
     },
-    "statusPublished": "",
+    "statusPublished": "Közzétéve",
     "sidebarLock": "",
     "selectAllElementsInFrame": "",
     "removeAllElementsFromFrame": "",
     "eyeDropper": "",
-    "textToDiagram": "",
-    "prompt": ""
+    "textToDiagram": "Szövegből diagram",
+    "prompt": "",
+    "followUs": "Kövess minket",
+    "discordChat": "Discord chat",
+    "zoomToFitViewport": "",
+    "zoomToFitSelection": "",
+    "zoomToFit": "",
+    "installPWA": "",
+    "autoResize": "",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "",
     "hint_emptyLibrary": "",
     "hint_emptyPrivateLibrary": ""
   },
+  "search": {
+    "title": "",
+    "noMatch": "",
+    "singleResult": "",
+    "multipleResults": "",
+    "placeholder": ""
+  },
   "buttons": {
     "clearReset": "Vászon törlése",
     "exportJSON": "Exportálás fájlba",
-    "exportImage": "Kép exportálása...",
-    "export": "Mentés másként...",
+    "exportImage": "",
+    "export": "",
     "copyToClipboard": "Vágólapra másolás",
+    "copyLink": "",
     "save": "Mentés az aktuális fájlba",
     "saveAs": "Mentés másként",
-    "load": "Megnyitás",
+    "load": "",
     "getShareableLink": "Megosztható link létrehozása",
     "close": "Bezárás",
     "selectLanguage": "Nyelv kiválasztása",
@@ -171,6 +211,7 @@
     "fullScreen": "Teljes képernyő",
     "darkMode": "Sötét mód",
     "lightMode": "Világos mód",
+    "systemMode": "",
     "zenMode": "Letisztult mód",
     "objectsSnapMode": "",
     "exitZenMode": "Kilépés a letisztult módból",
@@ -212,9 +253,9 @@
     "fileTooBig": "A fájl túl nagy. A megengedett maximális méret {{maxSize}}.",
     "svgImageInsertError": "Nem sikerült beszúrni az SVG-képet. Az SVG szintaktika érvénytelennek tűnik.",
     "failedToFetchImage": "",
-    "invalidSVGString": "Érvénytelen SVG.",
     "cannotResolveCollabServer": "",
     "importLibraryError": "",
+    "saveLibraryError": "",
     "collabSaveFailed": "",
     "collabSaveFailed_sizeExceeded": "",
     "imageToolNotSupported": "",
@@ -246,16 +287,31 @@
     "library": "Könyvtár",
     "lock": "Rajzolás után az aktív eszközt tartsa kijelölve",
     "penMode": "",
-    "link": "Hivatkozás hozzáadása/frissítése a kiválasztott alakzathoz",
-    "eraser": "Radír",
+    "link": "",
+    "eraser": "",
     "frame": "",
     "magicframe": "",
-    "embeddable": "Weblap beágyazása",
-    "laser": "Lézermutató",
+    "embeddable": "",
+    "laser": "",
     "hand": "",
-    "extraTools": "További eszközök",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "extraTools": "",
+    "mermaidToExcalidraw": ""
+  },
+  "element": {
+    "rectangle": "",
+    "diamond": "",
+    "ellipse": "",
+    "arrow": "",
+    "line": "",
+    "freedraw": "",
+    "text": "",
+    "image": "",
+    "group": "",
+    "frame": "",
+    "magicframe": "",
+    "embeddable": "",
+    "selection": "",
+    "iframe": ""
   },
   "headings": {
     "canvasActions": "Vászon műveletek",
@@ -263,8 +319,10 @@
     "shapes": "Alakzatok"
   },
   "hints": {
+    "dismissSearch": "",
     "canvasPanning": "",
     "linearElement": "Kattintással görbe, az eger húzásával pedig egyenes nyilat rajzolhatsz",
+    "arrowTool": "",
     "freeDraw": "Kattints és húzd, majd engedd el, amikor végeztél",
     "text": "Tipp: A kijelölés eszközzel a dupla kattintás új szöveget hoz létre",
     "embeddable": "",
@@ -281,10 +339,13 @@
     "placeImage": "Kattints a kép elhelyezéséhez, vagy kattints és méretezd manuálisan",
     "publishLibrary": "Tedd közzé saját könyvtáradat",
     "bindTextToElement": "Nyomd meg az Entert szöveg hozzáadáshoz",
+    "createFlowchart": "",
     "deepBoxSelect": "Tartsd lenyomva a Ctrl/Cmd billentyűt a mély kijelöléshez és a húzás megakadályozásához",
     "eraserRevert": "",
     "firefox_clipboard_write": "",
-    "disableSnapping": ""
+    "disableSnapping": "",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "Előnézet nem jeleníthető meg",
@@ -299,9 +360,12 @@
     "openIssueMessage": "Vigyáztunk arra, hogy a jelenthez tartozó információ ne jelenjen meg a hibaüzenetben. Ha a jeleneted nem bizalmas, kérjük add hozzá a <button>hibakövető rendszerünkhöz.</button> Kérjük, másolja be az alábbi információkat a GitHub problémába.",
     "sceneContent": "Jelenet tartalma:"
   },
+  "shareDialog": {
+    "or": ""
+  },
   "roomDialog": {
-    "desc_intro": "Meghívhat embereket a jelenlegi jelenetbe, hogy együttműködjenek önnel.",
-    "desc_privacy": "Ne aggódj, a munkamenet végpontok közötti titkosítást használ, tehát bármit rajzolsz, privát marad. Még a szerverünkről se lehet belenézni.",
+    "desc_intro": "",
+    "desc_privacy": "",
     "button_startSession": "Munkamenet indítása",
     "button_stopSession": "Munkamenet leállítása",
     "desc_inProgressIntro": "Az élő együttműködési munkamenet folyamatban van.",
@@ -328,6 +392,8 @@
     "click": "kattintás",
     "deepSelect": "Mély kijelölés",
     "deepBoxSelect": "Mély kijelölés a dobozon belül, és a húzás megakadályozása",
+    "createFlowchart": "",
+    "navigateFlowchart": "",
     "curvedArrow": "Ívelt nyíl",
     "curvedLine": "Ívelt vonal",
     "documentation": "Dokumentáció",
@@ -350,7 +416,9 @@
     "zoomToSelection": "Kijelölésre nagyítás",
     "toggleElementLock": "",
     "movePageUpDown": "",
-    "movePageLeftRight": ""
+    "movePageLeftRight": "",
+    "cropStart": "",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": "Rajzvászon alaphelyzetbe"
@@ -410,9 +478,9 @@
       "copyPngToClipboard": ""
     },
     "button": {
-      "exportToPng": "PNG",
-      "exportToSvg": "SVG",
-      "copyPngToClipboard": "Vágólapra másolás"
+      "exportToPng": "",
+      "exportToSvg": "",
+      "copyPngToClipboard": ""
     }
   },
   "encrypted": {
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "Szög",
-    "element": "Elem",
-    "elements": "Elemek",
+    "shapes": "",
     "height": "Magasság",
     "scene": "Jelenet",
     "selected": "Kijelölt",
     "storage": "Tárhely",
-    "title": "Statisztikák",
+    "fullTitle": "",
+    "title": "",
+    "generalStats": "",
+    "elementProperties": "",
     "total": "Összesen",
     "version": "Verzió",
     "versionCopy": "Kattints a másoláshoz",
@@ -439,30 +509,32 @@
     "copyStyles": "Másolt stílusok.",
     "copyToClipboard": "Vágólapra másolva.",
     "copyToClipboardAsPng": "Az {{exportSelection}} PNG formátumban a vágólapra másolva \n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "Fájl elmentve.",
     "fileSavedToFilename": "Mentve mint {filename}",
     "canvas": "rajzvászon",
     "selection": "kijelölés",
     "pasteAsSingleElement": "",
     "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "unrecognizedLinkFormat": "",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "Átlátszó",
-    "black": "Fekete",
-    "white": "Fehér",
-    "red": "Piros",
-    "pink": "Rózsaszín",
+    "black": "",
+    "white": "",
+    "red": "",
+    "pink": "",
     "grape": "",
-    "violet": "Ibolya",
-    "gray": "Szürke",
-    "blue": "Kék",
-    "cyan": "Cián",
-    "teal": "Kékes-zöld",
-    "green": "Zöld",
-    "yellow": "Sárga",
-    "orange": "Narancssárga",
-    "bronze": "Bronz"
+    "violet": "",
+    "gray": "",
+    "blue": "",
+    "cyan": "",
+    "teal": "",
+    "green": "",
+    "yellow": "",
+    "orange": "",
+    "bronze": ""
   },
   "welcomeScreen": {
     "app": {
@@ -481,35 +553,35 @@
     "mostUsedCustomColors": "",
     "colors": "",
     "shades": "",
-    "hexCode": "Hexadecimális kód",
+    "hexCode": "",
     "noShades": ""
   },
   "overwriteConfirm": {
     "action": {
       "exportToImage": {
-        "title": "Exportálás képként",
-        "button": "Exportálás képként",
+        "title": "",
+        "button": "",
         "description": ""
       },
       "saveToDisk": {
-        "title": "Mentés a lemezre",
-        "button": "Mentés a lemezre",
+        "title": "",
+        "button": "",
         "description": ""
       },
       "excalidrawPlus": {
-        "title": "Excalidraw+",
+        "title": "",
         "button": "",
         "description": ""
       }
     },
     "modal": {
       "loadFromFile": {
-        "title": "Betöltés fájlból",
-        "button": "Betöltés fájlból",
+        "title": "",
+        "button": "",
         "description": ""
       },
       "shareableLink": {
-        "title": "Feltöltás linkből",
+        "title": "",
         "button": "",
         "description": ""
       }
@@ -521,5 +593,41 @@
     "description": "",
     "syntax": "",
     "preview": ""
+  },
+  "quickSearch": {
+    "placeholder": ""
+  },
+  "fontList": {
+    "badge": {
+      "old": ""
+    },
+    "sceneFonts": "",
+    "availableFonts": "",
+    "empty": ""
+  },
+  "userList": {
+    "empty": "",
+    "hint": {
+      "text": "",
+      "followStatus": "",
+      "inCall": "",
+      "micMuted": "",
+      "isSpeaking": ""
+    }
+  },
+  "commandPalette": {
+    "title": "",
+    "shortcuts": {
+      "select": "",
+      "confirm": "",
+      "close": ""
+    },
+    "recents": "",
+    "search": {
+      "placeholder": "",
+      "noMatch": ""
+    },
+    "itemNotAvailable": "",
+    "shortcutHint": ""
   }
 }

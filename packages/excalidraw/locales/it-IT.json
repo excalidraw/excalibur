@@ -21,7 +21,9 @@
     "copyStyles": "Copia stili",
     "pasteStyles": "Incolla stili",
     "stroke": "Tratto",
+    "changeStroke": "Cambia il colore del tratto",
     "background": "Sfondo",
+    "changeBackground": "Cambia il colore dello sfondo",
     "fill": "Riempimento",
     "strokeWidth": "Spessore del tratto",
     "strokeStyle": "Stile del tratto",
@@ -44,6 +46,14 @@
     "arrowhead_triangle_outline": "Triangolo (contorno)",
     "arrowhead_diamond": "Diamante",
     "arrowhead_diamond_outline": "Diamante (contorno)",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "Tipo di freccia",
+    "arrowtype_sharp": "",
+    "arrowtype_round": "Freccia curva",
+    "arrowtype_elbowed": "",
     "fontSize": "Dimensione carattere",
     "fontFamily": "Carattere",
     "addWatermark": "Aggiungi \"Creato con Excalidraw\"",
@@ -72,6 +82,7 @@
     "canvasColors": "Usato su tela",
     "canvasBackground": "Sfondo tela",
     "drawingCanvas": "Area di disegno",
+    "clearCanvas": "Pulisci area di disegno",
     "layers": "Livelli",
     "actions": "Azioni",
     "language": "Lingua",
@@ -84,12 +95,13 @@
     "group": "Crea gruppo da selezione",
     "ungroup": "Dividi gruppo da selezione",
     "collaborators": "Collaboratori",
-    "showGrid": "Visualizza griglia",
+    "toggleGrid": "Attiva/disattiva griglia",
     "addToLibrary": "Aggiungi alla libreria",
     "removeFromLibrary": "Rimuovi dalla libreria",
     "libraryLoadingMessage": "Caricamento libreria…",
     "libraries": "Sfoglia librerie",
     "loadingScene": "Caricamento della scena…",
+    "loadScene": "Carica scena da file",
     "align": "Allinea",
     "alignTop": "Allinea in alto",
     "alignBottom": "Allinea in basso",
@@ -105,7 +117,9 @@
     "share": "Condividi",
     "showStroke": "Mostra selettore colore del tratto",
     "showBackground": "Mostra selettore colore di sfondo",
-    "toggleTheme": "Cambia tema",
+    "showFonts": "Mostra selettore font",
+    "toggleTheme": "Attiva/Disattiva tema chiaro/scuro",
+    "theme": "Tema",
     "personalLib": "Libreria Personale",
     "excalidrawLib": "Libreria di Excalidraw",
     "decreaseFontSize": "Riduci dimensione dei caratteri",
@@ -115,16 +129,17 @@
     "createContainerFromText": "Avvolgi il testo in un container",
     "link": {
       "edit": "Modifica link",
-      "editEmbed": "Modifica collegamento e incorpora",
-      "create": "Crea link",
-      "createEmbed": "Crea collegamento e incorpora",
+      "editEmbed": "",
+      "create": "Aggiungi link",
       "label": "Link",
       "labelEmbed": "Collega & incorpora",
-      "empty": "Nessun collegamento impostato"
+      "empty": "Nessun collegamento impostato",
+      "hint": "Digita o incolla qui il tuo link",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "Modifica linea",
-      "exit": "Esci dall'editor di linea"
+      "editArrow": "Modifica freccia"
     },
     "elementLock": {
       "lock": "Blocca",
@@ -138,12 +153,36 @@
     "removeAllElementsFromFrame": "Rimuovi tutti gli elementi dal riquadro",
     "eyeDropper": "Scegli il colore della tela",
     "textToDiagram": "Testo a diagramma",
-    "prompt": "Prompt"
+    "prompt": "Prompt",
+    "followUs": "Seguici",
+    "discordChat": "Chat di Discord",
+    "zoomToFitViewport": "Ingrandisci per adattarsi alla vista",
+    "zoomToFitSelection": "Ingrandisci per adattare la selezione",
+    "zoomToFit": "Zoom per adattare tutti gli elementi",
+    "installPWA": "Installa Excalidraw localmente (PWA)",
+    "autoResize": "Abilita ridimensionamento automatico del testo",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "Copia il link all'oggetto",
+    "linkToElement": "Link all'oggetto",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "Link all'oggetto",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "Nessun elemento ancora aggiunto...",
     "hint_emptyLibrary": "Seleziona un elemento sulla tela per aggiungerlo qui, o installa una libreria dal repository pubblico qui sotto.",
     "hint_emptyPrivateLibrary": "Seleziona un elemento sulla tela per aggiungerlo qui."
+  },
+  "search": {
+    "title": "",
+    "noMatch": "Non è stato trovato nessun risultato...",
+    "singleResult": "risultato",
+    "multipleResults": "risultati",
+    "placeholder": ""
   },
   "buttons": {
     "clearReset": "Svuota la tela",
@@ -151,6 +190,7 @@
     "exportImage": "Esporta immagine...",
     "export": "Salva in...",
     "copyToClipboard": "Copia negli appunti",
+    "copyLink": "Copia link",
     "save": "Salva sul file corrente",
     "saveAs": "Salva con nome",
     "load": "Apri",
@@ -171,6 +211,7 @@
     "fullScreen": "Schermo intero",
     "darkMode": "Tema scuro",
     "lightMode": "Tema chiaro",
+    "systemMode": "Modalità del sistema",
     "zenMode": "Modalità Zen",
     "objectsSnapMode": "Aggancia agli oggetti",
     "exitZenMode": "Uscire dalla modalità zen",
@@ -212,9 +253,9 @@
     "fileTooBig": "Il file è troppo grande. La dimensione massima consentita è {{maxSize}}.",
     "svgImageInsertError": "Impossibile inserire l'immagine SVG. Il markup SVG non sembra corretto.",
     "failedToFetchImage": "Impossibile recuperare l'immagine.",
-    "invalidSVGString": "SVG non valido.",
     "cannotResolveCollabServer": "Impossibile connettersi al server di collab. Ricarica la pagina e riprova.",
     "importLibraryError": "Impossibile caricare la libreria",
+    "saveLibraryError": "Impossibile salvare la libreria nell'archiviazione. Si prega di salvare la libreria in un file locale per assicurarsi di non perdere le modifiche.",
     "collabSaveFailed": "Impossibile salvare nel database di backend. Se i problemi persistono, dovresti salvare il tuo file localmente per assicurarti di non perdere il tuo lavoro.",
     "collabSaveFailed_sizeExceeded": "Impossibile salvare nel database di backend, la tela sembra essere troppo grande. Dovresti salvare il file localmente per assicurarti di non perdere il tuo lavoro.",
     "imageToolNotSupported": "Le immagini sono disabilitate.",
@@ -246,16 +287,31 @@
     "library": "Libreria",
     "lock": "Mantieni lo strumento selezionato attivo dopo aver disegnato",
     "penMode": "Modalità penna - previene il tocco",
-    "link": "Aggiungi/ aggiorna il link per una forma selezionata",
+    "link": "Aggiungi / aggiorna collegamento per una forma selezionata",
     "eraser": "Gomma",
     "frame": "Strumento riquadro",
-    "magicframe": "",
+    "magicframe": "Dal wireframe al codice",
     "embeddable": "Incorporamento Web",
     "laser": "Puntatore laser",
     "hand": "Mano (strumento di panoramica)",
     "extraTools": "Altri strumenti",
-    "mermaidToExcalidraw": "",
-    "magicSettings": "Impostazioni di IA"
+    "mermaidToExcalidraw": "Da Mermaid a Excalidraw"
+  },
+  "element": {
+    "rectangle": "Rettangolo",
+    "diamond": "Diamante",
+    "ellipse": "Ellisse",
+    "arrow": "Freccia",
+    "line": "Linea",
+    "freedraw": "Disegno libero",
+    "text": "Testo",
+    "image": "Immagine",
+    "group": "Gruppo",
+    "frame": "Cornice",
+    "magicframe": "Dal wireframe al codice",
+    "embeddable": "Incorporamento Web",
+    "selection": "Selezione",
+    "iframe": "IFrame"
   },
   "headings": {
     "canvasActions": "Azioni sulla Tela",
@@ -263,8 +319,10 @@
     "shapes": "Forme"
   },
   "hints": {
+    "dismissSearch": "",
     "canvasPanning": "Per spostare la tela, tieni premuta la rotellina del mouse o la barra spaziatrice mentre trascini oppure usa lo strumento mano",
     "linearElement": "Clicca per iniziare una linea in più punti, trascina per singola linea",
+    "arrowTool": "",
     "freeDraw": "Clicca e trascina, rilascia quando avrai finito",
     "text": "Suggerimento: puoi anche aggiungere del testo facendo doppio clic ovunque con lo strumento di selezione",
     "embeddable": "Fare click e trascina per creare un incorporamento web",
@@ -281,10 +339,13 @@
     "placeImage": "Fai click per posizionare l'immagine, o click e trascina per impostarne la dimensione manualmente",
     "publishLibrary": "Pubblica la tua libreria",
     "bindTextToElement": "Premi invio per aggiungere il testo",
+    "createFlowchart": "",
     "deepBoxSelect": "Tieni premuto CtrlOCmd per selezionare in profondità e per impedire il trascinamento",
     "eraserRevert": "Tieni premuto Alt per ripristinare gli elementi contrassegnati per l'eliminazione",
     "firefox_clipboard_write": "Questa funzione può essere abilitata impostando il flag \"dom.events.asyncClipboard.clipboardItem\" su \"true\". Per modificare i flag del browser in Firefox, visitare la pagina \"about:config\".",
-    "disableSnapping": "Tieni premuto Ctrl o Cmd per disabilitare lo snap"
+    "disableSnapping": "Tieni premuto Ctrl o Cmd per disabilitare lo snap",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "Impossibile visualizzare l'anteprima",
@@ -299,9 +360,12 @@
     "openIssueMessage": "Siamo stati molto cauti nel non includere informazioni della scena nell'errore. Se la tua scena non è privata, ti preghiamo di considerare la sua inclusione nel nostro <button>bug tracker.</button> Per favore includi le informazioni riportate qui sotto copiandole e incollandole nella issue di GitHub.",
     "sceneContent": "Contenuto della scena:"
   },
+  "shareDialog": {
+    "or": "O"
+  },
   "roomDialog": {
-    "desc_intro": "Puoi invitare persone nella tua scena attuale per collaborare con te.",
-    "desc_privacy": "Non preoccuparti, la sessione utilizza la crittografia end-to-end, quindi qualsiasi cosa disegni rimarrà privata. Nemmeno il nostro server sarà in grado di vedere cosa hai creato.",
+    "desc_intro": "Invita altri a collaborare al tuo disegno.",
+    "desc_privacy": "Non preoccuparti, la sessione utilizza la crittografia end-to-end ed è completamente privata. Nemmeno il nostro server è in grado di vedere ciò che disegni.",
     "button_startSession": "Avvia sessione",
     "button_stopSession": "Termina sessione",
     "desc_inProgressIntro": "La sessione di collaborazione è attualmente in corso.",
@@ -328,6 +392,8 @@
     "click": "click",
     "deepSelect": "Selezione profonda",
     "deepBoxSelect": "Seleziona in profondità all'interno della casella e previene il trascinamento",
+    "createFlowchart": "",
+    "navigateFlowchart": "Naviga un diagramma di flusso",
     "curvedArrow": "Freccia curva",
     "curvedLine": "Linea curva",
     "documentation": "Documentazione",
@@ -350,7 +416,9 @@
     "zoomToSelection": "Zoom alla selezione",
     "toggleElementLock": "Blocca/sblocca selezione",
     "movePageUpDown": "Sposta la pagina su/giù",
-    "movePageLeftRight": "Sposta la pagina a sinistra/destra"
+    "movePageLeftRight": "Sposta la pagina a sinistra/destra",
+    "cropStart": "",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": "Svuota la tela"
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "Angolo",
-    "element": "Elemento",
-    "elements": "Elementi",
+    "shapes": "Forme",
     "height": "Altezza",
     "scene": "Scena",
     "selected": "Selezionato",
     "storage": "Memoria",
-    "title": "Statistiche per nerd",
+    "fullTitle": "",
+    "title": "Proprietà",
+    "generalStats": "Generale",
+    "elementProperties": "Proprietà delle forme",
     "total": "Totale",
     "version": "Versione",
     "versionCopy": "Clicca per copiare",
@@ -439,13 +509,15 @@
     "copyStyles": "Stili copiati.",
     "copyToClipboard": "Copiato negli appunti.",
     "copyToClipboardAsPng": "{{exportSelection}} copiato negli appunti come PNG\n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "File salvato.",
     "fileSavedToFilename": "Salvato in {filename}",
     "canvas": "tela",
     "selection": "selezione",
     "pasteAsSingleElement": "Usa {{shortcut}} per incollare come un singolo elemento,\no incollare in un editor di testo esistente",
     "unableToEmbed": "Incorporare questo url non è permesso. Crea una issue su GitHub per richiedere che l'url sia autorizzato",
-    "unrecognizedLinkFormat": "Il link che hai incorporato non corrisponde al formato previsto. Prova a incollare la stringa 'embed' fornita dal sito di origine"
+    "unrecognizedLinkFormat": "Il link che hai incorporato non corrisponde al formato previsto. Prova a incollare la stringa 'embed' fornita dal sito di origine",
+    "elementLinkCopied": "Link copiato negli appunti"
   },
   "colors": {
     "transparent": "Trasparente",
@@ -516,10 +588,46 @@
     }
   },
   "mermaid": {
-    "title": "",
+    "title": "Da Mermaid a Excalidraw",
     "button": "Inserisci",
-    "description": "",
-    "syntax": "",
+    "description": "Attualmente sono supportati solo diagrammi di <flowchartLink>flusso</flowchartLink>,<sequenceLink> sequenza, </sequenceLink> e <classLink>classe </classLink>. Gli altri tipi saranno rappresentati come immagini in Excalidraw.",
+    "syntax": "Sintassi Mermaid",
     "preview": "Anteprima"
+  },
+  "quickSearch": {
+    "placeholder": "Ricerca rapida"
+  },
+  "fontList": {
+    "badge": {
+      "old": ""
+    },
+    "sceneFonts": "In questa scena",
+    "availableFonts": "Font disponibili",
+    "empty": "Nessun font trovato"
+  },
+  "userList": {
+    "empty": "Nessun utente trovato",
+    "hint": {
+      "text": "Clicca sull'utente per seguirlo",
+      "followStatus": "Stai attualmente seguendo questo utente",
+      "inCall": "Utente è in una chiamata vocale",
+      "micMuted": "Il microfono dell'utente è disattivato",
+      "isSpeaking": "L'utente sta parlando"
+    }
+  },
+  "commandPalette": {
+    "title": "Comando della tavolozza",
+    "shortcuts": {
+      "select": "Selezione",
+      "confirm": "Conferma",
+      "close": "Chiudi"
+    },
+    "recents": "Usate di recente",
+    "search": {
+      "placeholder": "Cerca menu, comandi e scopri gemme nascoste",
+      "noMatch": "Nessun comando corrisponde..."
+    },
+    "itemNotAvailable": "Il comando non è disponibile...",
+    "shortcutHint": "Per i comandi della tavolozza, usa {{shortcut}}"
   }
 }

@@ -11,8 +11,8 @@
     "copyAsPng": "Copiar para a área de transferência como PNG",
     "copyAsSvg": "Copiar para a área de transferência como SVG",
     "copyText": "Copiar para área de transferência como texto",
-    "copySource": "",
-    "convertToCode": "",
+    "copySource": "Copiar fonte para área de transferência",
+    "convertToCode": "Converter para código",
     "bringForward": "Trazer para a frente",
     "sendToBack": "Enviar para o fundo",
     "bringToFront": "Trazer para o primeiro plano",
@@ -21,10 +21,12 @@
     "copyStyles": "Copiar os estilos",
     "pasteStyles": "Colar os estilos",
     "stroke": "Contorno",
+    "changeStroke": "Alterar cor da borda",
     "background": "Fundo",
+    "changeBackground": "Alterar cor de fundo",
     "fill": "Preenchimento",
     "strokeWidth": "Espessura do traço",
-    "strokeStyle": "Estilo de traço",
+    "strokeStyle": "Estilo do traço",
     "strokeStyle_solid": "Sólido",
     "strokeStyle_dashed": "Tracejado",
     "strokeStyle_dotted": "Pontilhado",
@@ -38,12 +40,20 @@
     "arrowhead_none": "Nenhuma",
     "arrowhead_arrow": "Flecha",
     "arrowhead_bar": "Barra",
-    "arrowhead_circle": "",
-    "arrowhead_circle_outline": "",
+    "arrowhead_circle": "Círculo",
+    "arrowhead_circle_outline": "Circulo (contorno)",
     "arrowhead_triangle": "Triângulo",
-    "arrowhead_triangle_outline": "",
-    "arrowhead_diamond": "",
-    "arrowhead_diamond_outline": "",
+    "arrowhead_triangle_outline": "Triângulo (contorno)",
+    "arrowhead_diamond": "Diamante",
+    "arrowhead_diamond_outline": "Diamante (contorno)",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "Tipo de seta",
+    "arrowtype_sharp": "Seta afiada",
+    "arrowtype_round": "Seta curva",
+    "arrowtype_elbowed": "",
     "fontSize": "Tamanho da fonte",
     "fontFamily": "Família da fonte",
     "addWatermark": "Adicionar \"Feito com Excalidraw\"",
@@ -72,6 +82,7 @@
     "canvasColors": "Usado na tela",
     "canvasBackground": "Fundo da tela",
     "drawingCanvas": "Tela de desenho",
+    "clearCanvas": "Limpar a tela",
     "layers": "Camadas",
     "actions": "Ações",
     "language": "Idioma",
@@ -84,12 +95,13 @@
     "group": "Agrupar seleção",
     "ungroup": "Desagrupar seleção",
     "collaborators": "Colaboradores",
-    "showGrid": "Mostrar grade",
+    "toggleGrid": "Alternar grade",
     "addToLibrary": "Adicionar à biblioteca",
     "removeFromLibrary": "Remover da biblioteca",
     "libraryLoadingMessage": "Carregando biblioteca…",
     "libraries": "Procurar bibliotecas",
     "loadingScene": "Carregando cena…",
+    "loadScene": "Carregar cenário de arquivo",
     "align": "Alinhamento",
     "alignTop": "Alinhar ao topo",
     "alignBottom": "Alinhar embaixo",
@@ -105,7 +117,9 @@
     "share": "Compartilhar",
     "showStroke": "Exibir seletor de cores do traço",
     "showBackground": "Exibir seletor de cores do fundo",
-    "toggleTheme": "Alternar tema",
+    "showFonts": "Exibir seletor de fonte",
+    "toggleTheme": "Alternar tema claro/escuro",
+    "theme": "Tema",
     "personalLib": "Biblioteca Pessoal",
     "excalidrawLib": "Biblioteca do Excalidraw",
     "decreaseFontSize": "Diminuir o tamanho da fonte",
@@ -116,15 +130,16 @@
     "link": {
       "edit": "Editar link",
       "editEmbed": "",
-      "create": "Criar link",
-      "createEmbed": "",
+      "create": "",
       "label": "Link",
-      "labelEmbed": "",
-      "empty": ""
+      "labelEmbed": "Vincular e incorporar",
+      "empty": "Nenhum link foi definido",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "Editar linha",
-      "exit": "Sair do editor de linha"
+      "editArrow": "Editar seta"
     },
     "elementLock": {
       "lock": "Bloquear",
@@ -137,20 +152,45 @@
     "selectAllElementsInFrame": "Selecionar todos os elementos no quadro",
     "removeAllElementsFromFrame": "Remover todos os elementos do quadro",
     "eyeDropper": "Escolher cor da tela",
-    "textToDiagram": "",
-    "prompt": ""
+    "textToDiagram": "Texto para diagrama",
+    "prompt": "Prompt",
+    "followUs": "Siga-nos",
+    "discordChat": "Discord",
+    "zoomToFitViewport": "",
+    "zoomToFitSelection": "Ampliar para ajustar a seleção",
+    "zoomToFit": "Ampliar para encaixar todos os elementos",
+    "installPWA": "Instalar excalidraw localmente (PWA)",
+    "autoResize": "Habilitar redimensionamento automático de texto",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "Nenhum item adicionado ainda...",
     "hint_emptyLibrary": "Selecione um item na tela para adicioná-lo aqui, ou instale uma biblioteca do repositório público, abaixo.",
     "hint_emptyPrivateLibrary": "Selecione um item na tela para adicioná-lo aqui."
   },
+  "search": {
+    "title": "Procurar na tela",
+    "noMatch": "Nenhum resultado encontrado...",
+    "singleResult": "resultado",
+    "multipleResults": "resultados",
+    "placeholder": "Procurar texto na tela..."
+  },
   "buttons": {
-    "clearReset": "Limpar o canvas e redefinir a cor de fundo",
+    "clearReset": "Limpar a tela",
     "exportJSON": "Exportar arquivo",
     "exportImage": "Exportar imagem...",
     "export": "Salvar como...",
-    "copyToClipboard": "Copiar para o clipboard",
+    "copyToClipboard": "Copiar para a área de transferência",
+    "copyLink": "Copiar link",
     "save": "Salvar para o arquivo atual",
     "saveAs": "Salvar como",
     "load": "Abrir",
@@ -171,17 +211,18 @@
     "fullScreen": "Tela cheia",
     "darkMode": "Modo escuro",
     "lightMode": "Modo claro",
+    "systemMode": "Modo do sistema",
     "zenMode": "Modo Zen",
-    "objectsSnapMode": "",
+    "objectsSnapMode": "Encaixar em objetos",
     "exitZenMode": "Sair do modo zen",
     "cancel": "Cancelar",
     "clear": "Limpar",
     "remove": "Remover",
-    "embed": "",
+    "embed": "Alternar incorporação",
     "publishLibrary": "Publicar",
     "submit": "Enviar",
     "confirm": "Confirmar",
-    "embeddableInteractionButton": ""
+    "embeddableInteractionButton": "Clique para interagir"
   },
   "alerts": {
     "clearReset": "Isto irá limpar toda a tela. Você tem certeza?",
@@ -189,7 +230,7 @@
     "couldNotCreateShareableLinkTooBig": "Não foi possível criar um link compartilhável: a cena é muito grande",
     "couldNotLoadInvalidFile": "Não foi possível carregar o arquivo inválido",
     "importBackendFailed": "A importação do servidor falhou.",
-    "cannotExportEmptyCanvas": "Não é possível exportar um canvas vazio.",
+    "cannotExportEmptyCanvas": "Não é possível exportar uma tela vazia.",
     "couldNotCopyToClipboard": "Não foi possível copiar para a área de transferência.",
     "decryptFailed": "Não foi possível descriptografar os dados.",
     "uploadedSecurly": "O upload foi protegido com criptografia de ponta a ponta, o que significa que o servidor do Excalidraw e terceiros não podem ler o conteúdo.",
@@ -211,13 +252,13 @@
     "imageInsertError": "Não foi possível inserir imagem. Tente novamente mais tarde...",
     "fileTooBig": "O arquivo é muito grande. O tamanho máximo permitido é {{maxSize}}.",
     "svgImageInsertError": "Não foi possível inserir a imagem SVG. A marcação SVG parece inválida.",
-    "failedToFetchImage": "",
-    "invalidSVGString": "SVG Inválido.",
+    "failedToFetchImage": "Falha ao buscar imagem.",
     "cannotResolveCollabServer": "Não foi possível conectar-se ao servidor colaborativo. Por favor, recarregue a página e tente novamente.",
     "importLibraryError": "Não foi possível carregar a biblioteca",
+    "saveLibraryError": "Não foi possível salvar a biblioteca no armazenamento. Salve sua biblioteca em um arquivo localmente para garantir que você não perca as alterações.",
     "collabSaveFailed": "Não foi possível salvar no banco de dados do servidor. Se os problemas persistirem, salve o arquivo localmente para garantir que não perca o seu trabalho.",
     "collabSaveFailed_sizeExceeded": "Não foi possível salvar no banco de dados do servidor, a tela parece ser muito grande. Se os problemas persistirem, salve o arquivo localmente para garantir que não perca o seu trabalho.",
-    "imageToolNotSupported": "",
+    "imageToolNotSupported": "Imagens estão desabilitadas.",
     "brave_measure_text_error": {
       "line1": "Parece que você está usando o navegador Brave com a configuração <bold>Bloquear Impressões Digitais</bold> no modo agressivo.",
       "line2": "Isso pode acabar quebrando <bold>Elementos de Texto</bold> em seus desenhos.",
@@ -225,13 +266,13 @@
       "line4": "Se desativar essa configuração não corrigir a exibição de elementos de texto, por favor abra uma <issueLink>issue</issueLink> em nosso GitHub, ou mande uma mensagem em nosso <discordLink>Discord</discordLink>"
     },
     "libraryElementTypeError": {
-      "embeddable": "",
-      "iframe": "",
-      "image": ""
+      "embeddable": "Elementos incorporáveis não podem ser adicionados à biblioteca.",
+      "iframe": "Elementos do IFrame não podem ser adicionados à biblioteca.",
+      "image": "Suporte para adicionar imagens à biblioteca em breve!"
     },
-    "asyncPasteFailedOnRead": "",
-    "asyncPasteFailedOnParse": "",
-    "copyToSystemClipboardFailed": ""
+    "asyncPasteFailedOnRead": "Não foi possível colar (não foi possível ler da área de transferência do sistema).",
+    "asyncPasteFailedOnParse": "Não foi possível colar.",
+    "copyToSystemClipboardFailed": "Não foi possível copiar para a área de transferência."
   },
   "toolBar": {
     "selection": "Seleção",
@@ -246,16 +287,31 @@
     "library": "Biblioteca",
     "lock": "Manter ativa a ferramenta selecionada após desenhar",
     "penMode": "Modo caneta — impede o toque",
-    "link": "Adicionar/Atualizar link para uma forma selecionada",
+    "link": "Adicionar / Atualizar link para uma forma selecionada",
     "eraser": "Borracha",
     "frame": "Ferramenta de quadro",
-    "magicframe": "",
-    "embeddable": "",
+    "magicframe": "Wireframe para código",
+    "embeddable": "Página web incorporada",
     "laser": "",
     "hand": "Mão (ferramenta de rolagem)",
     "extraTools": "Mais ferramentas",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "mermaidToExcalidraw": "Mermaid para Excalidraw"
+  },
+  "element": {
+    "rectangle": "Retângulo",
+    "diamond": "Diamante",
+    "ellipse": "Elipse",
+    "arrow": "Seta",
+    "line": "Linha",
+    "freedraw": "Desenho livre",
+    "text": "Texto",
+    "image": "Imagem",
+    "group": "Grupo",
+    "frame": "Moldura",
+    "magicframe": "Wireframe para código",
+    "embeddable": "Página web incorporada",
+    "selection": "Seleção",
+    "iframe": "IFrame"
   },
   "headings": {
     "canvasActions": "Ações da tela",
@@ -263,11 +319,13 @@
     "shapes": "Formas"
   },
   "hints": {
+    "dismissSearch": "Pressione Esc para descartar a pesquisa",
     "canvasPanning": "Para mover a tela, segure a roda do mouse ou a barra de espaço enquanto arrasta ou use a ferramenta de mão",
     "linearElement": "Clique para iniciar vários pontos, arraste para uma única linha",
+    "arrowTool": "Clique para começar vários pontos, arraste para uma única linha. Pressione {{arrowShortcut}} novamente para alterar o tipo de seta.",
     "freeDraw": "Toque e arraste, solte quando terminar",
     "text": "Dica: você também pode adicionar texto clicando duas vezes em qualquer lugar com a ferramenta de seleção",
-    "embeddable": "",
+    "embeddable": "Clique e arraste para criar um site incorporado",
     "text_selected": "Clique duplo ou tecle ENTER para editar o texto",
     "text_editing": "Pressione Esc ou Ctrl/Cmd+ENTER para encerrar a edição",
     "linearElementMulti": "Clique no último ponto ou pressione Escape ou Enter para terminar",
@@ -275,16 +333,19 @@
     "resize": "Você pode restringir proporções segurando SHIFT enquanto redimensiona,\nsegure ALT para redimensionar do centro",
     "resizeImage": "Você pode redimensionar livremente segurando SHIFT,\nsegure ALT para redimensionar a partir do centro",
     "rotate": "Você pode restringir os ângulos segurando SHIFT enquanto gira",
-    "lineEditor_info": "Pressione CtrlOuCmd e duplo-clique ou pressione CtrlOuCmd + Enter para editar pontos",
+    "lineEditor_info": "Pressione Ctrl/Cmd e duplo-clique ou pressione Ctrl/Cmd + Enter para editar pontos",
     "lineEditor_pointSelected": "Pressione Delete para remover o(s) ponto(s),\nCtrl/Cmd+D para duplicar ou arraste para mover",
     "lineEditor_nothingSelected": "Selecione um ponto para editar (segure SHIFT para selecionar vários) ou segure Alt e clique para adicionar novos pontos",
     "placeImage": "Clique para colocar a imagem, ou clique e arraste para definir manualmente o seu tamanho",
     "publishLibrary": "Publicar sua própria biblioteca",
     "bindTextToElement": "Pressione Enter para adicionar o texto",
-    "deepBoxSelect": "Segure Ctrl/Cmd para seleção profunda e para evitar arrastar",
+    "createFlowchart": "Segure Ctrl ou Cmd e a tecla de seta para criar um fluxograma",
+    "deepBoxSelect": "Pressione Ctrl/Cmd para seleção profunda e para evitar arrastar",
     "eraserRevert": "Segure a tecla Alt para inverter os elementos marcados para exclusão",
     "firefox_clipboard_write": "Esse recurso pode ser ativado configurando a opção \"dom.events.asyncClipboard.clipboardItem\" como \"true\". Para alterar os sinalizadores do navegador no Firefox, visite a página \"about:config\".",
-    "disableSnapping": ""
+    "disableSnapping": "Pressione Ctrl/Cmd para desabilitar o encaixe",
+    "enterCropEditor": "",
+    "leaveCropEditor": "Clique fora da imagem ou pressione ENTER ou ESC para finalizar o corte"
   },
   "canvasError": {
     "cannotShowPreview": "Não é possível mostrar pré-visualização",
@@ -299,9 +360,12 @@
     "openIssueMessage": "Fomos muito cautelosos para não incluir suas informações de cena no erro. Se sua cena não for privada, por favor, considere seguir nosso <button>rastreador de bugs.</button> Por favor, inclua informações abaixo, copiando e colando para a issue do GitHub.",
     "sceneContent": "Conteúdo da cena:"
   },
+  "shareDialog": {
+    "or": "Ou"
+  },
   "roomDialog": {
-    "desc_intro": "Você pode convidar pessoas para sua cena atual para colaborar com você.",
-    "desc_privacy": "Não se preocupe, a sessão usa criptografia de ponta a ponta; portanto, o que você desenhar permanecerá privado. Nem mesmo nosso servidor poderá ver o que você cria.",
+    "desc_intro": "Convide pessoas para colaborar em seu desenho.",
+    "desc_privacy": "Não se preocupe, a sessão é criptografada de ponta a ponta e totalmente privada. Nem mesmo nosso servidor pode ver o que você desenha.",
     "button_startSession": "Iniciar sessão",
     "button_stopSession": "Parar sessão",
     "desc_inProgressIntro": "A sessão de colaboração ao vivo está agora em andamento.",
@@ -317,7 +381,7 @@
     "disk_details": "Exportar os dados da cena para um arquivo que você poderá importar mais tarde.",
     "disk_button": "Salvar em um arquivo",
     "link_title": "Link compartilhável",
-    "link_details": "Exportar como link de apenas leitura.",
+    "link_details": "Exportar como link de somente leitura.",
     "link_button": "Exportar link",
     "excalidrawplus_description": "Salvar a cena na sua área de trabalho Excalidraw+.",
     "excalidrawplus_button": "Exportar",
@@ -328,6 +392,8 @@
     "click": "clicar",
     "deepSelect": "Seleção profunda",
     "deepBoxSelect": "Use a seleção profunda dentro da caixa para previnir arrastar",
+    "createFlowchart": "Crie um fluxograma a partir de um elemento genérico",
+    "navigateFlowchart": "",
     "curvedArrow": "Seta curva",
     "curvedLine": "Linha curva",
     "documentation": "Documentação",
@@ -344,13 +410,15 @@
     "shortcuts": "Atalhos de teclado",
     "textFinish": "Encerrar edição (editor de texto)",
     "textNewLine": "Adicionar nova linha (editor de texto)",
-    "title": "Ajudar",
+    "title": "Ajuda",
     "view": "Visualizar",
     "zoomToFit": "Ampliar para encaixar todos os elementos",
     "zoomToSelection": "Ampliar a seleção",
     "toggleElementLock": "Bloquear/desbloquear seleção",
     "movePageUpDown": "Mover a página para cima/baixo",
-    "movePageLeftRight": "Mover a página para esquerda/direita"
+    "movePageLeftRight": "Mover a página para esquerda/direita",
+    "cropStart": "",
+    "cropFinish": "Finalizar corte da imagem"
   },
   "clearCanvasDialog": {
     "title": "Limpar a tela"
@@ -367,7 +435,7 @@
     "placeholder": {
       "authorName": "Seu nome ou nome de usuário",
       "libraryName": "Nome da sua biblioteca",
-      "libraryDesc": "Descrição para ajudar as pessoas a entenderem o uso da sua da sua biblioteca",
+      "libraryDesc": "Descrição para ajudar as pessoas a entenderem o uso da sua biblioteca",
       "githubHandle": "Identificador do GitHub (opcional), para que você possa editar a biblioteca depois de enviar para revisão",
       "twitterHandle": "Nome de usuário do Twitter (opcional), para que saibamos quem deve ser creditado se promovermos no Twitter",
       "website": "Link para o seu site pessoal ou outro lugar (opcional)"
@@ -377,7 +445,7 @@
       "website": "Informe uma URL válida"
     },
     "noteDescription": "Envie sua biblioteca para ser incluída no <link>repositório de biblioteca pública</link>para outras pessoas usarem em seus desenhos.",
-    "noteGuidelines": "A biblioteca precisa ser aprovada manualmente primeiro. Por favor leia o <link>orientações</link> antes de enviar. Você precisará de uma conta do GitHub para se comunicar e fazer alterações quando solicitado, mas não é estritamente necessário.",
+    "noteGuidelines": "A biblioteca precisa ser aprovada manualmente primeiro. Por favor, leia o <link>orientações</link> antes de enviar. Você precisará de uma conta do GitHub para se comunicar e fazer alterações quando solicitado, mas não é estritamente necessário.",
     "noteLicense": "Ao enviar, você concorda que a biblioteca será publicada sob a <link>Licença MIT, </link>o que, em suma, significa que qualquer pessoa pode utilizá-los sem restrições.",
     "noteItems": "Cada item da biblioteca deve ter seu próprio nome para que seja filtrável. Os seguintes itens da biblioteca serão incluídos:",
     "atleastOneLibItem": "Por favor, selecione pelo menos um item da biblioteca para começar",
@@ -385,7 +453,7 @@
   },
   "publishSuccessDialog": {
     "title": "Biblioteca enviada",
-    "content": "Obrigado {{authorName}}. Sua biblioteca foi enviada para análise. Você pode acompanhar o status<link>aqui</link>"
+    "content": "Obrigado {{authorName}}. Sua biblioteca foi enviada para análise. Você pode acompanhar o status <link>aqui</link>"
   },
   "confirmDialog": {
     "resetLibrary": "Redefinir biblioteca",
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "Ângulo",
-    "element": "Elemento",
-    "elements": "Elementos",
+    "shapes": "Formas",
     "height": "Altura",
     "scene": "Cena",
     "selected": "Selecionado",
     "storage": "Armazenamento",
-    "title": "Estatísticas para nerds",
+    "fullTitle": "Propriedades da Tela e da Forma",
+    "title": "Propriedades",
+    "generalStats": "Geral",
+    "elementProperties": "Propriedades da forma",
     "total": "Total",
     "version": "Versão",
     "versionCopy": "Clique para copiar",
@@ -439,13 +509,15 @@
     "copyStyles": "Estilos copiados.",
     "copyToClipboard": "Copiado para área de transferência.",
     "copyToClipboardAsPng": "{{exportSelection}} copiado para a área de transferência como PNG ({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "Arquivo salvo.",
     "fileSavedToFilename": "Salvo em {filename}",
     "canvas": "tela",
     "selection": "seleção",
     "pasteAsSingleElement": "Use {{shortcut}} para colar como um único elemento,\nou cole em um editor de texto já existente",
-    "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "unableToEmbed": "No momento não é permitido incorporar esta URL. Crie uma issue no GitHub para solicitar a lista branca da URL",
+    "unrecognizedLinkFormat": "",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "Transparente",
@@ -516,10 +588,46 @@
     }
   },
   "mermaid": {
-    "title": "",
-    "button": "",
-    "description": "",
-    "syntax": "",
-    "preview": ""
+    "title": "Mermaid para Excalidraw",
+    "button": "Inserir",
+    "description": "Atualmente apenas os diagramas<flowchartLink>Flowchart</flowchartLink><sequenceLink>Sequência,</sequenceLink> e <classLink>Class</classLink>são suportados. Os outros tipos serão renderizados como uma imagem no Excalidraw.",
+    "syntax": "Sintaxe em Mermaid",
+    "preview": "Visualizar"
+  },
+  "quickSearch": {
+    "placeholder": "Busca rápida"
+  },
+  "fontList": {
+    "badge": {
+      "old": "antigo"
+    },
+    "sceneFonts": "Neste cenário",
+    "availableFonts": "Fontes disponíveis",
+    "empty": "Nenhuma fonte encontrada"
+  },
+  "userList": {
+    "empty": "Nenhum usuário encontrado",
+    "hint": {
+      "text": "Clique no usuário para seguir",
+      "followStatus": "Atualmente você está seguindo este usuário",
+      "inCall": "O usuário está em uma chamada de voz",
+      "micMuted": "O microfone do usuário está silenciado",
+      "isSpeaking": "O usuário está falando"
+    }
+  },
+  "commandPalette": {
+    "title": "Paleta de comandos",
+    "shortcuts": {
+      "select": "Selecionar",
+      "confirm": "Confirmar",
+      "close": "Fechar"
+    },
+    "recents": "Usado recentemente",
+    "search": {
+      "placeholder": "Procure menus, comandos e descubra gemas ocultas",
+      "noMatch": "Nenhum comando correspondente..."
+    },
+    "itemNotAvailable": "Comando indisponível...",
+    "shortcutHint": "Para a paleta de comandos, use {{shortcut}}"
   }
 }

@@ -11,8 +11,8 @@
     "copyAsPng": "Copia al porta-retalls com a PNG",
     "copyAsSvg": "Copia al porta-retalls com a SVG",
     "copyText": "Copia al porta-retalls com a text",
-    "copySource": "Copia l'origen al porta-retalls",
-    "convertToCode": "",
+    "copySource": "Copia al porta-retalls",
+    "convertToCode": "Converteix a codi",
     "bringForward": "Porta endavant",
     "sendToBack": "Envia enrere",
     "bringToFront": "Porta al davant",
@@ -21,7 +21,9 @@
     "copyStyles": "Copia els estils",
     "pasteStyles": "Enganxa els estils",
     "stroke": "Color del traç",
+    "changeStroke": "Canvia el color del traç",
     "background": "Color del fons",
+    "changeBackground": "Canvia el color de fons",
     "fill": "Estil del fons",
     "strokeWidth": "Amplada del traç",
     "strokeStyle": "Estil del traç",
@@ -38,12 +40,20 @@
     "arrowhead_none": "Cap",
     "arrowhead_arrow": "Fletxa",
     "arrowhead_bar": "Barra",
-    "arrowhead_circle": "",
-    "arrowhead_circle_outline": "",
+    "arrowhead_circle": "Cercle",
+    "arrowhead_circle_outline": "Circumferència",
     "arrowhead_triangle": "Triangle",
-    "arrowhead_triangle_outline": "",
-    "arrowhead_diamond": "",
-    "arrowhead_diamond_outline": "",
+    "arrowhead_triangle_outline": "Triangle (vora)",
+    "arrowhead_diamond": "Rombe",
+    "arrowhead_diamond_outline": "Rombe (vora)",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "Tipus de fletxa",
+    "arrowtype_sharp": "Fletxa Esmolada",
+    "arrowtype_round": "Fletxa corba",
+    "arrowtype_elbowed": "Fletxa de colzes",
     "fontSize": "Mida de lletra",
     "fontFamily": "Tipus de lletra",
     "addWatermark": "Afegeix-hi «Fet amb Excalidraw»",
@@ -56,7 +66,7 @@
     "veryLarge": "Molt gran",
     "solid": "Sòlid",
     "hachure": "Ratlletes",
-    "zigzag": "",
+    "zigzag": "Ziga-zaga",
     "crossHatch": "Ratlletes creuades",
     "thin": "Fi",
     "bold": "Negreta",
@@ -72,6 +82,7 @@
     "canvasColors": "Usat al llenç",
     "canvasBackground": "Fons del llenç",
     "drawingCanvas": "Llenç de dibuix",
+    "clearCanvas": "Neteja el llenç",
     "layers": "Capes",
     "actions": "Accions",
     "language": "Llengua",
@@ -84,12 +95,13 @@
     "group": "Agrupa la selecció",
     "ungroup": "Desagrupa la selecció",
     "collaborators": "Col·laboradors",
-    "showGrid": "Mostra la graella",
+    "toggleGrid": "Alterna la quadrícula",
     "addToLibrary": "Afegir a la biblioteca",
     "removeFromLibrary": "Eliminar de la biblioteca",
     "libraryLoadingMessage": "S'està carregant la biblioteca…",
     "libraries": "Explora les biblioteques",
     "loadingScene": "S'està carregant l'escena…",
+    "loadScene": "Carrega una escena des d'un fitxer",
     "align": "Alinea",
     "alignTop": "Alinea a la part superior",
     "alignBottom": "Alinea a la part inferior",
@@ -105,26 +117,29 @@
     "share": "Comparteix",
     "showStroke": "Mostra el selector de color del traç",
     "showBackground": "Mostra el selector de color de fons",
-    "toggleTheme": "Activa o desactiva el tema",
+    "showFonts": "Mostra el selector tipogràfic",
+    "toggleTheme": "Alternar tema clar i fosc",
+    "theme": "Tema",
     "personalLib": "Biblioteca personal",
     "excalidrawLib": "Biblioteca d'Excalidraw",
     "decreaseFontSize": "Redueix la mida de la lletra",
     "increaseFontSize": "Augmenta la mida de la lletra",
     "unbindText": "Desvincular el text",
     "bindText": "Ajusta el text al contenidor",
-    "createContainerFromText": "",
+    "createContainerFromText": "Ajusta el text al contenidor",
     "link": {
       "edit": "Edita l'enllaç",
-      "editEmbed": "Edita l'enllaç i incrusta-ho",
-      "create": "Crea un enllaç",
-      "createEmbed": "",
+      "editEmbed": "",
+      "create": "",
       "label": "Enllaç",
-      "labelEmbed": "",
-      "empty": "No s'ha definit cap enllaç"
+      "labelEmbed": "Enllaça i encasta",
+      "empty": "No s'ha definit cap enllaç",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "Editar línia",
-      "exit": "Sortir de l'editor de línia"
+      "editArrow": "Edita la fletxa"
     },
     "elementLock": {
       "lock": "Bloca",
@@ -135,15 +150,39 @@
     "statusPublished": "Publicat",
     "sidebarLock": "Manté la barra lateral oberta",
     "selectAllElementsInFrame": "Selecciona tots els elements del marc",
-    "removeAllElementsFromFrame": "Eliminat tots els elements del marc",
-    "eyeDropper": "",
-    "textToDiagram": "",
-    "prompt": ""
+    "removeAllElementsFromFrame": "Elimina tots els elements del marc",
+    "eyeDropper": "Tria un color del llenç",
+    "textToDiagram": "Text a diagrama",
+    "prompt": "Prompt",
+    "followUs": "Seguiu-nos",
+    "discordChat": "Xat de Discord",
+    "zoomToFitViewport": "Amplia per adaptar-se a la finestra",
+    "zoomToFitSelection": "Zoom per veure la selecció",
+    "zoomToFit": "Zoom per veure tots els elements",
+    "installPWA": "Instal·la Excalidraw localment (PWA)",
+    "autoResize": "Activa la redimensió de text automàtica",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "Encara no s'hi han afegit elements...",
     "hint_emptyLibrary": "Trieu un element o un llenç per a afegir-lo aquí, o instal·leu una biblioteca del repositori públic, més avall.",
     "hint_emptyPrivateLibrary": "Trieu un element o un llenç per a afegir-lo aquí."
+  },
+  "search": {
+    "title": "Troba al llenç",
+    "noMatch": "No hem trobat coincidències...",
+    "singleResult": "resultat",
+    "multipleResults": "resultats",
+    "placeholder": "Troba al llenç..."
   },
   "buttons": {
     "clearReset": "Neteja el llenç",
@@ -151,6 +190,7 @@
     "exportImage": "Exporta la imatge...",
     "export": "Guardar a...",
     "copyToClipboard": "Copia al porta-retalls",
+    "copyLink": "Copia l'enllaç",
     "save": "Desa al fitxer actual",
     "saveAs": "Anomena i desa",
     "load": "Obrir",
@@ -171,13 +211,14 @@
     "fullScreen": "Pantalla completa",
     "darkMode": "Mode fosc",
     "lightMode": "Mode clar",
+    "systemMode": "Mode del sistema",
     "zenMode": "Mode zen",
-    "objectsSnapMode": "",
+    "objectsSnapMode": "Ajusta als objectes",
     "exitZenMode": "Surt de mode zen",
     "cancel": "Cancel·la",
     "clear": "Neteja",
     "remove": "Suprimeix",
-    "embed": "",
+    "embed": "Commuta incrustació",
     "publishLibrary": "Publica",
     "submit": "Envia",
     "confirm": "Confirma",
@@ -211,27 +252,27 @@
     "imageInsertError": "No s'ha pogut insertar la imatge, torneu-ho a provar més tard...",
     "fileTooBig": "El fitxer és massa gros. La mida màxima permesa és {{maxSize}}.",
     "svgImageInsertError": "No ha estat possible inserir la imatge SVG. Les marques SVG semblen invàlides.",
-    "failedToFetchImage": "",
-    "invalidSVGString": "SVG no vàlid.",
+    "failedToFetchImage": "No s'ha pogut obtenir la imatge.",
     "cannotResolveCollabServer": "No ha estat possible connectar amb el servidor collab. Si us plau recarregueu la pàgina i torneu a provar.",
     "importLibraryError": "No s'ha pogut carregar la biblioteca",
+    "saveLibraryError": "No hem pogut desar la llibreria a l'emmagatzematge. Si us plau, deseu la vostra llibreria a un fitxer local per assegurar que no perds els canvis.",
     "collabSaveFailed": "No s'ha pogut desar a la base de dades de fons. Si els problemes persisteixen, hauríeu de desar el fitxer localment per assegurar-vos que no perdeu el vostre treball.",
     "collabSaveFailed_sizeExceeded": "No s'ha pogut desar a la base de dades de fons, sembla que el llenç és massa gran. Hauríeu de desar el fitxer localment per assegurar-vos que no perdeu el vostre treball.",
-    "imageToolNotSupported": "",
+    "imageToolNotSupported": "Les imatges no estan habilitades.",
     "brave_measure_text_error": {
-      "line1": "",
-      "line2": "",
-      "line3": "",
-      "line4": ""
+      "line1": "Sembla que feu servir el navegador Brave amb el <bold>blocatge agressiu d'indentificació única</bold> activat.",
+      "line2": "Això podria provocar problemes amb els <bold>elements de text</bold> en els vostres dissenys.",
+      "line3": "Us recomanem encaridament que desactiveu aquesta característica. Podeu seguir <link>aquests passos</link> per a fer-ho.",
+      "line4": "Si els elements de text no es mostren correctament malgrat haver desactivat aquesta opció, si us plau, obriu una <issueLink>incidència</issueLink> a la nostra pàgina de GitHub o escriviu-nos a <discordLink>Discord</discordLink>"
     },
     "libraryElementTypeError": {
-      "embeddable": "",
+      "embeddable": "Els elements incrustables no poden afegir-se a la biblioteca.",
       "iframe": "",
       "image": ""
     },
     "asyncPasteFailedOnRead": "",
     "asyncPasteFailedOnParse": "No s'ha pogut enganxar.",
-    "copyToSystemClipboardFailed": ""
+    "copyToSystemClipboardFailed": "No s'ha pogut copiar al porta-retalls."
   },
   "toolBar": {
     "selection": "Selecció",
@@ -246,16 +287,31 @@
     "library": "Biblioteca",
     "lock": "Mantenir activa l'eina seleccionada desprès de dibuixar",
     "penMode": "Mode de llapis - evita tocar",
-    "link": "Afegeix / actualitza l'enllaç per a la forma seleccionada",
+    "link": "",
     "eraser": "Esborrador",
-    "frame": "",
+    "frame": "Eina de marc",
     "magicframe": "",
     "embeddable": "",
-    "laser": "",
+    "laser": "Punter làser",
     "hand": "Mà (eina de desplaçament)",
-    "extraTools": "",
-    "mermaidToExcalidraw": "De Mermaid a Excalidraw",
-    "magicSettings": "Preferències d'IA"
+    "extraTools": "Més eines",
+    "mermaidToExcalidraw": "Mermaid a Excalidraw"
+  },
+  "element": {
+    "rectangle": "Rectangle",
+    "diamond": "Rombe",
+    "ellipse": "El·lipse",
+    "arrow": "Fletxa",
+    "line": "Línia",
+    "freedraw": "Dibuix a mà alçada",
+    "text": "Text",
+    "image": "Imatge",
+    "group": "Grup",
+    "frame": "Marc",
+    "magicframe": "",
+    "embeddable": "",
+    "selection": "Selecció",
+    "iframe": "IFrame"
   },
   "headings": {
     "canvasActions": "Accions del llenç",
@@ -263,8 +319,10 @@
     "shapes": "Formes"
   },
   "hints": {
+    "dismissSearch": "",
     "canvasPanning": "Per moure el llenç, manteniu premuda la roda del ratolí o la barra espaiadora mentre arrossegueu o utilitzeu l'eina manual",
     "linearElement": "Feu clic per a dibuixar múltiples punts; arrossegueu per a una sola línia",
+    "arrowTool": "",
     "freeDraw": "Feu clic i arrossegueu, deixeu anar per a finalitzar",
     "text": "Consell: també podeu afegir text fent doble clic en qualsevol lloc amb l'eina de selecció",
     "embeddable": "",
@@ -281,10 +339,13 @@
     "placeImage": "Feu clic per a col·locar la imatge o clic i arrossegar per a establir-ne la mida manualment",
     "publishLibrary": "Publiqueu la vostra pròpia llibreria",
     "bindTextToElement": "Premeu enter per a afegir-hi text",
+    "createFlowchart": "",
     "deepBoxSelect": "Manteniu CtrlOrCmd per a selecció profunda, i per a evitar l'arrossegament",
     "eraserRevert": "Mantingueu premuda Alt per a revertir els elements seleccionats per a esborrar",
     "firefox_clipboard_write": "És probable que aquesta funció es pugui activar posant la marca \"dom.events.asyncClipboard.clipboardItem\" a \"true\". Per canviar les marques del navegador al Firefox, visiteu la pàgina \"about:config\".",
-    "disableSnapping": ""
+    "disableSnapping": "Manteniu premut CtrlOrCmd per a desactivar l'ajustament",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "No es pot mostrar la previsualització",
@@ -299,9 +360,12 @@
     "openIssueMessage": "Anàvem amb molta cura de no incloure la informació de la vostra escena en l'error. Si l'escena no és privada, podeu fer-ne el seguiment al nostre <button>rastrejador d'errors.</button> Incloeu la informació a continuació copiant i enganxant a GitHub Issues.",
     "sceneContent": "Contingut de l'escena:"
   },
+  "shareDialog": {
+    "or": "O"
+  },
   "roomDialog": {
-    "desc_intro": "Podeu convidar persones a la vostra escena actual a col·laborar amb vós.",
-    "desc_privacy": "No us preocupeu, la sessió utilitza el xifratge de punta a punta, de manera que qualsevol cosa que dibuixeu romandrà privada. Ni tan sols el nostre servidor podrà veure què feu.",
+    "desc_intro": "Convideu gent a col·laborar en el vostre disseny.",
+    "desc_privacy": "No us amoïneu, la sessió està encriptada d'extrem a extrem i és totalment privada. Ni tan sols el nostre servidor pot veure què dibuixeu.",
     "button_startSession": "Inicia la sessió",
     "button_stopSession": "Atura la sessió",
     "desc_inProgressIntro": "La sessió de col·laboració en directe està en marxa.",
@@ -328,14 +392,16 @@
     "click": "clic",
     "deepSelect": "Selecció profunda",
     "deepBoxSelect": "Seleccioneu profundament dins del quadre i eviteu arrossegar",
+    "createFlowchart": "",
+    "navigateFlowchart": "",
     "curvedArrow": "Fletxa corba",
     "curvedLine": "Línia corba",
     "documentation": "Documentació",
     "doubleClick": "doble clic",
     "drag": "arrossega",
     "editor": "Editor",
-    "editLineArrowPoints": "",
-    "editText": "",
+    "editLineArrowPoints": "Edita els punts de la línia/fletxa",
+    "editText": "Edita text / afegeix etiqueta",
     "github": "Hi heu trobat un problema? Informeu-ne",
     "howto": "Seguiu les nostres guies",
     "or": "o",
@@ -350,7 +416,9 @@
     "zoomToSelection": "Zoom per veure la selecció",
     "toggleElementLock": "Blocar/desblocar la selecció",
     "movePageUpDown": "Mou la pàgina cap amunt/a baix",
-    "movePageLeftRight": "Mou la pàgina cap a l'esquerra/dreta"
+    "movePageLeftRight": "Mou la pàgina cap a l'esquerra/dreta",
+    "cropStart": "Retallar l'imatge",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": "Neteja el llenç"
@@ -392,27 +460,27 @@
     "removeItemsFromLib": "Suprimeix els elements seleccionats de la llibreria"
   },
   "imageExportDialog": {
-    "header": "",
+    "header": "Exporteu la imatge",
     "label": {
-      "withBackground": "",
-      "onlySelected": "Només els seleccionats",
+      "withBackground": "Fons",
+      "onlySelected": "Només seleccionat",
       "darkMode": "Mode fosc",
       "embedScene": "",
-      "scale": "",
-      "padding": ""
+      "scale": "Escala",
+      "padding": "Marge intern (padding)"
     },
     "tooltip": {
-      "embedScene": ""
+      "embedScene": "Les dades de l’escena es desaran al fitxer PNG/SVG de manera que es pugui restaurar l’escena.\nAixò farà augmentar la mida del fitxer exportat."
     },
     "title": {
-      "exportToPng": "Exporta a PNG",
-      "exportToSvg": "Exporta a SVG",
-      "copyPngToClipboard": "Copia el PNG al porta-retalls"
+      "exportToPng": "Exporteu a PNG",
+      "exportToSvg": "Exporteu a SVG",
+      "copyPngToClipboard": "Copieu el PNG al porta-retalls"
     },
     "button": {
       "exportToPng": "PNG",
-      "exportToSvg": "",
-      "copyPngToClipboard": ""
+      "exportToSvg": "SVG",
+      "copyPngToClipboard": "Copieu al porta-retalls"
     }
   },
   "encrypted": {
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "Angle",
-    "element": "Element",
-    "elements": "Elements",
+    "shapes": "Formes",
     "height": "Altura",
     "scene": "Escena",
     "selected": "Seleccionat",
     "storage": "Emmagatzematge",
-    "title": "Estadístiques per nerds",
+    "fullTitle": "",
+    "title": "Propietats",
+    "generalStats": "General",
+    "elementProperties": "Propietats de la forma",
     "total": "Total",
     "version": "Versió",
     "versionCopy": "Feu clic per a copiar",
@@ -439,26 +509,28 @@
     "copyStyles": "S'han copiat els estils.",
     "copyToClipboard": "S'ha copiat al porta-retalls.",
     "copyToClipboardAsPng": "S'ha copiat {{exportSelection}} al porta-retalls en format PNG\n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "S'ha desat el fitxer.",
     "fileSavedToFilename": "S'ha desat a {filename}",
     "canvas": "el llenç",
     "selection": "la selecció",
     "pasteAsSingleElement": "Fer servir {{shortcut}} per enganxar com un sol element,\no enganxeu-lo en un editor de text existent",
     "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "unrecognizedLinkFormat": "",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "Transparent",
-    "black": "",
-    "white": "",
-    "red": "",
-    "pink": "",
-    "grape": "",
-    "violet": "",
-    "gray": "",
-    "blue": "",
-    "cyan": "",
-    "teal": "",
+    "black": "Negre",
+    "white": "Blanc",
+    "red": "Vermell",
+    "pink": "Rosa",
+    "grape": "Violat (raïm)",
+    "violet": "Violat",
+    "gray": "Gris",
+    "blue": "Blau",
+    "cyan": "Cian",
+    "teal": "Xarxet",
     "green": "Verd",
     "yellow": "Groc",
     "orange": "Taronja",
@@ -478,27 +550,27 @@
     }
   },
   "colorPicker": {
-    "mostUsedCustomColors": "",
-    "colors": "",
-    "shades": "",
-    "hexCode": "",
-    "noShades": ""
+    "mostUsedCustomColors": "Colors personalitzats més usats",
+    "colors": "Colors",
+    "shades": "Ombres",
+    "hexCode": "Codi hexadecimal",
+    "noShades": "No hi ha ombres disponibles per a aquest color"
   },
   "overwriteConfirm": {
     "action": {
       "exportToImage": {
-        "title": "Exporta com a imatge",
-        "button": "Exporta com a imatge",
+        "title": "Exporteu com a imatge",
+        "button": "Exporteu com a imatge",
         "description": ""
       },
       "saveToDisk": {
-        "title": "Desa al disc",
-        "button": "Desa al disc",
+        "title": "Deseu al disc",
+        "button": "Deseu al disc",
         "description": ""
       },
       "excalidrawPlus": {
-        "title": "",
-        "button": "",
+        "title": "Excalidraw+",
+        "button": "Exporta a Excalidraw+",
         "description": ""
       }
     },
@@ -506,20 +578,56 @@
       "loadFromFile": {
         "title": "Carrega des d'un fitxer",
         "button": "Carrega des d'un fitxer",
-        "description": ""
+        "description": "Carregar des d'un fitxer <bold>substituirà el contingut actual</bold>.<br></br>Podeu desar el vostre disseny abans fent servir una de les opcions més avall."
       },
       "shareableLink": {
         "title": "Carrega des d'un enllaç",
-        "button": "",
-        "description": ""
+        "button": "Substitueix el contingut",
+        "description": "Carregar un disseny extern <bold>substituirà el contingut actual</bold>.<br></br>Podeu desar el vostre disseny abans fent servir una de les opcions més avall."
       }
     }
   },
   "mermaid": {
-    "title": "De Mermaid a Excalidraw",
-    "button": "Insereix",
+    "title": "Mermaid a Excalidraw",
+    "button": "Inseriu",
     "description": "",
     "syntax": "Sintaxi de Mermaid",
     "preview": "Previsualització"
+  },
+  "quickSearch": {
+    "placeholder": "Cerca ràpida"
+  },
+  "fontList": {
+    "badge": {
+      "old": "antic"
+    },
+    "sceneFonts": "En aquesta escena",
+    "availableFonts": "Lletres tipogràfiques disponibles",
+    "empty": "No s'ha trobat cap lletra tipogràfica"
+  },
+  "userList": {
+    "empty": "No s'ha trobat cap usuari",
+    "hint": {
+      "text": "Feu clic sobre un usuari per seguir-lo",
+      "followStatus": "Ara per ara seguiu aquest usuari",
+      "inCall": "L'usuari es troba en una trucada de veu",
+      "micMuted": "El micròfon de l'usuari és silenciat",
+      "isSpeaking": "L'usuari parla ara"
+    }
+  },
+  "commandPalette": {
+    "title": "Paleta d'ordres",
+    "shortcuts": {
+      "select": "Selecciona",
+      "confirm": "Confirma",
+      "close": "Tanca"
+    },
+    "recents": "Usats recentment",
+    "search": {
+      "placeholder": "Cerca menús, ordres i descobreix joies amagades",
+      "noMatch": "No hi ha ordres coincidents..."
+    },
+    "itemNotAvailable": "Ordre no disponible...",
+    "shortcutHint": "Per obrir la paleta d'ordres, utilitza {{shortcut}}"
   }
 }

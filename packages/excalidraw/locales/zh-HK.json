@@ -21,7 +21,9 @@
     "copyStyles": "複製樣式",
     "pasteStyles": "套用樣式",
     "stroke": "筆跡顏色",
+    "changeStroke": "",
     "background": "填充顏色",
+    "changeBackground": "",
     "fill": "背景樣式",
     "strokeWidth": "筆跡寬度",
     "strokeStyle": "筆跡線條",
@@ -44,6 +46,14 @@
     "arrowhead_triangle_outline": "",
     "arrowhead_diamond": "",
     "arrowhead_diamond_outline": "",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "",
+    "arrowtype_sharp": "",
+    "arrowtype_round": "",
+    "arrowtype_elbowed": "",
     "fontSize": "字型大小",
     "fontFamily": "字體",
     "addWatermark": "加入「使用 Excalidraw 製圖」水印",
@@ -72,6 +82,7 @@
     "canvasColors": "",
     "canvasBackground": "畫布背景顏色",
     "drawingCanvas": "畫布",
+    "clearCanvas": "",
     "layers": "圖層",
     "actions": "動作",
     "language": "🌏 語言",
@@ -84,12 +95,13 @@
     "group": "建立物件群組",
     "ungroup": "取消物件群組",
     "collaborators": "已連線的協作者",
-    "showGrid": "顯示網格",
+    "toggleGrid": "",
     "addToLibrary": "加入作品庫",
     "removeFromLibrary": "從作品庫中移除",
     "libraryLoadingMessage": "正在載入作品庫…",
     "libraries": "瀏覽作品庫",
     "loadingScene": "載入畫布中…",
+    "loadScene": "",
     "align": "物件對齊",
     "alignTop": "水平置頂",
     "alignBottom": "水平置底",
@@ -105,7 +117,9 @@
     "share": "",
     "showStroke": "",
     "showBackground": "",
+    "showFonts": "",
     "toggleTheme": "",
+    "theme": "",
     "personalLib": "",
     "excalidrawLib": "",
     "decreaseFontSize": "",
@@ -117,14 +131,15 @@
       "edit": "",
       "editEmbed": "",
       "create": "",
-      "createEmbed": "",
       "label": "",
       "labelEmbed": "",
-      "empty": ""
+      "empty": "",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "",
-      "exit": ""
+      "editArrow": ""
     },
     "elementLock": {
       "lock": "",
@@ -138,12 +153,36 @@
     "removeAllElementsFromFrame": "",
     "eyeDropper": "",
     "textToDiagram": "",
-    "prompt": ""
+    "prompt": "",
+    "followUs": "",
+    "discordChat": "",
+    "zoomToFitViewport": "",
+    "zoomToFitSelection": "",
+    "zoomToFit": "",
+    "installPWA": "",
+    "autoResize": "",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "",
     "hint_emptyLibrary": "",
     "hint_emptyPrivateLibrary": ""
+  },
+  "search": {
+    "title": "",
+    "noMatch": "",
+    "singleResult": "",
+    "multipleResults": "",
+    "placeholder": ""
   },
   "buttons": {
     "clearReset": "清空畫布",
@@ -151,6 +190,7 @@
     "exportImage": "",
     "export": "",
     "copyToClipboard": "",
+    "copyLink": "",
     "save": "",
     "saveAs": "",
     "load": "",
@@ -171,6 +211,7 @@
     "fullScreen": "",
     "darkMode": "",
     "lightMode": "",
+    "systemMode": "",
     "zenMode": "",
     "objectsSnapMode": "",
     "exitZenMode": "",
@@ -212,9 +253,9 @@
     "fileTooBig": "",
     "svgImageInsertError": "",
     "failedToFetchImage": "",
-    "invalidSVGString": "",
     "cannotResolveCollabServer": "",
     "importLibraryError": "",
+    "saveLibraryError": "",
     "collabSaveFailed": "",
     "collabSaveFailed_sizeExceeded": "",
     "imageToolNotSupported": "",
@@ -254,8 +295,23 @@
     "laser": "",
     "hand": "",
     "extraTools": "",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "mermaidToExcalidraw": ""
+  },
+  "element": {
+    "rectangle": "",
+    "diamond": "",
+    "ellipse": "",
+    "arrow": "",
+    "line": "",
+    "freedraw": "",
+    "text": "",
+    "image": "",
+    "group": "",
+    "frame": "",
+    "magicframe": "",
+    "embeddable": "",
+    "selection": "",
+    "iframe": ""
   },
   "headings": {
     "canvasActions": "畫布動作",
@@ -263,8 +319,10 @@
     "shapes": ""
   },
   "hints": {
+    "dismissSearch": "",
     "canvasPanning": "",
     "linearElement": "",
+    "arrowTool": "",
     "freeDraw": "",
     "text": "",
     "embeddable": "",
@@ -281,10 +339,13 @@
     "placeImage": "",
     "publishLibrary": "",
     "bindTextToElement": "",
+    "createFlowchart": "",
     "deepBoxSelect": "",
     "eraserRevert": "",
     "firefox_clipboard_write": "",
-    "disableSnapping": ""
+    "disableSnapping": "",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "無法顯示預覽",
@@ -298,6 +359,9 @@
     "trackedToSentry": "",
     "openIssueMessage": "",
     "sceneContent": ""
+  },
+  "shareDialog": {
+    "or": ""
   },
   "roomDialog": {
     "desc_intro": "",
@@ -328,6 +392,8 @@
     "click": "",
     "deepSelect": "",
     "deepBoxSelect": "",
+    "createFlowchart": "",
+    "navigateFlowchart": "",
     "curvedArrow": "",
     "curvedLine": "",
     "documentation": "",
@@ -350,7 +416,9 @@
     "zoomToSelection": "",
     "toggleElementLock": "",
     "movePageUpDown": "",
-    "movePageLeftRight": ""
+    "movePageLeftRight": "",
+    "cropStart": "",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": ""
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "",
-    "element": "",
-    "elements": "",
+    "shapes": "",
     "height": "",
     "scene": "",
     "selected": "",
     "storage": "",
+    "fullTitle": "",
     "title": "",
+    "generalStats": "",
+    "elementProperties": "",
     "total": "",
     "version": "",
     "versionCopy": "",
@@ -439,13 +509,15 @@
     "copyStyles": "",
     "copyToClipboard": "",
     "copyToClipboardAsPng": "",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "",
     "fileSavedToFilename": "",
     "canvas": "畫布",
     "selection": "",
     "pasteAsSingleElement": "",
     "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "unrecognizedLinkFormat": "",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "",
@@ -521,5 +593,41 @@
     "description": "",
     "syntax": "",
     "preview": ""
+  },
+  "quickSearch": {
+    "placeholder": ""
+  },
+  "fontList": {
+    "badge": {
+      "old": ""
+    },
+    "sceneFonts": "",
+    "availableFonts": "",
+    "empty": ""
+  },
+  "userList": {
+    "empty": "",
+    "hint": {
+      "text": "",
+      "followStatus": "",
+      "inCall": "",
+      "micMuted": "",
+      "isSpeaking": ""
+    }
+  },
+  "commandPalette": {
+    "title": "",
+    "shortcuts": {
+      "select": "",
+      "confirm": "",
+      "close": ""
+    },
+    "recents": "",
+    "search": {
+      "placeholder": "",
+      "noMatch": ""
+    },
+    "itemNotAvailable": "",
+    "shortcutHint": ""
   }
 }

@@ -21,7 +21,9 @@
     "copyStyles": "Kopiera stil",
     "pasteStyles": "Klistra in stil",
     "stroke": "Linje",
+    "changeStroke": "Ändra streckfärg",
     "background": "Bakgrund",
+    "changeBackground": "Ändra bakgrundsfärg",
     "fill": "Fyllnad",
     "strokeWidth": "Linjebredd",
     "strokeStyle": "Linjestil",
@@ -42,8 +44,16 @@
     "arrowhead_circle_outline": "Cirkel (kontur)",
     "arrowhead_triangle": "Triangel",
     "arrowhead_triangle_outline": "Triangel (kontur)",
-    "arrowhead_diamond": "Diamant",
-    "arrowhead_diamond_outline": "Diamant (kontur)",
+    "arrowhead_diamond": "Romb",
+    "arrowhead_diamond_outline": "Romb (kontur)",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "Piltyp",
+    "arrowtype_sharp": "Rak",
+    "arrowtype_round": "Böjd",
+    "arrowtype_elbowed": "Vinklad",
     "fontSize": "Teckenstorlek",
     "fontFamily": "Teckensnitt",
     "addWatermark": "Lägg till \"Skapad med Excalidraw\"",
@@ -65,13 +75,14 @@
     "right": "Höger",
     "extraBold": "Extra fet",
     "architect": "Arkitekt",
-    "artist": "Artist",
+    "artist": "Konstnär",
     "cartoonist": "Serietecknare",
     "fileTitle": "Filnamn",
     "colorPicker": "Färgväljare",
     "canvasColors": "Används på canvas",
     "canvasBackground": "Canvas-bakgrund",
     "drawingCanvas": "Ritar canvas",
+    "clearCanvas": "Rensa canvas",
     "layers": "Lager",
     "actions": "Åtgärder",
     "language": "Språk",
@@ -84,12 +95,13 @@
     "group": "Gruppera markering",
     "ungroup": "Avgruppera markering",
     "collaborators": "Medarbetare",
-    "showGrid": "Visa rutnät",
+    "toggleGrid": "Visa/dölj rutnät",
     "addToLibrary": "Lägg till i biblioteket",
     "removeFromLibrary": "Ta bort från bibliotek",
     "libraryLoadingMessage": "Laddar bibliotek…",
     "libraries": "Bläddra i bibliotek",
     "loadingScene": "Laddar skiss…",
+    "loadScene": "Ladda scen från fil",
     "align": "Justera",
     "alignTop": "Justera överkant",
     "alignBottom": "Justera underkant",
@@ -105,7 +117,9 @@
     "share": "Dela",
     "showStroke": "Visa färgväljare för linjefärg",
     "showBackground": "Visa färgväljare för bakgrundsfärg",
-    "toggleTheme": "Växla tema",
+    "showFonts": "Visa typsnittsväljare",
+    "toggleTheme": "Växla ljus/mörkt tema",
+    "theme": "Tema",
     "personalLib": "Personligt bibliotek",
     "excalidrawLib": "Excalidraw bibliotek",
     "decreaseFontSize": "Minska fontstorleken",
@@ -115,16 +129,17 @@
     "createContainerFromText": "Radbryt text i en avgränsad yta",
     "link": {
       "edit": "Redigera länk",
-      "editEmbed": "Redigera länk & bädda in",
-      "create": "Skapa länk",
-      "createEmbed": "Skapa länk & bädda in",
+      "editEmbed": "Redigera inbäddningsbar länk",
+      "create": "Lägg till länk",
       "label": "Länk",
       "labelEmbed": "Länka & bädda in",
-      "empty": "Ingen länk är angiven"
+      "empty": "Ingen länk är angiven",
+      "hint": "Skriv eller klistra in din länk här",
+      "goToElement": "Gå till målelementet"
     },
     "lineEditor": {
       "edit": "Redigera linje",
-      "exit": "Avsluta linjeredigerare"
+      "editArrow": "Redigera pil"
     },
     "elementLock": {
       "lock": "Lås",
@@ -138,12 +153,36 @@
     "removeAllElementsFromFrame": "Ta bort alla element från rutan",
     "eyeDropper": "Välj färg från canvas",
     "textToDiagram": "Text till diagram",
-    "prompt": "Fråga"
+    "prompt": "Inmatning",
+    "followUs": "Följ oss",
+    "discordChat": "Discord chat",
+    "zoomToFitViewport": "Zooma för att passa in i vyn",
+    "zoomToFitSelection": "Zooma för att passa urval",
+    "zoomToFit": "Zooma för att rymma alla element",
+    "installPWA": "Installera Excalidraw lokalt (PWA)",
+    "autoResize": "Aktivera automatisk skalning av text",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "Kopiera länk till objektet",
+    "linkToElement": "Länk till objektet",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "Länk till objektet",
+    "desc": "Klicka på en figur på canvas eller klistra in en länk.",
+    "notFound": "Länkat objekt hittades inte på canvas."
   },
   "library": {
     "noItems": "Inga objekt tillagda ännu...",
     "hint_emptyLibrary": "Välj ett objekt på canvasen för att lägga till det här, eller installera ett bibliotek från det publika arkivet, nedan.",
     "hint_emptyPrivateLibrary": "Välj ett objekt på canvasen för att lägga till det här."
+  },
+  "search": {
+    "title": "Hitta på canvas",
+    "noMatch": "Inga träffar hittades...",
+    "singleResult": "resultat",
+    "multipleResults": "resultat",
+    "placeholder": "Hitta text på canvas..."
   },
   "buttons": {
     "clearReset": "Återställ canvasen",
@@ -151,6 +190,7 @@
     "exportImage": "Exportera bild...",
     "export": "Spara till...",
     "copyToClipboard": "Kopiera till urklipp",
+    "copyLink": "Kopiera länk",
     "save": "Spara till aktuell fil",
     "saveAs": "Spara som",
     "load": "Öppna",
@@ -171,6 +211,7 @@
     "fullScreen": "Helskärm",
     "darkMode": "Mörkt läge",
     "lightMode": "Ljust läge",
+    "systemMode": "Systemläge",
     "zenMode": "Zen-läge",
     "objectsSnapMode": "Fäst mot objekt",
     "exitZenMode": "Gå ur zen-läge",
@@ -212,9 +253,9 @@
     "fileTooBig": "Filen är för stor. Maximal tillåten storlek är {{maxSize}}.",
     "svgImageInsertError": "Kunde inte infoga SVG-bild. SVG-koden ser ogiltig ut.",
     "failedToFetchImage": "Kunde inte hämta bilden.",
-    "invalidSVGString": "Ogiltig SVG.",
     "cannotResolveCollabServer": "Det gick inte att ansluta till samarbets-servern. Ladda om sidan och försök igen.",
     "importLibraryError": "Kunde inte ladda bibliotek",
+    "saveLibraryError": "Det gick inte att spara biblioteket till lagring. Spara biblioteket till en fil lokalt för att se till att du inte förlorar ändringar.",
     "collabSaveFailed": "Det gick inte att spara i backend-databasen. Om problemen kvarstår bör du spara filen lokalt för att se till att du inte förlorar ditt arbete.",
     "collabSaveFailed_sizeExceeded": "Det gick inte att spara till backend-databasen, whiteboarden verkar vara för stor. Du bör spara filen lokalt för att du inte ska förlora ditt arbete.",
     "imageToolNotSupported": "Bilder är inaktiverade.",
@@ -229,9 +270,9 @@
       "iframe": "IFrame-element kan inte läggas till i biblioteket.",
       "image": "Stöd för att lägga till bilder till biblioteket kommer snart!"
     },
-    "asyncPasteFailedOnRead": "Kunde inte klistra in (kunde inte läsa från urklipp).",
+    "asyncPasteFailedOnRead": "Det gick inte att klistra in (kunde inte läsa från urklipp).",
     "asyncPasteFailedOnParse": "Kunde inte klistra in.",
-    "copyToSystemClipboardFailed": "Kunde inte kopiera till urklipp."
+    "copyToSystemClipboardFailed": "Det gick inte att kopiera till urklipp."
   },
   "toolBar": {
     "selection": "Markering",
@@ -254,8 +295,23 @@
     "laser": "Laserpekare",
     "hand": "Hand (panoreringsverktyg)",
     "extraTools": "Fler verktyg",
-    "mermaidToExcalidraw": "Mermaid till Excalidraw",
-    "magicSettings": "AI-inställningar"
+    "mermaidToExcalidraw": "Mermaid till Excalidraw"
+  },
+  "element": {
+    "rectangle": "Rektangel",
+    "diamond": "Romb",
+    "ellipse": "Ellips",
+    "arrow": "Pil",
+    "line": "Linje",
+    "freedraw": "Frihand",
+    "text": "Text",
+    "image": "Bild",
+    "group": "Grupp",
+    "frame": "Ram",
+    "magicframe": "Trådram till kod",
+    "embeddable": "Bädda in (web)",
+    "selection": "Markering",
+    "iframe": "IFrame"
   },
   "headings": {
     "canvasActions": "Canvas-åtgärder",
@@ -263,8 +319,10 @@
     "shapes": "Former"
   },
   "hints": {
+    "dismissSearch": "[Esc] för att avfärda sökning",
     "canvasPanning": "För att flytta whiteboarden, håll mushjulet eller mellanslagstangenten medan du drar eller använd handverktyget",
     "linearElement": "Klicka för att starta flera punkter, dra för en linje",
+    "arrowTool": "Klicka för att påbörja multipla punkter, dra för en linje. Använd {{arrowShortcut}} igen för att ändra typ av pil.",
     "freeDraw": "Klicka och dra, släpp när du är klar",
     "text": "Tips: du kan också lägga till text genom att dubbelklicka var som helst med markeringsverktyget",
     "embeddable": "Klicka-dra för att skapa en webbplats-inbäddning",
@@ -281,10 +339,13 @@
     "placeImage": "Klicka för att placera bilden, eller klicka och dra för att ställa in dess storlek manuellt",
     "publishLibrary": "Publicera ditt eget bibliotek",
     "bindTextToElement": "Tryck på Enter för att lägga till text",
+    "createFlowchart": "Håll CtrlOrCmd och piltangent för att skapa ett flödesschema",
     "deepBoxSelect": "Håll Ctrl eller Cmd för att djupvälja, och för att förhindra att dra",
     "eraserRevert": "Håll Alt för att återställa de element som är markerade för borttagning",
     "firefox_clipboard_write": "Denna funktion kan sannolikt aktiveras genom att ställa in \"dom.events.asyncClipboard.clipboardItem\" flaggan till \"true\". För att ändra webbläsarens flaggor i Firefox, besök \"about:config\" sidan.",
-    "disableSnapping": "Håll Ctrl eller Cmd för att inaktivera fästning"
+    "disableSnapping": "Håll Ctrl eller Cmd för att inaktivera fästning",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "Kan inte visa förhandsgranskning",
@@ -299,9 +360,12 @@
     "openIssueMessage": "Vi var mycket försiktiga med att inte inkludera din skissinformation om felet. Om din skiss inte är privat, vänligen överväga att följa upp på vår <button>buggspårare.</button> Vänligen inkludera information nedan genom att kopiera och klistra in i GitHub-problemet.",
     "sceneContent": "Skissinnehåll:"
   },
+  "shareDialog": {
+    "or": "Eller"
+  },
   "roomDialog": {
-    "desc_intro": "Du kan bjuda in personer till din nuvarande skiss för att samarbeta med dig.",
-    "desc_privacy": "Oroa dig inte, sessionen använder kryptering från ände till ände, så vad du än ritar kommer att förbli privat. Inte ens vår server kommer att kunna se vad du skissar.",
+    "desc_intro": "Bjud in personer att samarbeta på din ritning.",
+    "desc_privacy": "Oroa dig inte, sessionen är krypterad och helt privat. Inte ens vår server kan se vad du ritar.",
     "button_startSession": "Starta sessionen",
     "button_stopSession": "Stoppa session",
     "desc_inProgressIntro": "Nu pågår en live-samarbetssession.",
@@ -328,6 +392,8 @@
     "click": "klicka",
     "deepSelect": "Djupval",
     "deepBoxSelect": "Djupval inom boxen, och förhindra att dra",
+    "createFlowchart": "Skapa ett flödesschema från ett generiskt element",
+    "navigateFlowchart": "Navigera ett flödesschema",
     "curvedArrow": "Böjd pil",
     "curvedLine": "Böjd linje",
     "documentation": "Dokumentation",
@@ -350,7 +416,9 @@
     "zoomToSelection": "Zooma till markering",
     "toggleElementLock": "Lås/Lås upp valda",
     "movePageUpDown": "Flytta sida upp/ner",
-    "movePageLeftRight": "Flytta sida vänster/höger"
+    "movePageLeftRight": "Flytta sida vänster/höger",
+    "cropStart": "",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": "Rensa canvas"
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "Vinkel",
-    "element": "Element",
-    "elements": "Element",
+    "shapes": "Former",
     "height": "Höjd",
     "scene": "Skiss",
     "selected": "Valda",
     "storage": "Lagring",
-    "title": "Statistik för nördar",
+    "fullTitle": "Egenskaper för Canvas & Form",
+    "title": "Egenskaper",
+    "generalStats": "Allmän",
+    "elementProperties": "Formegenskaper",
     "total": "Totalt",
     "version": "Version",
     "versionCopy": "Klicka för att kopiera",
@@ -439,13 +509,15 @@
     "copyStyles": "Kopierade stilar.",
     "copyToClipboard": "Kopierad till urklipp.",
     "copyToClipboardAsPng": "Kopierade {{exportSelection}} till urklipp som PNG\n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "Fil sparad.",
     "fileSavedToFilename": "Sparad till {filename}",
-    "canvas": "canvas",
+    "canvas": "arbetsyta",
     "selection": "markering",
     "pasteAsSingleElement": "Använd {{shortcut}} för att klistra in som ett enda element,\neller klistra in i en befintlig textredigerare",
     "unableToEmbed": "Att bädda in denna webbadress är för närvarande inte tillåtet. Skapa en problemrapport på GitHub för att begära att webbadressen vitlistas.",
-    "unrecognizedLinkFormat": "Länken du bäddade in matchar inte det förväntade formatet. Försök klistra in 'embed'-strängen som tillhandahålls av källwebbplatsen"
+    "unrecognizedLinkFormat": "Länken du bäddade in matchar inte det förväntade formatet. Försök klistra in 'embed'-strängen som tillhandahålls av källwebbplatsen",
+    "elementLinkCopied": "Länk har kopierats till urklipp"
   },
   "colors": {
     "transparent": "Genomskinlig",
@@ -521,5 +593,41 @@
     "description": "För närvarande stöds endast <flowchartLink>Flödesdiagram</flowchartLink>,<sequenceLink> Sekvensdiagram </sequenceLink> och <classLink>Klassdiagram</classLink>. De andra typerna kommer att återges som bild i Excalidraw.",
     "syntax": "Mermaid-syntax",
     "preview": "Förhandsgranska"
+  },
+  "quickSearch": {
+    "placeholder": "Snabbsök"
+  },
+  "fontList": {
+    "badge": {
+      "old": "gammal"
+    },
+    "sceneFonts": "I den här scenen",
+    "availableFonts": "Tillgängliga typsnitt",
+    "empty": "Inga typsnitt hittades"
+  },
+  "userList": {
+    "empty": "Inga användare hittades",
+    "hint": {
+      "text": "Klicka på användaren för att följa",
+      "followStatus": "Du följer den här användaren",
+      "inCall": "Användaren är i ett röstsamtal",
+      "micMuted": "Användarens mikrofon är avstängd",
+      "isSpeaking": "Användaren pratar"
+    }
+  },
+  "commandPalette": {
+    "title": "Kommandopalett",
+    "shortcuts": {
+      "select": "Välj",
+      "confirm": "Bekräfta",
+      "close": "Stäng"
+    },
+    "recents": "Nyligen använda",
+    "search": {
+      "placeholder": "Sök menyer, kommandon och upptäck dolda pärlor",
+      "noMatch": "Inga matchande kommandon..."
+    },
+    "itemNotAvailable": "Kommandot är inte tillgängligt...",
+    "shortcutHint": "För kommandopalett, använd {{shortcut}}"
   }
 }

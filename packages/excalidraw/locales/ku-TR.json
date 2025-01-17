@@ -21,7 +21,9 @@
     "copyStyles": "لەبەرگرتنەوەی ستایل",
     "pasteStyles": "دانانەوەی ستایل",
     "stroke": "هێڵکار",
+    "changeStroke": "",
     "background": "پاشبنەما",
+    "changeBackground": "",
     "fill": "پڕکردنەوە",
     "strokeWidth": "پانی هێڵکاری",
     "strokeStyle": "ستایلی هێڵکاری",
@@ -44,6 +46,14 @@
     "arrowhead_triangle_outline": "",
     "arrowhead_diamond": "",
     "arrowhead_diamond_outline": "",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "",
+    "arrowtype_sharp": "",
+    "arrowtype_round": "",
+    "arrowtype_elbowed": "",
     "fontSize": "قەبارەی فۆنت",
     "fontFamily": "خێزانی فۆنت",
     "addWatermark": "زیادبکە \"Made with Excalidraw\"",
@@ -72,6 +82,7 @@
     "canvasColors": "بەکارهاتووە لەسەر تابلۆ",
     "canvasBackground": "پاشبنەمای تابلۆ",
     "drawingCanvas": "کێشانی تابلۆ",
+    "clearCanvas": "",
     "layers": "چینەکان",
     "actions": "کردارەکان",
     "language": "زمان",
@@ -84,12 +95,13 @@
     "group": "دیاریکردنی گروپ",
     "ungroup": "گروپی دیاریکراوەکان لابەرە",
     "collaborators": "هاوکارەکان",
-    "showGrid": "گرید نیشانبدە",
+    "toggleGrid": "",
     "addToLibrary": "زیادکردن بۆ کتێبخانە",
     "removeFromLibrary": "لابردن لە کتێبخانە",
     "libraryLoadingMessage": "...بارکردنی کتێبخانە",
     "libraries": "گەڕانی کتێبخانە",
     "loadingScene": "...بارکردنی دیمەنەکە",
+    "loadScene": "",
     "align": "لاچەنکردن",
     "alignTop": "لاچەنکردن بۆ سەرەوە",
     "alignBottom": "لاچەنکردن بۆ خوارەوە",
@@ -105,7 +117,9 @@
     "share": "هاوبەشی پێکردن",
     "showStroke": "ڕەنگهەڵگری هێڵکار نیشانبدە",
     "showBackground": "ڕەنگهەڵگری باکگراوند نیشانبدە",
-    "toggleTheme": "دۆخی ڕوکار بگۆڕە",
+    "showFonts": "",
+    "toggleTheme": "",
+    "theme": "",
     "personalLib": "کتێبخانەی کەسی",
     "excalidrawLib": "کتێبخانەی Excalidraw",
     "decreaseFontSize": "کەمکردنەوەی قەبارەی فۆنت",
@@ -116,15 +130,16 @@
     "link": {
       "edit": "دەستکاریکردنی بەستەر",
       "editEmbed": "",
-      "create": "دروستکردنی بەستەر",
-      "createEmbed": "",
+      "create": "",
       "label": "بەستەر",
       "labelEmbed": "",
-      "empty": ""
+      "empty": "",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "دەستکاری کردنی دێڕ",
-      "exit": "دەرچوون لە دەستکاریکەری دێڕ"
+      "editArrow": ""
     },
     "elementLock": {
       "lock": "قفڵکردن",
@@ -138,12 +153,36 @@
     "removeAllElementsFromFrame": "هەموو توخمەکانی ناو چوارچێوەکە لابەرە",
     "eyeDropper": "ڕەنگێک لەسەر تابلۆکە هەڵبژێرە",
     "textToDiagram": "",
-    "prompt": ""
+    "prompt": "",
+    "followUs": "",
+    "discordChat": "",
+    "zoomToFitViewport": "",
+    "zoomToFitSelection": "",
+    "zoomToFit": "",
+    "installPWA": "",
+    "autoResize": "",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "هێشتا هیچ بڕگەیەک زیاد نەکراوە...",
     "hint_emptyLibrary": "شتێک لەسەر تابلۆ هەڵبژێرە بۆ ئەوەی لێرە زیادی بکەیت، یان کتێبخانەیەک لە کۆگا گشتیەکەوە دابمەزرێنە، لە خوارەوە.",
     "hint_emptyPrivateLibrary": "شتێک لەسەر تابلۆ هەڵبژێرە بۆ ئەوەی لێرە زیادی بکەیت."
+  },
+  "search": {
+    "title": "",
+    "noMatch": "",
+    "singleResult": "",
+    "multipleResults": "",
+    "placeholder": ""
   },
   "buttons": {
     "clearReset": "تابلۆکە وەک سەرەتا لێبکەوە",
@@ -151,6 +190,7 @@
     "exportImage": "وێنە هەناردە بکە...",
     "export": "پاشەکەوت بکە بۆ...",
     "copyToClipboard": "له‌به‌ری بگره‌وه‌ بۆ ته‌خته‌نووس",
+    "copyLink": "",
     "save": "پاشەکەوت بکە بۆ فایلی بەردەست",
     "saveAs": "پاشەکەوتکردن وەک",
     "load": "بکەرەوە",
@@ -171,6 +211,7 @@
     "fullScreen": "پڕ بە شاشە",
     "darkMode": "دۆخی تاریک",
     "lightMode": "دۆخی ڕووناک",
+    "systemMode": "",
     "zenMode": "دۆخی زێن",
     "objectsSnapMode": "",
     "exitZenMode": "بەجێهێشتنی دۆخی زێن",
@@ -212,9 +253,9 @@
     "fileTooBig": "فایلەکە زۆر گەورەیە. زۆرترین قەبارەی ڕێگەپێدراو {{maxSize}}}.",
     "svgImageInsertError": "نەیتوانی وێنەی SVG داخڵ بکات. نیشانەی ئێس ڤی جی نادروست دیارە.",
     "failedToFetchImage": "",
-    "invalidSVGString": "ئێس ڤی جی نادروستە.",
     "cannotResolveCollabServer": "ناتوانێت پەیوەندی بکات بە سێرڤەری کۆلاب. تکایە لاپەڕەکە دووبارە باربکەوە و دووبارە هەوڵ بدەوە.",
     "importLibraryError": "نەیتوانی کتێبخانە بار بکات",
+    "saveLibraryError": "",
     "collabSaveFailed": "نەتوانرا لە بنکەدراوەی ڕاژەدا پاشەکەوت بکرێت. ئەگەر کێشەکان بەردەوام بوون، پێویستە فایلەکەت لە ناوخۆدا هەڵبگریت بۆ ئەوەی دڵنیا بیت کە کارەکانت لەدەست نادەیت.",
     "collabSaveFailed_sizeExceeded": "نەتوانرا لە بنکەدراوەی ڕاژەدا پاشەکەوت بکرێت، پێدەچێت تابلۆکە زۆر گەورە بێت. پێویستە فایلەکە لە ناوخۆدا هەڵبگریت بۆ ئەوەی دڵنیا بیت کە کارەکانت لەدەست نادەیت.",
     "imageToolNotSupported": "",
@@ -246,7 +287,7 @@
     "library": "کتێبخانە",
     "lock": "ئامێرە دیاریکراوەکان چالاک بهێڵەوە دوای وێنەکێشان",
     "penMode": "شێوازی قەڵەم - دەست لێدان ڕابگرە",
-    "link": "زیادکردن/ نوێکردنەوەی لینک بۆ شێوەی دیاریکراو",
+    "link": "",
     "eraser": "سڕەر",
     "frame": "ئامرازی چوارچێوە",
     "magicframe": "",
@@ -254,8 +295,23 @@
     "laser": "",
     "hand": "دەست (ئامرازی پانکردن)",
     "extraTools": "ئامرازی زیاتر",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "mermaidToExcalidraw": ""
+  },
+  "element": {
+    "rectangle": "",
+    "diamond": "",
+    "ellipse": "",
+    "arrow": "",
+    "line": "",
+    "freedraw": "",
+    "text": "",
+    "image": "",
+    "group": "",
+    "frame": "",
+    "magicframe": "",
+    "embeddable": "",
+    "selection": "",
+    "iframe": ""
   },
   "headings": {
     "canvasActions": "کردارەکانی تابلۆ",
@@ -263,8 +319,10 @@
     "shapes": "شێوەکان"
   },
   "hints": {
+    "dismissSearch": "",
     "canvasPanning": "بۆ جوڵاندنی تابلۆ، ویلی ماوسەکەت یان دوگمەی سپەیس بگرە لەکاتی ڕاکێشاندە، یانیش ئامرازی دەستەکە بەکاربهێنە",
     "linearElement": "کرتە بکە بۆ دەستپێکردنی چەند خاڵێک، ڕایبکێشە بۆ یەک هێڵ",
+    "arrowTool": "",
     "freeDraw": "کرتە بکە و ڕایبکێشە، کاتێک تەواو بوویت دەست هەڵگرە",
     "text": "زانیاری: هەروەها دەتوانیت دەق زیادبکەیت بە دوو کرتەکردن لە هەر شوێنێک لەگەڵ ئامڕازی دەستنیشانکردن",
     "embeddable": "",
@@ -281,10 +339,13 @@
     "placeImage": "کلیک بکە بۆ دانانی وێنەکە، یان کلیک بکە و ڕایبکێشە بۆ ئەوەی قەبارەکەی بە دەستی دابنێیت",
     "publishLibrary": "کتێبخانەی تایبەت بە خۆت بڵاوبکەرەوە",
     "bindTextToElement": "بۆ زیادکردنی دەق enter بکە",
+    "createFlowchart": "",
     "deepBoxSelect": "CtrlOrCmd ڕابگرە بۆ هەڵبژاردنی قووڵ، و بۆ ڕێگریکردن لە ڕاکێشان",
     "eraserRevert": "بۆ گەڕاندنەوەی ئەو توخمانەی کە بۆ سڕینەوە نیشانە کراون، Alt ڕابگرە",
     "firefox_clipboard_write": "ئەم تایبەتمەندییە بە ئەگەرێکی زۆرەوە دەتوانرێت چالاک بکرێت بە ڕێکخستنی ئاڵای \"dom.events.asyncClipboard.clipboardItem\" بۆ \"true\". بۆ گۆڕینی ئاڵاکانی وێبگەڕ لە فایەرفۆکسدا، سەردانی لاپەڕەی \"about:config\" بکە.",
-    "disableSnapping": ""
+    "disableSnapping": "",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "ناتوانرێ پێشبینین پیشان بدرێت",
@@ -299,9 +360,12 @@
     "openIssueMessage": "ئێمە زۆر وریا بووین کە زانیارییەکانی دیمەنەکەت لەسەر هەڵەکە نەخەینەڕوو. ئەگەر دیمەنەکەت تایبەت نییە، تکایە بیر لە بەدواداچوون بکەنەوە بۆ ئێمە <button>شوێنپێهەڵگری هەڵە.</button> تکایە ئەم زانیارییانەی خوارەوە کۆپی بکە و لە بەشی کێشەکانی Github دایبنێ.",
     "sceneContent": "پێکهاتەی ناو دیمەنەکە:"
   },
+  "shareDialog": {
+    "or": ""
+  },
   "roomDialog": {
-    "desc_intro": "دەتوانیت خەڵک بانگهێشت بکەیت بۆ دیمەنی ئێستات بۆ هاوکاری کردن لەگەڵت.",
-    "desc_privacy": "نیگەران مەبە، دانیشتنەکە کۆدکردنی کۆتایی بە کۆتایی بەکاردەهێنێت، بۆیە هەرچییەک بکێشیت بە تایبەتی دەمێنێتەوە. تەنانەت سێرڤەرەکەمان ناتوانێت بزانێت کە تۆ چیت دروستکردووە.",
+    "desc_intro": "",
+    "desc_privacy": "",
     "button_startSession": "دەستپێکردنی دانیشتن",
     "button_stopSession": "وەستاندنی دانیشتن",
     "desc_inProgressIntro": "دانیشتنی هاوکاری ڕاستەوخۆ ئێستا لە ئارادایە.",
@@ -328,6 +392,8 @@
     "click": "گرتە",
     "deepSelect": "دەستنیشانکردنی قوڵ",
     "deepBoxSelect": "لەناو بۆکسەکەدا بە قووڵی هەڵبژێرە، و ڕێگری لە ڕاکێشان بکە",
+    "createFlowchart": "",
+    "navigateFlowchart": "",
     "curvedArrow": "تیری نوشتاوە",
     "curvedLine": "هێڵی نوشتاوە",
     "documentation": "دۆکیومێنتەیشن",
@@ -350,7 +416,9 @@
     "zoomToSelection": "زووم بکە بۆ دەستنیشانکراوەکان",
     "toggleElementLock": "قفڵ/کردنەوەی دەستنیشانکراوەکان",
     "movePageUpDown": "لاپەڕەکە بجوڵێنە بۆ سەرەوە/خوارەوە",
-    "movePageLeftRight": "لاپەڕەکە بجوڵێنە بۆ چەپ/ڕاست"
+    "movePageLeftRight": "لاپەڕەکە بجوڵێنە بۆ چەپ/ڕاست",
+    "cropStart": "",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": "تابلۆکە خاوێن بکەرەوە"
@@ -410,8 +478,8 @@
       "copyPngToClipboard": "لەبەربگرەوە بۆ سەر تەختەنوس"
     },
     "button": {
-      "exportToPng": "PNG",
-      "exportToSvg": "SVG",
+      "exportToPng": "",
+      "exportToSvg": "",
       "copyPngToClipboard": "له‌به‌ری بگره‌وه‌ بۆ ته‌خته‌نووس"
     }
   },
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "گۆشە",
-    "element": "توخم",
-    "elements": "توخمەکان",
+    "shapes": "",
     "height": "بەرزی",
     "scene": "دیمەنەکە",
     "selected": "دەستنیشانکراوەکان",
     "storage": "بیرگە",
-    "title": "ئامار بۆ نێردەکان",
+    "fullTitle": "",
+    "title": "",
+    "generalStats": "",
+    "elementProperties": "",
     "total": "گشتی",
     "version": "وەشان",
     "versionCopy": "کلیک بۆ لەبەرگرتنەوە",
@@ -439,13 +509,15 @@
     "copyStyles": "ستایلی کۆپیکراو.",
     "copyToClipboard": "لەبەرگیرایەوە بۆ تەختەنوس.",
     "copyToClipboardAsPng": "کۆپی کراوە {{exportSelection}} بۆ کلیپبۆرد وەک PNG\n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "فایل هەڵگیرا.",
     "fileSavedToFilename": "هەڵگیراوە بۆ {filename}",
     "canvas": "تابلۆ",
     "selection": "دەستنیشانکراوەکان",
     "pasteAsSingleElement": "بۆ دانانەوە وەکو یەک توخم یان دانانەوە بۆ نێو دەسکاریکەرێکی دەق کە بوونی هەیە {{shortcut}} بەکاربهێنە",
     "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "unrecognizedLinkFormat": "",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "ڕوون",
@@ -521,5 +593,41 @@
     "description": "",
     "syntax": "",
     "preview": ""
+  },
+  "quickSearch": {
+    "placeholder": ""
+  },
+  "fontList": {
+    "badge": {
+      "old": ""
+    },
+    "sceneFonts": "",
+    "availableFonts": "",
+    "empty": ""
+  },
+  "userList": {
+    "empty": "",
+    "hint": {
+      "text": "",
+      "followStatus": "",
+      "inCall": "",
+      "micMuted": "",
+      "isSpeaking": ""
+    }
+  },
+  "commandPalette": {
+    "title": "",
+    "shortcuts": {
+      "select": "",
+      "confirm": "",
+      "close": ""
+    },
+    "recents": "",
+    "search": {
+      "placeholder": "",
+      "noMatch": ""
+    },
+    "itemNotAvailable": "",
+    "shortcutHint": ""
   }
 }

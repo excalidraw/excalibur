@@ -21,7 +21,9 @@
     "copyStyles": "ပုံစံကူး",
     "pasteStyles": "ပုံစံထား",
     "stroke": "မျဉ်း",
+    "changeStroke": "",
     "background": "နောက်ခံ",
+    "changeBackground": "",
     "fill": "ဖြည့်",
     "strokeWidth": "မျဉ်းအထူ",
     "strokeStyle": "မျဉ်းပုံစံ",
@@ -44,6 +46,14 @@
     "arrowhead_triangle_outline": "",
     "arrowhead_diamond": "",
     "arrowhead_diamond_outline": "",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "",
+    "arrowtype_sharp": "",
+    "arrowtype_round": "",
+    "arrowtype_elbowed": "",
     "fontSize": "စာလုံးအရွယ်",
     "fontFamily": "စာလုံးပုံစံ",
     "addWatermark": "\"Excalidraw ဖြင့်ဖန်တီးသည်။\" စာသားထည့်",
@@ -72,6 +82,7 @@
     "canvasColors": "",
     "canvasBackground": "ကားချပ်နောက်ခံ",
     "drawingCanvas": "ပုံဆွဲကားချပ်",
+    "clearCanvas": "",
     "layers": "အလွှာများ",
     "actions": "လုပ်ဆောင်ချက်များ",
     "language": "ဘာသာစကား",
@@ -84,12 +95,13 @@
     "group": "အုပ်စုဖွဲ့",
     "ungroup": "အုပ်စုဖျက်သိမ်း",
     "collaborators": "ပူးပေါင်းပါဝင်သူများ",
-    "showGrid": "",
+    "toggleGrid": "",
     "addToLibrary": "မှတ်တမ်းတင်",
     "removeFromLibrary": "မှတ်တမ်းမှထုတ်",
     "libraryLoadingMessage": "မှတ်တမ်းအား တင်သွင်းနေသည်…",
     "libraries": "စာကြည့်တိုက်တွင်ရှာဖွေပါ",
     "loadingScene": "မြင်ကွင်းဖော်နေသည်…",
+    "loadScene": "",
     "align": "ချိန်ညှိ",
     "alignTop": "ထိပ်ညှိ",
     "alignBottom": "အခြေညှိ",
@@ -105,7 +117,9 @@
     "share": "",
     "showStroke": "",
     "showBackground": "",
+    "showFonts": "",
     "toggleTheme": "",
+    "theme": "",
     "personalLib": "",
     "excalidrawLib": "",
     "decreaseFontSize": "",
@@ -117,14 +131,15 @@
       "edit": "",
       "editEmbed": "",
       "create": "",
-      "createEmbed": "",
       "label": "",
       "labelEmbed": "",
-      "empty": ""
+      "empty": "",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "",
-      "exit": ""
+      "editArrow": ""
     },
     "elementLock": {
       "lock": "",
@@ -138,12 +153,36 @@
     "removeAllElementsFromFrame": "",
     "eyeDropper": "",
     "textToDiagram": "",
-    "prompt": ""
+    "prompt": "",
+    "followUs": "",
+    "discordChat": "",
+    "zoomToFitViewport": "",
+    "zoomToFitSelection": "",
+    "zoomToFit": "",
+    "installPWA": "",
+    "autoResize": "",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "",
     "hint_emptyLibrary": "",
     "hint_emptyPrivateLibrary": ""
+  },
+  "search": {
+    "title": "",
+    "noMatch": "",
+    "singleResult": "",
+    "multipleResults": "",
+    "placeholder": ""
   },
   "buttons": {
     "clearReset": "ကားချပ်ရှင်းလင်း",
@@ -151,6 +190,7 @@
     "exportImage": "",
     "export": "",
     "copyToClipboard": "ကူးယူ",
+    "copyLink": "",
     "save": "",
     "saveAs": "ပြောင်းသိမ်း",
     "load": "",
@@ -171,6 +211,7 @@
     "fullScreen": "",
     "darkMode": "",
     "lightMode": "",
+    "systemMode": "",
     "zenMode": "",
     "objectsSnapMode": "",
     "exitZenMode": "ဇင်မြင်ကွင်းမှထွက်",
@@ -212,9 +253,9 @@
     "fileTooBig": "",
     "svgImageInsertError": "",
     "failedToFetchImage": "",
-    "invalidSVGString": "",
     "cannotResolveCollabServer": "",
     "importLibraryError": "",
+    "saveLibraryError": "",
     "collabSaveFailed": "",
     "collabSaveFailed_sizeExceeded": "",
     "imageToolNotSupported": "",
@@ -254,8 +295,23 @@
     "laser": "",
     "hand": "",
     "extraTools": "",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "mermaidToExcalidraw": ""
+  },
+  "element": {
+    "rectangle": "",
+    "diamond": "",
+    "ellipse": "",
+    "arrow": "",
+    "line": "",
+    "freedraw": "",
+    "text": "",
+    "image": "",
+    "group": "",
+    "frame": "",
+    "magicframe": "",
+    "embeddable": "",
+    "selection": "",
+    "iframe": ""
   },
   "headings": {
     "canvasActions": "ကားချပ်လုပ်ဆောင်ချက်",
@@ -263,8 +319,10 @@
     "shapes": "ပုံသဏ္ဌာန်များ"
   },
   "hints": {
+    "dismissSearch": "",
     "canvasPanning": "",
     "linearElement": "အမှတ်များချမှတ်ရေးဆွဲရန်ကလစ်နှိပ်ပါ၊ မျဉ်းတစ်ကြောင်းတည်းအတွက် တရွတ်ဆွဲပါ။",
+    "arrowTool": "",
     "freeDraw": "ကလစ်နှိပ်၍ တရွတ်ဆွဲပါ၊ ပြီးလျှင်လွှတ်ပါ။",
     "text": "မှတ်ချက်။ ။မည်သည့်ကိရိယာရွေးထားသည်ဖြစ်စေ ကလစ်နှစ်ချက်နှိပ်၍စာသားထည့်နိုင်သည်",
     "embeddable": "",
@@ -281,10 +339,13 @@
     "placeImage": "",
     "publishLibrary": "",
     "bindTextToElement": "",
+    "createFlowchart": "",
     "deepBoxSelect": "",
     "eraserRevert": "",
     "firefox_clipboard_write": "",
-    "disableSnapping": ""
+    "disableSnapping": "",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "နမူနာမပြသနိုင်ပါ",
@@ -299,9 +360,12 @@
     "openIssueMessage": "ချို့ယွင်းမှုမှတ်တမ်းတွင် အရေးကြီးအချက်အလက်များပါဝင်မှုမရှိစေရန်အထူးသတိပြုပါသည်။ မပါဝင်ပါက ဆက်လက်ဆောင်ရွက်ရန် <button>ချို့ယွင်းမှုအားခြေရာကောက်ပါ။</button> အောက်ပါအချက်အလက်များအား Github တွင် Issue အနေဖြင့်ဖြည့်သွင်းဖော်ပြပေးပါ။",
     "sceneContent": "မြင်ကွင်းပါအချက်အလက်။ ။"
   },
+  "shareDialog": {
+    "or": ""
+  },
   "roomDialog": {
-    "desc_intro": "လက်ရှိမြင်ကွင်းတွင်ပူးပေါင်းရေးဆွဲရန် အခြားသူများအား ဖိတ်ကြားနိုင်သည်။",
-    "desc_privacy": "နှစ်ဘက်စွန်းတိုင်လျှို့ဝှက်ထားသဖြင့်ရေးဆွဲသမျှအား ဆာဗာပေါ်မှပင်လျှင်ကြည့်ရှုနိုင်မည်မဟုတ်ပါ။ မစိုးရိမ်ပါနှင့်။",
+    "desc_intro": "",
+    "desc_privacy": "",
     "button_startSession": "ပူးပေါင်းမှုစတင်",
     "button_stopSession": "ပူးပေါင်းမှုအဆုံးသတ်",
     "desc_inProgressIntro": "တိုက်ရိုက်ပူးပေါင်းရေးဆွဲမှုများပြုလုပ်နေပါသည်။",
@@ -328,6 +392,8 @@
     "click": "",
     "deepSelect": "",
     "deepBoxSelect": "",
+    "createFlowchart": "",
+    "navigateFlowchart": "",
     "curvedArrow": "",
     "curvedLine": "",
     "documentation": "",
@@ -350,7 +416,9 @@
     "zoomToSelection": "",
     "toggleElementLock": "",
     "movePageUpDown": "",
-    "movePageLeftRight": ""
+    "movePageLeftRight": "",
+    "cropStart": "",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": ""
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "ထောင့်",
-    "element": "",
-    "elements": "",
+    "shapes": "",
     "height": "အမြင့်",
     "scene": "မြင်ကွင်း",
     "selected": "ရွေးချယ်သည်",
     "storage": "သိုလှောင်ခန်း",
-    "title": "အက္ခရာများအတွက်အချက်အလက်များ",
+    "fullTitle": "",
+    "title": "",
+    "generalStats": "",
+    "elementProperties": "",
     "total": "စုစုပေါင်း",
     "version": "",
     "versionCopy": "",
@@ -439,13 +509,15 @@
     "copyStyles": "",
     "copyToClipboard": "",
     "copyToClipboardAsPng": "",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "",
     "fileSavedToFilename": "",
     "canvas": "",
     "selection": "",
     "pasteAsSingleElement": "",
     "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "unrecognizedLinkFormat": "",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "",
@@ -521,5 +593,41 @@
     "description": "",
     "syntax": "",
     "preview": ""
+  },
+  "quickSearch": {
+    "placeholder": ""
+  },
+  "fontList": {
+    "badge": {
+      "old": ""
+    },
+    "sceneFonts": "",
+    "availableFonts": "",
+    "empty": ""
+  },
+  "userList": {
+    "empty": "",
+    "hint": {
+      "text": "",
+      "followStatus": "",
+      "inCall": "",
+      "micMuted": "",
+      "isSpeaking": ""
+    }
+  },
+  "commandPalette": {
+    "title": "",
+    "shortcuts": {
+      "select": "",
+      "confirm": "",
+      "close": ""
+    },
+    "recents": "",
+    "search": {
+      "placeholder": "",
+      "noMatch": ""
+    },
+    "itemNotAvailable": "",
+    "shortcutHint": ""
   }
 }

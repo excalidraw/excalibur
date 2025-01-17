@@ -21,7 +21,9 @@
     "copyStyles": "ਸਟਾਇਲ ਕਾਪੀ ਕਰੋ",
     "pasteStyles": "ਸਟਾਇਲ ਪੇਸਟ ਕਰੋ",
     "stroke": "ਰੇਖਾ",
+    "changeStroke": "",
     "background": "ਬੈਕਗਰਾਉਂਡ",
+    "changeBackground": "",
     "fill": "ਭਰਨਾ",
     "strokeWidth": "ਰੇਖਾ ਦੀ ਚੌੜਾਈ",
     "strokeStyle": "ਰੇਖਾ ਦਾ ਸਟਾਇਲ",
@@ -44,6 +46,14 @@
     "arrowhead_triangle_outline": "",
     "arrowhead_diamond": "",
     "arrowhead_diamond_outline": "",
+    "arrowhead_crowfoot_many": "",
+    "arrowhead_crowfoot_one": "",
+    "arrowhead_crowfoot_one_or_many": "",
+    "more_options": "",
+    "arrowtypes": "",
+    "arrowtype_sharp": "",
+    "arrowtype_round": "",
+    "arrowtype_elbowed": "",
     "fontSize": "ਫੌਂਟ ਅਕਾਰ",
     "fontFamily": "ਫੌਂਟ ਪਰਿਵਾਰ",
     "addWatermark": "\"Excalidraw ਨਾਲ ਬਣਾਇਆ\" ਜੋੜੋ",
@@ -72,6 +82,7 @@
     "canvasColors": "ਕੈਨਵਸ 'ਤੇ ਵਰਤਿਆ",
     "canvasBackground": "ਕੈਨਵਸ ਦਾ ਬੈਕਗਰਾਉਂਡ",
     "drawingCanvas": "ਡਰਾਇੰਗ ਕੈਨਵਸ",
+    "clearCanvas": "",
     "layers": "ਪਰਤਾਂ",
     "actions": "ਕਾਰਵਾਈਆਂ",
     "language": "ਭਾਸ਼ਾ",
@@ -84,12 +95,13 @@
     "group": "ਚੋਣ ਦਾ ਗਰੁੱਪ ਬਣਾਓ",
     "ungroup": "ਚੋਣ ਦਾ ਗਰੁੱਪ ਤੋੜੋ",
     "collaborators": "ਸਹਿਯੋਗੀ",
-    "showGrid": "ਜਾਲੀ ਦਿਖਾਓ",
+    "toggleGrid": "",
     "addToLibrary": "ਲਾਇਬ੍ਰੇਰੀ ਵਿੱਚ ਜੋੜੋ",
     "removeFromLibrary": "ਲਾਇਬ੍ਰੇਰੀ 'ਚੋਂ ਹਟਾਓ",
     "libraryLoadingMessage": "ਲਾਇਬ੍ਰੇਰੀ ਲੋਡ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ…",
     "libraries": "ਲਾਇਬ੍ਰੇਰੀਆਂ ਬਰਾਉਜ਼ ਕਰੋ",
     "loadingScene": "ਦ੍ਰਿਸ਼ ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ…",
+    "loadScene": "",
     "align": "ਇਕਸਾਰ",
     "alignTop": "ਉੱਪਰ ਇਕਸਾਰ ਕਰੋ",
     "alignBottom": "ਹੇਠਾਂ ਇਕਸਾਰ ਕਰੋ",
@@ -105,7 +117,9 @@
     "share": "ਸਾਂਝਾ ਕਰੋ",
     "showStroke": "ਰੇਖਾ ਦਾ ਰੰਗ ਚੋਣਕਾਰ ਦਿਖਾਓ",
     "showBackground": "ਬੈਕਗਰਾਉਂਡ ਦਾ ਰੰਗ ਚੋਣਕਾਰ ਦਿਖਾਓ",
-    "toggleTheme": "ਥੀਮ ਬਦਲੋ",
+    "showFonts": "",
+    "toggleTheme": "",
+    "theme": "",
     "personalLib": "ਨਿੱਜੀ ਲਾਇਬ੍ਰੇਰੀ",
     "excalidrawLib": "ਐਕਸਕਲੀਡਰਾਅ ਲਾਇਬ੍ਰੇਰੀ",
     "decreaseFontSize": "ਫੌਂਟ ਦਾ ਅਕਾਰ ਘਟਾਓ",
@@ -116,15 +130,16 @@
     "link": {
       "edit": "ਕੜੀ ਸੋਧੋ",
       "editEmbed": "",
-      "create": "ਕੜੀ ਬਣਾਓ",
-      "createEmbed": "",
+      "create": "",
       "label": "ਕੜੀ",
       "labelEmbed": "",
-      "empty": ""
+      "empty": "",
+      "hint": "",
+      "goToElement": ""
     },
     "lineEditor": {
       "edit": "ਪੰਕਤੀ ਸੋਧੋ",
-      "exit": "ਪੰਕਤੀ ਸੋਧਕ 'ਤੋਂ ਬਾਹਰ ਨਿਕਲੋ"
+      "editArrow": ""
     },
     "elementLock": {
       "lock": "ਲਾਕ ਕਰੋ",
@@ -138,12 +153,36 @@
     "removeAllElementsFromFrame": "",
     "eyeDropper": "",
     "textToDiagram": "",
-    "prompt": ""
+    "prompt": "",
+    "followUs": "",
+    "discordChat": "",
+    "zoomToFitViewport": "",
+    "zoomToFitSelection": "",
+    "zoomToFit": "",
+    "installPWA": "",
+    "autoResize": "",
+    "imageCropping": "",
+    "unCroppedDimension": "",
+    "copyElementLink": "",
+    "linkToElement": "",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "",
+    "desc": "",
+    "notFound": ""
   },
   "library": {
     "noItems": "ਹਾਲੇ ਤੱਕ ਕੋਈ ਚੀਜ ਜੋੜੀ ਨਹੀਂ ਗਈ...",
     "hint_emptyLibrary": "ਇੱਥੇ ਆਈਟਮ ਜੋੜਨ ਲਈ ਉਸਨੂੰ ਕੈਨਵਸ ‘ਤੇ ਚੁਣੋ, ਜਾਂ ਹੇਠਾਂ ਪਬਲਿਕ ਰਿਪਾਜ਼ੀਟਰੀ ‘ਚੋਂ ਲਾਇਬ੍ਰੇਰੀ ਸਥਾਪਤ ਕਰੋ।",
     "hint_emptyPrivateLibrary": "ਇੱਥੇ ਆਈਟਮ ਜੋੜਨ ਲਈ ਉਸਨੂੰ ਕੈਨਵਸ ‘ਤੇ ਚੁਣੋ।"
+  },
+  "search": {
+    "title": "",
+    "noMatch": "",
+    "singleResult": "",
+    "multipleResults": "",
+    "placeholder": ""
   },
   "buttons": {
     "clearReset": "ਕੈਨਵਸ ਰੀਸੈੱਟ ਕਰੋ",
@@ -151,6 +190,7 @@
     "exportImage": "ਤਸਵੀਰ ਨਿਰਯਾਤ ਕਰੋ...",
     "export": "ਇਸ ਵਿੱਚ ਸਾਂਭੋ...",
     "copyToClipboard": "ਕਲਿੱਪਬੋਰਡ 'ਤੇ ਕਾਪੀ ਕਰੋ",
+    "copyLink": "",
     "save": "ਮੌਜੂਦਾ ਫਾਈਲ ਵਿੱਚ ਸਾਂਭੋ",
     "saveAs": "ਇਸ ਵਜੋਂ ਸਾਂਭੋ",
     "load": "ਖੋਲ੍ਹੋ",
@@ -171,6 +211,7 @@
     "fullScreen": "ਪੂਰੀ ਸਕਰੀਨ",
     "darkMode": "ਡਾਰਕ ਮੋਡ",
     "lightMode": "ਲਾਇਟ ਮੋਡ",
+    "systemMode": "",
     "zenMode": "ਜ਼ੈੱਨ ਮੋਡ",
     "objectsSnapMode": "",
     "exitZenMode": "ਜ਼ੈੱਨ ਮੋਡ 'ਚੋਂ ਬਾਹਰ ਨਿਕਲੋ",
@@ -212,9 +253,9 @@
     "fileTooBig": "ਫਾਈਲ ਬਹੁਤ ਜ਼ਿਆਦਾ ਵੱਡੀ ਹੈ। ਵੱਧ-ਤੋਂ-ਵੱਧ ਪ੍ਰਵਾਨਤ ਅਕਾਰ {{maxSize}} ਹੈ।",
     "svgImageInsertError": "SVG ਤਸਵੀਰ ਸ਼ਾਮਲ ਨਹੀਂ ਕਰ ਸਕੇ। SVG ਮਾਰਕ-ਅੱਪ ਨਜਾਇਜ਼ ਲੱਗ ਰਿਹਾ ਹੈ।",
     "failedToFetchImage": "",
-    "invalidSVGString": "SVG ਨਜਾਇਜ਼ ਹੈ।",
     "cannotResolveCollabServer": "",
     "importLibraryError": "ਲਾਇਬ੍ਰੇਰੀ ਲੋਡ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ",
+    "saveLibraryError": "",
     "collabSaveFailed": "",
     "collabSaveFailed_sizeExceeded": "",
     "imageToolNotSupported": "",
@@ -254,8 +295,23 @@
     "laser": "",
     "hand": "",
     "extraTools": "",
-    "mermaidToExcalidraw": "",
-    "magicSettings": ""
+    "mermaidToExcalidraw": ""
+  },
+  "element": {
+    "rectangle": "",
+    "diamond": "",
+    "ellipse": "",
+    "arrow": "",
+    "line": "",
+    "freedraw": "",
+    "text": "",
+    "image": "",
+    "group": "",
+    "frame": "",
+    "magicframe": "",
+    "embeddable": "",
+    "selection": "",
+    "iframe": ""
   },
   "headings": {
     "canvasActions": "ਕੈਨਵਸ ਦੀਆਂ ਕਾਰਵਾਈਆਂ",
@@ -263,8 +319,10 @@
     "shapes": "ਆਕ੍ਰਿਤੀਆਂ"
   },
   "hints": {
+    "dismissSearch": "",
     "canvasPanning": "",
     "linearElement": "ਇੱਕ ਤੋਂ ਜ਼ਿਆਦਾ ਬਿੰਦੂਆਂ ਲਈ ਕਲਿੱਕ ਕਰਕੇ ਸ਼ੁਰੂਆਤ ਕਰੋ, ਇਕਹਿਰੀ ਲਕੀਰ ਲਈ ਘਸੀਟੋ",
+    "arrowTool": "",
     "freeDraw": "ਕਲਿੱਕ ਕਰਕੇ ਘਸੀਟੋ, ਪੂਰਾ ਹੋਣ 'ਤੇ ਛੱਡ ਦਿਉ",
     "text": "ਨੁਸਖਾ: ਤੁਸੀਂ ਚੋਣਕਾਰ ਸੰਦ ਰਾਹੀਂ ਕਿਤੇ ਵੀ ਡਬਲ-ਕਲਿੱਕ ਕਰਕੇ ਵੀ ਪਾਠ ਜੋੜ ਸਕਦੇ ਹੋ",
     "embeddable": "",
@@ -281,10 +339,13 @@
     "placeImage": "",
     "publishLibrary": "ਆਪਣੀ ਲਾਇਬ੍ਰੇਰੀ ਪ੍ਰਕਾਸ਼ਿਤ ਕਰੋ",
     "bindTextToElement": "ਪਾਠ ਜੋੜਨ ਲਈ ਐੰਟਰ ਦਬਾਓ",
+    "createFlowchart": "",
     "deepBoxSelect": "",
     "eraserRevert": "",
     "firefox_clipboard_write": "",
-    "disableSnapping": ""
+    "disableSnapping": "",
+    "enterCropEditor": "",
+    "leaveCropEditor": ""
   },
   "canvasError": {
     "cannotShowPreview": "ਝਲਕ ਨਹੀਂ ਦਿਖਾ ਸਕਦੇ",
@@ -299,9 +360,12 @@
     "openIssueMessage": "ਅਸੀਂ ਬੜੇ ਸਾਵਧਾਨ ਸੀ ਕਿ ਗਲਤੀ ਵਿੱਚ ਤੁਹਾਡੇ ਦ੍ਰਿਸ਼ ਦੀ ਜਾਣਕਾਰੀ ਸ਼ਾਮਲ ਨਾ ਕਰੀਏ। ਜੇ ਤੁਹਾਡਾ ਦ੍ਰਿਸ਼ ਨਿੱਜੀ ਨਹੀਂ ਹੈ ਤਾਂ ਇਸ 'ਤੇ ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ ਜੀ <button>ਬੱਗ ਟਰੈਕਰ।</button>ਹੇਠਾਂ ਦਿੱਤੀ ਜਾਣਕਾਰੀ ਨੂੰ ਕਾਪੀ ਕਰਕੇ ਗਿੱਟਹੱਬ ਮੁੱਦੇ ਵਿੱਚ ਪੇਸਟ ਕਰਕੇ ਸ਼ਾਮਲ ਕਰੋ ਜੀ।",
     "sceneContent": "ਦ੍ਰਿਸ਼ ਦੀ ਸਮੱਗਰੀ:"
   },
+  "shareDialog": {
+    "or": ""
+  },
   "roomDialog": {
-    "desc_intro": "ਤੁਸੀਂ ਲੋਕਾਂ ਨੂੰ ਆਪਣੇ ਨਾਲ ਮੌਜੂਦਾ ਦ੍ਰਿਸ਼ 'ਤੇ ਸਹਿਯੋਗ ਕਰਨ ਲਈ ਸੱਦਾ ਭੇਜ ਸਕਦੇ ਹੋ।",
-    "desc_privacy": "ਫਿਕਰ ਨਾ ਕਰੋ, ਇਜਲਾਸ ਸਿਰੇ-ਤੋਂ-ਸਿਰੇ ਤੱਕ ਇਨਕਰਿਪਸ਼ਨ ਵਰਤਦਾ ਹੈ, ਸੋ ਜੋ ਕੁਝ ਵੀ ਤੁਸੀਂ ਵਾਹੁੰਦੇ ਹੋ ਉਹ ਨਿੱਜੀ ਹੀ ਰਹਿੰਦਾ ਹੈ। ਇੱਥੋਂ ਤੱਕ ਕਿ ਸਾਡੇ ਸਰਵਰ ਵੀ ਨਹੀਂ ਜਾਣ ਸਕਣਗੇ ਕਿ ਤੁਸੀਂ ਕੀ ਬਣਾਇਆ ਹੈ।",
+    "desc_intro": "",
+    "desc_privacy": "",
     "button_startSession": "ਇਜਲਾਸ ਸ਼ੁਰੂ ਕਰੋ",
     "button_stopSession": "ਇਜਲਾਸ ਰੋਕੋ",
     "desc_inProgressIntro": "ਲਾਇਵ ਸਹਿਯੋਗ ਇਜਲਾਸ ਹੁਣ ਚੱਲ ਰਿਹਾ ਹੈ।",
@@ -328,6 +392,8 @@
     "click": "ਕਲਿੱਕ",
     "deepSelect": "",
     "deepBoxSelect": "",
+    "createFlowchart": "",
+    "navigateFlowchart": "",
     "curvedArrow": "ਵਿੰਗਾ ਤੀਰ",
     "curvedLine": "ਵਿੰਗੀ ਲਕੀਰ",
     "documentation": "ਕਾਗਜ਼ਾਤ",
@@ -350,7 +416,9 @@
     "zoomToSelection": "ਚੋਣ ਤੱਕ ਜ਼ੂਮ ਕਰੋ",
     "toggleElementLock": "",
     "movePageUpDown": "",
-    "movePageLeftRight": ""
+    "movePageLeftRight": "",
+    "cropStart": "",
+    "cropFinish": ""
   },
   "clearCanvasDialog": {
     "title": "ਕੈਨਵਸ ਨੂੰ ਸਾਫ਼ ਕਰੋ"
@@ -410,8 +478,8 @@
       "copyPngToClipboard": "PNG ਨੂੰ ਕਲਿੱਪੋਬਰਡ ‘ਤੇ ਕਾਪੀ ਕਰੋ"
     },
     "button": {
-      "exportToPng": "PNG",
-      "exportToSvg": "SVG",
+      "exportToPng": "",
+      "exportToSvg": "",
       "copyPngToClipboard": "ਗੱਤੇ 'ਤੇ ਕਾਪੀ ਕਰੋ"
     }
   },
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "ਕੋਣ",
-    "element": "ਐਲੀਮੈਂਟ",
-    "elements": "ਐਲੀਮੈਂਟ",
+    "shapes": "",
     "height": "ਉਚਾਈ",
     "scene": "ਦ੍ਰਿਸ਼",
     "selected": "ਚੁਣੇ",
     "storage": "ਸਟੋਰੇਜ",
-    "title": "ਪੜਾਕੂਆਂ ਲਈ ਅੰਕੜੇ",
+    "fullTitle": "",
+    "title": "",
+    "generalStats": "",
+    "elementProperties": "",
     "total": "ਕੁੱਲ",
     "version": "ਸੰਸਕਰਨ",
     "versionCopy": "ਕਾਪੀ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ",
@@ -439,13 +509,15 @@
     "copyStyles": "ਕਾਪੀ ਕੀਤੇ ਸਟਾਇਲ।",
     "copyToClipboard": "ਕਲਿੱਪਬੋਰਡ 'ਤੇ ਕਾਪੀ ਕੀਤਾ।",
     "copyToClipboardAsPng": "{{exportSelection}} ਨੂੰ ਕਲਿੱਪਬੋਰਡ 'ਤੇ PNG ਵਜੋਂ ਕਾਪੀ ਕੀਤਾ ({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "",
     "fileSaved": "ਫਾਈਲ ਸਾਂਭੀ ਗਈ।",
     "fileSavedToFilename": "{filename} ਵਿੱਚ ਸਾਂਭੀ",
     "canvas": "ਕੈਨਵਸ",
     "selection": "ਚੋਣ",
     "pasteAsSingleElement": "",
     "unableToEmbed": "",
-    "unrecognizedLinkFormat": ""
+    "unrecognizedLinkFormat": "",
+    "elementLinkCopied": ""
   },
   "colors": {
     "transparent": "ਪਾਰਦਰਸ਼ੀ",
@@ -521,5 +593,41 @@
     "description": "",
     "syntax": "",
     "preview": ""
+  },
+  "quickSearch": {
+    "placeholder": ""
+  },
+  "fontList": {
+    "badge": {
+      "old": ""
+    },
+    "sceneFonts": "",
+    "availableFonts": "",
+    "empty": ""
+  },
+  "userList": {
+    "empty": "",
+    "hint": {
+      "text": "",
+      "followStatus": "",
+      "inCall": "",
+      "micMuted": "",
+      "isSpeaking": ""
+    }
+  },
+  "commandPalette": {
+    "title": "",
+    "shortcuts": {
+      "select": "",
+      "confirm": "",
+      "close": ""
+    },
+    "recents": "",
+    "search": {
+      "placeholder": "",
+      "noMatch": ""
+    },
+    "itemNotAvailable": "",
+    "shortcutHint": ""
   }
 }

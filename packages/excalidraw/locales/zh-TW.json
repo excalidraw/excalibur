@@ -21,7 +21,9 @@
     "copyStyles": "複製樣式",
     "pasteStyles": "貼上樣式",
     "stroke": "筆畫",
+    "changeStroke": "變更筆畫顏色",
     "background": "背景",
+    "changeBackground": "變更背景顏色",
     "fill": "填滿",
     "strokeWidth": "筆跡寬度",
     "strokeStyle": "筆畫樣式",
@@ -44,6 +46,14 @@
     "arrowhead_triangle_outline": "三角形（外框）",
     "arrowhead_diamond": "菱形",
     "arrowhead_diamond_outline": "菱形（外框）",
+    "arrowhead_crowfoot_many": "雞爪符號（多）",
+    "arrowhead_crowfoot_one": "雞爪符號（一）",
+    "arrowhead_crowfoot_one_or_many": "雞爪符號（一或多）",
+    "more_options": "更多選項",
+    "arrowtypes": "箭頭類型",
+    "arrowtype_sharp": "尖銳箭頭",
+    "arrowtype_round": "彎角箭頭",
+    "arrowtype_elbowed": "直角箭頭",
     "fontSize": "字型大小",
     "fontFamily": "字體集",
     "addWatermark": "加上 \"Made with Excalidraw\" 浮水印",
@@ -72,6 +82,7 @@
     "canvasColors": "使用於畫布",
     "canvasBackground": "Canvas 背景",
     "drawingCanvas": "繪圖 canvas",
+    "clearCanvas": "清除畫布",
     "layers": "圖層",
     "actions": "動作",
     "language": "語言",
@@ -84,12 +95,13 @@
     "group": "建立群組",
     "ungroup": "取消群組",
     "collaborators": "協作者",
-    "showGrid": "顯示格線",
+    "toggleGrid": "切換網格",
     "addToLibrary": "加入資料庫",
     "removeFromLibrary": "從資料庫中移除",
     "libraryLoadingMessage": "資料庫讀取中…",
     "libraries": "瀏覽資料庫",
     "loadingScene": "場景讀取中…",
+    "loadScene": "從檔案載入場景",
     "align": "對齊",
     "alignTop": "對齊頂部",
     "alignBottom": "對齊底部",
@@ -105,7 +117,9 @@
     "share": "共享",
     "showStroke": "顯示線條檢色器",
     "showBackground": "顯示背景檢色器",
-    "toggleTheme": "切換主題",
+    "showFonts": "顯示字型選單",
+    "toggleTheme": "切換 亮色/暗色 主題",
+    "theme": "佈景主題",
     "personalLib": "個人資料庫",
     "excalidrawLib": "Excalidraw 資料庫",
     "decreaseFontSize": "縮小文字",
@@ -115,16 +129,17 @@
     "createContainerFromText": "將文字包於容器中",
     "link": {
       "edit": "編輯連結",
-      "editEmbed": "編輯連結&嵌入",
-      "create": "建立連結",
-      "createEmbed": "建立連結&嵌入",
+      "editEmbed": "編輯可嵌入連結",
+      "create": "新增連結",
       "label": "連結",
       "labelEmbed": "連結&嵌入",
-      "empty": "未設定連結"
+      "empty": "未設定連結",
+      "hint": "在此輸入或貼上連結",
+      "goToElement": "移至目標元素"
     },
     "lineEditor": {
       "edit": "編輯線條",
-      "exit": "結束線條編輯"
+      "editArrow": "編輯箭頭"
     },
     "elementLock": {
       "lock": "鎖定",
@@ -138,12 +153,36 @@
     "removeAllElementsFromFrame": "從框架內移除所有元素",
     "eyeDropper": "從畫布中選取顏色",
     "textToDiagram": "文字轉圖表",
-    "prompt": "提示詞"
+    "prompt": "提示詞",
+    "followUs": "追蹤我們",
+    "discordChat": "Discord 聊天室",
+    "zoomToFitViewport": "縮放至符合 viewport",
+    "zoomToFitSelection": "縮放至符合選取區",
+    "zoomToFit": "縮放至顯示所有元素",
+    "installPWA": "於本機安裝 Excalidraw (PWA)",
+    "autoResize": "啟用文字自動縮放",
+    "imageCropping": "圖片剪裁",
+    "unCroppedDimension": "未剪裁尺寸",
+    "copyElementLink": "複製此物件的連結",
+    "linkToElement": "連結至物件",
+    "wrapSelectionInFrame": ""
+  },
+  "elementLink": {
+    "title": "連結至物件",
+    "desc": "點擊畫布上的形狀或貼上連結",
+    "notFound": "無法在畫布上找到連結的物件"
   },
   "library": {
     "noItems": "尚未加入任何物件...",
     "hint_emptyLibrary": "選取畫布上的物件以加入，或從下方的公開 repository 中安裝資料庫",
     "hint_emptyPrivateLibrary": "選擇畫布上的物件以在此加入"
+  },
+  "search": {
+    "title": "在畫布上尋找",
+    "noMatch": "未找到符合項目…",
+    "singleResult": "結果",
+    "multipleResults": "結果",
+    "placeholder": "在畫布上尋找文字…"
   },
   "buttons": {
     "clearReset": "重置 canvas",
@@ -151,6 +190,7 @@
     "exportImage": "匯出圖片",
     "export": "儲存至...",
     "copyToClipboard": "複製至剪貼簿",
+    "copyLink": "複製連結",
     "save": "儲存目前檔案",
     "saveAs": "儲存為",
     "load": "開啟",
@@ -171,6 +211,7 @@
     "fullScreen": "全螢幕",
     "darkMode": "深色模式",
     "lightMode": "淺色模式",
+    "systemMode": "系統模式",
     "zenMode": "專注模式",
     "objectsSnapMode": "吸附至物件",
     "exitZenMode": "離開專注模式",
@@ -212,9 +253,9 @@
     "fileTooBig": "檔案過大。可接受的最大尺寸為 {{maxSize}} 。",
     "svgImageInsertError": "無法插入 SVG 圖片。此 SVG 檔案有問題。",
     "failedToFetchImage": "無法獲取圖片。",
-    "invalidSVGString": "無效的 SVG。",
     "cannotResolveCollabServer": "無法連結至 collab 伺服器。請重新整理後再試一次。",
     "importLibraryError": "無法載入資料庫",
+    "saveLibraryError": "無法將資料庫存至儲存區。請將資料庫存至本機檔案以確保不會失去已變更的部分。",
     "collabSaveFailed": "無法儲存至後端資料庫。若此問題持續發生，請將檔案儲存於本機以確保資料不會遺失。",
     "collabSaveFailed_sizeExceeded": "無法儲存至後端資料庫，可能的原因為畫布尺寸過大。請將檔案儲存於本機以確保資料不會遺失。",
     "imageToolNotSupported": "圖片已停用",
@@ -254,8 +295,23 @@
     "laser": "雷射筆",
     "hand": "手形（平移工具）",
     "extraTools": "更多工具",
-    "mermaidToExcalidraw": "Mermaid 至 Excalidraw",
-    "magicSettings": "AI 設定"
+    "mermaidToExcalidraw": "Mermaid 至 Excalidraw"
+  },
+  "element": {
+    "rectangle": "矩形",
+    "diamond": "菱形",
+    "ellipse": "橢圓形",
+    "arrow": "箭頭",
+    "line": "線條",
+    "freedraw": "自由繪圖",
+    "text": "文字",
+    "image": "圖片",
+    "group": "群組",
+    "frame": "框架",
+    "magicframe": "線框稿轉為程式碼",
+    "embeddable": "嵌入網站",
+    "selection": "已選項目",
+    "iframe": "IFrame框架"
   },
   "headings": {
     "canvasActions": "canvas 動作",
@@ -263,8 +319,10 @@
     "shapes": "形狀"
   },
   "hints": {
+    "dismissSearch": "按 Escape 鍵可停止搜尋",
     "canvasPanning": "若要移動畫布，請在拖曳時按住滑鼠滾輪或空白鍵，或使用手形工具",
     "linearElement": "點擊以繪製多點曲線；或拖曳以繪製直線",
+    "arrowTool": "點擊以開始建立多點，拖曳可建立單一線段。再次按下 {{arrowShortcut}} 來變更箭頭類型。",
     "freeDraw": "點擊並拖曳來繪圖，放開即結束",
     "text": "提示：亦可使用選取工具在任何地方雙擊來加入文字",
     "embeddable": "點擊並拖移以建立嵌入網站",
@@ -281,10 +339,13 @@
     "placeImage": "點擊以放置圖片，或點擊並拖曳以手動調整其尺寸。",
     "publishLibrary": "發布個人資料庫",
     "bindTextToElement": "按下 Enter 以加入文字。",
+    "createFlowchart": "按住 Ctrl 或 Cmd 及方向鍵以建立流程圖",
     "deepBoxSelect": "按住 Ctrl 或 Cmd 以深度選取並避免拖曳",
     "eraserRevert": "按住 Alt 以反選取已標記待刪除的元素",
     "firefox_clipboard_write": "此功能有機會透過將 \"dom.events.asyncClipboard.clipboardItem\" 設定為 \"true\" 來開啟。\n若要變更 Firefox 瀏覽器的此設定值，請至 \"about:config\" 頁面。",
-    "disableSnapping": "按住 Ctrl 或 Cmd 以禁用吸附"
+    "disableSnapping": "按住 Ctrl 或 Cmd 以禁用吸附",
+    "enterCropEditor": "雙擊圖片或按 ENTER 以裁切圖片",
+    "leaveCropEditor": "點擊圖片外的位置或按 ENTER 或 ESCAPE 以完成裁切"
   },
   "canvasError": {
     "cannotShowPreview": "無法顯示預覽",
@@ -299,9 +360,12 @@
     "openIssueMessage": "我們將謹慎處理，你的作品內容不會被包含在錯誤報告中。若你的作品不需保持私密，請考慮使用我們的<button>bug tracker。</button>請將下列資訊複製貼上至 GitHub issue 中。",
     "sceneContent": "作品內容："
   },
+  "shareDialog": {
+    "or": "或"
+  },
   "roomDialog": {
-    "desc_intro": "你可以邀請其他人一起協作目前的作品。",
-    "desc_privacy": "連線使用 end-to-end 加密故無須擔心作品的安全性。即使是我們的伺服器也無法取得其內容。",
+    "desc_intro": "邀請其他人一起協作",
+    "desc_privacy": "不用擔心，此連線為端到端加密且完全私有，即使是我們的伺服器也無法看見您的繪圖。",
     "button_startSession": "開始連線",
     "button_stopSession": "停止連線",
     "desc_inProgressIntro": "即時協作連線正在進行中。",
@@ -328,6 +392,8 @@
     "click": "點擊",
     "deepSelect": "深度選取",
     "deepBoxSelect": "在容器內深度選取並避免拖曳",
+    "createFlowchart": "由基本型建立流程圖",
+    "navigateFlowchart": "導覽流程圖",
     "curvedArrow": "曲箭頭",
     "curvedLine": "曲線",
     "documentation": "文件",
@@ -350,7 +416,9 @@
     "zoomToSelection": "縮放至選取區",
     "toggleElementLock": "鎖定/解鎖已選的項目",
     "movePageUpDown": "向上/下移動頁面",
-    "movePageLeftRight": "向左/右移動頁面"
+    "movePageLeftRight": "向左/右移動頁面",
+    "cropStart": "裁切圖片",
+    "cropFinish": "完成圖片裁切"
   },
   "clearCanvasDialog": {
     "title": "清除畫布"
@@ -421,13 +489,15 @@
   },
   "stats": {
     "angle": "角度",
-    "element": "元素",
-    "elements": "元素",
+    "shapes": "形狀",
     "height": "高度",
     "scene": "場景",
     "selected": "已選",
     "storage": "儲存",
-    "title": "詳細統計",
+    "fullTitle": "畫布與形狀屬性設定",
+    "title": "屬性",
+    "generalStats": "一般",
+    "elementProperties": "形狀屬性",
     "total": "合計",
     "version": "版本",
     "versionCopy": "點擊複製",
@@ -439,13 +509,15 @@
     "copyStyles": "已複製樣式",
     "copyToClipboard": "複製至剪貼簿。",
     "copyToClipboardAsPng": "以 PNG 格式將 {{exportSelection}} 複製至剪貼簿\n({{exportColorScheme}})",
+    "copyToClipboardAsSvg": "以 SVG 格式將 {{exportSelection}} 複製至剪貼簿\n({{exportColorScheme}})",
     "fileSaved": "已儲存檔案。",
     "fileSavedToFilename": "儲存為 {filename}",
     "canvas": "畫布",
     "selection": "已選項目",
     "pasteAsSingleElement": "使用 {{shortcut}} 以做為單一物件貼上，\n或貼上至現有的文字編輯器",
     "unableToEmbed": "目前不允許嵌入此網址。您可至 GitHub 提出 issue 以要求將此網址加入合格名單。",
-    "unrecognizedLinkFormat": "您嵌入的連結格式不符。請嘗試貼入原網站所提供的「嵌入」字串。"
+    "unrecognizedLinkFormat": "您嵌入的連結格式不符。請嘗試貼入原網站所提供的「嵌入」字串。",
+    "elementLinkCopied": "連結已複製至剪貼簿"
   },
   "colors": {
     "transparent": "透明",
@@ -521,5 +593,41 @@
     "description": "目前僅支援 <flowchartLink>Flowchart</flowchartLink> 、 <sequenceLink>Sequence</sequenceLink> 及 <classLink>Class </classLink> 圖表。其餘檔案類型在 Excalidraw 將會以圖像呈現。",
     "syntax": "Mermaid 語法",
     "preview": "預覽"
+  },
+  "quickSearch": {
+    "placeholder": "快速搜尋"
+  },
+  "fontList": {
+    "badge": {
+      "old": "舊版"
+    },
+    "sceneFonts": "在此場景中",
+    "availableFonts": "可用字型",
+    "empty": "找不到字型"
+  },
+  "userList": {
+    "empty": "找不到使用者",
+    "hint": {
+      "text": "點擊使用者以進行追蹤",
+      "followStatus": "您正在追蹤此使用者",
+      "inCall": "使用者正在語音通話中",
+      "micMuted": "使用者的麥克風已靜音",
+      "isSpeaking": "使用者說話中"
+    }
+  },
+  "commandPalette": {
+    "title": "指令面板",
+    "shortcuts": {
+      "select": "選取",
+      "confirm": "確認",
+      "close": "關閉"
+    },
+    "recents": "最近使用",
+    "search": {
+      "placeholder": "搜尋選單與指令並找出隱藏功能",
+      "noMatch": "沒有符合的指令…"
+    },
+    "itemNotAvailable": "指令無法使用…",
+    "shortcutHint": ""
   }
 }
