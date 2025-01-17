@@ -255,6 +255,14 @@ export const EXPORT_SOURCE =
 // time in milliseconds
 export const IMAGE_RENDER_TIMEOUT = 500;
 export const TAP_TWICE_TIMEOUT = 300;
+/**
+ * The time the user has from 2nd pointerdown to following pointerup
+ * before it's not considered a double click.
+ *
+ * Helps prevent cases where you double-click by mistake but then drag/keep
+ * the pointer down for to cancel the double click or do another action.
+ */
+export const DOUBLE_CLICK_POINTERUP_TIMEOUT = 300;
 export const TOUCH_CTX_MENU_TIMEOUT = 500;
 export const TITLE_TIMEOUT = 10000;
 export const VERSION_TIMEOUT = 30000;

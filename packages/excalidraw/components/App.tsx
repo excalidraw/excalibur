@@ -91,6 +91,7 @@ import {
   DEFAULT_REDUCED_GLOBAL_ALPHA,
   isSafari,
   type EXPORT_IMAGE_TYPES,
+  DOUBLE_CLICK_POINTERUP_TIMEOUT,
 } from "../constants";
 import type { ExportedElements } from "../data";
 import { exportCanvas, loadFromBlob } from "../data";
@@ -5308,6 +5309,14 @@ class App extends React.Component<AppProps, AppState> {
   private handleCanvasDoubleClick = (
     event: React.MouseEvent<HTMLCanvasElement>,
   ) => {
+    if (
+      this.lastPointerDownEvent &&
+      event.timeStamp - this.lastPointerDownEvent.timeStamp >
+        DOUBLE_CLICK_POINTERUP_TIMEOUT
+    ) {
+      return;
+    }
+
     // case: double-clicking with arrow/line tool selected would both create
     // text and enter multiElement mode
     if (this.state.multiElement) {
@@ -6282,6 +6291,7 @@ class App extends React.Component<AppProps, AppState> {
     event: React.PointerEvent<HTMLElement>,
   ) => {
     this.maybeCleanupAfterMissingPointerUp(event.nativeEvent);
+
     this.maybeUnfollowRemoteUser();
 
     if (this.state.searchMatches) {
