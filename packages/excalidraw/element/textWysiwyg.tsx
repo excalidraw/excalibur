@@ -11,7 +11,7 @@ import {
   isBoundToContainer,
   isTextElement,
 } from "./typeChecks";
-import { CLASSES, POINTER_BUTTON } from "../constants";
+import { CLASSES, EVENT, isSafari, POINTER_BUTTON } from "../constants";
 import type {
   ExcalidrawElement,
   ExcalidrawLinearElement,
@@ -50,6 +50,8 @@ import {
   originalContainerCache,
   updateOriginalContainerCache,
 } from "./containerCache";
+import { activeEyeDropperAtom } from "../components/EyeDropper";
+import { jotaiStore } from "../jotai";
 
 const getTransform = (
   width: number,
@@ -289,6 +291,8 @@ export const textWysiwyg = ({
   editable.dataset.type = "wysiwyg";
   // prevent line wrapping on Safari
   editable.wrap = "off";
+  // set &nbsp; placeholder fix for Safari not showing caret for empty textarea
+  editable.placeholder = "\u00A0";
   editable.classList.add("excalidraw-wysiwyg");
 
   let whiteSpace = "pre";
@@ -522,6 +526,7 @@ export const textWysiwyg = ({
   // so that we don't need to create separate a callback for event handlers
   let submittedViaKeyboard = false;
   const handleSubmit = () => {
+    console.warn("handleSubmit");
     // prevent double submit
     if (isDestroyed) {
       return;
@@ -579,61 +584,95 @@ export const textWysiwyg = ({
     });
   };
 
+  const onBlur = () => {
+    console.warn("onBlur", document.activeElement);
+    const isColorPicking = jotaiStore.get(activeEyeDropperAtom);
+    if (isColorPicking) {
+      focusEditable(null);
+    } else if (document.activeElement !== editable) {
+      handleSubmit();
+    }
+  };
+
   const cleanup = () => {
     // remove events to ensure they don't late-fire
     editable.onblur = null;
     editable.oninput = null;
     editable.onkeydown = null;
+    editable.onpointerdown = null;
 
     if (observer) {
       observer.disconnect();
     }
 
-    window.removeEventListener("resize", updateWysiwygStyle);
-    window.removeEventListener("wheel", stopEvent, true);
-    window.removeEventListener("pointerdown", onPointerDown);
-    window.removeEventListener("pointerup", bindBlurEvent);
-    window.removeEventListener("blur", handleSubmit);
-    window.removeEventListener("beforeunload", handleSubmit);
+    window.removeEventListener(EVENT.RESIZE, updateWysiwygStyle);
+    window.removeEventListener(EVENT.WHEEL, stopEvent, true);
+    window.removeEventListener(EVENT.POINTER_DOWN, onPointerDown, {
+      capture: true,
+    });
+    window.removeEventListener(EVENT.POINTER_UP, onPointerUp);
+    window.removeEventListener(EVENT.BLUR, onBlur);
+    window.removeEventListener(EVENT.BEFORE_UNLOAD, handleSubmit);
     unbindUpdate();
     unbindOnScroll();
 
     editable.remove();
   };
 
-  const bindBlurEvent = (event?: MouseEvent) => {
-    window.removeEventListener("pointerup", bindBlurEvent);
-    // Deferred so that the pointerdown that initiates the wysiwyg doesn't
-    // trigger the blur on ensuing pointerup.
-    // Also to handle cases such as picking a color which would trigger a blur
-    // in that same tick.
+  const focusEditable = (event: MouseEvent | FocusEvent | null) => {
     const target = event?.target;
 
-    const isPropertiesTrigger =
-      target instanceof HTMLElement &&
-      target.classList.contains("properties-trigger");
+    const shouldSkipRefocus =
+      target &&
+      // don't steal focus if user is focusing an input such as HEX input
+      ((isWritableElement(target) && document.activeElement !== editable) ||
+        // refocusing while clicking on popver breaks safari
+        (isSafari &&
+          target instanceof HTMLElement &&
+          target.classList.contains(CLASSES.PROPERTIES_POPOVER_TRIGGER)));
 
-    setTimeout(() => {
-      editable.onblur = handleSubmit;
-
-      // case: clicking on the same property → no change → no update → no focus
-      if (!isPropertiesTrigger) {
-        editable.focus();
-      }
-    });
+    if (!shouldSkipRefocus) {
+      // Deferred so that the pointerdown that initiates the wysiwyg doesn't
+      // trigger the blur on ensuing pointerup.
+      // Also to handle cases such as picking a color which would trigger a blur
+      // in that same tick.
+      setTimeout(() => {
+        // double deferred because on onUpdate/color picker shennanings
+        setTimeout(() => {
+          editable.focus();
+        });
+      });
+    }
   };
 
-  const temporarilyDisableSubmit = () => {
+  const onPointerUp = (event: PointerEvent | FocusEvent) => {
+    window.removeEventListener(EVENT.POINTER_UP, onPointerUp);
+    window.removeEventListener(EVENT.FOCUS, onPointerUp);
+    // needs to be deferred due to Safari
+    setTimeout(() => {
+      editable.onblur = onBlur;
+    });
+    focusEditable(event);
+  };
+
+  const disableBlurUntilNextPointerUp = () => {
     editable.onblur = null;
-    window.addEventListener("pointerup", bindBlurEvent);
+    window.addEventListener(EVENT.POINTER_UP, onPointerUp);
     // handle edge-case where pointerup doesn't fire e.g. due to user
     // alt-tabbing away
-    window.addEventListener("blur", handleSubmit);
+    window.addEventListener(EVENT.FOCUS, onPointerUp);
   };
 
   // prevent blur when changing properties from the menu
   const onPointerDown = (event: MouseEvent) => {
     const target = event?.target;
+
+    // ugly hack to close popups such as color picker when clicking back
+    // into the wysiwyg editor (it won't autoclose as blur won't trigger
+    // since we perpetually keep focus inside the wysiwyg)
+    if (target === editable && app.state.openPopup) {
+      app.setState({ openPopup: null });
+    }
 
     // panning canvas
     if (event.button === POINTER_BUTTON.WHEEL) {
@@ -642,24 +681,18 @@ export const textWysiwyg = ({
         event.preventDefault();
         app.handleCanvasPanUsingWheelOrSpaceDrag(event);
       }
-      temporarilyDisableSubmit();
+      disableBlurUntilNextPointerUp();
       return;
     }
 
-    const isPropertiesTrigger =
-      target instanceof HTMLElement &&
-      target.classList.contains("properties-trigger");
-
     if (
-      ((event.target instanceof HTMLElement ||
+      (event.target instanceof HTMLElement ||
         event.target instanceof SVGElement) &&
-        event.target.closest(
-          `.${CLASSES.SHAPE_ACTIONS_MENU}, .${CLASSES.ZOOM_ACTIONS}`,
-        ) &&
-        !isWritableElement(event.target)) ||
-      isPropertiesTrigger
+      event.target.closest(
+        `.${CLASSES.SHAPE_ACTIONS_MENU}, .${CLASSES.ZOOM_ACTIONS}, .${CLASSES.PROPERTIES_POPOVER}`,
+      )
     ) {
-      temporarilyDisableSubmit();
+      disableBlurUntilNextPointerUp();
     } else if (
       event.target instanceof HTMLCanvasElement &&
       // Vitest simply ignores stopPropagation, capture-mode, or rAF
@@ -682,9 +715,11 @@ export const textWysiwyg = ({
   const unbindUpdate = app.scene.onUpdate(() => {
     updateWysiwygStyle();
     const isPopupOpened = !!document.activeElement?.closest(
-      ".properties-content",
+      CLASSES.PROPERTIES_POPOVER,
     );
     if (!isPopupOpened) {
+      // we need to keep this code path for safari (iPadOS) bs reasons
+      // (also Vitest)
       editable.focus();
     }
   });
@@ -702,8 +737,11 @@ export const textWysiwyg = ({
     // because we need it to happen *after* the blur event from `pointerdown`)
     editable.select();
   }
-  bindBlurEvent();
-
+  focusEditable(null);
+  setTimeout(() => {
+    editable.onblur = onBlur;
+  });
+  console.log(">>>>>>>>", app.state.editingTextElement);
   // reposition wysiwyg in case of canvas is resized. Using ResizeObserver
   // is preferred so we catch changes from host, where window may not resize.
   let observer: ResizeObserver | null = null;
@@ -713,7 +751,7 @@ export const textWysiwyg = ({
     });
     observer.observe(canvas);
   } else {
-    window.addEventListener("resize", updateWysiwygStyle);
+    window.addEventListener(EVENT.RESIZE, updateWysiwygStyle);
   }
 
   editable.onpointerdown = (event) => event.stopPropagation();
@@ -721,9 +759,11 @@ export const textWysiwyg = ({
   // rAF (+ capture to by doubly sure) so we don't catch te pointerdown that
   // triggered the wysiwyg
   requestAnimationFrame(() => {
-    window.addEventListener("pointerdown", onPointerDown, { capture: true });
+    window.addEventListener(EVENT.POINTER_DOWN, onPointerDown, {
+      capture: true,
+    });
   });
-  window.addEventListener("beforeunload", handleSubmit);
+  window.addEventListener(EVENT.BEFORE_UNLOAD, handleSubmit);
   excalidrawContainer
     ?.querySelector(".excalidraw-textEditorContainer")!
     .appendChild(editable);

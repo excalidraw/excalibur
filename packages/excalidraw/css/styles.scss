@@ -759,3 +759,8 @@ body.excalidraw-cursor-resize * {
     font-family: "Assistant";
   }
 }
+
+.excalidraw-textEditorContainer {
+  position: fixed;
+  z-index: var(--zIndex-wysiwyg);
+}

@@ -1126,7 +1126,7 @@ describe("multiple selection", () => {
     expect(bottomArrowLabel.fontSize).toBeCloseTo(28 * scale);
   });
 
-  it("resizes with text elements", async () => {
+  it.only("resizes with text elements", async () => {
     const topText = UI.createElement("text", { position: 0 });
     await UI.editText(topText, "lorem ipsum");
 

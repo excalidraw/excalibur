@@ -169,7 +169,7 @@ export default defineConfig(({ mode }) => {
             },
           ],
           start_url: "/",
-          id:"excalidraw",
+          id: "excalidraw",
           display: "standalone",
           theme_color: "#121212",
           background_color: "#ffffff",

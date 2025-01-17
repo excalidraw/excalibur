@@ -5,6 +5,7 @@ import * as Popover from "@radix-ui/react-popover";
 import { useDevice } from "./App";
 import { Island } from "./Island";
 import { isInteractive } from "../utils";
+import { CLASSES } from "../constants";
 
 interface PropertiesPopoverProps {
   className?: string;
@@ -42,7 +43,11 @@ export const PropertiesPopover = React.forwardRef<
       <Popover.Portal container={container}>
         <Popover.Content
           ref={ref}
-          className={clsx("focus-visible-none", className)}
+          className={clsx(
+            "focus-visible-none",
+            CLASSES.PROPERTIES_POPOVER,
+            className,
+          )}
           data-prevent-outside-click
           side={
             device.editor.isMobile && !device.viewport.isLandscape

@@ -8,6 +8,7 @@ import {
 import HotkeyLabel from "./HotkeyLabel";
 import { t } from "../../i18n";
 import type { ColorPaletteCustom } from "../../colors";
+import { useUIAppState } from "../../context/ui-appState";
 
 interface ShadeListProps {
   hex: string;
@@ -16,6 +17,8 @@ interface ShadeListProps {
 }
 
 export const ShadeList = ({ hex, onChange, palette }: ShadeListProps) => {
+  const appState = useUIAppState();
+
   const colorObj = getColorNameAndShadeFromColor({
     color: hex || "transparent",
     palette,
@@ -31,7 +34,7 @@ export const ShadeList = ({ hex, onChange, palette }: ShadeListProps) => {
     if (btnRef.current && activeColorPickerSection === "shades") {
       btnRef.current.focus();
     }
-  }, [colorObj, activeColorPickerSection]);
+  }, [colorObj?.colorName, colorObj?.shade, activeColorPickerSection]);
 
   if (colorObj) {
     const { colorName, shade } = colorObj;
@@ -64,7 +67,9 @@ export const ShadeList = ({ hex, onChange, palette }: ShadeListProps) => {
               }}
             >
               <div className="color-picker__button-outline" />
-              <HotkeyLabel color={color} keyLabel={i + 1} isShade />
+              {!appState.editingTextElement && (
+                <HotkeyLabel color={color} keyLabel={i + 1} isShade />
+              )}
             </button>
           ))}
         </div>

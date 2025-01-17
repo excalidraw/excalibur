@@ -38,6 +38,8 @@ import { pointFrom, pointRotateRads } from "../../../math";
 import { cropElement } from "../../element/cropElement";
 import type { ToolType } from "../../types";
 
+const TEXT_EDITOR_SELECTOR = ".excalidraw-textEditorContainer > textarea";
+
 // so that window.h is available when App.tsx is not imported as well.
 createTestHook();
 
@@ -477,12 +479,20 @@ export class UI {
       pointFrom(0, 0),
       pointFrom(width, height),
     ];
-
     UI.clickTool(type);
 
     if (type === "text") {
       mouse.reset();
       mouse.click(x, y);
+
+      const openedEditor =
+        document.querySelector<HTMLTextAreaElement>(TEXT_EDITOR_SELECTOR);
+
+      // NOTE this is a hack to make sure the editor is focused on edit
+      // which for some reason doesn't work in tests after latest changes.
+      // This means that a regression in wysiwyg editor might not be caught
+      // tests.
+      openedEditor?.focus();
     } else if ((type === "line" || type === "arrow") && points.length > 2) {
       points.forEach((point) => {
         mouse.reset();
@@ -518,19 +528,24 @@ export class UI {
   static async editText<
     T extends ExcalidrawTextElement | ExcalidrawTextContainer,
   >(element: T, text: string) {
-    const textEditorSelector = ".excalidraw-textEditorContainer > textarea";
     const openedEditor =
-      document.querySelector<HTMLTextAreaElement>(textEditorSelector);
+      document.querySelector<HTMLTextAreaElement>(TEXT_EDITOR_SELECTOR);
 
     if (!openedEditor) {
       mouse.select(element);
       Keyboard.keyPress(KEYS.ENTER);
     }
 
-    const editor = await getTextEditor(textEditorSelector);
+    const editor = await getTextEditor();
     if (!editor) {
       throw new Error("Can't find wysiwyg text editor in the dom");
     }
+
+    // NOTE this is a hack to make sure the editor is focused on edit
+    // which for some reason doesn't work in tests after latest changes.
+    // This means that a regression in wysiwyg editor might not be caught
+    // tests.
+    editor.focus();
 
     fireEvent.input(editor, { target: { value: text } });
     act(() => {

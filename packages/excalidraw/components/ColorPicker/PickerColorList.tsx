@@ -10,6 +10,7 @@ import HotkeyLabel from "./HotkeyLabel";
 import type { ColorPaletteCustom } from "../../colors";
 import type { TranslationKeys } from "../../i18n";
 import { t } from "../../i18n";
+import { useUIAppState } from "../../context/ui-appState";
 
 interface PickerColorListProps {
   palette: ColorPaletteCustom;
@@ -26,6 +27,8 @@ const PickerColorList = ({
   label,
   activeShade,
 }: PickerColorListProps) => {
+  const appState = useUIAppState();
+
   const colorObj = getColorNameAndShadeFromColor({
     color: color || "transparent",
     palette,
@@ -80,7 +83,9 @@ const PickerColorList = ({
             key={key}
           >
             <div className="color-picker__button-outline" />
-            <HotkeyLabel color={color} keyLabel={keybinding} />
+            {!appState.editingTextElement && (
+              <HotkeyLabel color={color} keyLabel={keybinding} />
+            )}
           </button>
         );
       })}

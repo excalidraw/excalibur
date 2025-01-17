@@ -5,6 +5,7 @@ import { TextIcon } from "../icons";
 import type { FontFamilyValues } from "../../element/types";
 import { t } from "../../i18n";
 import { isDefaultFont } from "./FontPicker";
+import { CLASSES } from "../../constants";
 
 interface FontPickerTriggerProps {
   selectedFontFamily: FontFamilyValues | null;
@@ -26,7 +27,7 @@ export const FontPickerTrigger = ({
           standalone
           icon={TextIcon}
           title={t("labels.showFonts")}
-          className="properties-trigger"
+          className={CLASSES.PROPERTIES_POPOVER_TRIGGER}
           testId={"font-family-show-fonts"}
           active={isTriggerActive}
           // no-op

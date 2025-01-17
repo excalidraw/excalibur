@@ -250,6 +250,10 @@ export const FontPickerList = React.memo(
         onClose={onClose}
         onPointerLeave={onLeave}
         onKeyDown={onKeyDown}
+        onFocusOutside={(event) => {
+          // so we don't close when refocusing wysiwyg while editing
+          event.preventDefault();
+        }}
       >
         <QuickSearch
           ref={inputRef}

@@ -17,6 +17,7 @@ exports[`Test Linear Elements > Test bound text element > should match styles fo
   class="excalidraw-wysiwyg"
   data-type="wysiwyg"
   dir="auto"
+  placeholder=" "
   style="position: absolute; display: inline-block; min-height: 1em; backface-visibility: hidden; margin: 0px; padding: 0px; border: 0px; outline: 0; resize: none; background: transparent; overflow: hidden; z-index: var(--zIndex-wysiwyg); word-break: break-word; white-space: pre-wrap; overflow-wrap: break-word; box-sizing: content-box; width: 10.5px; height: 26.25px; left: 35px; top: 7.5px; transform: translate(0px, 0px) scale(1) rotate(0deg); text-align: center; vertical-align: middle; color: rgb(30, 30, 30); opacity: 1; filter: var(--theme-filter); max-height: 992.5px; font: Emoji 20px 20px; line-height: 1.25; font-family: Excalifont, Xiaolai, Segoe UI Emoji;"
   tabindex="0"
   wrap="off"

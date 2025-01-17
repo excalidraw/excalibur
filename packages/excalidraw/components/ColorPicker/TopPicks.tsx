@@ -56,6 +56,7 @@ export const TopPicks = ({
           title={color}
           onClick={() => onChange(color)}
           data-testid={`color-top-pick-${color}`}
+          tabIndex={-1}
         >
           <div className="color-picker__button-outline" />
         </button>

@@ -1,7 +1,10 @@
 import { waitFor } from "@testing-library/dom";
 import { fireEvent } from "@testing-library/react";
 
-export const getTextEditor = async (selector: string, waitForEditor = true) => {
+export const getTextEditor = async (
+  selector = ".excalidraw-textEditorContainer > textarea",
+  waitForEditor = true,
+) => {
   const query = () => document.querySelector(selector) as HTMLTextAreaElement;
   if (waitForEditor) {
     await waitFor(() => expect(query()).not.toBe(null));

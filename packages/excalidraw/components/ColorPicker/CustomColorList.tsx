@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { useAtom } from "../../editor-jotai";
 import { useEffect, useRef } from "react";
+import { useUIAppState } from "../../context/ui-appState";
 import { activeColorPickerSectionAtom } from "./colorPickerUtils";
 import HotkeyLabel from "./HotkeyLabel";
 
@@ -17,6 +18,7 @@ export const CustomColorList = ({
   onChange,
   label,
 }: CustomColorListProps) => {
+  const appState = useUIAppState();
   const [activeColorPickerSection, setActiveColorPickerSection] = useAtom(
     activeColorPickerSectionAtom,
   );
@@ -54,7 +56,9 @@ export const CustomColorList = ({
             key={i}
           >
             <div className="color-picker__button-outline" />
-            <HotkeyLabel color={c} keyLabel={i + 1} isCustomColor />
+            {!appState.editingTextElement && (
+              <HotkeyLabel color={c} keyLabel={i + 1} isCustomColor />
+            )}
           </button>
         );
       })}
