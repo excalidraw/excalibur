@@ -367,7 +367,26 @@
       box-shadow: none;
     }
   }
-
+  input[type="color"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;        
+    width: 20px;          
+    height: 20px;
+    border-radius: 50%;   
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+  
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+  
+    &::-webkit-color-swatch {
+      border: none;       
+      border-radius: 50%; 
+    }
+  }
   .color-picker-label-swatch-container {
     border: 1px solid var(--default-border-color);
     border-radius: var(--border-radius-lg);

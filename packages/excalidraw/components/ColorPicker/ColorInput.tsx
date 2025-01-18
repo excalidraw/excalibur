@@ -66,7 +66,13 @@ export const ColorInput = ({
 
   return (
     <div className="color-picker__input-label">
-      <div className="color-picker__input-hash">#</div>
+      <input
+        type="color"
+        onChange={(event) => {
+          changeColor(event.target.value);
+        }}
+        className="color-picker__input"
+      />
       <input
         ref={activeSection === "hex" ? inputRef : undefined}
         style={{ border: 0, padding: 0 }}
