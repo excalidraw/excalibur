@@ -69,6 +69,7 @@
     "es6-promise-pool": "2.5.0",
     "fractional-indexing": "3.2.0",
     "fuzzy": "0.1.3",
+    "idb-keyval": "6.2.1",
     "image-blob-reduce": "3.0.1",
     "jotai": "2.11.0",
     "jotai-scope": "0.7.2",

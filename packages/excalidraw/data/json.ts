@@ -18,6 +18,7 @@ import type {
   ExportedLibraryData,
   ImportedLibraryData,
 } from "./types";
+import { set, createStore } from "idb-keyval";
 
 /**
  * Strips out files which are only referenced by deleted elements
@@ -68,6 +69,10 @@ export const serializeAsJSON = (
   return JSON.stringify(data, null, 2);
 };
 
+export const createIndexedDBStore = () => {
+  return createStore("file-handle-store", "file-handle");
+};
+
 export const saveAsJSON = async (
   elements: readonly ExcalidrawElement[],
   appState: AppState,
@@ -88,6 +93,9 @@ export const saveAsJSON = async (
       ? null
       : appState.fileHandle,
   });
+  const fileHandleStore = createIndexedDBStore();
+  const newFileName = fileHandle?.name || DEFAULT_FILENAME;
+  await set(newFileName, fileHandle, fileHandleStore);
   return { fileHandle };
 };
 

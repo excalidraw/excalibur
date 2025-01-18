@@ -20,6 +20,8 @@ import type { Theme } from "../element/types";
 
 import "../components/ToolIcon.scss";
 import { StoreAction } from "../store";
+import { get, del } from "idb-keyval";
+import { createIndexedDBStore } from "../data/json";
 
 export const actionChangeProjectName = register({
   name: "changeProjectName",
@@ -150,20 +152,27 @@ export const actionSaveToActiveFile = register({
     const fileHandleExists = !!appState.fileHandle;
 
     try {
-      const { fileHandle } = isImageFileHandle(appState.fileHandle)
-        ? await resaveAsImageWithScene(
-            elements,
-            appState,
-            app.files,
-            app.getName(),
-          )
-        : await saveAsJSON(elements, appState, app.files, app.getName());
-
+      const fileHandleStore = createIndexedDBStore();
+      let fileHandle = await get(`${app.getName()}`, fileHandleStore);
+      if (!fileHandle) {
+        const { fileHandle: existingFilehandle } = isImageFileHandle(
+          appState.fileHandle,
+        )
+          ? await resaveAsImageWithScene(
+              elements,
+              appState,
+              app.files,
+              app.getName(),
+            )
+          : await saveAsJSON(elements, appState, app.files, app.getName());
+        fileHandle = existingFilehandle;
+      }
       return {
         storeAction: StoreAction.NONE,
         appState: {
           ...appState,
           fileHandle,
+          name: fileHandle?.name,
           toast: fileHandleExists
             ? {
                 message: fileHandle?.name
@@ -197,6 +206,8 @@ export const actionSaveFileToDisk = register({
   trackEvent: { category: "export" },
   perform: async (elements, appState, value, app) => {
     try {
+      const fileHandleStore = createIndexedDBStore();
+      const previousFileName = app.getName();
       const { fileHandle } = await saveAsJSON(
         elements,
         {
@@ -206,11 +217,13 @@ export const actionSaveFileToDisk = register({
         app.files,
         app.getName(),
       );
+      await del(previousFileName, fileHandleStore);
       return {
         storeAction: StoreAction.NONE,
         appState: {
           ...appState,
           openDialog: null,
+          name: fileHandle?.name,
           fileHandle,
           toast: { message: t("toast.fileSaved") },
         },
