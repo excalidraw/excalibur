@@ -3,6 +3,7 @@ import { newElementWith } from "./element/mutateElement";
 import type { BoundingBox } from "./element/bounds";
 import { getCommonBoundingBox } from "./element/bounds";
 import { getMaximumGroups } from "./groups";
+import { getConnectedArrows } from "./element/binding";
 
 export interface Alignment {
   position: "start" | "center" | "end";
@@ -20,19 +21,44 @@ export const alignElements = (
   );
   const selectionBoundingBox = getCommonBoundingBox(selectedElements);
 
-  return groups.flatMap((group) => {
+  // Track all elements that need to be updated
+  const updatedElements: ExcalidrawElement[] = [];
+
+  // Align the non-arrow elements and their connected arrows
+  groups.forEach((group) => {
     const translation = calculateTranslation(
       group,
       selectionBoundingBox,
       alignment,
     );
-    return group.map((element) =>
-      newElementWith(element, {
-        x: element.x + translation.x,
-        y: element.y + translation.y,
-      }),
-    );
+
+    // Update each element in the group
+    group.forEach((element) => {
+      // Add the translated element
+      updatedElements.push(
+        newElementWith(element, {
+          x: element.x + translation.x,
+          y: element.y + translation.y,
+        }),
+      );
+
+      // Get and update connected arrows
+      const connectedArrows = getConnectedArrows(element, elementsMap);
+      connectedArrows.forEach((arrow) => {
+        // Only update arrow if not already processed
+        if (!updatedElements.some((el) => el.id === arrow.id)) {
+          updatedElements.push(
+            newElementWith(arrow, {
+              x: arrow.x + translation.x,
+              y: arrow.y + translation.y,
+            }),
+          );
+        }
+      });
+    });
   });
+
+  return updatedElements;
 };
 
 const calculateTranslation = (

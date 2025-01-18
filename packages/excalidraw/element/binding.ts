@@ -2332,3 +2332,19 @@ export const normalizeFixedPoint = <T extends FixedPoint | null>(
   }
   return fixedPoint as any as T extends null ? null : FixedPoint;
 };
+
+export const getConnectedArrows = (
+  element: ExcalidrawElement,
+  elementsMap: ElementsMap,
+): ExcalidrawElement[] => {
+  const connectedArrows: ExcalidrawElement[] = [];
+
+  element.boundElements?.forEach((binding) => {
+    const boundElement = elementsMap.get(binding.id);
+    if (isArrowElement(boundElement)) {
+      connectedArrows.push(boundElement);
+    }
+  });
+
+  return connectedArrows;
+};
