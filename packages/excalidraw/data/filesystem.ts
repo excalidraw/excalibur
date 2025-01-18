@@ -10,7 +10,7 @@ import { debounce } from "../utils";
 
 type FILE_EXTENSION = Exclude<keyof typeof MIME_TYPES, "binary">;
 
-const INPUT_CHANGE_INTERVAL_MS = 500;
+const INPUT_CHANGE_INTERVAL_MS = 1000;
 
 export const fileOpen = <M extends boolean | undefined = false>(opts: {
   extensions?: FILE_EXTENSION[];
