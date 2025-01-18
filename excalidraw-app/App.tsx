@@ -837,17 +837,38 @@ const ExcalidrawWrapper = () => {
         autoFocus={true}
         theme={editorTheme}
         renderTopRightUI={(isMobile) => {
-          if (isMobile || !collabAPI || isCollabDisabled) {
+          if (!collabAPI || isCollabDisabled) {
             return null;
           }
           return (
-            <div className="top-right-ui">
+            <div className={isMobile ? "top-right-ui_mobile" : "top-right-ui"}>
+              <button
+                className="custom-top-button"
+                onClick={() => alert("This is an empty top right UI")}
+                title="Click"
+                aria-label="click"
+              />
               {collabError.message && <CollabError collabError={collabError} />}
               <LiveCollaborationTrigger
                 isCollaborating={isCollaborating}
                 onSelect={() =>
                   setShareDialogState({ isOpen: true, type: "share" })
                 }
+              />
+            </div>
+          );
+        }}
+        renderTopLeftUI={(isMobile) => {
+          if (!collabAPI || isCollabDisabled) {
+            return null;
+          }
+          return (
+            <div className={isMobile ? "top-left-ui_mobile" : "top-left-ui"}>
+              <button
+                className="custom-top-button"
+                onClick={() => alert("This is an empty top left UI")}
+                title="Custom Top Left"
+                aria-label="Custom Top Left"
               />
             </div>
           );

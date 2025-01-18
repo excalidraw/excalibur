@@ -344,6 +344,14 @@ body.excalidraw-cursor-resize * {
     justify-self: flex-end;
   }
 
+  .App-menu_top__left{
+    .Stack{
+      &_horizontal{
+        align-items: center;
+      }
+    }
+  }
+
   .App-menu_bottom {
     position: absolute;
     bottom: 1rem;
@@ -495,6 +503,18 @@ body.excalidraw-cursor-resize * {
     margin-top: auto;
     margin-bottom: auto;
     margin-inline-start: 0.6em;
+  }
+
+  .undo-redo-buttons_mobile{
+    display: flex;
+    gap: .5rem;
+    button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+    }
   }
 
   @include isMobile {

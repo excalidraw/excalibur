@@ -516,6 +516,10 @@ export interface ExcalidrawProps {
     isMobile: boolean,
     appState: UIAppState,
   ) => JSX.Element | null;
+  renderTopLeftUI?: (
+    isMobile: boolean,
+    appState: UIAppState,
+  ) => JSX.Element | null;
   langCode?: Language["code"];
   viewModeEnabled?: boolean;
   zenModeEnabled?: boolean;

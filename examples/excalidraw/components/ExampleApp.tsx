@@ -203,6 +203,7 @@ export default function ExampleApp({
           tools: { image: !disableImageTool },
         },
         renderTopRightUI,
+        renderTopLeftUI,
         onLinkOpen,
         onPointerDown,
         onScrollChange: rerenderCommentIcons,
@@ -274,6 +275,26 @@ export default function ExampleApp({
         )}
         <button
           onClick={() => alert("This is an empty top right UI")}
+          style={{ height: "2.5rem" }}
+        >
+          Click me
+        </button>
+      </>
+    );
+  };
+  const renderTopLeftUI = (isMobile: boolean) => {
+    return (
+      <>
+        {!isMobile && (
+          <LiveCollaborationTrigger
+            isCollaborating={isCollaborating}
+            onSelect={() => {
+              window.alert("Collab dialog clicked");
+            }}
+          />
+        )}
+        <button
+          onClick={() => alert("This is an empty top left UI")}
           style={{ height: "2.5rem" }}
         >
           Click me

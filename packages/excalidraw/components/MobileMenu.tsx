@@ -40,6 +40,10 @@ type MobileMenuProps = {
     isMobile: boolean,
     appState: UIAppState,
   ) => JSX.Element | null;
+  renderTopLeftUI?: (
+    isMobile: boolean,
+    appState: UIAppState,
+  ) => JSX.Element | null;
   renderCustomStats?: ExcalidrawProps["renderCustomStats"];
   renderSidebars: () => JSX.Element | null;
   device: Device;
@@ -56,7 +60,7 @@ export const MobileMenu = ({
   onLockToggle,
   onHandToolToggle,
   onPenModeToggle,
-
+  renderTopLeftUI,
   renderTopRightUI,
   renderCustomStats,
   renderSidebars,
@@ -89,7 +93,6 @@ export const MobileMenu = ({
                     />
                   </Stack.Row>
                 </Island>
-                {renderTopRightUI && renderTopRightUI(true, appState)}
                 <div className="mobile-misc-tools-container">
                   {!appState.viewModeEnabled &&
                     appState.openDialog?.name !== "elementLinkSelector" && (
@@ -114,6 +117,8 @@ export const MobileMenu = ({
                     title={t("toolBar.hand")}
                     isMobile
                   />
+                  {renderTopLeftUI && renderTopLeftUI(true, appState)}
+                  {renderTopRightUI && renderTopRightUI(true, appState)}
                 </div>
               </Stack.Row>
             </Stack.Col>
@@ -145,8 +150,10 @@ export const MobileMenu = ({
       <div className="App-toolbar-content">
         <MainMenuTunnel.Out />
         {actionManager.renderAction("toggleEditMenu")}
-        {actionManager.renderAction("undo")}
-        {actionManager.renderAction("redo")}
+        <div className="undo-redo-buttons_mobile">
+          {actionManager.renderAction("undo")}
+          {actionManager.renderAction("redo")}
+        </div>
         {actionManager.renderAction(
           appState.multiElement ? "finalize" : "duplicateSelection",
         )}

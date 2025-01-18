@@ -1,10 +1,48 @@
 # Render Props
 
+## renderTopLeftUI
+
+<pre>
+  (isMobile: boolean, appState:
+  <a href="https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/types.ts#L519">
+    AppState
+  </a>) => JSX | null
+</pre>
+
+A function returning `JSX` to render `custom` UI in the top left corner of the app. The element will render next to the main menu trigger.
+
+```jsx live
+function App() {
+  return (
+    <div style={{ height: "500px" }}>
+      <Excalidraw
+        renderTopLeftUI={() => {
+          return (
+            <button
+              style={{
+                background: "#70b1ec",
+                border: "none",
+                color: "#fff",
+                width: "max-content",
+                fontWeight: "bold",
+              }}
+              onClick={() => window.alert("This is dummy top left UI")}
+            >
+              Click me
+            </button>
+          );
+        }}
+      />
+    </div>
+  );
+}
+```
+
 ## renderTopRightUI
 
 <pre>
   (isMobile: boolean, appState:
-  <a href="https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/types.ts#L95">
+  <a href="https://github.com/excalidraw/excalidraw/blob/master/packages/excalidraw/types.ts#L515">
     AppState
   </a>) => JSX | null
 </pre>

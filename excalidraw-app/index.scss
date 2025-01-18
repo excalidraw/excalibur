@@ -5,10 +5,61 @@
     --color-primary-contrast-offset: #726dff; // to offset Chubb illusion
   }
 
+  .custom-top-button{
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    min-width: 44px;
+    min-height: 44px;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-surface-lowest);
+    box-shadow: 0;
+
+    &:hover{
+      background-color: var(--color-primary-darker);
+      border-color: var(--color-primary-darker);
+    }
+  }
+
   .top-right-ui {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    gap: .25rem;
+    .custom-top-button{
+      &::before{
+        content:"Custom Top Right";
+      }
+    }
+    &_mobile {
+      flex-direction: column;
+      
+      .custom-top-button{
+        padding: .5rem .5rem;
+        margin-bottom: .5rem;
+        &::before{
+        content:"☞";
+      }
+    }
+  }
+
+  }
+  .top-left-ui{
+    min-width: 10rem;
+    .custom-top-button{
+      &::before{
+        content:"Custom Top Left";
+      }
+    }
+    &_mobile {
+      flex-direction: column;
+      .custom-top-button{
+        padding: .5rem .5rem;
+        margin: .5rem 0;
+        &::before{
+        content:"♥︎";
+        }
+      }
+    }
   }
 
   .footer-center {

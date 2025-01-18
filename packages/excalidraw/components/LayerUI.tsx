@@ -77,6 +77,7 @@ interface LayerUIProps {
   showExitZenModeBtn: boolean;
   langCode: Language["code"];
   renderTopRightUI?: ExcalidrawProps["renderTopRightUI"];
+  renderTopLeftUI?: ExcalidrawProps["renderTopLeftUI"];
   renderCustomStats?: ExcalidrawProps["renderCustomStats"];
   UIOptions: AppProps["UIOptions"];
   onExportImage: AppClassProperties["onExportImage"];
@@ -135,6 +136,7 @@ const LayerUI = ({
   onPenModeToggle,
   showExitZenModeBtn,
   renderTopRightUI,
+  renderTopLeftUI,
   renderCustomStats,
   UIOptions,
   onExportImage,
@@ -240,7 +242,11 @@ const LayerUI = ({
       <FixedSideContainer side="top">
         <div className="App-menu App-menu_top">
           <Stack.Col gap={6} className={clsx("App-menu_top__left")}>
-            {renderCanvasActions()}
+            <Stack.Row gap={1}>
+              {renderCanvasActions()}
+              {renderTopLeftUI?.(device.editor.isMobile, appState)}
+            </Stack.Row>
+
             {shouldRenderSelectedShapeActions && renderSelectedShapeActions()}
           </Stack.Col>
           {!appState.viewModeEnabled &&
@@ -515,6 +521,7 @@ const LayerUI = ({
           onHandToolToggle={onHandToolToggle}
           onPenModeToggle={onPenModeToggle}
           renderTopRightUI={renderTopRightUI}
+          renderTopLeftUI={renderTopLeftUI}
           renderCustomStats={renderCustomStats}
           renderSidebars={renderSidebars}
           device={device}
