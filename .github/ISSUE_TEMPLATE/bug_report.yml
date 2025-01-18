@@ -1,0 +1,36 @@
+name: "🐛 Bug report"
+description: Report a reproducible bug or regression
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue :pray:
+
+        This issue tracker is for reporting reproducible bugs or regression's found in Excalidraw or Excalidraw+
+        If you have a question about how to achieve something and are struggling, please post a question
+        inside of excalidraw's [Discussions tab](https://github.com/excalidraw/excalidraw/discussions)
+
+        Before submitting a new bug/issue, please check the links below to see if there is a solution or question posted there already:
+         - excalidraw's [Discussions tab](https://github.com/excalidraw/excalidraw/discussions)
+         - excalidraw's [Open Issues](https://github.com/excalidraw/excalidraw/discussions/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
+         - excalidraw's [Closed Issues](https://github.com/excalidraw/excalidraw/discussions/issues?q=is%3Aissue+sort%3Aupdated-desc+is%3Aclosed)
+
+        The more information you fill in, the better the community can help you.
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: Provide a clear and concise description of the challenge you are running into.
+    validations:
+      required: true
+  - type: textarea
+    id: platform
+    attributes:
+      label: Platform
+      description: |
+        Please let us know which Operting System, Browser and Browser version you were using when the issue occurred.
+      placeholder: |
+        - OS + version: e.g. MacOS Big Sur, Windows 11, Linux, iOS 14, Android
+        - Browser + version: e.g. Chrome 104, Safari 15, Firefox 102
+    validations:
+      required: true
