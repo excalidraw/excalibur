@@ -41,6 +41,7 @@ import type { ContextMenuItems } from "./components/ContextMenu";
 import type { SnapLine } from "./snapping";
 import type { Merge, MaybePromise, ValueOf, MakeBrand } from "./utility-types";
 import type { StoreActionType } from "./store";
+import type { ToastType } from "./components/Toast";
 
 export type SocketId = string & { _brand: "SocketId" };
 
@@ -352,7 +353,13 @@ export interface AppState {
   previousSelectedElementIds: { [id: string]: true };
   selectedElementsAreBeingDragged: boolean;
   shouldCacheIgnoreZoom: boolean;
-  toast: { message: string; closable?: boolean; duration?: number } | null;
+  toast: {
+    message: string;
+    closable?: boolean;
+    duration?: number;
+    style?: React.CSSProperties;
+    type?: ToastType;
+  } | null;
   zenModeEnabled: boolean;
   theme: Theme;
   /** grid cell px size */

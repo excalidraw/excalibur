@@ -43,6 +43,12 @@ import { FileManager } from "./FileManager";
 import { Locker } from "./Locker";
 import { updateBrowserStateVersion } from "./tabSync";
 
+// Global state to inform the app about local storage overflow
+import { atom } from "jotai";
+import { appJotaiStore } from "../app-jotai";
+
+export const isLocalStorageOverflowAtom = atom(false);
+
 const filesStore = createStore("files-db", "files-store");
 
 class LocalFileManager extends FileManager {
@@ -68,7 +74,7 @@ class LocalFileManager extends FileManager {
 const saveDataStateToLocalStorage = (
   elements: readonly ExcalidrawElement[],
   appState: AppState,
-) => {
+): boolean => {
   try {
     const _appState = clearAppStateForLocalStorage(appState);
 
@@ -88,9 +94,18 @@ const saveDataStateToLocalStorage = (
       JSON.stringify(_appState),
     );
     updateBrowserStateVersion(STORAGE_KEYS.VERSION_DATA_STATE);
+    appJotaiStore.set(isLocalStorageOverflowAtom, false);
+    return true;
   } catch (error: any) {
-    // Unable to access window.localStorage
-    console.error(error);
+    // Quota exceeded error
+    if (error.name === "QuotaExceededError") {
+      // Set global state to inform the app about local storage overflow
+      appJotaiStore.set(isLocalStorageOverflowAtom, true);
+    } else {
+      console.error(error);
+    }
+
+    return false;
   }
 };
 
@@ -104,7 +119,12 @@ export class LocalData {
       files: BinaryFiles,
       onFilesSaved: () => void,
     ) => {
-      saveDataStateToLocalStorage(elements, appState);
+      const didSave = saveDataStateToLocalStorage(elements, appState);
+
+      // if saving to localStorage failed, don't attempt to save files
+      if (!didSave) {
+        return;
+      }
 
       await this.fileStorage.saveFiles({
         elements,

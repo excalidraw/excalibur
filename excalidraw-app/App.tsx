@@ -77,6 +77,7 @@ import { newElementWith } from "../packages/excalidraw/element/mutateElement";
 import { isInitializedImageElement } from "../packages/excalidraw/element/typeChecks";
 import { loadFilesFromFirebase } from "./data/firebase";
 import {
+  isLocalStorageOverflowAtom,
   LibraryIndexedDBAdapter,
   LibraryLocalStorageMigrationAdapter,
   LocalData,
@@ -366,6 +367,20 @@ const ExcalidrawWrapper = () => {
     return isCollaborationLink(window.location.href);
   });
   const collabError = useAtomValue(collabErrorIndicatorAtom);
+
+  const isLocalStorageOverflow = useAtomValue(isLocalStorageOverflowAtom);
+
+  useEffect(() => {
+    if (isLocalStorageOverflow) {
+      excalidrawAPI?.setToast({
+        message: t("alerts.localStorageOverflow"),
+        closable: true,
+        duration: Infinity,
+        type: "danger",
+        style: { textWrap: "balance" },
+      });
+    }
+  }, [isLocalStorageOverflow, excalidrawAPI]);
 
   useHandleLibrary({
     excalidrawAPI,

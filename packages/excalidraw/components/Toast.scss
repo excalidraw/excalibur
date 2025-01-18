@@ -1,10 +1,14 @@
 @import "../css/variables.module.scss";
 
 .excalidraw {
+  --bg-toast-message: var(--button-gray-1);
+  --bg-toast-warning: var(--color-warning-background);
+  --bg-toast-danger: var(--color-danger-background);
+  --bg-toast-success: var(--color-success);
+
   .Toast {
     $closeButtonSize: 1.2rem;
     $closeButtonPadding: 0.4rem;
-
     animation: fade-in 0.5s;
     background-color: var(--button-gray-1);
     border-radius: 4px;
@@ -19,10 +23,58 @@
     width: 300px;
     z-index: 999999;
 
+    /* 4 types of toasts: message, warning, danger, success
+     * Close icon styles for toasts override ToolIcon__icon styles
+     * Except for the default message toast
+    /*
+
     .Toast__message {
       padding: 0 $closeButtonSize + ($closeButtonPadding);
       color: var(--popup-text-color);
       white-space: pre-wrap;
+    }
+    /* Default toast uses ToolIcon__icon hover and active states */
+
+    /* Warning Toast */
+    .Toast__warning {
+      padding: 0 $closeButtonSize + ($closeButtonPadding);
+      color: var(--color-text-warning);
+      white-space: pre-wrap;
+    }
+    .Toast__warning__close:hover .ToolIcon__icon,
+    .Toast__warning__close:active .ToolIcon__icon {
+      background-color: var(--color-warning-icon-background);
+    }
+    .Toast__warning__close:active {
+      background-color: var(--bg-warning);
+    }
+
+    /* Danger Toast */
+    .Toast__danger {
+      padding: 0 $closeButtonSize + ($closeButtonPadding);
+      color: var(--color-danger-text);
+      white-space: pre-wrap;
+    }
+    .Toast__danger__close:hover .ToolIcon__icon,
+    .Toast__danger__close:active .ToolIcon__icon {
+      background-color: var(--color-danger-icon-background);
+    }
+    .Toast__danger__close:active {
+      background-color: var(--bg-danger);
+    }
+
+    /* Success Toast */
+    .Toast__success {
+      padding: 0 $closeButtonSize + ($closeButtonPadding);
+      color: var(--color-success-text);
+      white-space: pre-wrap;
+    }
+    .Toast__success__close:hover .ToolIcon__icon,
+    .Toast__success__close:active .ToolIcon__icon {
+      background-color: var(--color-success-darkest);
+    }
+    .Toast__success__close:active {
+      background-color: var(--bg-success);
     }
 
     .close {
