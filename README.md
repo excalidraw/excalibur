@@ -99,6 +99,37 @@ yarn add react react-dom @excalidraw/excalidraw
 
 Check out our [documentation](https://docs.excalidraw.com/docs/@excalidraw/excalidraw/installation) for more details!
 
+## Deploy on Minikube
+
+- 1. ```git clone git@github.com:rescenic/excalidraw.git```
+- 2. ```cd excalidraw```
+- 3. ```docker build -t excalidraw:v1.0.0 .```
+- 4. ```minikube image load excalidraw:v1.0.0```
+- 5. ```minikube image ls```
+- 6. ```minikube addons enable ingress```
+- 7. Add rescenic.com to system hosts:
+
+```host
+127.0.0.1 rescenic.com
+::1 rescenic.com
+```
+
+- 8. ```kubectl apply -f deployment.yaml```
+- 9. Check service in the pod:
+
+```zsh
+ kubectl get pod
+NAME                          READY   STATUS    RESTARTS   AGE
+excalidraw-7f4cbc69b4-dqkbt   1/1     Running   0          17m
+ kubectl exec -it excalidraw-7f4cbc69b4-dqkbt -- /bin/sh
+/ # curl localhost
+/ # exit
+```
+
+- 10. ```kubectl port-forward svc/excalidraw-service 9991:80```
+- 11. ```minikube tunnel```
+- 12. Check in host browser: http://rescenic.com
+
 ## Contributing
 
 - Missing something or found a bug? [Report here](https://github.com/excalidraw/excalidraw/issues).

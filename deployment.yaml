@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: excalidraw
+spec:
+  selector:
+    matchLabels:
+      app: excalidraw
+  template:
+    metadata:
+      labels:
+        app: excalidraw
+    spec:
+      containers:
+      - name: excalidraw
+        image: excalidraw:v1.0.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: excalidraw-service
+spec:
+  selector:
+    app: excalidraw
+  ports:
+  - port: 80
+    targetPort: 80
+
+# https://kubernetes.io/docs/concepts/services-networking/ingress/#the-ingress-resource
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: excalidraw-ingress
+  labels:
+    name: excalidraw-ingress
+spec:
+  rules:
+  - host: rescenic.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: excalidraw-service
+            port:
+              number: 80
