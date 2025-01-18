@@ -216,22 +216,6 @@ export const textWysiwyg = ({
         }
       }
       const [viewportX, viewportY] = getViewportCoords(coordX, coordY);
-      const initialSelectionStart = editable.selectionStart;
-      const initialSelectionEnd = editable.selectionEnd;
-      const initialLength = editable.value.length;
-
-      // restore cursor position after value updated so it doesn't
-      // go to the end of text when container auto expanded
-      if (
-        initialSelectionStart === initialSelectionEnd &&
-        initialSelectionEnd !== initialLength
-      ) {
-        // get diff between length and selection end and shift
-        // the cursor by "diff" times to position correctly
-        const diff = initialLength - initialSelectionEnd;
-        editable.selectionStart = editable.value.length - diff;
-        editable.selectionEnd = editable.value.length - diff;
-      }
 
       if (!container) {
         maxWidth = (appState.width - 8 - viewportX) / appState.zoom.value;
