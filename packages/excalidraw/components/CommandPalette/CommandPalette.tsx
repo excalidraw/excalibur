@@ -800,12 +800,28 @@ function CommandPaletteInner({
     const _query = deburr(
       commandSearch.toLocaleLowerCase().replace(/[<>_| -]/g, ""),
     );
-    matchingCommands = fuzzy
+
+    const matchingCommandsHaystack = fuzzy
       .filter(_query, matchingCommands, {
         extract: (command) => command.haystack,
       })
       .sort((a, b) => b.score - a.score)
       .map((item) => item.original);
+
+    const matchingCommandsShortcut = fuzzy
+      .filter(_query, matchingCommands, {
+        extract: (command) => command.shortcut || "",
+      })
+      .sort((a, b) => b.score - a.score)
+      .map((item) => item.original)
+      .filter(
+        (item) =>
+          !matchingCommandsHaystack.some((item2) => item.label === item2.label),
+      );
+
+    matchingCommands = matchingCommandsHaystack.concat(
+      matchingCommandsShortcut,
+    );
 
     setCommandsByCategory(getNextCommandsByCategory(matchingCommands));
     setCurrentCommand(matchingCommands[0] ?? null);
