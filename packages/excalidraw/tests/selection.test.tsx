@@ -16,6 +16,7 @@ import { API } from "./helpers/api";
 import { Keyboard, Pointer, UI } from "./helpers/ui";
 import { SHAPES } from "../shapes";
 import { vi } from "vitest";
+import type { ExcalidrawElement } from "../element/types";
 
 // Unmount ReactDOM from root
 ReactDOM.unmountComponentAtNode(document.getElementById("root")!);
@@ -533,5 +534,60 @@ describe("selectedElementIds stability", () => {
     mouse.up();
 
     expect(h.state.selectedElementIds).toBe(selectedElementIds_2);
+  });
+});
+
+describe("edit-group selection", () => {
+  let rect1: ExcalidrawElement;
+  let rect2: ExcalidrawElement;
+  let rect3: ExcalidrawElement;
+
+  beforeEach(async () => {
+    await render(<Excalidraw handleKeyboardGlobally={true} />);
+
+    rect1 = API.createElement({
+      type: "rectangle",
+      x: 0,
+      y: 0,
+      width: 20,
+      height: 20,
+      groupIds: ["A"],
+    });
+    rect2 = API.createElement({
+      type: "rectangle",
+      x: 50,
+      y: 50,
+      width: 20,
+      height: 20,
+      groupIds: ["A"],
+    });
+    rect3 = API.createElement({
+      type: "rectangle",
+      x: 100,
+      y: 100,
+      width: 20,
+      height: 20,
+    });
+    API.setElements([rect1, rect2, rect3]);
+  });
+
+  it("edits group on Enter", () => {
+    mouse.select(rect1);
+    assertSelectedElements([rect1.id, rect2.id]);
+    expect(h.state.selectedGroupIds).toEqual({ A: true });
+
+    Keyboard.keyDown(KEYS.ENTER);
+    expect(h.state.editingGroupId).toBe("A");
+    assertSelectedElements([rect1.id, rect2.id]);
+  });
+
+  it("doesn't edit group if selected elements aren't part of the same group", () => {
+    mouse.downAt(130, 130);
+    mouse.moveTo(40, 40);
+    mouse.up();
+    assertSelectedElements([rect1.id, rect2.id, rect3.id]);
+
+    Keyboard.keyDown(KEYS.ENTER);
+    expect(h.state.editingGroupId).toBe(null);
   });
 });
