@@ -133,6 +133,22 @@ export const SearchMenu = () => {
     }
   };
 
+  const fixInputCursorPosition = () => {
+    requestAnimationFrame(() => {
+      const searchInput = searchInputRef.current;
+      const isFocus = document.activeElement === searchInput;
+      // if input is not focus and input instance is not exist return
+      if (!searchInput || !isFocus) {
+        return;
+      }
+      const cursorPosition = searchInput.selectionStart;
+      const textLength = searchInput.value.length!;
+      if (cursorPosition !== textLength) {
+        searchInput.setSelectionRange(textLength, textLength);
+      }
+    });
+  };
+
   useEffect(() => {
     setAppState((state) => {
       return {
@@ -278,6 +294,7 @@ export const SearchMenu = () => {
           if (event.key === KEYS.ARROW_UP) {
             event.stopPropagation();
             stableState.goToPreviousItem();
+            fixInputCursorPosition();
           } else if (event.key === KEYS.ARROW_DOWN) {
             event.stopPropagation();
             stableState.goToNextItem();
