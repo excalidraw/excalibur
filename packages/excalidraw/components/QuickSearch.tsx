@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 import { searchIcon } from "./icons";
+import { TextField } from "./TextField";
 
 import "./QuickSearch.scss";
 
@@ -13,14 +14,14 @@ interface QuickSearchProps {
 export const QuickSearch = React.forwardRef<HTMLInputElement, QuickSearchProps>(
   ({ className, placeholder, onChange }, ref) => {
     return (
-      <div className={clsx("QuickSearch__wrapper", className)}>
-        {searchIcon}
-        <input
+      <div className={clsx("layer-ui__search-header", className)}>
+        <TextField
+          className="layer-ui__search-inputWrapper"
           ref={ref}
-          className="QuickSearch__input"
-          type="text"
           placeholder={placeholder}
-          onChange={(e) => onChange(e.target.value.trim().toLowerCase())}
+          onChange={(value) => onChange(value.trim().toLowerCase())}
+          defaultValue=""
+          icon={searchIcon}
         />
       </div>
     );

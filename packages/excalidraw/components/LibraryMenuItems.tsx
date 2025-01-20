@@ -13,7 +13,7 @@ import type {
   LibraryItems,
   UIAppState,
 } from "../types";
-import { arrayToMap } from "../utils";
+import { arrayToMap, debounce } from "../utils";
 import Stack from "./Stack";
 import { MIME_TYPES } from "../constants";
 import Spinner from "./Spinner";
@@ -28,6 +28,7 @@ import { useScrollPosition } from "../hooks/useScrollPosition";
 import { useLibraryCache } from "../hooks/useLibraryItemSvg";
 
 import "./LibraryMenuItems.scss";
+import { QuickSearch } from "./QuickSearch";
 
 // using an odd number of items per batch so the rendering creates an irregular
 // pattern which looks more organic
@@ -60,6 +61,7 @@ export default function LibraryMenuItems({
   onSelectItems: (id: LibraryItem["id"][]) => void;
 }) {
   const libraryContainerRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const scrollPosition = useScrollPosition<HTMLDivElement>(libraryContainerRef);
 
   // This effect has to be called only on first render, therefore  `scrollPosition` isn't in the dependency array
@@ -203,6 +205,17 @@ export default function LibraryMenuItems({
       ? CACHED_ITEMS_RENDERED_PER_BATCH
       : ITEMS_RENDERED_PER_BATCH;
 
+  const [publishedSearchQuery, setPublishedSearchQuery] = useState("");
+
+  const filteredPublishedItems = useMemo(() => {
+    const normalizedQuery = publishedSearchQuery.toLowerCase();
+
+    return publishedItems.filter((item) => {
+      const libraryItem = item as LibraryItem;
+      return libraryItem.name?.toLowerCase().includes(normalizedQuery);
+    });
+  }, [publishedItems, publishedSearchQuery]);
+
   return (
     <div
       className="library-menu-items-container"
@@ -215,11 +228,28 @@ export default function LibraryMenuItems({
       }
     >
       {!isLibraryEmpty && (
-        <LibraryDropdownMenu
-          selectedItems={selectedItems}
-          onSelectItems={onSelectItems}
-          className="library-menu-dropdown-container--in-heading"
-        />
+        <div
+          style={{
+            display: "flex",
+            boxSizing: "border-box",
+            gap: "8px",
+            alignItems: "center",
+            justifyContent: "center",
+            paddingTop: "8px",
+            width: "100%",
+          }}
+        >
+          <QuickSearch
+            ref={inputRef}
+            placeholder={t("library.searchPlaceholder")}
+            onChange={debounce(setPublishedSearchQuery, 20)}
+          />
+          <LibraryDropdownMenu
+            selectedItems={selectedItems}
+            onSelectItems={onSelectItems}
+            className="library-menu-dropdown-container--in-heading"
+          />
+        </div>
       )}
       <Stack.Col
         className="library-menu-items-container__items"
@@ -298,7 +328,7 @@ export default function LibraryMenuItems({
             <LibraryMenuSectionGrid>
               <LibraryMenuSection
                 itemsRenderedPerBatch={itemsRenderedPerBatch}
-                items={publishedItems}
+                items={filteredPublishedItems}
                 onItemSelectToggle={onItemSelectToggle}
                 onItemDrag={onItemDrag}
                 onClick={onItemClick}
@@ -321,6 +351,11 @@ export default function LibraryMenuItems({
               {t("library.noItems")}
             </div>
           ) : null}
+          {filteredPublishedItems.length === 0 &&
+            inputRef &&
+            publishedSearchQuery.length && (
+              <div style={{ margin: "1rem auto" }}>{t("search.noMatch")}</div>
+            )}
         </>
 
         {showBtn && (

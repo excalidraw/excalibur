@@ -5,14 +5,15 @@
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 8px 0 0 0;
+    padding: 8px 0.75rem 0 0.75rem;
   }
 
   .layer-ui__search-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0.75rem;
+    padding: 0;
+    width: 100%;
     .ExcTextField {
       flex: 1 0 auto;
     }
