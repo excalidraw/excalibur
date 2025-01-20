@@ -27,6 +27,7 @@ import { isBoundToContainer } from "../element/typeChecks";
 import {
   getElementsInResizingFrame,
   getFrameLikeElements,
+  getRootElements,
   groupByFrameLikes,
   removeElementsFromFrame,
   replaceAllElementsInFrame,
@@ -60,8 +61,15 @@ const enableActionGroup = (
     selectedElementIds: appState.selectedElementIds,
     includeBoundTextElement: true,
   });
+
+  const elementsMap = arrayToMap(selectedElements);
+
   return (
-    selectedElements.length >= 2 && !allElementsInSameGroup(selectedElements)
+    selectedElements.length >= 2 &&
+    !allElementsInSameGroup(selectedElements) &&
+    !selectedElements.some(
+      (element) => element.frameId && elementsMap.has(element.frameId),
+    )
   );
 };
 
@@ -71,10 +79,12 @@ export const actionGroup = register({
   icon: (appState) => <GroupIcon theme={appState.theme} />,
   trackEvent: { category: "element" },
   perform: (elements, appState, _, app) => {
-    const selectedElements = app.scene.getSelectedElements({
-      selectedElementIds: appState.selectedElementIds,
-      includeBoundTextElement: true,
-    });
+    const selectedElements = getRootElements(
+      app.scene.getSelectedElements({
+        selectedElementIds: appState.selectedElementIds,
+        includeBoundTextElement: true,
+      }),
+    );
     if (selectedElements.length < 2) {
       // nothing to group
       return { appState, elements, storeAction: StoreAction.NONE };

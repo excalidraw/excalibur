@@ -3235,7 +3235,12 @@ class App extends React.Component<AppProps, AppState> {
         newElements,
         topLayerFrame,
       );
-      addElementsToFrame(nextElements, eligibleElements, topLayerFrame);
+      addElementsToFrame(
+        nextElements,
+        eligibleElements,
+        topLayerFrame,
+        this.state,
+      );
     }
 
     this.scene.replaceAllElements(nextElements);
@@ -4326,10 +4331,14 @@ class App extends React.Component<AppProps, AppState> {
         }
 
         selectedElements.forEach((element) => {
-          mutateElement(element, {
-            x: element.x + offsetX,
-            y: element.y + offsetY,
-          });
+          mutateElement(
+            element,
+            {
+              x: element.x + offsetX,
+              y: element.y + offsetY,
+            },
+            false,
+          );
 
           updateBoundElements(element, this.scene.getNonDeletedElementsMap(), {
             simultaneouslyUpdated: selectedElements,
@@ -4345,6 +4354,8 @@ class App extends React.Component<AppProps, AppState> {
             this.state.zoom,
           ),
         });
+
+        this.scene.triggerUpdate();
 
         event.preventDefault();
       } else if (event.key === KEYS.ENTER) {
@@ -8588,6 +8599,7 @@ class App extends React.Component<AppProps, AppState> {
                 elements,
                 this.state.selectionElement,
                 this.scene.getNonDeletedElementsMap(),
+                false,
               )
             : [];
 
@@ -9016,6 +9028,7 @@ class App extends React.Component<AppProps, AppState> {
             this.scene.getElementsMapIncludingDeleted(),
             elementsInsideFrame,
             newElement,
+            this.state,
           ),
         );
       }
@@ -9133,6 +9146,7 @@ class App extends React.Component<AppProps, AppState> {
               nextElements,
               elementsToAdd,
               topLayerFrame,
+              this.state,
             );
           } else if (!topLayerFrame) {
             if (this.state.editingGroupId) {
